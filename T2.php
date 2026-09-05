@@ -1,433 +1,331 @@
 <?php
+/**
+ * Cahaya - Template T2 (landing AMP "Mario Footer" — replika persis HTML referensi client)
+ * ------------------------------------------------------------------------------
+ * File HTML asli client dipertahankan UTUH (nowdoc), hanya titik variabel ber-token %%KEY%%.
+ * Kontrak SAMA PERSIS dengan T1 (render engine baca /data/data.json):
+ *  - Ganti template = ganti file ini saja, data.json tidak disentuh.
+ *  - Subpage (?id=slug) + 404 + GSC meta + noindex jalan lewat token.
+ *  - Gambar referensi domain asli sudah di-relatifkan ke /images/*.
+ */
 
 $id   = (isset($_GET['id']) && $_GET['id'] !== '') ? $_GET['id'] : 'homepage';
 $file = __DIR__ . '/data/data.json';
 
 if (!file_exists($file)) {
-http_response_code(500);
-exit('data.json tidak ditemukan.');
+    http_response_code(500);
+    exit('data.json tidak ditemukan.');
 }
 
 $data = json_decode(file_get_contents($file), true);
 $page = isset($data[$id]) ? $data[$id] : null;
 
 if (!$page) {
-http_response_code(404);
-exit('<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>404</title></head><body><h1>404</h1><p><a href="/">Kembali ke Beranda</a></p></body></html>');
+    http_response_code(404);
+    exit('<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>404</title></head><body style="background:#000;color:#fff;font-family:sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center"><div style="text-align:center"><h1 style="color:#ff0033">404</h1><p><a href="/" style="color:#f1ff00">&larr; Kembali ke Beranda</a></p></div></body></html>');
 }
 
-function e($str) { return htmlspecialchars($str ?? '', ENT_QUOTES, 'UTF-8'); }
+function h($str) { return htmlspecialchars((string)$str, ENT_QUOTES, 'UTF-8'); }
 
-$homepage   = isset($data['homepage']) ? $data['homepage'] : [];
-$isHome     = ($page['category'] === 'homepage');
-$host       = $_SERVER['HTTP_HOST'];
-$origin     = 'https://' . $host;
+$homepage     = isset($data['homepage']) ? $data['homepage'] : [];
+$isHomepage   = ($page['category'] === 'homepage');
+$domainName   = $_SERVER['HTTP_HOST'];
+$origin       = 'https://' . $domainName;
+$namaSitus    = !empty($homepage['keyword']) ? $homepage['keyword'] : explode('.', $domainName)[0];
 
-$logoSrc    = $homepage['logo_src']       ?? '/img/logo.png';
-$faviconSrc = $homepage['favicon_src']    ?? '/img/favicon.png';
-$banner1    = $homepage['banner_src']     ?? '';
-$waUrl      = $homepage['whatsapp_cta']   ?? '#';
-$tgUrl      = $homepage['telegram_cta']   ?? '#';
-$daftarUrl  = $homepage['cta_daftar_url'] ?? '#';
-$loginUrl   = $homepage['cta_login_url']  ?? '#';
+$title        = $page['title'];
+$description  = isset($page['meta_description']) ? $page['meta_description'] : '';
+$canonical    = !empty($page['canonical_url']) ? $page['canonical_url'] : ($origin . '/');
+$robots       = !empty($page['noindex']) ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large';
+$gscToken     = isset($homepage['gsc_token']) ? $homepage['gsc_token'] : '';
+$gscMeta      = $gscToken !== '' ? '<meta name="google-site-verification" content="' . h($gscToken) . '">' : '';
 
-$noindex    = !empty($page['noindex']);
-$lang       = $page['lang'] ?? 'id';
-$lastmod    = $page['lastmod'] ?? date('Y-m-d');
-$canonical  = $page['canonical_url'] ?? ($origin . '/');
-$ogImage    = $page['image_src'] ?? $banner1;
-$dateMod    = $lastmod . 'T00:00:00+07:00';
-$bulanId = [1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-$ts = strtotime($lastmod);
-$tglTampil = $ts ? (date('j', $ts) . ' ' . $bulanId[(int)date('n', $ts)] . ' ' . date('Y', $ts)) : $lastmod;
+$ctaDaftar    = !empty($homepage['cta_daftar_url']) ? $homepage['cta_daftar_url'] : '#';
+$ctaLogin     = !empty($homepage['cta_login_url']) ? $homepage['cta_login_url'] : '#';
 
-$semuaPost = array_filter($data, function ($item) {
-return isset($item['category']) && $item['category'] === 'post';
-});
-
-// og:image WAJIB URL mutlak. Jalur relatif membuat pratinjau bagikan di
-// WhatsApp dan Facebook gagal memuat gambar.
-$ogAbs = $ogImage ? ((strpos($ogImage, 'http') === 0) ? $ogImage : $origin . $ogImage) : '';
-
-// Menu halaman informasi. Dicocokkan dengan AKHIRAN slug, bukan slug persis,
-// karena staf memakai pola berawalan nama domain (mis. domain-link-alternatif).
-// Pola yang lebih panjang didahulukan supaya 'cara-daftar' tidak tertelan 'daftar'.
-// Satu label hanya dipakai sekali. Halaman yang belum ada tidak ditampilkan,
-// jadi tidak pernah ada tautan mati.
-$polaMenu = [
-'about-us'        => 'Tentang Kami',
-'tentang-kami'    => 'Tentang Kami',
-'contact-us'      => 'Kontak',
-'kontak'          => 'Kontak',
-'link-alternatif' => 'Link Alternatif',
-'cara-daftar'     => 'Cara Daftar',
-'daftar'          => 'Cara Daftar',
-'cara-masuk-akun' => 'Cara Masuk',
-'cara-masuk'      => 'Cara Masuk',
-'login'           => 'Cara Masuk',
-'disclaimer'      => 'Disclaimer',
-];
-
-$menuHalaman = [];
-$labelDipakai = [];
-foreach ($polaMenu as $pola => $label) {
-if (isset($labelDipakai[$label])) { continue; }
-foreach ($semuaPost as $slug => $item) {
-if (isset($menuHalaman[$slug])) { continue; }
-$s = strtolower(trim($slug));
-if ($s === $pola || substr($s, -(strlen($pola) + 1)) === '-' . $pola) {
-$menuHalaman[$slug] = $label;
-$labelDipakai[$label] = true;
-break;
-}
-}
-}
-// Artikel biasa dipisah dari menu supaya Disclaimer tidak ikut muncul di
-// daftar bacaan lain.
-$bacaanLain = array_diff_key($semuaPost, $menuHalaman);
-
-// Tautan internal di awal artikel: kemunculan PERTAMA nama situs di dalam
-// content_html ditautkan ke beranda. Dikerjakan saat render, jadi artikel lama
-// pun ikut mendapat tautan tanpa perlu regenerate.
-// Penggantian HANYA pada teks di luar tag, supaya nama situs yang kebetulan
-// berada di dalam atribut tidak ikut dirusak. Hanya satu kali per halaman.
-// Variabel sengaja bernama $namaTaut, bukan $namaSitus, karena $namaSitus
-// sudah dipakai untuk keperluan lain di template ini.
-$isiArtikel = $page['content_html'];
-$namaTaut   = !empty($homepage['keyword']) ? $homepage['keyword'] : explode('.', $host)[0];
-if ($namaTaut !== '' && $isiArtikel !== '') {
-    $bagian = preg_split('/(<[^>]*>)/', $isiArtikel, -1, PREG_SPLIT_DELIM_CAPTURE);
+// Konten: homepage = paragraf pembuka + artikel penuh; subpage = artikel penuh.
+// Tautan internal pertama nama situs -> beranda (pola T1).
+$isi = isset($page['content_html']) ? $page['content_html'] : '';
+if (!$isHomepage && $isi !== '' && $namaSitus !== '') {
+    $bagian = preg_split('/(<[^>]*>)/', $isi, -1, PREG_SPLIT_DELIM_CAPTURE);
     $sudah = false;
     foreach ($bagian as $i => $b) {
         if ($sudah || $b === '' || $b[0] === '<') { continue; }
-        $pos = stripos($b, $namaTaut);
+        $pos = stripos($b, $namaSitus);
         if ($pos !== false) {
-            $asli = substr($b, $pos, strlen($namaTaut));
-            $bagian[$i] = substr($b, 0, $pos) . '<a href="/">' . $asli . '</a>' . substr($b, $pos + strlen($namaTaut));
+            $asli = substr($b, $pos, strlen($namaSitus));
+            $bagian[$i] = substr($b, 0, $pos) . '<a href="/">' . $asli . '</a>' . substr($b, $pos + strlen($namaSitus));
             $sudah = true;
         }
     }
-    if ($sudah) { $isiArtikel = implode('', $bagian); }
+    if ($sudah) { $isi = implode('', $bagian); }
 }
-$papanRtp = [
-['nama' => 'Gerbang Olympia',   'prov' => 'Pragmatic Play', 'rtp' => '96.5%',  'st' => 'TINGGI', 'kelas' => 'hi'],
-['nama' => 'Mahjong Jalur 2',   'prov' => 'PG Soft',        'rtp' => '96.9%',  'st' => 'TINGGI', 'kelas' => 'hi'],
-['nama' => 'Manis Bonanza',     'prov' => 'Pragmatic Play', 'rtp' => '96.5%',  'st' => 'SEDANG', 'kelas' => 'mid'],
-['nama' => 'Putri Bintang',     'prov' => 'Pragmatic Play', 'rtp' => '96.5%',  'st' => 'SEDANG', 'kelas' => 'mid'],
-['nama' => 'Koin Naga',         'prov' => 'PG Soft',        'rtp' => '96.2%',  'st' => 'RENDAH', 'kelas' => 'lo'],
-];
+$content = $isHomepage
+    ? '<a href="' . h($origin) . '/"><strong>' . h($namaSitus) . '</strong></a> ' . h($description)
+    : $isi;
 
-$providerList = ['Pragmatic Play','PG Soft','Habanero','Microgaming','Playtech','Evolution','JILI','CQ9'];
+$html = <<<'HTMLPAGE'
 
-$faqList = [
-['t' => 'Apa arti angka RTP di papan ' . $host . '?',
-'j' => 'RTP adalah persentase teoritis dari total taruhan yang kembali ke pemain dalam jangka sangat panjang. Angka ini berasal dari provider dan dihitung lintas jutaan putaran, bukan jaminan hasil satu sesi.'],
-['t' => 'Berapa kali papan RTP diperbarui?',
-'j' => 'Sekali sehari. Waktu pembaruan terakhir selalu tercantum di bagian atas halaman ini.'],
-['t' => 'Apakah status TINGGI berarti pasti menang?',
-'j' => 'Tidak. Status itu merangkum laporan komunitas dalam 24 jam terakhir. Setiap putaran ditentukan RNG dan independen dari putaran sebelumnya.'],
-['t' => 'Dari mana angka RTP diambil?',
-'j' => 'Dari informasi resmi yang dipublikasikan tiap provider di halaman info game. Angka dicocokkan ulang setiap kali provider merilis pembaruan.'],
-['t' => 'Apa bedanya RTP dengan volatilitas?',
-'j' => 'RTP mengukur berapa persen taruhan yang kembali dalam jangka panjang, sedangkan volatilitas menggambarkan pola kemenangannya. Volatilitas tinggi berarti menang jarang tapi besar; rendah berarti menang kecil tapi lebih sering.'],
-];
-?>
 <!DOCTYPE html>
-<html lang="<?= e($lang) ?>">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="<?= e($faviconSrc) ?>">
-<title><?= e($page['title']) ?></title>
-<meta name="description" content="<?= e($page['meta_description']) ?>">
-<meta name="robots" content="<?= $noindex ? 'noindex, nofollow' : 'index, follow' ?>">
-<link rel="canonical" href="<?= e($canonical) ?>">
-<?php if (!empty($page['amp_url']) && $page['amp_url'] !== '#'): ?>
-<link rel="amphtml" href="<?= e($page['amp_url']) ?>">
-<link rel="alternate" hreflang="id-id" href="<?= e($page['amp_url']) ?>">
-<link rel="alternate" href="<?= e($page['amp_url']) ?>">
-<link rel="alternate" hreflang="id" href="<?= e($page['amp_url']) ?>">
-<link rel="alternate" hreflang="en" href="<?= e($page['amp_url']) ?>">
-<link rel="alternate" hreflang="x-default" href="<?= e($page['amp_url']) ?>">
-<?php endif; ?>
-<meta property="og:type" content="<?= $isHome ? 'website' : 'article' ?>">
-<meta property="og:url" content="<?= e($canonical) ?>">
-<meta property="og:title" content="<?= e($page['title']) ?>">
-<meta property="og:description" content="<?= e($page['meta_description']) ?>">
-<meta property="og:image" content="<?= e($ogAbs) ?>">
-<meta name="twitter:card" content="summary_large_image">
+<html lang="id" prefix="og: https://ogp.me/ns#" amp="" data-amp-auto-lightbox-disable transformed="self;v=1" i-amphtml-layout="" i-amphtml-no-boilerplate="" i-amphtml-binding>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,viewport-fit=cover"><link rel="preconnect" href="https://cdn.ampproject.org"><style amp-runtime="" i-amphtml-version="012608131752000">html{overflow-x:hidden!important}html.i-amphtml-fie{height:100%!important;width:100%!important}html:not([amp4ads]),html:not([amp4ads]) body{height:auto!important}html:not([amp4ads]) body{margin:0!important}body{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}html.i-amphtml-singledoc.i-amphtml-embedded{-ms-touch-action:pan-y pinch-zoom;touch-action:pan-y pinch-zoom}html.i-amphtml-fie>body,html.i-amphtml-singledoc>body{overflow:visible!important}html.i-amphtml-fie:not(.i-amphtml-inabox)>body,html.i-amphtml-singledoc:not(.i-amphtml-inabox)>body{position:relative!important}html.i-amphtml-ios-embed-legacy>body{overflow-x:hidden!important;overflow-y:auto!important;position:absolute!important}html.i-amphtml-ios-embed{overflow-y:auto!important;position:static}#i-amphtml-wrapper{overflow-x:hidden!important;overflow-y:auto!important;position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;margin:0!important;display:block!important}html.i-amphtml-ios-embed.i-amphtml-ios-overscroll,html.i-amphtml-ios-embed.i-amphtml-ios-overscroll>#i-amphtml-wrapper{-webkit-overflow-scrolling:touch!important}#i-amphtml-wrapper>body{position:relative!important;border-top:1px solid transparent!important}#i-amphtml-wrapper+body{visibility:visible}#i-amphtml-wrapper+body .i-amphtml-lightbox-element,#i-amphtml-wrapper+body[i-amphtml-lightbox]{visibility:hidden}#i-amphtml-wrapper+body[i-amphtml-lightbox] .i-amphtml-lightbox-element{visibility:visible}#i-amphtml-wrapper.i-amphtml-scroll-disabled,.i-amphtml-scroll-disabled{overflow-x:hidden!important;overflow-y:hidden!important}amp-instagram{padding:54px 0px 0px!important;background-color:#fff}amp-iframe iframe{box-sizing:border-box!important}[amp-access][amp-access-hide]{display:none}[subscriptions-dialog],body:not(.i-amphtml-subs-ready) [subscriptions-action],body:not(.i-amphtml-subs-ready) [subscriptions-section]{display:none!important}amp-experiment,amp-live-list>[update]{display:none}amp-list[resizable-children]>.i-amphtml-loading-container.amp-hidden{display:none!important}amp-list [fetch-error],amp-list[load-more] [load-more-button],amp-list[load-more] [load-more-end],amp-list[load-more] [load-more-failed],amp-list[load-more] [load-more-loading]{display:none}amp-list[diffable] div[role=list]{display:block}amp-story-page,amp-story[standalone]{min-height:1px!important;display:block!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;width:100%!important}amp-story[standalone]{background-color:#000!important;position:relative!important}amp-story-page{background-color:#757575}amp-story .amp-active>div,amp-story .i-amphtml-loader-background{display:none!important}amp-story-page:not(:first-of-type):not([distance]):not([active]){transform:translateY(1000vh)!important}amp-autocomplete{position:relative!important;display:inline-block!important}amp-autocomplete>input,amp-autocomplete>textarea{padding:0.5rem;border:1px solid rgba(0,0,0,.33)}.i-amphtml-autocomplete-results,amp-autocomplete>input,amp-autocomplete>textarea{font-size:1rem;line-height:1.5rem}[amp-fx^=fly-in]{visibility:hidden}amp-script[nodom],amp-script[sandboxed]{position:fixed!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;visibility:hidden}
+/*# sourceURL=/css/ampdoc.css*/[hidden]{display:none!important}.i-amphtml-element{display:inline-block}.i-amphtml-blurry-placeholder{transition:opacity 0.3s cubic-bezier(0.0,0.0,0.2,1)!important;pointer-events:none}[layout=nodisplay]:not(.i-amphtml-element){display:none!important}.i-amphtml-layout-fixed,[layout=fixed][width][height]:not(.i-amphtml-layout-fixed){display:inline-block;position:relative}.i-amphtml-layout-responsive,[layout=responsive][width][height]:not(.i-amphtml-layout-responsive),[width][height][heights]:not([layout]):not(.i-amphtml-layout-responsive),[width][height][sizes]:not(img):not([layout]):not(.i-amphtml-layout-responsive){display:block;position:relative}.i-amphtml-layout-intrinsic,[layout=intrinsic][width][height]:not(.i-amphtml-layout-intrinsic){display:inline-block;position:relative;max-width:100%}.i-amphtml-layout-intrinsic .i-amphtml-sizer{max-width:100%}.i-amphtml-intrinsic-sizer{max-width:100%;display:block!important}.i-amphtml-layout-container,.i-amphtml-layout-fixed-height,[layout=container],[layout=fixed-height][height]:not(.i-amphtml-layout-fixed-height){display:block;position:relative}.i-amphtml-layout-fill,.i-amphtml-layout-fill.i-amphtml-notbuilt,[layout=fill]:not(.i-amphtml-layout-fill),body noscript>*{display:block;overflow:hidden!important;position:absolute;top:0;left:0;bottom:0;right:0}body noscript>*{position:absolute!important;width:100%;height:100%;z-index:2}body noscript{display:inline!important}.i-amphtml-layout-flex-item,[layout=flex-item]:not(.i-amphtml-layout-flex-item){display:block;position:relative;-ms-flex:1 1 auto;flex:1 1 auto}.i-amphtml-layout-fluid{position:relative}.i-amphtml-layout-size-defined{overflow:hidden!important}.i-amphtml-layout-awaiting-size{position:absolute!important;top:auto!important;bottom:auto!important}i-amphtml-sizer{display:block!important}@supports (aspect-ratio:1/1){i-amphtml-sizer.i-amphtml-disable-ar{display:none!important}}.i-amphtml-blurry-placeholder,.i-amphtml-fill-content{display:block;height:0;max-height:100%;max-width:100%;min-height:100%;min-width:100%;width:0;margin:auto}.i-amphtml-layout-size-defined .i-amphtml-fill-content{position:absolute;top:0;left:0;bottom:0;right:0}.i-amphtml-replaced-content,.i-amphtml-screen-reader{padding:0!important;border:none!important}.i-amphtml-screen-reader{position:fixed!important;top:0px!important;left:0px!important;width:4px!important;height:4px!important;opacity:0!important;overflow:hidden!important;margin:0!important;display:block!important;visibility:visible!important}.i-amphtml-screen-reader~.i-amphtml-screen-reader{left:8px!important}.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader{left:12px!important}.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader~.i-amphtml-screen-reader{left:16px!important}.i-amphtml-unresolved{position:relative;overflow:hidden!important}.i-amphtml-select-disabled{-webkit-user-select:none!important;-ms-user-select:none!important;user-select:none!important}.i-amphtml-notbuilt,[layout]:not(.i-amphtml-element),[width][height][heights]:not([layout]):not(.i-amphtml-element),[width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element){position:relative;overflow:hidden!important;color:transparent!important}.i-amphtml-notbuilt:not(.i-amphtml-layout-container)>*,[layout]:not([layout=container]):not(.i-amphtml-element)>*,[width][height][heights]:not([layout]):not(.i-amphtml-element)>*,[width][height][sizes]:not([layout]):not(.i-amphtml-element)>*{display:none}amp-img:not(.i-amphtml-element)[i-amphtml-ssr]>img.i-amphtml-fill-content{display:block}.i-amphtml-notbuilt:not(.i-amphtml-layout-container),[layout]:not([layout=container]):not(.i-amphtml-element),[width][height][heights]:not([layout]):not(.i-amphtml-element),[width][height][sizes]:not(img):not([layout]):not(.i-amphtml-element){color:transparent!important;line-height:0!important}.i-amphtml-ghost{visibility:hidden!important}.i-amphtml-element>[placeholder],[layout]:not(.i-amphtml-element)>[placeholder],[width][height][heights]:not([layout]):not(.i-amphtml-element)>[placeholder],[width][height][sizes]:not([layout]):not(.i-amphtml-element)>[placeholder]{display:block;line-height:normal}.i-amphtml-element>[placeholder].amp-hidden,.i-amphtml-element>[placeholder].hidden{visibility:hidden}.i-amphtml-element:not(.amp-notsupported)>[fallback],.i-amphtml-layout-container>[placeholder].amp-hidden,.i-amphtml-layout-container>[placeholder].hidden{display:none}.i-amphtml-layout-size-defined>[fallback],.i-amphtml-layout-size-defined>[placeholder]{position:absolute!important;top:0!important;left:0!important;right:0!important;bottom:0!important;z-index:1}amp-img[i-amphtml-ssr]:not(.i-amphtml-element)>[placeholder]{z-index:auto}.i-amphtml-notbuilt>[placeholder]{display:block!important}.i-amphtml-hidden-by-media-query{display:none!important}.i-amphtml-element-error{background:red!important;color:#fff!important;position:relative!important}.i-amphtml-element-error:before{content:attr(error-message)}i-amp-scroll-container,i-amphtml-scroll-container{position:absolute;top:0;left:0;right:0;bottom:0;display:block}i-amp-scroll-container.amp-active,i-amphtml-scroll-container.amp-active{overflow:auto;-webkit-overflow-scrolling:touch}.i-amphtml-loading-container{display:block!important;pointer-events:none;z-index:1}.i-amphtml-notbuilt>.i-amphtml-loading-container{display:block!important}.i-amphtml-loading-container.amp-hidden{visibility:hidden}.i-amphtml-element>[overflow]{cursor:pointer;position:relative;z-index:2;visibility:hidden;display:initial;line-height:normal}.i-amphtml-layout-size-defined>[overflow]{position:absolute}.i-amphtml-element>[overflow].amp-visible{visibility:visible}template{display:none!important}.amp-border-box,.amp-border-box *,.amp-border-box :after,.amp-border-box :before{box-sizing:border-box}amp-pixel{display:none!important}amp-analytics,amp-auto-ads,amp-story-auto-ads{position:fixed!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;visibility:hidden}amp-story{visibility:hidden!important}html.i-amphtml-fie>amp-analytics{position:initial!important}[visible-when-invalid]:not(.visible),form [submit-error],form [submit-success],form [submitting]{display:none}amp-accordion{display:block!important}@media (min-width:1px){:where(amp-accordion>section)>:first-child{margin:0;background-color:#efefef;padding-right:20px;border:1px solid #dfdfdf}:where(amp-accordion>section)>:last-child{margin:0}}amp-accordion>section{float:none!important}amp-accordion>section>*{float:none!important;display:block!important;overflow:hidden!important;position:relative!important}amp-accordion,amp-accordion>section{margin:0}amp-accordion:not(.i-amphtml-built)>section>:last-child{display:none!important}amp-accordion:not(.i-amphtml-built)>section[expanded]>:last-child{display:block!important}
+/*# sourceURL=/css/ampshared.css*/</style><meta name="description" content="%%DESCRIPTION%%"><meta name="robots" content="%%ROBOTS%%"><meta property="og:locale" content="id_ID"><meta property="og:type" content="website"><meta property="og:title" content="%%TITLE%%"><meta property="og:description" content="%%DESCRIPTION%%"><meta property="og:url" content="%%CANONICAL%%"><meta property="og:site_name" content="%%SITE%%"><meta property="og:updated_time" content="2026-08-29T09:29:33+07:00"><meta property="article:published_time" content="2026-08-28T16:46:16+07:00"><meta property="article:modified_time" content="2026-08-29T09:29:33+07:00"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="%%TITLE%%"><meta name="twitter:description" content="%%DESCRIPTION%%"><meta name="twitter:label1" content="Ditulis oleh"><meta name="twitter:data1" content="%%SITE%%"><meta name="twitter:label2" content="Waktunya membaca"><meta name="twitter:data2" content="Kurang dari semenit"><meta name="generator" content="WordPress 7.1"><meta name="generator" content="Elementor 4.2.3; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-disabled, font_display-swap"><meta name="theme-color" content="#020201">%%GSC_META%%<meta name="generator" content="AMP Plugin v2.5.5; mode=standard"><meta name="msapplication-TileImage" content="/images/favicon.webp"><script async="" src="https://cdn.ampproject.org/v0.mjs" type="module" crossorigin="anonymous"></script><script async nomodule src="https://cdn.ampproject.org/v0.js" crossorigin="anonymous"></script><script src="https://cdn.ampproject.org/v0/amp-anim-0.1.mjs" async="" custom-element="amp-anim" type="module" crossorigin="anonymous"></script><script async nomodule src="https://cdn.ampproject.org/v0/amp-anim-0.1.js" crossorigin="anonymous" custom-element="amp-anim"></script><script src="https://cdn.ampproject.org/v0/amp-bind-0.1.mjs" async="" custom-element="amp-bind" type="module" crossorigin="anonymous"></script><script async nomodule src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" crossorigin="anonymous" custom-element="amp-bind"></script><link rel="icon" href="/images/favicon.webp" sizes="32x32"><link rel="icon" href="/images/favicon.webp" sizes="192x192"><style amp-custom="">amp-img:is([sizes=auto i],[sizes^="auto," i]),amp-anim:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}amp-anim.amp-wp-enforced-sizes,amp-img.amp-wp-enforced-sizes{object-fit:contain}amp-anim img,amp-anim noscript,amp-img img,amp-img noscript{image-rendering:inherit;object-fit:inherit;object-position:inherit}body,h1,html,p{border:0;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align:baseline}html{-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}a:active{outline:0}a,a:focus,a:hover,a:visited{text-decoration:none}strong{font-weight:700}amp-img,amp-anim{border:0}h1{clear:both}h1{color:#808285;font-size:2em;line-height:1.2}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{color:#808285;background:#fff;font-style:normal}strong{font-weight:700}amp-img,amp-anim{height:auto;max-width:100%}a{color:#4169e1}a:focus,a:hover{color:#191970}a:focus{outline:thin dotted}a:hover{outline:0}::selection{color:#fff;background:#0274be}body:not(.logged-in){position:relative}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a,a:focus{text-decoration:none}a{transition:all .2s linear}amp-img,amp-anim{vertical-align:middle}p{margin-bottom:1.75em}body{line-height:1.8571428571}body{background-color:#fff}body{overflow-x:hidden}:root{--ast-post-nav-space:0;--ast-container-default-xlg-padding:2.5em;--ast-container-default-lg-padding:2.5em;--ast-container-default-slg-padding:2em;--ast-container-default-md-padding:2.5em;--ast-container-default-sm-padding:2.5em;--ast-container-default-xs-padding:2.4em;--ast-container-default-xxs-padding:1.8em;--ast-code-block-background:#eceff3;--ast-comment-inputs-background:#f9fafb;--ast-normal-container-width:1200px;--ast-narrow-container-width:750px;--ast-blog-title-font-weight:600;--ast-blog-meta-weight:600;--ast-global-color-primary:var(--ast-global-color-4);--ast-global-color-secondary:var(--ast-global-color-5);--ast-global-color-alternate-background:var(--ast-global-color-6);--ast-global-color-subtle-background:var(--ast-global-color-7);--ast-bg-style-guide:var(--ast-global-color-secondary,var(--ast-global-color-5));--ast-shadow-style-guide:0px 0px 4px 0 rgba(0,0,0,.34);--ast-global-dark-bg-style:#fff;--ast-global-dark-lfs:#fbfbfb;--ast-widget-bg-color:#fafafa;--ast-wc-container-head-bg-color:#fbfbfb;--ast-title-layout-bg:#eee;--ast-search-border-color:#e7e7e7;--ast-lifter-hover-bg:#e6e6e6;--ast-gallery-block-color:#000;--srfm-color-input-label:var(--ast-global-color-2)}html{font-size:100%}a{color:var(--ast-global-color-0)}a:hover,a:focus{color:var(--ast-global-color-1)}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;font-weight:400;font-size:16px;font-size:1rem;line-height:var(--ast-body-line-height,1.65)}h1{font-weight:600}h1{font-size:36px;font-size:2.25rem;font-weight:600;line-height:1.4em}::selection{background-color:var(--ast-global-color-0);color:#fff}body,h1{color:var(--ast-global-color-3)}.ast-single-post .elementor-widget-button .elementor-button{text-decoration:none}a:focus-visible{outline-style:dotted;outline-color:inherit;outline-width:thin}a:where(.wp-block-button__link){border-radius:4px;box-shadow:0px 1px 2px 0px rgba(0,0,0,.05)}:root{--ast-comment-inputs-background:#fff}::placeholder{color:var(--ast-form-field-color,#9ca3af)}::-ms-input-placeholder{color:var(--ast-form-field-color,#9ca3af)}.elementor-widget-heading h1.elementor-heading-title{line-height:1.4em}@media (max-width:921px){h1{font-size:30px;font-size:1.875rem}}@media (max-width:544px){h1{font-size:30px;font-size:1.875rem}}@media (max-width:921px){html{font-size:91.2%}}@media (max-width:544px){html{font-size:91.2%}}:root{--wp--custom--ast-default-block-top-padding:3em;--wp--custom--ast-default-block-right-padding:3em;--wp--custom--ast-default-block-bottom-padding:3em;--wp--custom--ast-default-block-left-padding:3em;--wp--custom--ast-container-width:1200px;--wp--custom--ast-content-width-size:1200px;--wp--custom--ast-wide-width-size:calc(1200px + var(--wp--custom--ast-default-block-left-padding) + var(--wp--custom--ast-default-block-right-padding))}@media (max-width: 921px){:root{--wp--custom--ast-default-block-top-padding:3em;--wp--custom--ast-default-block-right-padding:2em;--wp--custom--ast-default-block-bottom-padding:3em;--wp--custom--ast-default-block-left-padding:2em}}@media (max-width: 544px){:root{--wp--custom--ast-default-block-top-padding:3em;--wp--custom--ast-default-block-right-padding:1.5em;--wp--custom--ast-default-block-bottom-padding:3em;--wp--custom--ast-default-block-left-padding:1.5em}}:root{--ast-global-color-0:#046bd2;--ast-global-color-1:#045cb4;--ast-global-color-2:#2a4167;--ast-global-color-3:#334155;--ast-global-color-4:#fff;--ast-global-color-5:#f0f5fa;--ast-global-color-6:#111;--ast-global-color-7:#d1d5db;--ast-global-color-8:#111}:root{--ast-border-color:var(--ast-global-color-7)}h1{color:var(--ast-global-color-2)}.elementor-widget-heading .elementor-heading-title{margin:0}.ast-page-builder-template{background-color:var(--ast-global-color-4);background-image:none}@media (max-width:921px){.ast-page-builder-template{background-color:var(--ast-global-color-4);background-image:none}}@media (max-width:544px){.ast-page-builder-template{background-color:var(--ast-global-color-4);background-image:none}}:root{--e-global-color-astglobalcolor0:#046bd2;--e-global-color-astglobalcolor1:#045cb4;--e-global-color-astglobalcolor2:#2a4167;--e-global-color-astglobalcolor3:#334155;--e-global-color-astglobalcolor4:#fff;--e-global-color-astglobalcolor5:#f0f5fa;--e-global-color-astglobalcolor6:#111;--e-global-color-astglobalcolor7:#d1d5db;--e-global-color-astglobalcolor8:#111}:root{--wp--preset--aspect-ratio--square:1;--wp--preset--aspect-ratio--4-3:4/3;--wp--preset--aspect-ratio--3-4:3/4;--wp--preset--aspect-ratio--3-2:3/2;--wp--preset--aspect-ratio--2-3:2/3;--wp--preset--aspect-ratio--16-9:16/9;--wp--preset--aspect-ratio--9-16:9/16;--wp--preset--color--black:#000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#fff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--ast-global-color-0:var(--ast-global-color-0);--wp--preset--color--ast-global-color-1:var(--ast-global-color-1);--wp--preset--color--ast-global-color-2:var(--ast-global-color-2);--wp--preset--color--ast-global-color-3:var(--ast-global-color-3);--wp--preset--color--ast-global-color-4:var(--ast-global-color-4);--wp--preset--color--ast-global-color-5:var(--ast-global-color-5);--wp--preset--color--ast-global-color-6:var(--ast-global-color-6);--wp--preset--color--ast-global-color-7:var(--ast-global-color-7);--wp--preset--color--ast-global-color-8:var(--ast-global-color-8);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,#0693e3 0%,#9b51e0 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,#7adcb4 0%,#00d082 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,#fcb900 0%,#ff6900 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,#ff6900 0%,#cf2e2e 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,#eee 0%,#a9b8c3 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,#4aeadc 0%,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,#ffceec 0%,#9896f0 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,#fecda5 0%,#fe2d2d 50%,#6b003e 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,#ffcb70 0%,#c751c0 50%,#4158d0 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,#fff5cb 0%,#b6e3d4 50%,#33a7b5 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,#caf880 0%,#71ce7e 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,#020381 0%,#2874fc 100%);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:.44rem;--wp--preset--spacing--30:.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0,0,0,.2);--wp--preset--shadow--deep:12px 12px 50px rgba(0,0,0,.4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0,0,0,.2);--wp--preset--shadow--outlined:6px 6px 0px -3px #fff,6px 6px #000;--wp--preset--shadow--crisp:6px 6px 0px #000}:root{--wp--style--global--content-size:var(--wp--custom--ast-content-width-size);--wp--style--global--wide-size:var(--wp--custom--ast-wide-width-size)}:where(body){margin:0}:where(.wp-site-blocks) > *{margin-block-start:24px;margin-block-end:0}:where(.wp-site-blocks) > :first-child{margin-block-start:0}:where(.wp-site-blocks) > :last-child{margin-block-end:0}:root{--wp--style--block-gap:24px}:root :where(.is-layout-flow) > :first-child{margin-block-start:0}:root :where(.is-layout-flow) > :last-child{margin-block-end:0}:root :where(.is-layout-flow) > *{margin-block-start:24px;margin-block-end:0}:root :where(.is-layout-constrained) > :first-child{margin-block-start:0}:root :where(.is-layout-constrained) > :last-child{margin-block-end:0}:root :where(.is-layout-constrained) > *{margin-block-start:24px;margin-block-end:0}:root :where(.is-layout-flex){gap:24px}:root :where(.is-layout-grid){gap:24px}body{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px}a:where(:not(.wp-element-button)){text-decoration:none}:root :where(.wp-block-icon svg){width:24px}:root :where(.wp-block-pullquote){font-size:1.5em;line-height:1.6}:root{--direction-multiplier:1}.elementor *,.elementor :after,.elementor :before{box-sizing:border-box}.elementor a{box-shadow:none;text-decoration:none}.elementor amp-img,.elementor amp-anim{border:none;border-radius:0;box-shadow:none;height:auto;max-width:100%}.elementor-element{--flex-direction:initial;--flex-wrap:initial;--justify-content:initial;--align-items:initial;--align-content:initial;--gap:initial;--flex-basis:initial;--flex-grow:initial;--flex-shrink:initial;--order:initial;--align-self:initial;align-self:var(--align-self);flex-basis:var(--flex-basis);flex-grow:var(--flex-grow);flex-shrink:var(--flex-shrink);order:var(--order)}.elementor-element:where(.e-con-full,.elementor-widget){align-content:var(--align-content);align-items:var(--align-items);flex-direction:var(--flex-direction);flex-wrap:var(--flex-wrap);gap:var(--row-gap) var(--column-gap);justify-content:var(--justify-content)}.elementor-align-justify .elementor-button{width:100%}:root{--page-title-display:block}@keyframes eicon-spin{0%{transform:rotate(0deg)}to{transform:rotate(359deg)}}.elementor-widget{position:relative}.elementor-widget:not(:last-child){margin-block-end:var(--kit-widget-spacing,20px)}@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}.e-con{--border-radius:0;--border-top-width:0px;--border-right-width:0px;--border-bottom-width:0px;--border-left-width:0px;--border-style:initial;--border-color:initial;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--content-width:min(100%,var(--container-max-width,1140px));--width:100%;--min-height:initial;--height:auto;--text-align:initial;--margin-top:0px;--margin-right:0px;--margin-bottom:0px;--margin-left:0px;--padding-top:var(--container-default-padding-top,10px);--padding-right:var(--container-default-padding-right,10px);--padding-bottom:var(--container-default-padding-bottom,10px);--padding-left:var(--container-default-padding-left,10px);--position:relative;--z-index:revert;--overflow:visible;--gap:var(--widgets-spacing,20px);--row-gap:var(--widgets-spacing-row,20px);--column-gap:var(--widgets-spacing-column,20px);--overlay-mix-blend-mode:initial;--overlay-opacity:1;--overlay-transition:.3s;--e-con-grid-template-columns:repeat(3,1fr);--e-con-grid-template-rows:repeat(2,1fr);border-radius:var(--border-radius);height:var(--height);min-height:var(--min-height);min-width:0;overflow:var(--overflow);position:var(--position);width:var(--width);z-index:var(--z-index);--flex-wrap-mobile:wrap}.e-con:where(:not(.e-div-block-base)){transition:background var(--background-transition,.3s),border var(--border-transition,.3s),box-shadow var(--border-transition,.3s),transform var(--e-con-transform-transition-duration,.4s)}.e-con{--margin-block-start:var(--margin-top);--margin-block-end:var(--margin-bottom);--margin-inline-start:var(--margin-left);--margin-inline-end:var(--margin-right);--padding-inline-start:var(--padding-left);--padding-inline-end:var(--padding-right);--padding-block-start:var(--padding-top);--padding-block-end:var(--padding-bottom);--border-block-start-width:var(--border-top-width);--border-block-end-width:var(--border-bottom-width);--border-inline-start-width:var(--border-left-width);--border-inline-end-width:var(--border-right-width)}.e-con{margin-block-end:var(--margin-block-end);margin-block-start:var(--margin-block-start);margin-inline-end:var(--margin-inline-end);margin-inline-start:var(--margin-inline-start);padding-inline-end:var(--padding-inline-end);padding-inline-start:var(--padding-inline-start)}.e-con.e-flex{--flex-direction:column;--flex-basis:auto;--flex-grow:0;--flex-shrink:1;flex:var(--flex-grow) var(--flex-shrink) var(--flex-basis)}.e-con-full,.e-con>.e-con-inner{padding-block-end:var(--padding-block-end);padding-block-start:var(--padding-block-start);text-align:var(--text-align)}.e-con-full.e-flex,.e-con.e-flex>.e-con-inner{flex-direction:var(--flex-direction)}.e-con,.e-con>.e-con-inner{display:var(--display)}.e-con.e-grid{--grid-justify-content:start;--grid-align-content:start;--grid-auto-flow:row}.e-con.e-grid,.e-con.e-grid>.e-con-inner{align-content:var(--grid-align-content);align-items:var(--align-items);grid-auto-flow:var(--grid-auto-flow);grid-template-columns:var(--e-con-grid-template-columns);grid-template-rows:var(--e-con-grid-template-rows);justify-content:var(--grid-justify-content);justify-items:var(--justify-items)}.e-con-boxed.e-flex{align-content:normal;align-items:normal;flex-direction:column;flex-wrap:nowrap;justify-content:normal}.e-con-boxed.e-grid{grid-template-columns:1fr;grid-template-rows:1fr;justify-items:legacy}.e-con-boxed{gap:initial;text-align:initial}.e-con.e-flex>.e-con-inner{align-content:var(--align-content);align-items:var(--align-items);align-self:auto;flex-basis:auto;flex-grow:1;flex-shrink:1;flex-wrap:var(--flex-wrap);justify-content:var(--justify-content)}.e-con.e-grid>.e-con-inner{align-items:var(--align-items);justify-items:var(--justify-items)}.e-con>.e-con-inner{gap:var(--row-gap) var(--column-gap);height:100%;margin:0 auto;max-width:var(--content-width);padding-inline-end:0;padding-inline-start:0;width:100%}:is([data-widget_type="e-component.default"],[data-widget_type="e-component.default"]>.elementor-section-wrap)>.e-con{--margin-right:0px;--margin-left:0px}.e-con .elementor-widget.elementor-widget{margin-block-end:0}.e-con:before{border-block-end-width:var(--border-block-end-width);border-block-start-width:var(--border-block-start-width);border-color:var(--border-color);border-inline-end-width:var(--border-inline-end-width);border-inline-start-width:var(--border-inline-start-width);border-radius:var(--border-radius);border-style:var(--border-style);content:var(--background-overlay);display:block;height:max(100% + var(--border-top-width) + var(--border-bottom-width),100%);left:calc(0px - var(--border-left-width));mix-blend-mode:var(--overlay-mix-blend-mode);opacity:var(--overlay-opacity);position:absolute;top:calc(0px - var(--border-top-width));transition:var(--overlay-transition,.3s);width:max(100% + var(--border-left-width) + var(--border-right-width),100%)}.e-con:before{transition:background var(--overlay-transition,.3s),border-radius var(--border-transition,.3s),opacity var(--overlay-transition,.3s)}.e-con .elementor-widget{min-width:0}.e-con>.e-con-inner>.elementor-widget>.elementor-widget-container,.e-con>.elementor-widget>.elementor-widget-container{height:100%}.e-con.e-con>.e-con-inner>.elementor-widget,.elementor.elementor .e-con>.elementor-widget{max-width:100%}.e-con .elementor-widget:not(:last-child){--kit-widget-spacing:0px}@media (max-width:767px){.e-con.e-flex{--width:100%;--flex-wrap:var(--flex-wrap-mobile)}}.elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)) .elementor-widget-container,.elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)):not(:has(.elementor-widget-container)){transition:background .3s,border .3s,border-radius .3s,box-shadow .3s,transform var(--e-transform-transition-duration,.4s)}.elementor-heading-title{line-height:1;margin:0;padding:0}.elementor-button{background-color:#69727d;border-radius:3px;color:#fff;display:inline-block;fill:#fff;font-size:15px;line-height:1;padding:12px 24px;text-align:center;transition:all .3s}.elementor-button:focus,.elementor-button:hover,.elementor-button:visited{color:#fff}.elementor-button-content-wrapper{display:flex;flex-direction:row;gap:5px;justify-content:center}.elementor-button-text{display:inline-block}.elementor-button span{text-decoration:inherit}.elementor-icon{color:#69727d;display:inline-block;font-size:50px;line-height:1;text-align:center;transition:all .3s}.elementor-icon:hover{color:#69727d}.elementor-icon svg{display:block;height:1em;position:relative;width:1em}.elementor-icon svg:before{left:50%;position:absolute;transform:translateX(-50%)}@media (prefers-reduced-motion:reduce){html *:not(#_#_#_#_#_#_#_#_){transition-delay:0s;transition-duration:0s}}@media (max-width:767px){.elementor .elementor-hidden-mobile{display:none}}@media (min-width:768px) and (max-width:1024px){.elementor .elementor-hidden-tablet{display:none}}@media (min-width:1025px) and (max-width:99999px){.elementor .elementor-hidden-desktop{display:none}}.elementor-kit-12{--e-global-color-primary:#f7f800;--e-global-color-secondary:#fa0;--e-global-color-text:#fff;--e-global-color-accent:#f1ff00;--e-global-typography-primary-font-family:"Roboto";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;background-color:#000;color:var(--e-global-color-text);overscroll-behavior:none}.elementor-kit-12 h1{color:var(--e-global-color-primary)}.e-con{--container-max-width:1140px}.elementor-widget:not(:last-child){margin-block-end:20px}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px}@media (max-width:1024px){.e-con{--container-max-width:1024px}}@media (max-width:767px){.e-con{--container-max-width:767px}}.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a amp-img[src$=".svg"],.elementor-widget-image a amp-anim[src$=".svg"]{width:48px}.elementor-widget-image amp-img,.elementor-widget-image amp-anim{display:inline-block;vertical-align:middle}.e-con{--container-widget-width:100%}.e-con-inner>.elementor-widget-spacer,.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container,.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.e-con-inner>.elementor-widget-spacer:not(:has(>.elementor-widget-container))>.elementor-spacer,.e-con>.elementor-widget-spacer:not(:has(>.elementor-widget-container))>.elementor-spacer{height:100%}.e-con-inner>.elementor-widget-spacer:not(:has(>.elementor-widget-container))>.elementor-spacer>.elementor-spacer-inner,.e-con>.elementor-widget-spacer:not(:has(>.elementor-widget-container))>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#0c0d0e;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:flex}.elementor-widget-divider .elementor-divider__element{flex-shrink:0;margin:0 var(--divider-element-spacing)}.elementor-widget-divider .elementor-icon{font-size:var(--divider-icon-size)}.elementor-widget-divider .elementor-divider-separator{direction:ltr;display:flex;margin:0}.elementor-widget-divider--view-line_icon .elementor-divider-separator{align-items:center}.elementor-widget-divider--view-line_icon .elementor-divider-separator:after,.elementor-widget-divider--view-line_icon .elementor-divider-separator:before{border-block-end:0;border-block-start:var(--divider-border-width) var(--divider-border-style) var(--divider-color);content:"";display:block;flex-grow:1}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-block-start:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.e-con-inner>.elementor-widget-divider,.e-con>.elementor-widget-divider{width:var(--container-widget-width,100%);--flex-grow:var(--container-widget-flex-grow)}.elementor-2022 .elementor-element.elementor-element-b360777{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:0px 0px;--row-gap:0px;--column-gap:0px}.elementor-2022 .elementor-element.elementor-element-8a1e919{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-a2ea372.elementor-element{--align-self:flex-start}.elementor-2022 .elementor-element.elementor-element-00d65f2{--display:grid;--e-con-grid-template-columns:repeat(2,1fr);--e-con-grid-template-rows:repeat(1,1fr);--grid-auto-flow:row}.elementor-widget-button .elementor-button{background-color:var(--e-global-color-accent);font-family:var(--e-global-typography-accent-font-family),Sans-serif;font-weight:var(--e-global-typography-accent-font-weight)}.elementor-2022 .elementor-element.elementor-element-1403d50{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-1403d50.e-con{--align-self:center}.elementor-2022 .elementor-element.elementor-element-a2ab8e8{--display:grid;--e-con-grid-template-columns:repeat(2,1fr);--e-con-grid-template-rows:repeat(1,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-a2ab8e8.e-con{--align-self:flex-end}.elementor-2022 .elementor-element.elementor-element-5813631{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-216e086{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-f19d7ed{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-3be8321{--display:grid;--e-con-grid-template-columns:repeat(3,1fr);--e-con-grid-template-rows:repeat(2,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-f680fd1{--display:flex;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--gap:0px 6px;--row-gap:0px;--column-gap:6px}.elementor-2022 .elementor-element.elementor-element-573e1ae{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-93a6a81{--display:grid;--e-con-grid-template-columns:repeat(3,1fr);--e-con-grid-template-rows:repeat(3,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-f05c690{--display:flex;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-6d34a88{--spacer-size:90px}.elementor-widget-heading .elementor-heading-title{font-family:var(--e-global-typography-primary-font-family),Sans-serif;font-weight:var(--e-global-typography-primary-font-weight);color:var(--e-global-color-primary)}.elementor-2022 .elementor-element.elementor-element-bd54a08{text-align:center}.elementor-2022 .elementor-element.elementor-element-bd54a08 .elementor-heading-title{font-size:14px;font-weight:600;color:#f80000}.elementor-widget-divider{--divider-color:var(--e-global-color-secondary)}.elementor-widget-divider.elementor-view-default .elementor-icon{color:var(--e-global-color-secondary);border-color:var(--e-global-color-secondary)}.elementor-widget-divider.elementor-view-default .elementor-icon svg{fill:var(--e-global-color-secondary)}.elementor-2022 .elementor-element.elementor-element-9d438e1{--divider-border-style:solid;--divider-color:#f70303;--divider-border-width:3px}.elementor-2022 .elementor-element.elementor-element-9d438e1 .elementor-divider-separator{width:100%}.elementor-2022 .elementor-element.elementor-element-9d438e1 .elementor-divider{padding-block-start:0px;padding-block-end:0px}.elementor-2022 .elementor-element.elementor-element-9d438e1.elementor-view-default .elementor-icon{color:#f00;border-color:#f00}.elementor-2022 .elementor-element.elementor-element-9d438e1.elementor-view-default .elementor-icon svg{fill:#f00}.elementor-widget-text-editor{font-family:var(--e-global-typography-text-font-family),Sans-serif;font-weight:var(--e-global-typography-text-font-weight);color:var(--e-global-color-text)}.elementor-2022 .elementor-element.elementor-element-1a740d5{text-align:center}.elementor-2022 .elementor-element.elementor-element-1a740d5 a{color:#fc0000}.elementor-2022 .elementor-element.elementor-element-289fa2a{--display:flex;--min-height:149px;--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap}.elementor-2022 .elementor-element.elementor-element-bddb4b0{text-align:center}.elementor-2022 .elementor-element.elementor-element-bddb4b0 a{color:#ff0606}@media (max-width:1024px){.elementor-2022 .elementor-element.elementor-element-8a1e919.e-con{--align-self:center}.elementor-2022 .elementor-element.elementor-element-00d65f2{--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-a2ab8e8{--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-3be8321{--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-f680fd1{--gap:2px 2px;--row-gap:2px;--column-gap:2px}.elementor-2022 .elementor-element.elementor-element-93a6a81{--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-6d34a88{--spacer-size:12px}}@media (max-width:767px){.elementor-2022 .elementor-element.elementor-element-a2ea372.elementor-element{--align-self:center}.elementor-2022 .elementor-element.elementor-element-a2ea372{text-align:center}.elementor-2022 .elementor-element.elementor-element-00d65f2{--e-con-grid-template-columns:repeat(2,1fr);--e-con-grid-template-rows:repeat(1,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-a2ab8e8{--e-con-grid-template-columns:repeat(1,1fr);--e-con-grid-template-rows:repeat(1,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-3be8321{--e-con-grid-template-columns:repeat(3,1fr);--e-con-grid-template-rows:repeat(3,1fr);--grid-auto-flow:row}.elementor-2022 .elementor-element.elementor-element-93a6a81{--e-con-grid-template-columns:repeat(1,1fr);--e-con-grid-template-rows:repeat(2,1fr);--grid-auto-flow:row}}@media (min-width:768px){.elementor-2022 .elementor-element.elementor-element-8a1e919{--width:50%}.elementor-2022 .elementor-element.elementor-element-1403d50{--width:50%}.elementor-2022 .elementor-element.elementor-element-a2ab8e8{--width:36%}.elementor-2022 .elementor-element.elementor-element-573e1ae{--width:50%}.elementor-2022 .elementor-element.elementor-element-f05c690{--width:50%}}@media (max-width:1024px) and (min-width:768px){.elementor-2022 .elementor-element.elementor-element-a2ab8e8{--width:310px}}.elementor-2022 .elementor-element.elementor-element-03f0d62 .elementor-button{text-transform:uppercase;letter-spacing:.5px;border-radius:6px;box-shadow:0 0 12px rgba(255,0,51,.45),inset 0 0 8px rgba(255,255,255,.2);transition:all .25s ease-in-out}.elementor-2022 .elementor-element.elementor-element-03f0d62 .elementor-button:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#f03 0%,#99001a 100%);color:#fff;font-weight:700;padding:8px 18px;border:1px solid rgba(255,80,100,.8)}.elementor-2022 .elementor-element.elementor-element-03f0d62 .elementor-button:hover{box-shadow:0 0 20px rgba(255,0,51,.85),inset 0 0 10px rgba(255,255,255,.35);transform:translateY(-2px)}.elementor-2022 .elementor-element.elementor-element-03f0d62 .elementor-button:hover:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#ff2a55 0%,#f03 100%)}.elementor-2022 .elementor-element.elementor-element-7c03cb4 .elementor-button{text-transform:uppercase;letter-spacing:.5px;border-radius:6px;box-shadow:0 0 12px rgba(255,0,51,.45),inset 0 0 8px rgba(255,255,255,.2);transition:all .25s ease-in-out}.elementor-2022 .elementor-element.elementor-element-7c03cb4 .elementor-button:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#f03 0%,#99001a 100%);color:#fff;font-weight:700;padding:8px 18px;border:1px solid rgba(255,80,100,.8)}.elementor-2022 .elementor-element.elementor-element-7c03cb4 .elementor-button:hover{box-shadow:0 0 20px rgba(255,0,51,.85),inset 0 0 10px rgba(255,255,255,.35);transform:translateY(-2px)}.elementor-2022 .elementor-element.elementor-element-7c03cb4 .elementor-button:hover:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#ff2a55 0%,#f03 100%)}.elementor-2022 .elementor-element.elementor-element-c4a0eba .elementor-button{text-transform:uppercase;letter-spacing:.5px;border-radius:6px;box-shadow:0 0 12px rgba(255,0,51,.45),inset 0 0 8px rgba(255,255,255,.2);transition:all .25s ease-in-out}.elementor-2022 .elementor-element.elementor-element-c4a0eba .elementor-button:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#f03 0%,#99001a 100%);color:#fff;font-weight:700;padding:8px 18px;border:1px solid rgba(255,80,100,.8)}.elementor-2022 .elementor-element.elementor-element-c4a0eba .elementor-button:hover{box-shadow:0 0 20px rgba(255,0,51,.85),inset 0 0 10px rgba(255,255,255,.35);transform:translateY(-2px)}.elementor-2022 .elementor-element.elementor-element-c4a0eba .elementor-button:hover:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#ff2a55 0%,#f03 100%)}.elementor-2022 .elementor-element.elementor-element-e548526 .elementor-button{text-transform:uppercase;letter-spacing:.5px;border-radius:6px;box-shadow:0 0 12px rgba(255,0,51,.45),inset 0 0 8px rgba(255,255,255,.2);transition:all .25s ease-in-out}.elementor-2022 .elementor-element.elementor-element-e548526 .elementor-button:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#f03 0%,#99001a 100%);color:#fff;font-weight:700;padding:8px 18px;border:1px solid rgba(255,80,100,.8)}.elementor-2022 .elementor-element.elementor-element-e548526 .elementor-button:hover{box-shadow:0 0 20px rgba(255,0,51,.85),inset 0 0 10px rgba(255,255,255,.35);transform:translateY(-2px)}.elementor-2022 .elementor-element.elementor-element-e548526 .elementor-button:hover:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#ff2a55 0%,#f03 100%)}.elementor-2022 .elementor-element.elementor-element-b360777{position:relative;background-color:rgba(11,11,15,.85);background-image:linear-gradient(to right,rgba(255,0,51,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,51,.15) 1px,transparent 1px);background-size:15px 15px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:2px solid rgba(255,0,51,.85);border-bottom:2px solid rgba(255,0,51,.85);box-shadow:0 0 15px rgba(255,0,51,.3),inset 0 0 15px rgba(255,0,51,.1)}.elementor-2022 .elementor-element.elementor-element-3be8321{background-color:rgba(11,11,15,.85);background-image:linear-gradient(to right,rgba(255,0,51,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,51,.15) 1px,transparent 1px);background-size:15px 15px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,0,51,.85);border-radius:8px;box-shadow:0 0 15px rgba(255,0,51,.4),inset 0 0 15px rgba(255,0,51,.15);overflow:hidden}.elementor-2022 .elementor-element.elementor-element-573e1ae{background-color:rgba(11,11,15,.85);background-image:linear-gradient(to right,rgba(255,0,51,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,51,.15) 1px,transparent 1px);background-size:15px 15px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,0,51,.85);border-radius:8px;box-shadow:0 0 15px rgba(255,0,51,.4),inset 0 0 15px rgba(255,0,51,.15);overflow:hidden}.elementor-2022 .elementor-element.elementor-element-f05c690{background-color:rgba(11,11,15,.85);background-image:linear-gradient(to right,rgba(255,0,51,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,51,.15) 1px,transparent 1px);background-size:15px 15px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,0,51,.85);border-radius:8px;box-shadow:0 0 15px rgba(255,0,51,.4),inset 0 0 15px rgba(255,0,51,.15);overflow:hidden}.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload):not(#_#_#_#_#_#_#_#_),.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) *:not(#_#_#_#_#_#_#_#_){background-image:none}@media screen and (max-height: 1024px){.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload):not(#_#_#_#_#_#_#_#_),.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) *:not(#_#_#_#_#_#_#_#_){background-image:none}}@media screen and (max-height: 640px){.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload):not(#_#_#_#_#_#_#_#_),.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) *:not(#_#_#_#_#_#_#_#_){background-image:none}}.mario-footer-bar:not(#_#_#_#_#_#_#_){position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:95%;max-width:880px;z-index:99999;padding:10px 16px;box-sizing:border-box;background:transparent;overflow:visible;clip-path:polygon(18px 0%,calc(50% - 90px) 0%,calc(50% - 70px) 6px,calc(50% + 70px) 6px,calc(50% + 90px) 0%,calc(100% - 18px) 0%,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,calc(50% + 90px) 100%,calc(50% + 70px) calc(100% - 4px),calc(50% - 70px) calc(100% - 4px),calc(50% - 90px) 100%,18px 100%,0% calc(100% - 18px),0% 18px);filter:drop-shadow(0 0 12px rgba(255,0,51,.85)) drop-shadow(0 0 30px rgba(255,0,51,.4));animation:neonBreath 3.5s ease-in-out infinite alternate}.mario-footer-bar::before:not(#_#_#_#_#_#_#_#_){content:"";position:absolute;inset:0;border:2px solid rgba(255,0,51,.9);background-color:rgba(6,6,10,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background-image:repeating-linear-gradient(0deg,rgba(255,0,51,.05) 0px,rgba(255,0,51,.05) 2px,transparent 2px,transparent 4px),linear-gradient(to right,rgba(255,0,51,.15) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,51,.15) 1px,transparent 1px);background-size:100% 4px,14px 14px,14px 14px;z-index:0;pointer-events:none}.mario-footer-bar::after{top:0;left:-150%;width:60%;height:100%}.mario-footer-bar::after:not(#_#_#_#_#_#_#_#_){content:"";position:absolute;background:linear-gradient(90deg,transparent 0%,rgba(255,0,51,.3) 35%,rgba(255,255,255,.9) 50%,rgba(255,0,51,.3) 65%,transparent 100%);transform:skewX(-25deg);pointer-events:none;z-index:1;animation:laserScan 4s infinite linear}.mario-footer-container:not(#_#_#_#_#_#_#_){position:relative;z-index:3;width:100%;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:8px}.mario-btn:not(#_#_#_#_#_#_#_){flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;padding:8px 4px;position:relative;background:linear-gradient(180deg,rgba(255,0,51,.2) 0%,rgba(20,3,6,.95) 100%);clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);box-shadow:inset 0 0 10px rgba(255,0,51,.4);border:none;overflow:hidden;transition:all .25s cubic-bezier(.2,1,.3,1)}.mario-btn::before{top:0;left:0;width:100%;height:2px}.mario-btn::before:not(#_#_#_#_#_#_#_#_){content:"";position:absolute;background:linear-gradient(90deg,transparent,#f03,transparent)}.mario-btn::after{bottom:0;left:0;width:100%;height:3px}.mario-btn::after:not(#_#_#_#_#_#_#_#_){content:"";position:absolute;background:#f03;box-shadow:0 0 10px #f03,0 0 18px #f03}.mario-btn .btn-icon:not(#_#_#_#_#_#_#_),.mario-btn .btn-text:not(#_#_#_#_#_#_#_){position:relative;z-index:3;transform:skew(8deg)}.mario-btn .btn-icon:not(#_#_#_#_#_#_#_){font-size:16px;line-height:1;margin-bottom:2px;color:#f35;filter:drop-shadow(0 0 6px rgba(255,0,51,1));transition:.2s ease}.mario-btn .btn-text:not(#_#_#_#_#_#_#_){font-size:10px;font-weight:900;font-style:italic;color:#fff;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 8px rgba(255,0,51,.7);white-space:nowrap}.mario-btn-highlight:not(#_#_#_#_#_#_#_){background:linear-gradient(135deg,#f03 0%,#7a0016 100%);box-shadow:0 0 20px rgba(255,0,51,.85),inset 0 0 12px rgba(255,255,255,.4);border:1px solid rgba(255,120,140,.8);transform:translateY(-2px) scale(1.05)}.mario-btn-highlight .btn-icon:not(#_#_#_#_#_#_#_){color:#fff;filter:drop-shadow(0 0 8px #fff)}.mario-btn-highlight .btn-text:not(#_#_#_#_#_#_#_){color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.9)}.mario-btn:hover:not(#_#_#_#_#_#_#_){transform:translateY(-4px) scale(1.06);background:linear-gradient(180deg,rgba(255,0,51,.55) 0%,rgba(50,5,12,1) 100%);box-shadow:inset 0 0 18px rgba(255,0,51,.8),0 6px 20px rgba(255,0,51,.6)}.mario-btn:hover .btn-icon:not(#_#_#_#_#_#_#_){transform:scale(1.2);color:#fff}@keyframes neonBreath{0%{filter:drop-shadow(0 0 10px rgba(255,0,51,.7)) drop-shadow(0 0 20px rgba(255,0,51,.3))}100%{filter:drop-shadow(0 0 18px rgba(255,0,51,.95)) drop-shadow(0 0 35px rgba(255,0,51,.6))}}@keyframes laserScan{0%{left:-150%}40%,100%{left:200%}}@media (max-width: 480px){.mario-footer-bar:not(#_#_#_#_#_#_#_){bottom:6px;width:calc(100% - 10px);padding:6px 6px;clip-path:polygon(10px 0%,calc(100% - 10px) 0%,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0% calc(100% - 10px),0% 10px)}.mario-footer-container:not(#_#_#_#_#_#_#_){gap:4px}.mario-btn:not(#_#_#_#_#_#_#_){padding:6px 2px;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%)}.mario-btn-highlight:not(#_#_#_#_#_#_#_){transform:none}.mario-btn .btn-icon:not(#_#_#_#_#_#_#_){font-size:13px}.mario-btn .btn-text:not(#_#_#_#_#_#_#_){font-size:8px;letter-spacing:.3px}}
 
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@graph":[
-{
-"@type":"Article",
-"headline":<?= json_encode($page['h1'], JSON_UNESCAPED_UNICODE) ?>,
-"description":<?= json_encode($page['meta_description'] ?? '', JSON_UNESCAPED_UNICODE) ?>,
-"image":<?= json_encode($ogImage ? $origin . $ogImage : '', JSON_UNESCAPED_UNICODE) ?>,
-"datePublished":<?= json_encode($dateMod, JSON_UNESCAPED_UNICODE) ?>,
-"dateModified":<?= json_encode($dateMod, JSON_UNESCAPED_UNICODE) ?>,
-"inLanguage":"id-ID",
-"author":{"@type":"Organization","name":<?= json_encode($host, JSON_UNESCAPED_UNICODE) ?>,"url":<?= json_encode($origin . '/', JSON_UNESCAPED_UNICODE) ?>},
-"publisher":{"@type":"Organization","name":<?= json_encode($host, JSON_UNESCAPED_UNICODE) ?>,"url":<?= json_encode($origin . '/', JSON_UNESCAPED_UNICODE) ?>,"logo":{"@type":"ImageObject","url":<?= json_encode($origin . $logoSrc, JSON_UNESCAPED_UNICODE) ?>}},
-"mainEntityOfPage":{"@type":"WebPage","@id":<?= json_encode($canonical, JSON_UNESCAPED_UNICODE) ?>}
-},
-{
-"@type":"BreadcrumbList",
-"itemListElement":[
-{"@type":"ListItem","position":1,"name":"Beranda","item":<?= json_encode($origin . '/', JSON_UNESCAPED_UNICODE) ?>}<?php if (!$isHome): ?>,
-{"@type":"ListItem","position":2,"name":<?= json_encode($page['h1'], JSON_UNESCAPED_UNICODE) ?>,"item":<?= json_encode($canonical, JSON_UNESCAPED_UNICODE) ?>}<?php endif; ?>
+/*# sourceURL=amp-custom.css */</style><link rel="canonical" href="%%CANONICAL%%"><script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"%%DOMAIN%%/#person","name":"%%SITE%%","url":"%%DOMAIN%%","address":{"@type":"PostalAddress","addressRegion":"indonesia"},"logo":{"@type":"ImageObject","@id":"%%DOMAIN%%/#logo","url":"%%DOMAIN%%/wp-content/uploads/2026/03/logo.webp","contentUrl":"%%DOMAIN%%/wp-content/uploads/2026/03/logo.webp","caption":"%%SITE%%","inLanguage":"id"},"image":{"@id":"%%DOMAIN%%/#logo"}},{"@type":"WebSite","@id":"%%DOMAIN%%/#website","url":"%%DOMAIN%%","name":"%%SITE%%","publisher":{"@id":"%%DOMAIN%%/#person"},"inLanguage":"id","potentialAction":{"@type":"SearchAction","target":"%%DOMAIN%%/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"/images/logo.webp","url":"/images/logo.webp","width":"200","height":"200","inLanguage":"id"},{"@type":"WebPage","@id":"%%DOMAIN%%/#webpage","url":"%%DOMAIN%%/","name":"%%TITLE%%","datePublished":"2026-08-28T16:46:16+07:00","dateModified":"2026-08-29T09:29:33+07:00","about":{"@id":"%%DOMAIN%%/#person"},"isPartOf":{"@id":"%%DOMAIN%%/#website"},"primaryImageOfPage":{"@id":"/images/logo.webp"},"inLanguage":"id"},{"@type":"Person","@id":"%%DOMAIN%%/author/%%SITE%%/","name":"%%SITE%%","url":"%%DOMAIN%%/author/%%SITE%%/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/3db675d41551e259c810a5eff793ab6e85d196093cb19e38ef32f68917761890?s=96\u0026amp;d=mm\u0026amp;r=g","url":"https://secure.gravatar.com/avatar/3db675d41551e259c810a5eff793ab6e85d196093cb19e38ef32f68917761890?s=96\u0026amp;d=mm\u0026amp;r=g","caption":"%%SITE%%","inLanguage":"id"},"sameAs":["%%DOMAIN%%"]},{"@type":"Article","headline":"%%TITLE%%","keywords":"%%SITE%%","datePublished":"2026-08-28T16:46:16+07:00","dateModified":"2026-08-29T09:29:33+07:00","author":{"@id":"%%DOMAIN%%/author/%%SITE%%/","name":"%%SITE%%"},"publisher":{"@id":"%%DOMAIN%%/#person"},"description":"%%DESCRIPTION%%","name":"%%TITLE%%","@id":"%%DOMAIN%%/#richSnippet","isPartOf":{"@id":"%%DOMAIN%%/#webpage"},"image":{"@id":"/images/logo.webp"},"inLanguage":"id","mainEntityOfPage":{"@id":"%%DOMAIN%%/#webpage"}}]}</script><link rel="apple-touch-icon" href="/images/favicon.webp"><title>%%TITLE%%</title></head>
+<body class="home wp-singular page-template page-template-elementor_canvas page page-id-2022 wp-custom-logo wp-embed-responsive wp-theme-astra ast-desktop ast-amp ast-page-builder-template ast-no-sidebar astra-4.13.10 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-normal-title-enabled elementor-default elementor-template-canvas elementor-kit-12 elementor-page elementor-page-2022">
+			<div data-elementor-type="wp-page" data-elementor-id="2022" class="elementor elementor-2022" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-b360777 e-con-full e-flex e-con e-parent" data-id="b360777" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-8a1e919 e-con-full e-flex e-con e-child" data-id="8a1e919" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-a2ea372 elementor-widget elementor-widget-image" data-id="a2ea372" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="360" height="70" src="<?= $data['logo_src'] ?>" class="attachment-large size-large wp-image-1204 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/logo.webp 360w, /images/logo.webp 300w" sizes="(max-width: 360px) 100vw, 360px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjcwIiB3aWR0aD0iMzYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIvPg=="></i-amphtml-sizer><noscript><img decoding="async" width="360" height="70" src="<?= $data['logo_src'] ?>" alt="" srcset="/images/logo.webp 360w, /images/logo.webp 300w" sizes="(max-width: 360px) 100vw, 360px"></noscript></amp-img>															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-00d65f2 e-grid elementor-hidden-desktop elementor-hidden-tablet e-con-boxed e-con e-child" data-id="00d65f2" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-03f0d62 elementor-align-justify elementor-widget elementor-widget-button" data-id="03f0d62" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="%%CTA%%" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Daftar</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-7c03cb4 elementor-align-justify elementor-widget elementor-widget-button" data-id="7c03cb4" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="%%CTA%%" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Login</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-1403d50 e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="1403d50" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-a2ab8e8 e-grid e-con-full e-con e-child" data-id="a2ab8e8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-c4a0eba elementor-align-justify elementor-widget elementor-widget-button" data-id="c4a0eba" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="%%CTA%%" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Daftar</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-e548526 elementor-align-justify elementor-widget elementor-widget-button" data-id="e548526" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="%%CTA%%" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Login</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-5813631 e-con-full e-flex e-con e-parent" data-id="5813631" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-d8ffdb2 elementor-widget elementor-widget-image" data-id="d8ffdb2" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="1920" height="613" src="<?= $data['banner_src'] ?>" class="attachment-full size-full wp-image-2033 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/banner.webp 1920w, /images/banner.webp 300w, /images/banner.webp 1024w, /images/banner.webp 768w, /images/banner.webp 1536w" sizes="(max-width: 1920px) 100vw, 1920px" layout="intrinsic" disable-inline-width="" data-hero i-amphtml-ssr i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjYxMyIgd2lkdGg9IjE5MjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"></i-amphtml-sizer><img class="i-amphtml-fill-content i-amphtml-replaced-content" decoding="async" fetchpriority="high" alt="" src="<?= $data['banner_src'] ?>" srcset="/images/banner.webp 1920w, /images/banner.webp 300w, /images/banner.webp 1024w, /images/banner.webp 768w, /images/banner.webp 1536w" sizes="(max-width: 1920px) 100vw, 1920px"></amp-img>															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-216e086 e-con-full e-flex e-con e-parent" data-id="216e086" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-1d58c7d elementor-widget elementor-widget-image" data-id="1d58c7d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-anim width="900" height="112" src="/images/jackpoot.gif" class="attachment-large size-large wp-image-1640 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" layout="intrinsic" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjExMiIgd2lkdGg9IjkwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img decoding="async" width="900" height="112" src="/images/jackpoot.gif" alt=""></noscript></amp-anim>															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-f19d7ed elementor-hidden-desktop elementor-hidden-tablet e-flex e-con-boxed e-con e-parent" data-id="f19d7ed" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-3be8321 e-grid e-con-full e-con e-child" data-id="3be8321" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-41a39fe elementor-widget elementor-widget-image" data-id="41a39fe" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-1.webp" class="attachment-full size-full wp-image-2041 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-1.webp 350w, /images/game-1.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-1.webp" alt="" srcset="/images/game-1.webp 350w, /images/game-1.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-29855df elementor-widget elementor-widget-image" data-id="29855df" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-2.webp" class="attachment-large size-large wp-image-2042 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-2.webp 350w, /images/game-2.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-2.webp" alt="" srcset="/images/game-2.webp 350w, /images/game-2.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-47fe3d0 elementor-widget elementor-widget-image" data-id="47fe3d0" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-3.webp" class="attachment-large size-large wp-image-2043 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-3.webp 350w, /images/game-3.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-3.webp" alt="" srcset="/images/game-3.webp 350w, /images/game-3.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-a983dac elementor-widget elementor-widget-image" data-id="a983dac" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-4.webp" class="attachment-large size-large wp-image-2044 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-4.webp 350w, /images/game-4.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-4.webp" alt="" srcset="/images/game-4.webp 350w, /images/game-4.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-ebd7333 elementor-widget elementor-widget-image" data-id="ebd7333" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-5.webp" class="attachment-large size-large wp-image-2045 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-5.webp 350w, /images/game-5.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-5.webp" alt="" srcset="/images/game-5.webp 350w, /images/game-5.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-081db34 elementor-widget elementor-widget-image" data-id="081db34" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-6.webp" class="attachment-large size-large wp-image-2046 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-6.webp 350w, /images/game-6.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-6.webp" alt="" srcset="/images/game-6.webp 350w, /images/game-6.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-df4f9f4 elementor-widget elementor-widget-image" data-id="df4f9f4" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-7.webp" class="attachment-large size-large wp-image-2047 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-7.webp 350w, /images/game-7.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-7.webp" alt="" srcset="/images/game-7.webp 350w, /images/game-7.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-ab04ed8 elementor-widget elementor-widget-image" data-id="ab04ed8" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-8.webp" class="attachment-large size-large wp-image-2048 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-8.webp 350w, /images/game-8.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-8.webp" alt="" srcset="/images/game-8.webp 350w, /images/game-8.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-79bbc6a elementor-widget elementor-widget-image" data-id="79bbc6a" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-9.webp" class="attachment-large size-large wp-image-2049 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-9.webp 350w, /images/game-9.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-9.webp" alt="" srcset="/images/game-9.webp 350w, /images/game-9.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-f680fd1 e-flex e-con-boxed e-con e-parent" data-id="f680fd1" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-573e1ae e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="573e1ae" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-93a6a81 e-grid e-con-full e-con e-child" data-id="93a6a81" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-beb41a6 elementor-widget elementor-widget-image" data-id="beb41a6" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-1.webp" class="attachment-full size-full wp-image-2041 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-1.webp 350w, /images/game-1.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-1.webp" alt="" srcset="/images/game-1.webp 350w, /images/game-1.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-bbba0d8 elementor-widget elementor-widget-image" data-id="bbba0d8" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-2.webp" class="attachment-large size-large wp-image-2042 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-2.webp 350w, /images/game-2.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-2.webp" alt="" srcset="/images/game-2.webp 350w, /images/game-2.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-b25f852 elementor-widget elementor-widget-image" data-id="b25f852" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-3.webp" class="attachment-large size-large wp-image-2043 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-3.webp 350w, /images/game-3.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-3.webp" alt="" srcset="/images/game-3.webp 350w, /images/game-3.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-dede736 elementor-widget elementor-widget-image" data-id="dede736" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-4.webp" class="attachment-large size-large wp-image-2044 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-4.webp 350w, /images/game-4.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-4.webp" alt="" srcset="/images/game-4.webp 350w, /images/game-4.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-e98183d elementor-widget elementor-widget-image" data-id="e98183d" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-5.webp" class="attachment-large size-large wp-image-2045 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-5.webp 350w, /images/game-5.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-5.webp" alt="" srcset="/images/game-5.webp 350w, /images/game-5.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-ff2a706 elementor-widget elementor-widget-image" data-id="ff2a706" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-6.webp" class="attachment-large size-large wp-image-2046 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-6.webp 350w, /images/game-6.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-6.webp" alt="" srcset="/images/game-6.webp 350w, /images/game-6.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-d286510 elementor-widget elementor-widget-image" data-id="d286510" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-7.webp" class="attachment-large size-large wp-image-2047 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-7.webp 350w, /images/game-7.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-7.webp" alt="" srcset="/images/game-7.webp 350w, /images/game-7.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-8a55469 elementor-widget elementor-widget-image" data-id="8a55469" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-8.webp" class="attachment-large size-large wp-image-2048 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-8.webp 350w, /images/game-8.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-8.webp" alt="" srcset="/images/game-8.webp 350w, /images/game-8.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				<div class="elementor-element elementor-element-50dde58 elementor-widget elementor-widget-image" data-id="50dde58" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<amp-img width="350" height="202" src="/images/game-9.webp" class="attachment-large size-large wp-image-2049 amp-wp-enforced-sizes i-amphtml-layout-intrinsic i-amphtml-layout-size-defined" alt="" srcset="/images/game-9.webp 350w, /images/game-9.webp 300w" sizes="(max-width: 350px) 100vw, 350px" layout="intrinsic" disable-inline-width="" i-amphtml-layout="intrinsic"><i-amphtml-sizer slot="i-amphtml-svc" class="i-amphtml-sizer"><img alt="" aria-hidden="true" class="i-amphtml-intrinsic-sizer" role="presentation" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwMiIgd2lkdGg9IjM1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="></i-amphtml-sizer><noscript><img loading="lazy" decoding="async" width="350" height="202" src="/images/game-9.webp" alt="" srcset="/images/game-9.webp 350w, /images/game-9.webp 300w" sizes="(max-width: 350px) 100vw, 350px"></noscript></amp-img>															</div>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-f05c690 e-con-full e-flex e-con e-child" data-id="f05c690" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-6d34a88 elementor-widget elementor-widget-spacer" data-id="6d34a88" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-bd54a08 elementor-widget elementor-widget-heading" data-id="bd54a08" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h1 class="elementor-heading-title elementor-size-default">%%TITLE%%</h1>				</div>
+				</div>
+				<div class="elementor-element elementor-element-9d438e1 elementor-widget-divider--view-line_icon elementor-view-default elementor-widget-divider--element-align-center elementor-widget elementor-widget-divider" data-id="9d438e1" data-element_type="widget" data-e-type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+							<div class="elementor-icon elementor-divider__element">
+					<svg aria-hidden="true" class="e-font-icon-svg e-fas-store-alt" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M320 384H128V224H64v256c0 17.7 14.3 32 32 32h256c17.7 0 32-14.3 32-32V224h-64v160zm314.6-241.8l-85.3-128c-6-8.9-16-14.2-26.7-14.2H117.4c-10.7 0-20.7 5.3-26.6 14.2l-85.3 128c-14.2 21.3 1 49.8 26.6 49.8H608c25.5 0 40.7-28.5 26.6-49.8zM512 496c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h-64v272z" /></svg></div>
+						</span>
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-1a740d5 elementor-widget elementor-widget-text-editor" data-id="1a740d5" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>%%CONTENT%%</p>								</div>
+				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-289fa2a e-flex e-con-boxed e-con e-parent" data-id="289fa2a" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-bddb4b0 elementor-widget elementor-widget-text-editor" data-id="bddb4b0" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Copyright © <a href="%%DOMAIN%%/"><strong>%%SITE%%</strong></a>. All rights reserved</p>								</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		
+<div class="mario-footer-bar">
+    <div class="mario-footer-container">
+        <a href="%%CTA%%" class="mario-btn">
+            <span class="btn-icon">🏠</span>
+            <span class="btn-text">Home</span>
+        </a>
 
-]
-}<?php if ($isHome): ?>,
-{
-"@type":"FAQPage",
-"mainEntity":[
-<?php foreach ($faqList as $i => $f): ?>
-{"@type":"Question","name":<?= json_encode($f['t'], JSON_UNESCAPED_UNICODE) ?>,"acceptedAnswer":{"@type":"Answer","text":<?= json_encode($f['j'], JSON_UNESCAPED_UNICODE) ?>}}<?= $i < count($faqList) - 1 ? ',' : '' ?>
+        <a href="%%CTA%%" class="mario-btn">
+            <span class="btn-icon">⭐</span>
+            <span class="btn-text">Promo</span>
+        </a>
 
-<?php endforeach; ?>
-]
-}<?php endif; ?>
+        <a href="%%CTA%%" class="mario-btn">
+            <span class="btn-icon">🎮</span>
+            <span class="btn-text">Games</span>
+        </a>
 
-]
-}
-</script>
+        <a href="%%CTA%%" class="mario-btn mario-btn-highlight">
+            <span class="btn-icon">💬</span>
+            <span class="btn-text">Live Chat</span>
+        </a>
+    </div>
+</div>			
+			<amp-state id="astraAmpMenuExpanded" class="i-amphtml-layout-container" i-amphtml-layout="container"><script type="application/json">false</script></amp-state>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#0d1117;--ink2:#151b26;--line:#232c3b;--paper:#e8eaf0;--muted:#8b97ab;--amber:#f5b93b;--signal:#3ddc97;--warn:#ff7a5c}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.65;padding-bottom:76px}
-.shell{max-width:980px;margin:0 auto;padding:0 18px}
-a{color:inherit}
-img{max-width:100%}
 
-.topdock{position:sticky;top:0;z-index:40;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.topdock .shell{display:flex;align-items:center;gap:12px;min-height:60px}
-.mark{margin-right:auto;display:flex;align-items:center}
-.mark img{height:34px;width:auto}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line);color:var(--paper)}
-.pill-fill{background:var(--amber);color:#1a1200;border-color:var(--amber)}
 
-.masthead{padding:34px 0 26px;border-bottom:1px solid var(--line)}
-.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 12px}
-h1{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(28px,7vw,40px);line-height:1.15;letter-spacing:-.03em;margin:0 0 14px}
-.standfirst{font-size:17px;color:#c6ccd9;margin:0 0 18px}
-.stampline{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0}
-.blip{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(61,220,151,.16)}
-.crumb{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);padding:14px 0 0}
-.crumb a{color:var(--amber);text-decoration:none}
 
-.rtpboard{margin:26px 0;border:1px solid var(--line);border-radius:12px;background:var(--ink2);overflow:hidden}
-.rtpboard-top{display:flex;justify-content:space-between;align-items:baseline;padding:13px 16px;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.rtprow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line)}
-.rtprow:last-of-type{border-bottom:0}
-.rtpname{font-weight:600;font-size:15px;line-height:1.3}
-.rtpprov{display:block;font-size:12.5px;color:var(--muted);font-weight:400}
-.rtpnum{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px}
-.flag{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;padding:4px 8px;border-radius:5px;letter-spacing:.06em;white-space:nowrap}
-.flag-hi{background:rgba(61,220,151,.14);color:var(--signal)}
-.flag-mid{background:rgba(245,185,59,.14);color:var(--amber)}
-.flag-lo{background:rgba(255,122,92,.14);color:var(--warn)}
-.rtpnote{padding:12px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin:0}
 
-.promo{display:block;margin:26px 0}
-.promo img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#1d2430}
 
-.block{padding:30px 0;border-bottom:1px solid var(--line)}
-h2{font-family:'Sora',sans-serif;font-weight:600;font-size:clamp(21px,4.6vw,26px);letter-spacing:-.02em;margin:0 0 14px}
-h3{font-family:'Sora',sans-serif;font-weight:600;font-size:18px;margin:22px 0 8px}
-p{margin:0 0 14px}
 
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:620px){.tiles{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:900px){.tiles{grid-template-columns:repeat(5,1fr)}}
-.tile{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--ink2);text-decoration:none;display:block}
-.tile img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#1d2430}
-.tile b{display:block;padding:10px 12px;font-size:13.5px;font-weight:600}
 
-.tagrow{display:flex;flex-wrap:wrap;gap:8px}
-.tagrow span,.tagrow a{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13.5px;color:#c6ccd9;background:var(--ink2);text-decoration:none;display:inline-flex;align-items:center;min-height:40px}
 
-.callout{border:1px solid var(--amber);border-radius:12px;padding:22px 18px;background:linear-gradient(180deg,rgba(245,185,59,.08),rgba(245,185,59,0));text-align:center}
-.callout h2{margin-bottom:8px}
-.callout p{color:#c6ccd9;font-size:15px}
-.pill-big{min-height:52px;font-size:16px;padding:0 30px;margin-top:6px}
 
-.readable p,.readable ul,.readable ol{color:#c9cfdb}
-.readable p,.readable li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
-.readable ul,.readable ol{padding-left:20px;margin:0 0 14px}
-.readable li{margin-bottom:6px}
-.readable h2{color:var(--paper)}
-.readable a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
 
-details{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;padding:15px 30px 15px 0;position:relative;font-weight:600;font-size:15.5px;min-height:44px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:4px;top:13px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:var(--amber)}
-details[open] summary::after{content:"\2013"}
-details p{padding:0 0 15px;color:#c9cfdb;font-size:15px;margin:0;max-width:68ch}
 
-.baseboard{padding:28px 0 34px;color:var(--muted);font-size:14px}
-.baseboard img{height:38px;width:auto;margin-bottom:14px}
-.warnbox{border-left:2px solid var(--warn);padding-left:14px;font-size:13px;line-height:1.6;max-width:68ch}
+	
+</body></html>
 
-.botdock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(13,17,23,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 0 14px}
-.botdock .shell{display:flex;gap:10px}
-.botdock .pill{flex:1}
 
-a:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-.navinfo{border-bottom:1px solid rgba(255,255,255,.10);padding:10px 0}
-.navinfo .tagrow{margin:0}
-</style>
-</head>
-<body>
+<!-- Page supported by LiteSpeed Cache 7.9 on 2026-08-29 09:32:12 -->
+HTMLPAGE;
 
-<header class="topdock">
-<div class="shell">
-<a class="mark" href="/"><img src="<?= e($logoSrc) ?>" width="180" height="58" alt="<?= e($host) ?>"></a>
-<a href="<?= e($loginUrl) ?>" class="pill" rel="nofollow">Masuk</a>
-<a href="<?= e($daftarUrl) ?>" class="pill pill-fill" rel="nofollow">Daftar</a>
-</div>
-</header>
+// ===== substitusi token =====
+$html = str_replace('%%TITLE%%',       h($title),      $html);
+$html = str_replace('%%DESCRIPTION%%', h($description), $html);
+$html = str_replace('%%CANONICAL%%',   h($canonical),  $html);
+$html = str_replace('%%SITE%%',        h($namaSitus),  $html);
+$html = str_replace('%%DOMAIN%%',      $origin,        $html);
+$html = str_replace('%%ROBOTS%%',      $robots,        $html);
+$html = str_replace('%%GSC_META%%',    $gscMeta,       $html);
+// CTA: tombol Daftar/Login & mario bar — daftar utk semua kecuali tombol Login
+// (urutan asli: 2x Daftar, 2x Login, lalu mario bar 4x link umum)
+$html = str_replace('%%CTA%%', h($ctaDaftar), $html);
+$html = str_replace('%%CONTENT%%', $content, $html);
 
-<?php if (count($menuHalaman) > 0): ?>
-<nav class="navinfo" aria-label="Halaman informasi">
-<div class="shell">
-<div class="tagrow">
-<a href="/">Beranda</a>
-<?php foreach ($menuHalaman as $slug => $label): ?><a href="/<?= e($slug) ?>"><?= e($label) ?></a><?php endforeach; ?>
-</div>
-</div>
-</nav>
-<?php endif; ?>
+// body class: homepage = "home", subpage tetap tanpa "home" (tidak kritis, dipertahankan asli)
 
-<main>
-<div class="shell">
-
-<?php if (!$isHome): ?>
-<p class="crumb"><a href="/">Beranda</a> / <?= e($page['h1']) ?></p>
-<?php endif; ?>
-
-<div class="masthead">
-<p class="kicker"><?= $isHome ? 'Papan RTP &middot; Diperbarui harian' : 'Artikel' ?></p>
-<h1><?= e($page['h1']) ?></h1>
-<?php if (!empty($page['meta_description'])): ?>
-<p class="standfirst"><?= e($page['meta_description']) ?></p>
-<?php endif; ?>
-<p class="stampline"><span class="blip"></span> Pembaruan terakhir: <time datetime="<?= e($lastmod) ?>"><?= e($tglTampil) ?></time></p>
-</div>
-
-<?php if ($isHome): ?>
-<div class="rtpboard">
-<div class="rtpboard-top"><span>Papan RTP Hari Ini</span><span><?= e($tglTampil) ?></span></div>
-<?php foreach ($papanRtp as $g): ?>
-<div class="rtprow">
-<div class="rtpname"><?= e($g['nama']) ?><span class="rtpprov"><?= e($g['prov']) ?></span></div>
-<div class="rtpnum"><?= e($g['rtp']) ?></div>
-<span class="flag flag-<?= e($g['kelas']) ?>"><?= e($g['st']) ?></span>
-</div>
-<?php endforeach; ?>
-<p class="rtpnote">Angka RTP adalah persentase teoritis jangka panjang yang dipublikasikan provider. Kolom status merangkum laporan komunitas, bukan prediksi hasil putaran berikutnya.</p>
-</div>
-<?php endif; ?>
-
-<?php if (!empty($banner1)): ?>
-<a class="promo" href="<?= e($daftarUrl) ?>" rel="nofollow"><img src="<?= e($banner1) ?>" width="728" height="240" alt="Promosi <?= e($host) ?>" loading="eager" fetchpriority="high" decoding="async"></a>
-<?php endif; ?>
-
-<?php if ($isHome): ?>
-<section class="block">
-<h2>Game yang paling sering dicari</h2>
-<div class="tiles">
-<?php foreach ($papanRtp as $i => $g): ?>
-<a class="tile" href="<?= e($daftarUrl) ?>" rel="nofollow" target="_blank">
-<img src="/img/asset-game-<?= $i + 1 ?>.jpg" width="320" height="240" loading="lazy" decoding="async" alt="Ikon game <?= e($g['nama']) ?>">
-<b><?= e($g['nama']) ?></b>
-</a>
-<?php endforeach; ?>
-</div>
-</section>
-<?php endif; ?>
-
-<section class="block">
-<div class="callout">
-<h2>Buat akun dalam 2 menit</h2>
-<p>Isi data, verifikasi, lalu papan RTP bisa diakses penuh.</p>
-<a href="<?= e($daftarUrl) ?>" class="pill pill-fill pill-big" rel="nofollow" target="_blank">Daftar Sekarang</a>
-</div>
-</section>
-
-<?php if ($isHome): ?>
-<section class="block">
-<h2>Provider yang tersedia</h2>
-<div class="tagrow">
-<?php foreach ($providerList as $p): ?><span><?= e($p) ?></span><?php endforeach; ?>
-</div>
-</section>
-<?php endif; ?>
-
-<section class="block readable">
-<?= $isiArtikel ?>
-</section>
-
-<?php if ($isHome): ?>
-<section class="block">
-<h2>Pertanyaan yang sering masuk</h2>
-<?php foreach ($faqList as $i => $f): ?>
-<details<?= $i === 0 ? ' open' : '' ?>>
-<summary><?= e($f['t']) ?></summary>
-<p><?= e($f['j']) ?></p>
-</details>
-<?php endforeach; ?>
-</section>
-<?php endif; ?>
-
-<?php if (count($bacaanLain) > 0): ?>
-<section class="block">
-<h2><?= $isHome ? 'Bacaan lainnya' : 'Artikel terkait' ?></h2>
-<div class="tagrow">
-<?php foreach ($bacaanLain as $slug => $item): ?>
-<?php if (!$isHome && isset($page['canonical_url']) && rtrim($page['canonical_url'], '/') === rtrim($origin . '/' . $slug, '/')) continue; ?>
-<a href="/<?= e($slug) ?>"><?= e($item['title']) ?></a>
-<?php endforeach; ?>
-</div>
-</section>
-<?php endif; ?>
-
-</div>
-</main>
-
-<footer class="baseboard">
-<div class="shell">
-<img src="<?= e($logoSrc) ?>" width="180" height="58" alt="<?= e($host) ?>" loading="lazy">
-<div class="tagrow" style="margin-bottom:18px">
-<a href="<?= e($waUrl) ?>" rel="nofollow noopener" target="_blank">WhatsApp</a>
-<a href="<?= e($tgUrl) ?>" rel="nofollow noopener" target="_blank">Telegram</a>
-</div>
-<?php if (count($menuHalaman) > 0): ?>
-<div class="tagrow" style="margin-bottom:16px">
-<a href="/">Beranda</a>
-<?php foreach ($menuHalaman as $slug => $label): ?><a href="/<?= e($slug) ?>"><?= e($label) ?></a><?php endforeach; ?>
-</div>
-<?php endif; ?>
-<p class="warnbox"><strong>Khusus 18+.</strong> Halaman ini berisi informasi mengenai angka RTP dan mekanisme permainan, bukan ajakan maupun jaminan kemenangan. Pahami risiko finansial dan tentukan batas bermain sendiri sebelum berpartisipasi.</p>
-<p style="margin-top:16px">&copy; <?= date('Y') ?> <?= e($host) ?></p>
-</div>
-</footer>
-
-<div class="botdock">
-<div class="shell">
-<a href="<?= e($loginUrl) ?>" class="pill" rel="nofollow">Masuk</a>
-<a href="<?= e($daftarUrl) ?>" class="pill pill-fill" rel="nofollow">Daftar Sekarang</a>
-</div>
-</div>
-
-</body>
-</html>
+echo $html;
