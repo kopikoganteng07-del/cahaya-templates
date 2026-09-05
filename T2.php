@@ -328,6 +328,8 @@ $html = str_replace('%%CONTENT%%', $content, $html);
 
 // body class: homepage = "home", subpage tetap tanpa "home" (tidak kritis, dipertahankan asli)
 
+$logoSrc   = !empty($homepage['logo_src']) ? $homepage['logo_src'] : '/img/logo.png';
+$bannerSrc = !empty($homepage['banner_src']) ? $homepage['banner_src'] : '/img/banner1.jpg';
 $html = str_replace('%%LOGO_SRC%%',   h($logoSrc),   $html);
 $html = str_replace('%%BANNER_SRC%%', h($bannerSrc), $html);
 
