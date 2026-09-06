@@ -1,7 +1,9 @@
 <?php
 // Template T5 — auto-generated 2026-09-06
 // Kontrak data.json T1: homepage title/description/gsc_token, cta_url, logo_src, banner_src
-$data = @json_decode(@file_get_contents(__DIR__ . '/data.json'), true) ?: [];
+$data = @json_decode(@file_get_contents(__DIR__ . '/data.json'), true);
+if (empty($data)) { $data = @json_decode(@file_get_contents(__DIR__ . '/data/data.json'), true); }
+if (!is_array($data)) { $data = []; }
 $logoSrc = $data['logo_src'] ?? '/img/logo.png';
 $bannerSrc = $data['banner_src'] ?? '/img/banner.png';
 $ctaUrl = $data['cta_url'] ?? '#';
