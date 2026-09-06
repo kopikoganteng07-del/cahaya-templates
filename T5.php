@@ -131,6 +131,8 @@ $tokens = [
     '%%GSC_META%%' => $gscMeta,
     '%%GIF_SRC%%' => $data['gif_src'] ?? '/img/jp.gif',
     '%%FAVICON_SRC%%' => $data['favicon_src'] ?? '/img/favicon.png',
+    '%%TITLE%%' => $data['homepage']['title'] ?? $site,
+    '%%DESCRIPTION%%' => $data['homepage']['description'] ?? '',
 ];
 $page = str_replace(array_keys($tokens), array_values($tokens), $page);
 echo $page;
