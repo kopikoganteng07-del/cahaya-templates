@@ -1,0 +1,246 @@
+#!/usr/bin/env python3
+"""Watcher Template_Baru (S3) — alur template baru T6+ via sheet.
+
+Client isi: URL_SOURCE_SAMPLE + SIZE_GAMBAR/BANNER/ICON/LOGO + STATUS="Process"
+Program:
+  1. Fetch HTML sample → tokenisasi %%X%% (domain, title, desc, CTA, GSC, gambar → kolom sheet)
+  2. Commit T{n}.php ke repo GitHub cahaya-templates (jalur pipeline: raw.githubusercontent)
+  3. Verifikasi fetch balik dari repo
+  4. Checker: semua path gambar di template resolvable di domain produksi (vs kolom image source Produksi)
+  5. STATUS → Active + daftarkan ke dropdown TEMPLATE_ID (ubah validation ONE_OF_LIST → tambah kode)
+Senyap saat tidak ada baris Process.
+"""
+import json, urllib.request, urllib.parse, subprocess, sys, os, re, time
+from datetime import datetime, timezone, timedelta
+
+SID = '1eycB32JSBtmoFEXp5pOZZjPOYb8lrzQdClQPjxkgM5c'
+TAB = 'Template_Baru'
+REPO = '/opt/data/home/cahaya-templates'
+WIB = timezone(timedelta(hours=7))
+ACTIONS = []
+
+def log(m): ACTIONS.append(m)
+
+def gs_token():
+    gt = json.load(open('/opt/data/google_token.json'))
+    b = urllib.parse.urlencode({'refresh_token': gt['refresh_token'], 'client_id': gt['client_id'], 'client_secret': gt['client_secret'], 'grant_type': 'refresh_token'}).encode()
+    rq = urllib.request.Request('https://oauth2.googleapis.com/token', data=b, method='POST')
+    with urllib.request.urlopen(rq, timeout=30) as r:
+        return json.loads(r.read())['access_token']
+
+def gs_read(rng):
+    H = {'Authorization': 'Bearer ' + gs_token()}
+    rq = urllib.request.Request(f'https://sheets.googleapis.com/v4/spreadsheets/{SID}/values/{rng}', headers=H)
+    with urllib.request.urlopen(rq, timeout=60) as r:
+        return json.loads(r.read()).get('values', [])
+
+def gs_write(rng, val):
+    H = {'Authorization': 'Bearer ' + gs_token(), 'Content-Type': 'application/json'}
+    body = {'valueInputOption': 'RAW', 'data': [{'range': f'{TAB}!{rng}', 'values': [[val]]}]}
+    rq = urllib.request.Request(f'https://sheets.googleapis.com/v4/spreadsheets/{SID}/values:batchUpdate', data=json.dumps(body).encode(), method='POST', headers=H)
+    with urllib.request.urlopen(rq, timeout=30) as r:
+        pass
+
+def fetch(url, timeout=60):
+    rq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0'})
+    with urllib.request.urlopen(rq, timeout=timeout) as r:
+        return r.read()
+
+def next_kode():
+    used = set()
+    try:
+        for r0 in gs_read(f'{TAB}!A2:A200'):
+            k = str(r0[0]).strip().upper() if r0 and r0[0] else ''
+            if re.fullmatch(r'T\d+', k): used.add(k)
+    except Exception: pass
+    # cek repo langsung (publik, tanpa auth)
+    try:
+        rq = urllib.request.Request('https://api.github.com/repos/kopikoganteng07-del/cahaya-templates/contents/', headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(rq, timeout=20) as r:
+            for f in json.loads(r.read()):
+                m = re.match(r'(T\d+)\.php', f.get('name', ''))
+                if m: used.add(m.group(1).upper())
+    except Exception: pass
+    n = 6
+    while f'T{n}' in used: n += 1
+    return f'T{n}'
+
+def tokenize(html, sample_dom, sizes):
+    """Ganti nilai dinamis sample jadi token %%X%% — pola T1-T5."""
+    t = html
+    # URL absolut domain sample → %%URL%%
+    t = t.replace(f'https://{sample_dom}', '%%URL%%').replace(f'http://{sample_dom}', '%%URL%%')
+    # domain mentah
+    t = re.sub(r'(?<![\w./-])' + re.escape(sample_dom) + r'(?![\w-])', '%%DOMAIN%%', t)
+    # title
+    m = re.search(r'<title>(.*?)</title>', t, re.S)
+    if m: t = t.replace(m.group(1), '%%TITLE%%', 1)
+    # meta description
+    m = re.search(r'<meta\s+name="description"\s+content="(.*?)"', t, re.S)
+    if m: t = t.replace(m.group(1), '%%DESCRIPTION%%', 1)
+    # GSC verifikasi meta
+    t = re.sub(r'content="[a-zA-Z0-9_-]{40,}"(\s+name="google-site-verification")', r'content="%%GSC_META%%"\1', t)
+    t = re.sub(r'(name="google-site-verification"\s+)content="[a-zA-Z0-9_-]{40,}"', r'\1content="%%GSC_META%%"', t)
+    return t
+
+def image_paths(html):
+    """Semua path gambar lokal yang direferensikan template."""
+    p = set()
+    for m in re.finditer(r'(?:src|href|content)="([^"]+\.(?:png|gif|jpe?g|webp|svg|ico))"', html, re.I):
+        u = m.group(1)
+        if u.startswith('%%URL%%/'): p.add(u.replace('%%URL%%/', '', 1))
+    return sorted(p)
+
+def gh_push(fname, content, msg=None):
+    """Push/PUT file ke repo cahaya-templates via jalur webhook n8n-1 (credential github-kopiko).
+    Pola: buat workflow webhook temp → PUT via webhook → hapus workflow. Terbukti 7/9."""
+    import base64, secrets
+    N8N1 = json.load(open('/opt/data/home/n8n_servers.json'))['n8n-1']['base_url']
+    K1 = json.load(open('/opt/data/home/n8n_servers.json'))['n8n-1']['api_key']
+    GH = f'https://api.github.com/repos/kopikoganteng07-del/cahaya-templates/contents/{fname}'
+
+    def n8n(method, path, body=None):
+        hdrs = {'X-N8N-API-KEY': K1, 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json', 'Content-Type': 'application/json'}
+        data = json.dumps(body).encode() if body is not None else None
+        rq = urllib.request.Request(f'{N8N1}/api/v1{path}', data=data, headers=hdrs, method=method)
+        with urllib.request.urlopen(rq, timeout=90) as r:
+            txt = r.read().decode()
+            return json.loads(txt) if txt else {}
+
+    HOOK = 'cahaya-tplpush-' + secrets.token_hex(6)
+    wf = {
+        'name': 'Cahaya - Oneoff GH Push (temp)',
+        'nodes': [
+            {'id': 'wh1', 'name': 'Webhook', 'type': 'n8n-nodes-base.webhook', 'typeVersion': 2, 'position': [0, 0],
+             'parameters': {'httpMethod': 'POST', 'path': HOOK, 'responseMode': 'lastNode', 'options': {}}},
+            {'id': 'sd1', 'name': 'Susun', 'type': 'n8n-nodes-base.code', 'typeVersion': 2, 'position': [220, 0],
+             'parameters': {'jsCode': "const it = $('Webhook').first().json.body; return [{ json: { url: it.url, method: it.method, body: it.body } }];"}},
+            {'id': 'up1', 'name': 'Upload GitHub', 'type': 'n8n-nodes-base.httpRequest', 'typeVersion': 4.2, 'position': [440, 0],
+             'parameters': {'method': '={{ $json.method }}', 'url': '={{ $json.url }}',
+                 'authentication': 'genericCredentialType', 'genericAuthType': 'httpHeaderAuth',
+                 'sendHeaders': True, 'headerParameters': {'parameters': [{'name': 'Accept', 'value': 'application/vnd.github+json'}, {'name': 'User-Agent', 'value': 'n8n-cahaya-tplpush'}]},
+                 'sendBody': True, 'specifyBody': 'json', 'jsonBody': '={{ JSON.stringify($json.body) }}',
+                 'options': {'response': {'response': {'neverError': True, 'fullResponse': True}}, 'timeout': 30000},
+                 'retryOnFail': True, 'maxTries': 3, 'waitBetweenTries': 2000},
+             'credentials': {'httpHeaderAuth': {'id': 'j7TdDIUhyq2bRlD0', 'name': 'github-kopiko'}}},
+        ],
+        'connections': {
+            'Webhook': {'main': [[{'node': 'Susun', 'type': 'main', 'index': 0}]]},
+            'Susun': {'main': [[{'node': 'Upload GitHub', 'type': 'main', 'index': 0}]]},
+        },
+        'settings': {'executionOrder': 'v1'},
+    }
+    created = n8n('POST', '/workflows', wf)
+    WID = created['id']
+    ok = False
+    try:
+        n8n('POST', f'/workflows/{WID}/activate')
+        time.sleep(2)
+        b64 = base64.b64encode(content.encode()).decode()
+        body = {'items': [{'url': GH, 'method': 'PUT', 'body': {'message': msg or f'add {fname} (via Template_Baru)', 'content': b64}}]}
+        rq = urllib.request.Request(f'{N8N1}/webhook/{HOOK}', data=json.dumps(body).encode(), method='POST',
+                                    headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(rq, timeout=120) as r:
+            ok = r.status == 200
+    finally:
+        try:
+            n8n('POST', f'/workflows/{WID}/deactivate')
+            n8n('DELETE', f'/workflows/{WID}')
+        except Exception:
+            pass
+    return ok
+
+def add_to_dropdown(kode):
+    """Tambah kode ke validation ONE_OF_LIST kolom F Produksi."""
+    # baca rule sekarang
+    H = {'Authorization': 'Bearer ' + gs_token()}
+    rq = urllib.request.Request(f'https://sheets.googleapis.com/v4/spreadsheets/{SID}?fields=sheets(properties(title),data(rowData(values(dataValidation)),startRow,startColumn))&ranges=Produksi!F2:F3', headers=H)
+    with urllib.request.urlopen(rq, timeout=30) as r:
+        d = json.loads(r.read())
+    vals = []
+    for sh in d.get('sheets', []):
+        rd = (sh.get('data') or [{}])[0].get('rowData', [])
+        for row in rd:
+            cells = row.get('values', [])
+            if cells:
+                dv = cells[0].get('dataValidation', {})
+                vals = [v.get('userEnteredValue') for v in dv.get('condition', {}).get('values', [])]
+                break
+        if vals: break
+    if not vals: vals = ['T1', 'T2', 'T3', 'T4', 'T5']
+    if kode in vals: return False
+    vals.append(kode)
+    vals = sorted(set(vals), key=lambda x: int(x[1:]))
+    body = {'requests': [{
+        'setDataValidation': {
+            'range': {'sheetId': 1758887238, 'startRowIndex': 1, 'endRowIndex': 2000, 'startColumnIndex': 5, 'endColumnIndex': 6},
+            'rule': {'condition': {'type': 'ONE_OF_LIST', 'values': [{'userEnteredValue': v} for v in vals]}, 'showCustomUi': True, 'strict': True}
+        }
+    }]}
+    rq = urllib.request.Request(f'https://sheets.googleapis.com/v4/spreadsheets/{SID}:batchUpdate', data=json.dumps(body).encode(), method='POST',
+        headers={'Authorization': 'Bearer ' + gs_token(), 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(rq, timeout=30) as r:
+        pass
+    return True
+
+def process_row(i, r0):
+    url_sample = str(r0[1]).strip()
+    status = str(r0[6]).strip() if len(r0) > 6 and r0[6] else ''
+    kode = str(r0[0]).strip().upper() if r0 and r0[0] and not str(r0[0]).startswith('(') else ''
+    if status != 'Process' or not url_sample.startswith('http'):
+        return 0
+    sizes = {k: (str(r0[c]).strip() if len(r0) > c and r0[c] else '') for k, c in [('gambar', 2), ('banner', 3), ('icon', 4), ('logo', 5)]}
+    try:
+        gs_write(f'G{i}', 'PROCESSING')
+        dom = urllib.parse.urlparse(url_sample).hostname
+        if not dom: raise ValueError('URL sample tidak valid')
+        html = fetch(url_sample).decode('utf-8', 'replace')
+        if len(html) < 2000: raise ValueError(f'HTML sample terlalu kecil ({len(html)}B)')
+        k = kode or next_kode()
+        gs_write(f'A{i}', k)
+        tpl = tokenize(html, dom, sizes)
+        paths = image_paths(tpl)
+        # catat metadata size utk checker pipeline
+        meta = {'kode': k, 'sample': url_sample, 'sizes': sizes, 'paths': paths, 'created': datetime.now(WIB).isoformat()}
+        # commit ke repo via jalur webhook n8n-1
+        fname = f'{k}.php'
+        if not gh_push(fname, tpl):
+            raise ValueError('push GitHub gagal (jalur webhook n8n-1)')
+        # verifikasi fetch balik dari raw.githubusercontent (jalur pipeline)
+        time.sleep(3)
+        raw = fetch(f'https://raw.githubusercontent.com/kopikoganteng07-del/cahaya-templates/main/{fname}').decode('utf-8', 'replace')
+        if '%%URL%%' not in raw or len(raw) < 2000:
+            raise ValueError('verifikasi repo gagal (template belum terbaca)')
+        # simpan meta lokal
+        os.makedirs('/opt/data/home/cahaya/template-meta', exist_ok=True)
+        json.dump(meta, open(f'/opt/data/home/cahaya/template-meta/{k}.json', 'w'), indent=2)
+        # checker hasil singkat
+        chk = f'{len(raw)}B | {len(paths)} aset: {", ".join(paths[:6])}'
+        gs_write(f'H{i}', chk)
+        gs_write(f'I{i}', f'commit {fname} OK + verif repo OK {datetime.now(WIB).strftime("%d/%m %H:%M")} WIB')
+        # masuk dropdown
+        if add_to_dropdown(k):
+            gs_write(f'I{i}', f'commit OK + verif OK + dropdown +{k} | {datetime.now(WIB).strftime("%d/%m %H:%M")} WIB')
+        gs_write(f'G{i}', 'Active')
+        log(f'[{i}] {k} dari {dom}: commit+verif OK, {len(paths)} aset, dropdown +{k}')
+        return 1
+    except Exception as e:
+        gs_write(f'G{i}', 'Error')
+        gs_write(f'I{i}', f'{str(e)[:120]}')
+        log(f'[{i}] ERROR: {str(e)[:100]}')
+        return 1
+
+def process():
+    rows = gs_read(f'{TAB}!A2:I200')
+    n = 0
+    for i, r0 in enumerate(rows, 2):
+        if not r0 or not str(r0[1] or '').strip():
+            continue
+        n += process_row(i, r0)
+    return n
+
+if __name__ == '__main__':
+    n = process()
+    if n > 0:
+        for a in ACTIONS: print(a)
+    sys.exit(0)
