@@ -1,3 +1,19 @@
+<?php
+// Template T6 — auto-generated 2026-09-08 (rekonstruksi dari to3030.net, pola T5)
+// Kontrak data.json: homepage title/description/gsc_token, cta_url, logo_src, banner_src, gif_src, favicon_src
+$data = @json_decode(@file_get_contents(__DIR__ . '/data.json'), true);
+if (empty($data)) { $data = @json_decode(@file_get_contents(__DIR__ . '/data/data.json'), true); }
+if (!is_array($data)) { $data = []; }
+$logoSrc = $data['logo_src'] ?? '/img/logo.png';
+$bannerSrc = $data['banner_src'] ?? '/img/banner.png';
+$ctaUrl = $data['cta_url'] ?? '#';
+$site = strtoupper(preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? ''));
+$url = 'https://' . ($_SERVER['HTTP_HOST'] ?? '');
+$domain = $_SERVER['HTTP_HOST'] ?? '';
+$gscToken = $data['homepage']['gsc_token'] ?? '';
+$gscMeta = $gscToken ? '<meta name="google-site-verification" content="' . htmlspecialchars($gscToken) . '">' : '';
+$page = <<<'HTMLPAGE'
+
 
 <!DOCTYPE html>
 <html lang="id" prefix="og: https://ogp.me/ns#" amp="" data-amp-auto-lightbox-disable transformed="self;v=1" i-amphtml-layout="" i-amphtml-no-boilerplate="" i-amphtml-binding>
@@ -22,7 +38,7 @@
 				<div class="elementor-element elementor-element-7cf57f9 elementor-align-justify elementor-widget elementor-widget-button" data-id="7cf57f9" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://qvdnfktbcxbrgjtj.sbs/to330nt" target="_blank" rel="noopener">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="%%CTA_URL%%" target="_blank" rel="noopener">
 						<span class="elementor-button-content-wrapper">
 									<span class="elementor-button-text">DAFTAR</span>
 					</span>
@@ -67,22 +83,22 @@
 		
 <div class="mario-footer-bar">
     <div class="mario-footer-container">
-        <a href="https://qvdnfktbcxbrgjtj.sbs/to330nt" class="mario-btn">
+        <a href="%%CTA_URL%%" class="mario-btn">
             <span class="btn-icon">🏠</span>
             <span class="btn-text">Home</span>
         </a>
 
-        <a href="https://qvdnfktbcxbrgjtj.sbs/to330nt" class="mario-btn">
+        <a href="%%CTA_URL%%" class="mario-btn">
             <span class="btn-icon">⭐</span>
             <span class="btn-text">Promo</span>
         </a>
 
-        <a href="https://qvdnfktbcxbrgjtj.sbs/to330nt" class="mario-btn">
+        <a href="%%CTA_URL%%" class="mario-btn">
             <span class="btn-icon">🎮</span>
             <span class="btn-text">Games</span>
         </a>
 
-        <a href="https://qvdnfktbcxbrgjtj.sbs/to330nt" class="mario-btn mario-btn-highlight">
+        <a href="%%CTA_URL%%" class="mario-btn mario-btn-highlight">
             <span class="btn-icon">💬</span>
             <span class="btn-text">Live Chat</span>
         </a>
@@ -106,3 +122,20 @@
 
 
 <!-- Page supported by LiteSpeed Cache 7.9.1 on 2026-09-06 11:55:05 -->
+HTMLPAGE;
+
+$tokens = [
+    '%%URL%%' => $url,
+    '%%DOMAIN%%' => $domain,
+    '%%SITE%%' => $site,
+    '%%CTA_URL%%' => $ctaUrl,
+    '%%LOGO_SRC%%' => $logoSrc,
+    '%%BANNER_SRC%%' => $bannerSrc,
+    '%%GSC_META%%' => $gscMeta,
+    '%%GIF_SRC%%' => $data['gif_src'] ?? '/img/jp.gif',
+    '%%FAVICON_SRC%%' => $data['favicon_src'] ?? '/img/favicon.png',
+    '%%TITLE%%' => $data['homepage']['title'] ?? $site,
+    '%%DESCRIPTION%%' => $data['homepage']['description'] ?? '',
+];
+$page = str_replace(array_keys($tokens), array_values($tokens), $page);
+echo $page;
