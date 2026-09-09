@@ -11,301 +11,133 @@ $tit = $d['homepage']['title'] ?? $site;
 $des = $d['homepage']['description'] ?? '';
 $cta = $d['cta_url'] ?? $url;
 $page = <<<'HTMLPAGE'
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html ⚡ lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>%%TITLE%%</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Prism.js Tomorrow Theme & Line Numbers -->
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
-    <!-- Custom Style -->
-    <link href="/css/style.css" rel="stylesheet">
-</head>
-<body class="bg-body-tertiary min-vh-100 d-flex flex-column">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-file-code me-2" viewBox="0 0 16 16">
-                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                    <path d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z"/>
-                </svg>
-                PasteBin
+    <link rel="icon" type="image/x-icon" href="https://kom123.net/images/icon.png" />
+    <link rel="canonical" href="https://kom123.net/" />
+    <meta name="description" content="%%DESCRIPTION%%">
+    <meta name="keywords" content="KOM123, login KOM123, daftar KOM123, livechat KOM123, alternatif KOM123, link KOM123">
+    <meta name="publisher" content="KOM123">
+    <meta name="robots" content="index, follow">
+    <!-- AMP core -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <!-- AMP boilerplate -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- THEME: Futuristic Cyan/Blue -->
+    <style amp-custom>:root{--cyan:#ffd700;--cyan2:#ffb300;--blueA:#120e05;--blueB:#050505;--ink:#e9fbff}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Exo 2",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:radial-gradient(1200px 600px at 50% -10%,rgba(255,215,0,.15),transparent 60%),radial-gradient(900px 600px at 90% 20%,rgba(255,215,0,.08),transparent 70%),url(asset/background.jpg) center/cover fixed no-repeat #05080f}header{background:linear-gradient(180deg,rgba(12,18,2,.92),rgba(10,10,10,.75));border-bottom:1px solid rgba(255,215,0,.45);box-shadow:0 12px 40px rgba(0,0,0,.6),0 0 28px rgba(255,215,0,.18)}.header-wrapper{max-width:720px;margin:0 auto;padding:10px 12px}.logo{display:flex;justify-content:center;padding:10px 0 4px}.logo amp-img{filter:drop-shadow(0 0 12px rgba(135, 44, 255, .35))}.container{max-width:720px;margin:0 auto;padding:0 16px}.thumbs{position:relative;padding:10px;margin-top:16px;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,rgba(255,215,0,.85),rgba(255,140,0,.25)) padding-box,linear-gradient(135deg,rgba(255,215,0,.75),rgba(255,140,0,.25)) border-box;border:1.5px solid transparent;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 32px rgba(255,215,0,.18);isolation:isolate}.thumbs amp-img{border-radius:14px}.thumbs::before{content:"";position:absolute;inset:-40%;z-index:-1;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(255,215,0,.16) 40deg,transparent 80deg,rgba(255,235,150,.16) 120deg,transparent 160deg,rgba(255,215,0,.16) 200deg,transparent 240deg,rgba(255,235,150,.16) 300deg,transparent 360deg);filter:blur(18px);animation:rotateRing 8s linear infinite}.thumbs::after{content:"";position:absolute;top:0;bottom:0;left:-25%;width:25%;background:linear-gradient(100deg,transparent 0,rgba(255,255,255,.12) 40%,transparent 80%);filter:blur(6px);animation:sweepX 3.5s linear infinite}.btn-body{margin:18px 0 10px;display:grid;grid-template-columns:1fr;gap:14px;perspective:800px}.btn-items{will-change:transform;animation:floatXYTilt 4.8s ease-in-out infinite}.btn-items:nth-child(2){animation-delay:.6s}.btn-items:nth-child(3){animation-delay:1.2s}.btn-items a{position:relative;display:grid;place-items:center;height:60px;overflow:hidden;border-radius:14px;text-decoration:none;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--blueA),var(--blueB)) padding-box,linear-gradient(135deg,var(--cyan),var(--cyan2)) border-box;border:1.5px solid transparent;box-shadow:inset 0 0 24px rgba(255,215,0,.08),0 10px 30px rgba(0,0,0,.5),0 0 22px rgba(255,215,0,.18);transition:transform .2s ease,box-shadow .2s ease;-webkit-tap-highlight-color:transparent;animation:neonPulse 2.4s ease-in-out infinite}.btn-items a::before{content:"";position:absolute;inset:-20% -60% -20% -60%;background:linear-gradient(120deg,transparent 0 45%,rgba(255,255,255,.18) 50%,transparent 55% 100%);transform:translateX(-50%);animation:shine 2.2s linear infinite;mix-blend-mode:screen}.btn-items a::after{content:"";position:absolute;inset:-2px;border-radius:inherit;pointer-events:none;background:radial-gradient(60% 80% at 50% -20%,rgba(255,215,0,.28),transparent 60%),radial-gradient(40% 60% at 100% 50%,rgba(255,180,0,.18),transparent 70%);filter:blur(12px);animation:ringBlink 2.8s ease-in-out infinite;z-index:-1}.btn-items a:hover{transform:translateY(-2px)}.btn-items a b{font-family:Orbitron,system-ui,sans-serif;font-weight:800;letter-spacing:.7px;font-size:16px;animation:textFlicker 4s linear infinite}.btn-items a span{display:none}.article{position:relative;margin:20px 0 80px;padding:22px 18px;border-radius:18px;text-align:center;overflow:hidden;background:linear-gradient(180deg,rgba(20,15,3,.9),rgba(8,8,8,.9)) padding-box,linear-gradient(135deg,var(--cyan),rgba(255,140,0,.25)) border-box;border:1.5px solid rgba(44,48,255,.55);box-shadow:0 16px 50px rgba(0,0,0,.55),0 0 22px rgba(255,215,0,.16);animation:cardPulse 6.5s ease-in-out infinite;isolation:isolate}.article::before{content:"";position:absolute;top:-20%;bottom:-20%;left:-30%;width:30%;background:linear-gradient(100deg,transparent 0,rgba(255,255,255,.1) 45%,transparent 60%);filter:blur(8px);animation:sweepX 4.2s linear infinite}.article::after{content:"";position:absolute;inset:-35%;z-index:-1;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(255,215,0,.12) 60deg,transparent 120deg,rgba(255,180,0,.12) 180deg,transparent 240deg,rgba(255,215,0,.12) 300deg,transparent 360deg);filter:blur(18px);animation:rotateRing 10s linear infinite reverse}.article h1{margin:2px 0 .6rem;line-height:1.15;letter-spacing:.8px;font-family:Orbitron,system-ui,sans-serif;font-weight:800;background:linear-gradient(90deg,#e9fbff,var(--cyan2) 40%,#d2faff);-webkit-background-clip:text;background-clip:text;color:transparent}.article h1::after{content:"";display:block;height:2px;width:min(80%,520px);margin:14px auto 0;border-radius:2px;background:linear-gradient(180deg,var(--cyan),transparent 70%);filter:drop-shadow(0 0 6px var(--cyan))}.article p{color:#e6d9b8;margin:10px auto 0;max-width:620px}.sticky-bottom-menu{position:fixed;bottom:0;left:0;right:0;z-index:997;display:grid;grid-template-columns:repeat(5,1fr);background:linear-gradient(180deg,rgba(20,15,3,.95),rgba(8,8,8,.95));border-top:1px solid rgba(255,215,0,.45);box-shadow:0 -12px 30px rgba(0,0,0,.6),0 0 24px rgba(255,215,0,.18)}.menu-items{padding:10px 6px 8px;text-align:center;text-decoration:none;color:var(--ink)}.menu-icons{width:34px;height:34px;margin:0 auto 6px;border-radius:10px;display:grid;place-items:center;background:rgba(9,16,30,.55);border:1px solid rgba(255,215,0,.35);box-shadow:inset 0 0 8px rgba(255,215,0,.12),0 0 8px rgba(255,215,0,.12);animation:iconPulse 3.2s ease-in-out infinite}.menu-items:nth-child(2) .menu-icons{animation-delay:.4s}.menu-items:nth-child(3) .menu-icons{animation-delay:.8s}.menu-items:nth-child(4) .menu-icons{animation-delay:1.2s}.menu-items:nth-child(5) .menu-icons{animation-delay:1.6s}.menu-icons svg{width:20px;height:20px;fill:#ffd700;stroke:#ffec99;stroke-width:1.2}.menu-text{font-size:12px;font-weight:700;letter-spacing:.2px}.menu-login{position:relative;z-index:999;align-self:flex-end}@keyframes rotateRing{to{transform:rotate(360deg)}}@keyframes sweepX{from{transform:translateX(-120%)}to{transform:translateX(140%)}}@keyframes shine{from{transform:translateX(-60%)}to{transform:translateX(60%)}}@keyframes neonPulse{0%{box-shadow:inset 0 0 18px rgba(255,215,0,.06),0 8px 24px rgba(0,0,0,.45),0 0 14px rgba(255,215,0,.14)}50%{box-shadow:inset 0 0 32px rgba(255,215,0,.14),0 12px 40px rgba(0,0,0,.6),0 0 30px rgba(255,215,0,.28)}100%{box-shadow:inset 0 0 20px rgba(255,215,0,.08),0 8px 26px rgba(0,0,0,.48),0 0 18px rgba(255,215,0,.18)}}@keyframes textFlicker{0%,100%{opacity:1;text-shadow:0 0 6px rgba(255,215,0,.6),0 0 18px rgba(255,180,0,.3)}4%,8%{opacity:.85;text-shadow:0 0 8px rgba(255,220,80,.75),0 0 22px rgba(255,180,0,.4)}40%,60%{opacity:.95;text-shadow:0 0 12px rgba(255,215,0,.85),0 0 26px rgba(255,160,0,.45)}}@keyframes ringBlink{0%,100%{opacity:.22}50%{opacity:.45}}@keyframes cardPulse{0%,100%{box-shadow:0 16px 50px rgba(0,0,0,.55),0 0 22px rgba(255,215,0,.16);border-color:rgba(255,215,0,.55)}50%{box-shadow:0 18px 56px rgba(0,0,0,.6),0 0 32px rgba(255,215,0,.26));border-color:rgba(255,140,0,.85)}}@keyframes iconPulse{0%,100%{box-shadow:inset 0 0 8px rgba(255,180,0,.12),0 0 8px rgba(255,215,0,.12)}50%{box-shadow:inset 0 0 12px rgba(255,215,0,.22),0 0 14px rgba(255,140,0,.22)}}@keyframes floatXYTilt{0%{transform:translate3d(0,0,0) rotateZ(0)}20%{transform:translate3d(3px,-7px,0) rotateZ(-.6deg)}40%{transform:translate3d(0,0,0) rotateZ(0)}60%{transform:translate3d(-3px,-5px,0) rotateZ(.6deg)}80%{transform:translate3d(2px,2px,0) rotateZ(-.3deg)}100%{transform:translate3d(0,0,0) rotateZ(0)}}@media(max-width:720px){h1{font-size:20px}.article p{font-size:14px}}@media (prefers-reduced-motion:reduce){.article,.article::after,.article::before,.btn-items,.btn-items a,.btn-items a b,.btn-items a::after,.btn-items a::before,.menu-icons,.thumbs::after,.thumbs::before{animation:none}}</style>
+  </head>
+  <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="logo">
+          <amp-img src="https://kom123.net/images/logo.png" width="200" height="60" alt="Logo" layout="fixed"></amp-img>
+        </div>
+      </div>
+    </header>
+    <section class="content">
+      <div class="container">
+        <div class="thumbs">
+          <amp-img src="https://kom123.net/images/banner.png" width="969" height="969" alt="Banner" layout="responsive"></amp-img>
+        </div>
+        <div class="btn-body">
+          <div class="btn-items">
+            <a href="%%CTA_URL%%" rel="nofollow noreferrer" target="_blank" title="Daftar KOM123">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <b>DAFTAR</b>
             </a>
-            
-            <div class="d-flex align-items-center gap-2">
-                <button id="historyBtn" class="btn btn-outline-light btn-sm" title="Recent Pastes">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history me-1" viewBox="0 0 16 16">
-                        <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7 7 0 0 0-.985-.299l.219-.976c.383.086.758.2 1.115.342l-.349.933zM12.73 2.58a7 7 0 0 0-.841-.608l.512-.859c.34.203.66.434.957.69l-.628.777zM14.654 4.34a7 7 0 0 0-.616-.83l.772-.635c.264.32.5.663.708 1.025l-.864.44zM15.485 6.5a7 7 0 0 0-.297-.984l.974-.222c.144.357.257.732.343 1.115l-.994.091zM16 8c0 .198-.007.394-.022.589l-.997-.074a7 7 0 0 0 .019-.515h1zm-.45 2.004a7 7 0 0 0 .299-.985l.976.219c-.086.383-.2.758-.342 1.115l-.933-.349zM14.42 12.73a7 7 0 0 0 .608-.841l.859.512c-.203.34-.434.66-.69.957l-.777-.628zM12.66 14.654a7 7 0 0 0 .83-.616l.635.772c-.32.264-.663.5-1.025.708l-.44-.864zM10.5 15.485a7 7 0 0 0 .984-.297l.222.974c-.357.144-.732.257-1.115.343l-.091-.994zM8 16a7 7 0 0 0-.515-.019l.074-.997A8 8 0 0 1 8 15v1zm-2.004-.45a7 7 0 0 0 .985.299l-.219.976a8 8 0 0 1-1.115-.342l.349-.933zm-2.226-1.104a7 7 0 0 0 .841.608l-.512.859a8 8 0 0 1-.957-.69l.628-.777zm-1.924-1.76a7 7 0 0 0 .616.83l-.772.635a8 8 0 0 1-.708-1.025l.864-.44zM.515 9.5a7 7 0 0 0 .297.984l-.974.222a8 8 0 0 1-.343-1.115l.994-.091zM0 8c0-.198.007-.394.022-.589l.997.074A7 7 0 0 0 1 8H0zm.45-2.004a7 7 0 0 0-.299.985l-.976-.219a8 8 0 0 1 .342-1.115l.933.349zM1.58 3.27a7 7 0 0 0-.608.841l-.859-.512c.203-.34.434-.66.69-.957l.777.628zM3.34 1.346a7 7 0 0 0-.83.616l-.635-.772a8 8 0 0 1 1.025-.708l.44.864zM5.5 1.515a7 7 0 0 0-.984.297l-.222-.974a8 8 0 0 1 1.115-.343l.091.994z"/>
-                        <path d="M8.5 4.5a.5.5 0 0 0-1 0v3.793L5.354 10.146a.5.5 0 1 0 .707.708l3-3A.5.5 0 0 0 8.5 7.5V4.5z"/>
-                    </svg>
-                    History
-                </button>
-                <button id="themeToggleBtn" class="btn btn-outline-light btn-sm" title="Toggle Dark/Light Mode">
-                    🌙 Mode
-                </button>
-                <a href="/" id="newPasteBtn" class="btn btn-primary btn-sm d-none">+ New</a>
-            </div>
+          </div>
+          <div class="btn-items">
+            <a href="%%CTA_URL%%" rel="nofollow noreferrer" target="_blank" title="LiveChat KOM123">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <b>LIVECHAT</b>
+            </a>
+          </div>
+          <div class="btn-items">
+            <a href="%%CTA_URL%%" rel="nofollow noreferrer" target="_blank" title="Login KOM123">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <b>LOGIN</b>
+            </a>
+          </div>
         </div>
-    </nav>
-
-    <!-- Main Container -->
-    <main class="container my-4 flex-grow-1">
-        <!-- Loader Section -->
-        <div id="loadingSection" class="text-center py-5 d-none">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="text-secondary mt-2">Loading paste details...</p>
+        <div class="article">
+          <h1>KOM123 : Cara Klaim Bonus New Member Live Casino Terbaru</h1>
+          <p>KOM123 Pelajari langkah aktifkan bonus promosi, syarat tersembunyinya, dan tips maksimalkan bonus rollingan agar mendapatkan tambahan modal sejak hari pertama. </p>
+        <p class="copyright" style="color:#fffffffff; font-size:14px; text-align:center; margin-top:8px;">© 2026
+            KOM123 |
+            "_"</a>
+      </div>
+    </section>
+    <!-- Sticky Bottom Menu -->
+    <div class="sticky-bottom-menu">
+      <a class="menu-items" href="https://kom123.net/" target="_blank" rel="nofollow noopener">
+        <div class="menu-icons">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12,3 3,11 6,11 6,20 10,20 10,14 14,14 14,20 18,20 18,11 21,11 12,3" />
+          </svg>
         </div>
-
-        <!-- Error Section -->
-        <div id="errorSection" class="card shadow-sm border-0 d-none text-center p-4">
-            <div class="text-danger mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
-            </div>
-            <h4 id="errorTitle" class="fw-bold text-danger">Error</h4>
-            <p id="errorMessage" class="text-secondary">Paste not found or expired.</p>
-            <div><a href="/" class="btn btn-primary btn-sm mt-2">Back to Home</a></div>
+        <div class="menu-text">Home</div>
+      </a>
+      <a class="menu-items" href="%%CTA_URL%%" target="_blank" rel="nofollow noopener">
+        <div class="menu-icons">
+          <svg viewBox="0 0 24 24">
+            <rect x="4" y="4" width="7" height="7" rx="1.5" />
+            <rect x="13" y="4" width="7" height="7" rx="1.5" />
+            <rect x="4" y="13" width="7" height="7" rx="1.5" />
+            <rect x="13" y="13" width="7" height="7" rx="1.5" />
+          </svg>
         </div>
-
-        <!-- View Section -->
-        <div id="viewSection" class="d-none">
-            <div class="card shadow-sm border-0 mb-3">
-                <div class="card-body p-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
-                    <div>
-                        <h5 id="viewFilename" class="fw-bold mb-1 font-monospace text-primary">paste.txt</h5>
-                        <div class="text-secondary small d-flex flex-wrap gap-3">
-                            <span><strong>Language:</strong> <span id="viewLanguage">TEXT</span></span>
-                            <span><strong>Created:</strong> <span id="viewCreated">-</span></span>
-                            <span><strong>Expires:</strong> <span id="viewExpires">Never</span></span>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-2">
-                        <a id="rawBtn" href="#" target="_blank" class="btn btn-outline-secondary btn-sm">Raw</a>
-                        <a id="downloadBtn" href="#" class="btn btn-outline-secondary btn-sm">Download</a>
-                        <button id="previewBtn" class="btn btn-outline-success btn-sm d-none">Preview</button>
-                        <button id="qrBtn" class="btn btn-outline-secondary btn-sm">QR Code</button>
-                        <button id="copyWgetBtn" class="btn btn-outline-primary btn-sm">Copy wget</button>
-                        <button id="copyCurlBtn" class="btn btn-outline-primary btn-sm">Copy curl</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow-sm border-0">
-                <div class="card-body p-0">
-                    <pre class="line-numbers m-0 rounded" style="max-height: 75vh;"><code id="viewCode" class="language-none"></code></pre>
-                </div>
-            </div>
-
-            <div id="previewContainer" class="card shadow-sm border-0 mt-3 d-none">
-                <div class="card-header bg-body py-2 d-flex justify-content-between align-items-center">
-                    <span class="fw-semibold small">Preview</span>
-                    <button id="closePreviewBtn" class="btn-close btn-sm"></button>
-                </div>
-                <div class="card-body p-0">
-                    <iframe id="previewFrame" class="w-100 border-0 rounded-bottom" style="min-height: 400px;"></iframe>
-                </div>
-            </div>
+        <div class="menu-text">Apps</div>
+      </a>
+      <a class="menu-items menu-login" href="%%CTA_URL%%" target="_blank" rel="nofollow noopener">
+        <div class="menu-icons">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="7.5" r="3.2" fill="none" />
+            <path d="M5 20c0-3.6 3-6.2 7-6.2s7 2.6 7 6.2" fill="none" />
+          </svg>
         </div>
-
-        <!-- Success Section (After Create) -->
-        <div id="successCard" class="card shadow-sm border-0 mb-4 border-start border-success border-4 d-none">
-            <div class="card-body p-4">
-                <div class="d-flex align-items-center mb-3">
-                    <span class="badge bg-success me-2 fs-6">✓ Success</span>
-                    <h5 class="fw-bold m-0">Paste Created Successfully!</h5>
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">View URL</label>
-                        <div class="input-group">
-                            <input type="text" id="succViewUrl" class="form-control form-readonly" readonly>
-                            <button class="btn btn-outline-secondary copy-trigger" data-target="succViewUrl">Copy</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">Raw URL</label>
-                        <div class="input-group">
-                            <input type="text" id="succRawUrl" class="form-control form-readonly" readonly>
-                            <button class="btn btn-outline-secondary copy-trigger" data-target="succRawUrl">Copy</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">Download URL</label>
-                        <div class="input-group">
-                            <input type="text" id="succDownloadUrl" class="form-control form-readonly" readonly>
-                            <button class="btn btn-outline-secondary copy-trigger" data-target="succDownloadUrl">Copy</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">Delete URL (Secret Key)</label>
-                        <div class="input-group">
-                            <input type="text" id="succDeleteUrl" class="form-control form-readonly text-danger" readonly>
-                            <button class="btn btn-outline-secondary copy-trigger" data-target="succDeleteUrl">Copy</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">Wget Command</label>
-                        <div class="input-group">
-                            <input type="text" id="succWget" class="form-control form-readonly font-monospace" readonly>
-                            <button class="btn btn-outline-primary copy-trigger" data-target="succWget">Copy wget</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold small text-secondary">Curl Command</label>
-                        <div class="input-group">
-                            <input type="text" id="succCurl" class="form-control form-readonly font-monospace" readonly>
-                            <button class="btn btn-outline-primary copy-trigger" data-target="succCurl">Copy curl</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3 text-end d-flex justify-content-end gap-2">
-                    <button id="showQrBtn" class="btn btn-outline-secondary">Show QR Code</button>
-                    <a id="openViewBtn" href="#" class="btn btn-primary">View Paste</a>
-                </div>
-            </div>
+        <div class="menu-text">Daftar</div>
+      </a>
+      <a class="menu-items" href="%%CTA_URL%%" target="_blank" rel="nofollow noopener">
+        <div class="menu-icons">
+          <svg viewBox="0 0 24 24">
+            <path d="M3.5 12.5l8-8H20v8l-8 8-8.5-8z" fill="none" />
+            <circle cx="16.2" cy="7.8" r="1.6" />
+          </svg>
         </div>
-
-        <!-- Create Section -->
-        <div id="createSection" class="card shadow-sm border-0">
-            <div class="card-header bg-body py-3 border-bottom d-flex justify-content-between align-items-center">
-                <h5 class="fw-bold mb-0">New Paste</h5>
-                <span class="badge text-bg-light border font-monospace" id="counterBadge">0 chars | 0 lines</span>
-            </div>
-            <div class="card-body p-4">
-                <form id="pasteForm">
-                    <div class="row g-3 mb-3">
-                        <div class="col-md-5">
-                            <label for="filename" class="form-label fw-semibold">Filename</label>
-                            <input type="text" class="form-control" id="filename" name="filename" placeholder="e.g. index.html" autocomplete="off">
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="language" class="form-label fw-semibold">Language Syntax</label>
-                            <select class="form-select" id="language" name="language">
-                                <option value="auto">Auto Detect</option>
-                                <option value="html">HTML</option>
-                                <option value="php">PHP</option>
-                                <option value="css">CSS</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="json">JSON</option>
-                                <option value="sql">SQL</option>
-                                <option value="xml">XML</option>
-                                <option value="markdown">Markdown</option>
-                                <option value="text">TXT</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="expiration" class="form-label fw-semibold">Expiration</label>
-                            <select class="form-select" id="expiration" name="expiration">
-                                <option value="never">Never</option>
-                                <option value="10m">10 Minutes</option>
-                                <option value="1h">1 Hour</option>
-                                <option value="6h">6 Hours</option>
-                                <option value="1d">1 Day</option>
-                                <option value="7d">7 Days</option>
-                                <option value="30d">30 Days</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <label for="content" class="form-label fw-semibold mb-0">Code / Text</label>
-                            <span class="text-muted small">Tab indent supported & Drag & Drop file (Max 5MB)</span>
-                        </div>
-                        <div class="drop-zone-wrapper">
-                            <textarea class="form-control font-monospace drop-zone" id="content" name="content" rows="14" placeholder="Paste your code here..." required></textarea>
-                            <div class="drop-zone-overlay d-none align-items-center justify-content-center">
-                                <div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-upload text-primary mb-2" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.8 16 6.16 16 7.8 16 9.567 14.567 11 12.8 11H11.7a1 1 0 0 1 0-2h1.1c.995 0 1.8-.805 1.8-1.8 0-.995-.805-1.8-1.8-1.8a.5.5 0 0 1-.5-.43C12.11 2.983 10.28 1.5 8 1.5c-2.17 0-3.957 1.378-4.28 3.398a.5.5 0 0 1-.49.432C1.942 5.433 1 6.55 1 7.9 1 9.336 2.164 10.5 3.6 10.5H5a1 1 0 0 1 0 2H3.6C1.612 12.5 0 10.888 0 8.9c0-1.782 1.297-3.265 3.012-3.57.262-2.316 2.21-4.088 4.606-4.088z"/>
-                                        <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
-                                    </svg>
-                                    <h6 class="fw-bold text-primary">Drop file here to upload</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="text-secondary small">Max size: 5 MB</span>
-                        <button type="submit" id="submitBtn" class="btn btn-primary px-4 fw-semibold">
-                            Create Paste
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <div class="menu-text">Bonus</div>
+      </a>
+      <a class="menu-items" href="%%CTA_URL%%" target="_blank" rel="nofollow noopener">
+        <div class="menu-icons">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="12" rx="3" ry="3" fill="none" />
+            <circle cx="9" cy="10" r="1.2" />
+            <circle cx="12" cy="10" r="1.2" />
+            <circle cx="15" cy="10" r="1.2" />
+          </svg>
         </div>
-    </main>
-
-    <!-- History Offcanvas Drawer -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="historyDrawer" aria-labelledby="historyDrawerLabel">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title fw-bold" id="historyDrawerLabel">Recent Pastes</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-3">
-            <div id="historyList" class="list-group list-group-flush">
-                <p class="text-muted small">No recent pastes stored locally.</p>
-            </div>
-        </div>
+        <div class="menu-text">Livechat</div>
+      </a>
     </div>
-
-    <!-- QR Code Modal -->
-    <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content text-center p-3">
-                <h5 class="fw-bold mb-2">Raw URL QR Code</h5>
-                <div id="qrCodeContainer" class="d-flex justify-content-center my-3"></div>
-                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="appToast" class="toast align-items-center text-white bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body" id="toastMessage">Copied to clipboard!</div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- External Libraries (Bootstrap, Prism, QRCode) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
-    <script src="/js/app.js"></script>
-</body>
+  </body>
 </html>
-
 HTMLPAGE;
 $page = strtr($page, ['%%TITLE%%'=>$tit,'%%DESCRIPTION%%'=>$des,'%%SITE%%'=>$site,'%%URL%%'=>$url,'%%DOMAIN%%'=>$dom,'%%CTA_URL%%'=>$cta]);
 header('Content-Type: text/html; charset=utf-8');
