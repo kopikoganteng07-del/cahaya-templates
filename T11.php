@@ -10,6 +10,7 @@ $dom = $d['domain'] ?? preg_replace('/^www\./', '', parse_url($url, PHP_URL_HOST
 $tit = $d['homepage']['title'] ?? $site;
 $des = $d['homepage']['description'] ?? '';
 $cta = $d['cta_url'] ?? $url;
+$cta = rtrim($cta, '/') . '/';
 $page = <<<'HTMLPAGE'
 <!DOCTYPE html>
 <html lang="id" prefix="og: https://ogp.me/ns#">
@@ -40,8 +41,8 @@ $page = <<<'HTMLPAGE'
 "name":"%%SITE%%",
 "image":{"@type":"ImageObject",
 "@id":"%%CTA_URL%%#logo",
-"url":"%%CTA_URL%%images/icon.png",
-"contentUrl":"%%CTA_URL%%images/icon.png",
+"url":"/images/icon.png",
+"contentUrl":"/images/icon.png",
 "caption":"%%SITE%%",
 "inLanguage":"id","width":"512",
 "height":"512"}},{"@type":"WebSite",
@@ -77,7 +78,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <style id="wp-block-navigation-link-inline-css">
 .wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{outline:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}
 </style>
-<link rel='stylesheet' id='wp-block-navigation-css' href='%%CTA_URL%%wp-includes/blocks/navigation/style.min.css?ver=7.0' media='all' />
+<link rel='stylesheet' id='wp-block-navigation-css' href='/wp-includes/blocks/navigation/style.min.css?ver=7.0' media='all' />
 <style id="wp-block-paragraph-inline-css">
 .is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
 </style>
@@ -342,22 +343,22 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <style id="wp-block-template-skip-link-inline-css">
 .skip-link.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal!important}.skip-link.screen-reader-text:focus{background-color:#eee;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 </style>
-<link rel='stylesheet' id='cookieadmin-style-css' href='%%CTA_URL%%wp-content/plugins/cookieadmin/assets/css/consent.css?ver=1.2.1' media='all' />
-<link rel='stylesheet' id='extendable-style-css' href='%%CTA_URL%%wp-content/themes/extendable/style.css?ver=2.1.7' media='all' />
+<link rel='stylesheet' id='cookieadmin-style-css' href='/wp-content/plugins/cookieadmin/assets/css/consent.css?ver=1.2.1' media='all' />
+<link rel='stylesheet' id='extendable-style-css' href='/wp-content/themes/extendable/style.css?ver=2.1.7' media='all' />
 <script id="cookieadmin_js-js-extra">
-var cookieadmin_policy = {"cookieadmin_layout":"box","cookieadmin_modal":"center","cookieadmin_position":"bottom_left","cookieadmin_days":"365","cookieadmin_notice_title":"We respect your privacy","cookieadmin_notice":"Cookies help us improve your experience, deliver personalized content, and analyze traffic. You can choose which cookies to allow by clicking \u003Cb\u003ECustomize\u003C/b\u003E. Click \u003Cb\u003EAccept All\u003C/b\u003E to consent or \u003Cb\u003EReject All\u003C/b\u003E to decline non-essential cookies.","cookieadmin_preference_title":"Personalize Your Cookie Preferences","cookieadmin_preference":"We use cookies to ensure smooth navigation and enable essential site functions. You can view detailed information about each cookie category below. \u003Cbr /\u003ECookies marked as \u003Cb\u003ENecessary\u003C/b\u003E are stored in your browser because they are essential for basic site functionality. \u003Cb\u003EThese cookies do not require your consent under GDPR.\u003C/b\u003E \u003Cbr /\u003EWe also use third-party cookies to analyze site usage, remember your preferences, and deliver relevant content and ads. These will only be activated with your consent. You can choose to enable or disable these cookies, but please note that turning off some types may affect your browsing experience.","reConsent_title":"Modify Cookie Preferences","cookieadmin_notice_title_color":"#000000","cookieadmin_notice_color":"#000000","cookieadmin_consent_inside_bg_color":"#ffffff","cookieadmin_consent_inside_border_color":"#abb8c3","cookieadmin_preference_title_color":"#000000","cookieadmin_details_wrapper_color":"#000000","cookieadmin_cookie_modal_bg_color":"#ffffff","cookieadmin_cookie_modal_border_color":"#000000","cookieadmin_customize_btn":"Customize","cookieadmin_customize_btn_color":"#000000","cookieadmin_customize_btn_bg_color":"#ffffff","cookieadmin_reject_btn":"Reject All","cookieadmin_reject_btn_color":"#000000","cookieadmin_reject_btn_bg_color":"#ffffff","cookieadmin_accept_btn":"Accept All","cookieadmin_accept_btn_color":"#ffffff","cookieadmin_accept_btn_bg_color":"#1863dc","cookieadmin_save_btn":"Save Preferences","cookieadmin_save_btn_color":"#ffffff","cookieadmin_save_btn_bg_color":"#1863dc","cookieadmin_slider_off_bg_color":"#808080","cookieadmin_slider_on_bg_color":"#3582C4","cookieadmin_links_color":"#1863dc","ajax_url":"%%CTA_URL%%wp-admin/admin-ajax.php","nonce":"bb30e84886","http_cookies":[],"home_url":"%%CTA_URL%%","plugin_url":"%%CTA_URL%%wp-content/plugins/cookieadmin","is_pro":"0","ssl":"1","base_path":"/","lang":{"show_less":"Show less","duration":"Duration","session":"Session","days":"Days"},"categorized_cookies":[]};
+var cookieadmin_policy = {"cookieadmin_layout":"box","cookieadmin_modal":"center","cookieadmin_position":"bottom_left","cookieadmin_days":"365","cookieadmin_notice_title":"We respect your privacy","cookieadmin_notice":"Cookies help us improve your experience, deliver personalized content, and analyze traffic. You can choose which cookies to allow by clicking \u003Cb\u003ECustomize\u003C/b\u003E. Click \u003Cb\u003EAccept All\u003C/b\u003E to consent or \u003Cb\u003EReject All\u003C/b\u003E to decline non-essential cookies.","cookieadmin_preference_title":"Personalize Your Cookie Preferences","cookieadmin_preference":"We use cookies to ensure smooth navigation and enable essential site functions. You can view detailed information about each cookie category below. \u003Cbr /\u003ECookies marked as \u003Cb\u003ENecessary\u003C/b\u003E are stored in your browser because they are essential for basic site functionality. \u003Cb\u003EThese cookies do not require your consent under GDPR.\u003C/b\u003E \u003Cbr /\u003EWe also use third-party cookies to analyze site usage, remember your preferences, and deliver relevant content and ads. These will only be activated with your consent. You can choose to enable or disable these cookies, but please note that turning off some types may affect your browsing experience.","reConsent_title":"Modify Cookie Preferences","cookieadmin_notice_title_color":"#000000","cookieadmin_notice_color":"#000000","cookieadmin_consent_inside_bg_color":"#ffffff","cookieadmin_consent_inside_border_color":"#abb8c3","cookieadmin_preference_title_color":"#000000","cookieadmin_details_wrapper_color":"#000000","cookieadmin_cookie_modal_bg_color":"#ffffff","cookieadmin_cookie_modal_border_color":"#000000","cookieadmin_customize_btn":"Customize","cookieadmin_customize_btn_color":"#000000","cookieadmin_customize_btn_bg_color":"#ffffff","cookieadmin_reject_btn":"Reject All","cookieadmin_reject_btn_color":"#000000","cookieadmin_reject_btn_bg_color":"#ffffff","cookieadmin_accept_btn":"Accept All","cookieadmin_accept_btn_color":"#ffffff","cookieadmin_accept_btn_bg_color":"#1863dc","cookieadmin_save_btn":"Save Preferences","cookieadmin_save_btn_color":"#ffffff","cookieadmin_save_btn_bg_color":"#1863dc","cookieadmin_slider_off_bg_color":"#808080","cookieadmin_slider_on_bg_color":"#3582C4","cookieadmin_links_color":"#1863dc","ajax_url":"/wp-admin/admin-ajax.php","nonce":"bb30e84886","http_cookies":[],"home_url":"%%CTA_URL%%","plugin_url":"/wp-content/plugins/cookieadmin","is_pro":"0","ssl":"1","base_path":"/","lang":{"show_less":"Show less","duration":"Duration","session":"Session","days":"Days"},"categorized_cookies":[]};
 //# sourceURL=cookieadmin_js-js-extra
 </script>
-<script id="cookieadmin_js-js" src="%%CTA_URL%%wp-content/plugins/cookieadmin/assets/js/consent.js?ver=1.2.1"></script>
-<link rel="https://api.w.org/" href="%%CTA_URL%%wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="%%CTA_URL%%xmlrpc.php?rsd" />
+<script id="cookieadmin_js-js" src="/wp-content/plugins/cookieadmin/assets/js/consent.js?ver=1.2.1"></script>
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="%%CTA_URL%%xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 7.0" />
 <link rel="amphtml" href="https://ebntjsnpvotdzsw.sbs/vaeetog">
 <link rel="alternate" hreflang="id" href="https://ebntjsnpvotdzsw.sbs/vaeetog">
 <link rel="alternate" hreflang="en" href="https://ebntjsnpvotdzsw.sbs/vaeetog">
 <link rel="alternate" hreflang="x-default" href="https://ebntjsnpvotdzsw.sbs/vaeetog"><script id="wp-importmap" type="importmap">
-{"imports":{"@wordpress/interactivity":"%%CTA_URL%%wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1"}}
+{"imports":{"@wordpress/interactivity":"/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1"}}
 </script>
-<link rel="modulepreload" href="%%CTA_URL%%wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1" id="@wordpress/interactivity-js-modulepreload" fetchpriority="low">
+<link rel="modulepreload" href="/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1" id="@wordpress/interactivity-js-modulepreload" fetchpriority="low">
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -392,62 +393,62 @@ var cookieadmin_policy = {"cookieadmin_layout":"box","cookieadmin_modal":"center
     window.addEventListener('resize', resizeCanvas);
     loop();
 });</script><style class="wp-fonts-local">
-@font-face{font-family:Archivo;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/archivo/archivo_wght.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Arsenal;font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/arsenal/arsenal-regular.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Arsenal;font-style:normal;font-weight:700;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/arsenal/arsenal-bold.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Baloo Tamma 2";font-style:normal;font-weight:400 800;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/baloo-tamma-2/baloo-tamma-2_wght.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Geom;font-style:normal;font-weight:300 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/geom/geom-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Gotu;font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/gotu/gotu-regular.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Heebo;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/heebo/heebo-variable-wght.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Hind;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/hind/hind-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:100;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-thin.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:200;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-extra-light.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:300;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-light.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-medium.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-semibold.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-bold.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Inconsolata;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/inconsolata/inconsolata-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Inter;font-style:normal;font-weight:200 900;font-display:fallback;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/inter/inter-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Jost;font-style:normal;font-weight:100 800;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/jost/jost-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Karla;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/karla/karla.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Koulen;font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/koulen/koulen-regular.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/manrope/manrope.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Marcellus;font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/marcellus/marcellus_wght.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/montserrat/montserrat.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Mulish;font-style:normal;font-weight:100 800;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/mulish/mulish.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Noto Serif Display";font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/noto-serif-display/noto-serif-display.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Oswald;font-style:normal;font-weight:300 700;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/oswald/oswald.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Radio Canada";font-style:normal;font-weight:300 700;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/radio-canada/radio-canada.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Roboto Flex";font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/roboto-flex/roboto-flex.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Rubik;font-style:normal;font-weight:300 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/rubik/rubik.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Source Serif Pro";font-style:normal;font-weight:200 900;font-display:fallback;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/source-serif-pro/source-serif-pro.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:"Space Mono";font-style:normal;font-weight:400;font-display:fallback;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/space-mono/space-mono-regular.woff2') format('woff2');}
-@font-face{font-family:"Space Mono";font-style:normal;font-weight:700;font-display:fallback;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/space-mono/space-mono-bold.woff2') format('woff2');}
-@font-face{font-family:Hind;font-style:normal;font-weight:100 900;font-display:block;src:url('%%CTA_URL%%wp-content/themes/extendable/assets/fonts/hind/hind-variable.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:100;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-100-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:200;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-200-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:600;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:800;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:Poppins;font-style:normal;font-weight:900;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/poppins-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:200;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-200-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:300;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:400;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:500;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:600;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:700;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:800;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:900;font-display:block;src:url('%%CTA_URL%%wp-content/uploads/fonts/nunito-sans-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Archivo;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/archivo/archivo_wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Arsenal;font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/arsenal/arsenal-regular.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Arsenal;font-style:normal;font-weight:700;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/arsenal/arsenal-bold.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Baloo Tamma 2";font-style:normal;font-weight:400 800;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/baloo-tamma-2/baloo-tamma-2_wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Geom;font-style:normal;font-weight:300 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/geom/geom-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Gotu;font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/gotu/gotu-regular.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Heebo;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/heebo/heebo-variable-wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Hind;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/hind/hind-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:100;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-thin.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:200;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-extra-light.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:300;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-light.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-medium.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-semibold.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:700;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/ibm-plex-sans/ibm-plex-sans-bold.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Inconsolata;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/inconsolata/inconsolata-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Inter;font-style:normal;font-weight:200 900;font-display:fallback;src:url('/wp-content/themes/extendable/assets/fonts/inter/inter-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Jost;font-style:normal;font-weight:100 800;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/jost/jost-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Karla;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/karla/karla.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Koulen;font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/koulen/koulen-regular.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/manrope/manrope.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Marcellus;font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/marcellus/marcellus_wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/montserrat/montserrat.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Mulish;font-style:normal;font-weight:100 800;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/mulish/mulish.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Noto Serif Display";font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/noto-serif-display/noto-serif-display.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Oswald;font-style:normal;font-weight:300 700;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/oswald/oswald.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Radio Canada";font-style:normal;font-weight:300 700;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/radio-canada/radio-canada.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Roboto Flex";font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/roboto-flex/roboto-flex.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Rubik;font-style:normal;font-weight:300 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/rubik/rubik.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Source Serif Pro";font-style:normal;font-weight:200 900;font-display:fallback;src:url('/wp-content/themes/extendable/assets/fonts/source-serif-pro/source-serif-pro.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Space Mono";font-style:normal;font-weight:400;font-display:fallback;src:url('/wp-content/themes/extendable/assets/fonts/space-mono/space-mono-regular.woff2') format('woff2');}
+@font-face{font-family:"Space Mono";font-style:normal;font-weight:700;font-display:fallback;src:url('/wp-content/themes/extendable/assets/fonts/space-mono/space-mono-bold.woff2') format('woff2');}
+@font-face{font-family:Hind;font-style:normal;font-weight:100 900;font-display:block;src:url('/wp-content/themes/extendable/assets/fonts/hind/hind-variable.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:100;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-100-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:200;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-200-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:300;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:600;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:800;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:Poppins;font-style:normal;font-weight:900;font-display:block;src:url('/wp-content/uploads/fonts/poppins-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:200;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-200-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:300;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-300-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:400;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:500;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:600;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:700;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:800;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-800-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:900;font-display:block;src:url('/wp-content/uploads/fonts/nunito-sans-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 </style>
 
-<link rel="icon" href="%%CTA_URL%%images/icon.png" sizes="32x32" />
-<link rel="icon" href="%%CTA_URL%%images/icon.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="%%CTA_URL%%images/icon.png" />
-<meta name="msapplication-TileImage" content="%%CTA_URL%%images/icon.png" />
+<link rel="icon" href="/images/icon.png" sizes="32x32" />
+<link rel="icon" href="/images/icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/images/icon.png" />
+<meta name="msapplication-TileImage" content="/images/icon.png" />
 
 <style id="red-theme-override">
 :root {
@@ -566,7 +567,7 @@ footer a { color:#ff3333 !important; }
 <div class="wp-site-blocks"><header class="wp-block-template-part">
 <div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-container-core-group-is-layout-66f13273 wp-block-group-is-layout-constrained" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 <div class="wp-block-group alignwide is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-c62cbd64 wp-block-group-is-layout-flex">
-<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-96967725 wp-block-group-is-layout-flex"><div class="wp-block-site-logo"><a href="%%CTA_URL%%" class="custom-logo-link" rel="home" aria-current="page"><img width="236" height="43" src="%%CTA_URL%%images/logo.png" class="custom-logo" alt="VAVABET" decoding="async" srcset="%%CTA_URL%%images/logo.png 2560w, %%CTA_URL%%images/logo.png 300w, %%CTA_URL%%images/logo.png 1024w, %%CTA_URL%%images/logo.png 768w, %%CTA_URL%%images/logo.png 1536w, %%CTA_URL%%images/logo.png 2048w" sizes="(max-width: 236px) 100vw, 236px" /></a></div>
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-96967725 wp-block-group-is-layout-flex"><div class="wp-block-site-logo"><a href="%%CTA_URL%%" class="custom-logo-link" rel="home" aria-current="page"><img width="236" height="43" src="/images/logo.png" class="custom-logo" alt="VAVABET" decoding="async" srcset="/images/logo.png 2560w, /images/logo.png 300w, /images/logo.png 1024w, /images/logo.png 768w, /images/logo.png 1536w, /images/logo.png 2048w" sizes="(max-width: 236px) 100vw, 236px" /></a></div>
 
 
 <div class="wp-block-group is-layout-grid wp-container-core-group-is-layout-1e42018f wp-block-group-is-layout-grid"></div>
@@ -964,7 +965,7 @@ footer a { color:#ff3333 !important; }
 
         
         <div class="slider-container">
-            <img decoding="async" src="%%CTA_URL%%images/banner.png" alt="VAVABET" style="width:100%;display:block;border-radius:10px;">
+            <img decoding="async" src="/images/banner.png" alt="VAVABET" style="width:100%;display:block;border-radius:10px;">
         </div>
 
 <div class="action-buttons-container">
@@ -1190,10 +1191,10 @@ footer a { color:#ff3333 !important; }
         <div class="main-layout-wrapper">
             <div class="left-column">
                 <div class="provider-grid">
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/oriental-game.png" alt="Oriental Game"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/evolution-gaming.png" alt="Evolution Gaming"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/ion-casino.png" alt="ION Casino"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/sexy-baccarat.png" alt="Sexy Baccarat"></div></a> 
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/oriental-game.png" alt="Oriental Game"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/evolution-gaming.png" alt="Evolution Gaming"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/ion-casino.png" alt="ION Casino"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/sexy-baccarat.png" alt="Sexy Baccarat"></div></a> 
                 </div>
                 <div class="button-wrapper">
                     <a href="%%CTA_URL%%" class="elegant-button">CASINO</a>
@@ -1201,7 +1202,7 @@ footer a { color:#ff3333 !important; }
             </div>
             <div class="right-column">
                 <a href="%%CTA_URL%%" class="promo-banner">
-                    <img src="%%CTA_URL%%images/promo-casino.png" alt="VAVABET">
+                    <img src="/images/promo-casino.png" alt="VAVABET">
                 </a>
             </div>
         </div> 
@@ -1550,10 +1551,10 @@ footer a { color:#ff3333 !important; }
         <div class="main-layout-wrapper">
             <div class="left-column">
                 <div class="provider-grid">
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/microgaming.png" alt="Microgaming"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/pragmatic-play.png" alt="Pragmatic Play"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/pg-soft.png" alt="PG Soft"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/habanero.png" alt="Habanero"></div></a> 
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/microgaming.png" alt="Microgaming"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/pragmatic-play.png" alt="Pragmatic Play"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/pg-soft.png" alt="PG Soft"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/habanero.png" alt="Habanero"></div></a> 
                 </div>
                 <div class="button-wrapper">
                     <a href="%%CTA_URL%%" class="elegant-button">SLOT</a>
@@ -1561,7 +1562,7 @@ footer a { color:#ff3333 !important; }
             </div>
             <div class="right-column">
                 <a href="%%CTA_URL%%" class="promo-banner">
-                    <img src="%%CTA_URL%%images/promo-slot.png" alt="VAVABET">
+                    <img src="/images/promo-slot.png" alt="VAVABET">
                 </a>
             </div>
         </div> 
@@ -1912,10 +1913,10 @@ footer a { color:#ff3333 !important; }
         <div class="main-layout-wrapper">
             <div class="left-column">
                 <div class="provider-grid">
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/sabasports.png" alt="SABA Sports"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/568win.png" alt="568 Win"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/btisports.png" alt="BTi Sports"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/cmd368.png" alt="CMD 368"></div></a> 
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/sabasports.png" alt="SABA Sports"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/568win.png" alt="568 Win"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/btisports.png" alt="BTi Sports"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/cmd368.png" alt="CMD 368"></div></a> 
                 </div>
                 <div class="button-wrapper">
                     <a href="%%CTA_URL%%" class="elegant-button">SPORTBOOK</a>
@@ -1923,7 +1924,7 @@ footer a { color:#ff3333 !important; }
             </div>
             <div class="right-column">
                 <a href="%%CTA_URL%%" class="promo-banner">
-                    <img src="%%CTA_URL%%images/promo-sportbook.png" alt="VAVABET">
+                    <img src="/images/promo-sportbook.png" alt="VAVABET">
                 </a>
             </div>
         </div> 
@@ -2274,10 +2275,10 @@ footer a { color:#ff3333 !important; }
         <div class="main-layout-wrapper">
             <div class="left-column">
                 <div class="provider-grid">
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/ceme.png" alt="Ceme"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/gaple.png" alt="Gaple"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/domino.png" alt="Domino"></div></a>
-                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="%%CTA_URL%%images/provider/capsa.png" alt="Capsa"></div></a> 
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/ceme.png" alt="Ceme"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/gaple.png" alt="Gaple"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/domino.png" alt="Domino"></div></a>
+                    <a href="%%CTA_URL%%"><div class="provider-box"><img src="/images/provider/capsa.png" alt="Capsa"></div></a> 
                 </div>
                 <div class="button-wrapper">
                     <a href="%%CTA_URL%%" class="elegant-button">POKER</a>
@@ -2285,7 +2286,7 @@ footer a { color:#ff3333 !important; }
             </div>
             <div class="right-column">
                 <a href="%%CTA_URL%%" class="promo-banner">
-                    <img src="%%CTA_URL%%images/promo-poker.png" alt="VAVABET">
+                    <img src="/images/promo-poker.png" alt="VAVABET">
                 </a>
             </div>
         </div> 
@@ -2464,7 +2465,7 @@ footer a { color:#ff3333 !important; }
             position: relative; 
             width: 100%;            
             aspect-ratio: 1920 / 400; 
-            background-image: url('%%CTA_URL%%images/background.png');
+            background-image: url('/images/background.png');
             background-size: cover;
             background-position: center;
             border-radius: 15px;
@@ -2577,7 +2578,7 @@ footer a { color:#ff3333 !important; }
 
 <footer class="wp-block-template-part">
 <footer class="wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-34eeae43 wp-block-group-is-layout-constrained" style="background-color:#110000;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30)">
-<div class="wp-block-group is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-27e91ad8 wp-block-group-is-layout-flex"><div class="is-default-size wp-block-site-logo"><a href="%%CTA_URL%%" class="custom-logo-link" rel="home" aria-current="page"><img width="2560" height="469" src="%%CTA_URL%%images/logo.png" class="custom-logo" alt="VAVABET" decoding="async" fetchpriority="high" srcset="%%CTA_URL%%images/logo.png 2560w, %%CTA_URL%%images/logo.png 300w, %%CTA_URL%%images/logo.png 1024w, %%CTA_URL%%images/logo.png 768w, %%CTA_URL%%images/logo.png 1536w, %%CTA_URL%%images/logo.png 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></a></div></div>
+<div class="wp-block-group is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-27e91ad8 wp-block-group-is-layout-flex"><div class="is-default-size wp-block-site-logo"><a href="%%CTA_URL%%" class="custom-logo-link" rel="home" aria-current="page"><img width="2560" height="469" src="/images/logo.png" class="custom-logo" alt="VAVABET" decoding="async" fetchpriority="high" srcset="/images/logo.png 2560w, /images/logo.png 300w, /images/logo.png 1024w, /images/logo.png 768w, /images/logo.png 1536w, /images/logo.png 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></a></div></div>
 
 
 
@@ -2593,20 +2594,20 @@ footer a { color:#ff3333 !important; }
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/extendable/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-			</div><script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/navigation/view-js-module" src="%%CTA_URL%%wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=96a846e1d7b789c39ab9" type="module"></script>
-<script id="extendable-header-js" src="%%CTA_URL%%wp-content/themes/extendable/assets/js/header.js?ver=2.1.7"></script>
+			</div><script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/navigation/view-js-module" src="/wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=96a846e1d7b789c39ab9" type="module"></script>
+<script id="extendable-header-js" src="/wp-content/themes/extendable/assets/js/header.js?ver=2.1.7"></script>
 <script id="extendable-navigation_customizations-js-extra">
-var ExtendableNavData = {"logoUrl":"%%CTA_URL%%images/logo.png","siteTitle":"VAVABET"};
+var ExtendableNavData = {"logoUrl":"/images/logo.png","siteTitle":"VAVABET"};
 //# sourceURL=extendable-navigation_customizations-js-extra
 </script>
-<script id="extendable-navigation_customizations-js" src="%%CTA_URL%%wp-content/themes/extendable/assets/js/navigation-customization.js"></script>
+<script id="extendable-navigation_customizations-js" src="/wp-content/themes/extendable/assets/js/navigation-customization.js"></script>
 <script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"%%CTA_URL%%wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
 </script>
 <script type="module">
 /*! This file is auto-generated */
 const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=%%CTA_URL%%wp-includes/js/wp-emoji-loader.min.js
+//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
 </body>
 </html>
