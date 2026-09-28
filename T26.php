@@ -1,5 +1,5 @@
 <?php
-// Template T26 — auto-generated 2026-09-25 (watcher TEMPLATE-BARU wave-2)
+// Template T26 — auto-generated 2026-09-28 (watcher TEMPLATE-BARU wave-2)
 $d = null;
 foreach ([__DIR__ . '/data/data.json', __DIR__ . '/data.json'] as $f) {
     if (is_readable($f)) { $d = json_decode(file_get_contents($f), true); if ($d) break; }
