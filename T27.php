@@ -1,5 +1,5 @@
 <?php
-// Template T27 regen-fix CTA 2026-09-30
+// Template T27 — auto-generated 2026-10-01 (watcher TEMPLATE-BARU wave-2)
 $d = null;
 foreach ([__DIR__ . '/data/data.json', __DIR__ . '/data.json'] as $f) {
     if (is_readable($f)) { $d = json_decode(file_get_contents($f), true); if ($d) break; }
@@ -10,3383 +10,7180 @@ $dom = $d['domain'] ?? preg_replace('/^www\./', '', parse_url($url, PHP_URL_HOST
 $tit = $d['homepage']['title'] ?? $site;
 $des = $d['homepage']['description'] ?? '';
 $cta = $d['cta_url'] ?? $url;
-$asset = $d['asset_base'] ?? $url;
 $page = <<<'HTMLPAGE'
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="id">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" data-vue-meta-server-rendered="true" data-vue-meta="%7B%22lang%22:%7B%221%22:%22en%22%7D,%22xml:lang%22:%7B%221%22:%22en%22%7D,%22xmlns%22:%7B%221%22:%22http://www.w3.org/1999/xhtml%22%7D,%22data-vue-meta-server-rendered%22:%7B%221%22:true%7D%7D">
-  <head>
-    <title>%%TITLE%%</title>
-    <meta data-vue-meta="1" charset="utf-8">
-    <meta data-vue-meta="1" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta data-vue-meta="1" name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta data-vue-meta="1" http-equiv="Content-Language" content="en">
-    <meta data-vue-meta="1" property="og:site_name" content="%%SITE%%">
-    <meta data-vue-meta="1" name="theme-color" content="#ffffff">
-    <meta data-vue-meta="1" id="csrftoken" content="VohL8bie-LApLuxE9K357Ra9TXm6gmNBHEtY">
-    <meta data-vue-meta="1" id="reqId" content="695cdc5e344bfb03aa628462">
-    <meta data-vue-meta="1" name="format-detection" content="telephone=no">
-    <meta data-vue-meta="1" data-vmid="ios" property="al:ios:url" content="%%CTA_URL%%">
-    <meta data-vue-meta="1" property="al:ios:app_store_id" content="470412147">
-    <meta data-vue-meta="1" property="al:ios:app_name" content="BOMO77">
-    <meta data-vue-meta="1" data-vmid="android" property="al:android:url" content="%%CTA_URL%%">
-    <meta data-vue-meta="1" property="al:android:package" content="BOMO77">
-    <meta data-vue-meta="1" property="al:android:app_name" content="BOMO77">
-    <meta data-vue-meta="1" property="al:web:should_fallback" content="false">
-    <meta data-vue-meta="1" name="description" content="BOMO77 Web resmi Stabil Modal Receh menghadirkan informasi lengkap seputar layanan WD jutaan malam ini dengan akses mudah, cepat, dan praktis.">
-    <meta data-vue-meta="1" property="fb:app_id" content="182809591793403">
-    <meta data-vue-meta="1" property="og:type" content="product">
-    <meta data-vue-meta="1" property="og:url" content="%%CTA_URL%%">
-    <meta data-vue-meta="1" property="og:title" content="%%TITLE%%">
-    <meta data-vue-meta="1" property="og:description" content="%%DESCRIPTION%%">
-    <meta data-vue-meta="1" property="og:image" content="https://bomo77.net/images/banner.png">
-    <meta data-vue-meta="1" property="og:image:width" content="580">
-    <meta data-vue-meta="1" property="og:image:height" content="580">
-    <meta data-vue-meta="1" name="twitter:card" content="summary_large_image">
-    <meta data-vue-meta="1" name="twitter:site" content="@BOMO77">
-    <meta data-vue-meta="1" name="twitter:title" content="%%TITLE%%">
-    <meta data-vue-meta="1" name="twitter:description" content="%%DESCRIPTION%%">
-    <meta data-vue-meta="1" name="twitter:image" content="https://bomo77.net/images/banner.png">
-    <meta data-vue-meta="1" name="twitter:app:name:iphone" content="BOMO77">
-    <meta data-vue-meta="1" name="twitter:app:url:iphone" content="BOMO77">
-    <meta data-vue-meta="1" name="twitter:app:name:ipad" content="BOMO77">
-    <meta data-vue-meta="1" name="twitter:app:url:ipad" content="BOMO77">
-    <meta data-vue-meta="1" property="product:availability" content="instock">
-    <meta data-vue-meta="1" property="product:condition" content="used">
-    <meta data-vue-meta="1" property="product:retailer_item_id" content="695c02705919e047c632042e">
-    <meta data-vue-meta="1" property="product:price:amount" content="78000">
-    <meta data-vue-meta="1" property="product:price:currency" content="IDR">
-    <meta data-vue-meta="1" property="product:brand" content="Nike">
-    <link data-vue-meta="1" rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2" as="font" crossorigin="anonymous">
-    <link data-vue-meta="1" rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2" as="font" crossorigin="anonymous">
-    <link data-vue-meta="1" rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2" as="font" crossorigin="anonymous">
-    <link data-vue-meta="1" rel="preload" href="https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2" as="font" crossorigin="anonymous">
-    <link rel="shortcut icon" href="https://bomo77.net/images/icon.png">
-    <link data-vue-meta="1" rel="canonical" href="%%CTA_URL%%">
-    <link rel="amphtml" href="https://bep.cdnzz.buzz/blog/dreamgaragedoorcalifornia.html" /> 
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://akses-bomo77net.pages.dev/">
-    <link data-vue-meta="1" as="image" rel="preload" href="https://bomo77.net/images/banner.png">
-    <style data-vue-meta="1" type="text/css">
-      @font-face {
-      font-display: swap;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 300;
-      src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-      font-display: swap;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-      font-display: swap;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 500;
-      src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-      @font-face {
-      font-display: swap;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 700;
-      src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-      }
-    </style>
-<script
-  data-vue-meta="1"
-  data-vmid="ldjson-schema-breadcrumb"
-  type="application/ld+json"
->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="canonical" href="%%CTA_URL%%" />
+  <link rel="amphtml" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="id" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="id-ID" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="en" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="en-US" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="en-SG" href="https://akses-alexsis77org.pages.dev/" />
+  <link rel="alternate" hreflang="x-default" href="https://akses-alexsis77org.pages.dev/" />
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin />
+  <link rel="shortcut icon" href="https://alexsis77.org/images/icon.png">
+  <link rel="icon" type="image/webp" sizes="32x32" href="https://alexsis77.org/images/icon.png">
+  <link rel="icon" type="image/webp" sizes="16x16" href="https://alexsis77.org/images/icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alexsis77.org/images/icon.png">
+  <title>%%TITLE%%</title>
+  <meta name="description"
+    content="ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan." />
+  <meta name="keywords"
+    content="ALEXSIS77, ALEXSIS77 Login, ALEXSIS77 Link, ALEXSIS77 Link Alternatif, rtp ALEXSIS77, situs ALEXSIS77, website ALEXSIS77">
+  <meta property="og:site_name" content="%%SITE%%" />
+  <meta property="og:url" content="%%CTA_URL%%" />
+  <meta property="og:title"
+    content="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia" />
+  <meta property="og:type" content="product" />
+  <meta property="og:description"
+    content="ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan." />
+  <meta property="og:image" content="https://alexsis77.org/images/banner.png" />
+  <meta property="og:image:secure_url" content="https://alexsis77.org/images/banner.png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:price:amount" content="1.00" />
+  <meta property="og:price:currency" content="SGD" />
+  <meta property="og:locale" content="id_ID" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia" />
+  <meta name="twitter:description"
+    content="ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan." />
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.SDG = window.SDG || {};
+    SDG.Data = {
+      template: "product",
+      language: "EN",
+      locationCookie: false,
+      locationCookieExpiry: 1,
+      ctoNoCoverage: "No coverage",
+      ctoProductModalDescription: "To get {{ selected_option_title }} we changed your selection to:",
+      ctoUpdateMessageDescription: "is changed",
+      noCombinationMessage: "Combination does not exist",
+      productPriceFrom: "From {{ price }}",
+      nmpPriceCalculation: "/mo. for {{ per_month }} mo."
+    };
+  </script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/jquery-latest.min.js?v=174441762609953228921742784888"
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/constants.js?v=58251544750838685771742784887" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/pubsub.js?v=158357773527763999511742784889" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/global.js?v=86940198807662246831742784888" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/slick.min.js?v=177366201532680719881742784889" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/slick-custom.js?v=124467254043905770051742784887" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fancybox-3-5-7.js?v=45336575563953974081742784888" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/ac-modal.min.js?v=177811281368891218321742784887" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/ac-modal-custom.js?v=65753906577603767491742784888" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-form.js?v=29435186399513605341757430292" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/lazyload-section.js?v=5359969406261385591742784888" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/adobe-analytics-tracking.js?v=123617832924672007461742784888"
+    defer nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    SDG.Data.adobeAnalyticsData = {
+      page_name: "Product",
+      page_type: "product",
+      page_url: window.location.hostname + window.location.pathname,
+      page_title: document.title,
+      language: "EN",
+      country: "SG",
+      currency: "SGD",
+
+      login_status: 'logged out',
+
+    };
+  </script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.dataLayer = window.dataLayer || [];
+  </script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');
+  </script>
+  <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/63738642612/digital_wallets/dialog">
+  <script async="async" src="/checkouts/internal/preloads.js?locale=en-SG"
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script id="shopify-features" type="application/json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {"accessToken":"02dc024b3b107f5c668c6465659caac4","betas":["rich-media-storefront-analytics"],"domain":"%%SITE%%.istudiosg.com","predictiveSearch":true,"shopId":63738642612,"locale":"en"}
+  </script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    var Shopify = Shopify || {};
+    Shopify.shop = "istudio-elush-production.myshopify.com";
+    Shopify.locale = "en";
+    Shopify.currency = { "active": "SGD", "rate": "1.0" };
+    Shopify.country = "SG";
+    Shopify.theme = { "name": "360u00265 - 2.0", "id": 139536236724, "schema_name": "Dawn", "schema_version": "11.0.0", "theme_store_id": null, "role": "main" };
+    Shopify.theme.handle = "null";
+    Shopify.theme.style = { "id": null, "handle": null };
+    Shopify.cdnHost = "%%SITE%%.istudiosg.com/cdn";
+    Shopify.routes = Shopify.routes || {};
+    Shopify.routes.root = "/";
+  </script>
+  <script type="module" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    !function (o) { (o.Shopify = o.Shopify || {}).modules = !0 }(window);
+  </script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    !function (o) { function n() { var o = []; function n() { o.push(Array.prototype.slice.apply(arguments)) } return n.q = o, n } var t = o.Shopify = o.Shopify || {}; t.loadFeatures = n(), t.autoloadFeatures = n() }(window);
+  </script>
+  <script id="shop-js-analytics" type="application/json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {"pageType":"product"}
+  </script>
+  <script defer="defer" async="async" src="https://%%SITE%%.istudiosg.com/cdn/shopifycloud/shop-js/client.js" onload="window.Shopify.SignInWithShop?.initShopCartSync?.({&quot;fedCMEnabled&quot;:true,&quot;windoidEnabled&quot;:true});
+         " nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+
+  <script id="__st" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    var __st = { "a": 63738642612, "offset": 28800, "reqid": "04c86973-5e2c-42e3-9d06-03b64158a049-1759762349", "pageurl": "%%SITE%%.istudiosg.comhttps://alexsis77.org/", "u": "1f94d1565a86", "p": "product", "rtyp": "product", "rid": 7986665160884 };
+  </script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.ShopifyPaypalV4VisibilityTracking = true;
+  </script>
+  <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "url": "https://alexsis77.org/",
+            "name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia",
+            "sku": "3215487804",
+            "description": "ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "author": "ALEXSIS77",
+                "contentUrl": "https://alexsis77.org/images/banner.png",
+                "thumbnailUrl": "https://alexsis77.org/images/banner.png"
+              }
+            ],
+            "category": "Android Game < Slot Gacor < Slot game",
+            "brand": {
+              "@type": "Brand",
+              "name": "ALEXSIS77"
+            },
+            "logo": "https://alexsis77.org/images/logo.png",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 4.9,
+              "reviewCount": 62595
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "offerCount": 952,
+              "lowPrice": 258621,
+              "highPrice": 494253,
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingOrigin": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "ID"
+                }
+              }
+            },
+            "review": [
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+    "datePublished": "2026-02-10",
+    "reviewBody": "ALEXSIS77 tuh bener-bener vibes-nya beda, interface rapih tapi gameplay-nya super smooth, jadi bet kecil pun tetep kerasa worth it.",
+    "author": { "@type": "Person", "name": "Reyna" }
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+    "datePublished": "2026-02-08",
+    "reviewBody": "Jujurrr, gue awalnya coba-coba main di ALEXSIS77, tapi ternyata feel “gacor”-nya dapet banget, kayak ada RTP yang bocor tiap main.",
+    "author": { "@type": "Person", "name": "Axle" }
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+    "datePublished": "2026-02-05",
+    "reviewBody": "Buat yang suka rilex tapi tetep pengen kaya, ALEXSIS77 ini literally best spot antara fun dan peluang.",
+    "author": { "@type": "Person", "name": "Yoru" }
+  },
+  
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
+    "datePublished": "2026-01-28",
+    "reviewBody": "ALEXSIS77 itu bukan cuma soal jackpot atau maxwin, tapi lebih ke seluruh experience yang smooth dan enjoyable.",
+    "author": { "@type": "Person", "name": "Horizon" }
+  }
+]
+          }
+  </script>
+  <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia",
+            "description": "ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan.",
+            "thumbnailUrl": [
+              "https://alexsis77.org/images/banner.png",
+              "https://alexsis77.org/images/banner.png"
+            ],
+            "uploadDate": "2024-09-28T04:19:10-04:00",
+            "duration": "PT18S",
+            "contentUrl": "https://v.etsystatic.com/video/upload/ac_none,du_15,q_auto:good/2024-09-27_23-11-55_xozutd.mp4"
+          }
+  </script>
+  <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ALEXSIS77",
+                "item": "https://alexsis77.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ALEXSIS77 Link",
+                "item": "https://alexsis77.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "ALEXSIS77 Login",
+                "item": "https://alexsis77.org/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia",
+                "item": "https://alexsis77.org/"
+              }
+            ]
+          }
+  </script>
+  <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://alexsis77.org/#org",
+                "name": "ALEXSIS77",
+                "url": "https://alexsis77.org/",
+                "logo": "https://alexsis77.org/images/logo.png"
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://alexsis77.org/#website",
+                "url": "https://alexsis77.org/",
+                "name": "ALEXSIS77",
+                "publisher": { "@id": "https://alexsis77.org/#org" },
+                "inLanguage": "id-ID",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://alexsis77.org/?s={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://alexsis77.org/#app",
+                "name": "ALEXSIS77",
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Android, iOS, Windows",
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": 4.9,
+                  "ratingCount": 62595
+                }
+              }
+            ]
+          }
+  </script>
+  <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://bomo77.net/"
+      "@type": "Question",
+      "name": "Apa Sih ALEXSIS77 Itu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ALEXSIS77 adalah situs game game yang lagi rame dibicarain para member. Katanya sih terkenal karena slot yang 'gacor' dan peluang kayanya lumayan sering muncul, jadi banyak yang nyobain peruntungan di sini."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "BOMO77",
-      "item": "https://bomo77.net/"
+      "@type": "Question",
+      "name": "Beneran bisa mulai dari modal kecil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Katanya sih iya. Banyak member mulai dari deposit kecil dulu, cuma buat ngetes hoki. Jadi cocok buat yang pengen main santai tanpa harus keluar modal besar."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "SITUS SLOT",
-      "item": "https://bomo77.net/"
+      "@type": "Question",
+      "name": "Kenapa banyak yang nyebut ALEXSIS77 “gacor”?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Istilah gacor di kalangan member berarti game lagi sering kasih kemenangan. Di ALEXSIS77, banyak member bilang fitur bonus, free spin, dan jackpot mini sering muncul, makanya komunitas sering share pola mainnya."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini",
-      "item": "https://bomo77.net/"
+      "@type": "Question",
+      "name": "Apakah ALEXSIS77 bisa dimainkan kapan saja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biasanya situs seperti ini buka 24 jam, jadi member bebas login kapan saja. Ada juga yang percaya jam-jam tertentu lebih “rame kemenangan”."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cocok buat member baru?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kalau dari obrolan komunitas, banyak ampilan game gampang dipahami, member baru yang mulai dari sini karena: Banyak pilihan permainan, Tampilan game gampang dipahami, Modal awal bisa kecil"
+      }
     }
   ]
 }
 </script>
+  <script integrity="sha256-52AcMU7V7pcBOXWImdc/TAGTFKeNjmkeM1Pvks/DTgc=" data-source-attribution="shopify.loadfeatures"
+    defer="defer" src="https://%%SITE%%.istudiosg.com/cdn/shopifycloud/storefront/assets/storefront/load_feature-81c60534.js"
+    crossorigin="anonymous" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script data-source-attribution="shopify.dynamic_checkout.dynamic.init" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    var Shopify = Shopify || {}; Shopify.PaymentButton = Shopify.PaymentButton || { isStorefrontPortableWallets: !0, init: function () { window.Shopify.PaymentButton.init = function () { }; var t = document.createElement("script"); t.src = "https://%%SITE%%.istudiosg.com/cdn/shopifycloud/portable-wallets/latest/portable-wallets.en.js", t.type = "module", document.head.appendChild(t) } };
+  </script>
+  <script data-source-attribution="shopify.dynamic_checkout.buyer_consent" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    function portableWalletsHideBuyerConsent(e) { var t = document.getElementById("shopify-buyer-consent"), n = document.getElementById("shopify-subscription-policy-button"); t && n && (t.classList.add("hidden"), t.setAttribute("aria-hidden", "true"), n.removeEventListener("click", e)) } function portableWalletsShowBuyerConsent(e) { var t = document.getElementById("shopify-buyer-consent"), n = document.getElementById("shopify-subscription-policy-button"); t && n && (t.classList.remove("hidden"), t.removeAttribute("aria-hidden"), n.addEventListener("click", e)) } window.Shopify?.PaymentButton && (window.Shopify.PaymentButton.hideBuyerConsent = portableWalletsHideBuyerConsent, window.Shopify.PaymentButton.showBuyerConsent = portableWalletsShowBuyerConsent);
+  </script>
+  <script data-source-attribution="shopify.dynamic_checkout.cart.bootstrap" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    document.addEventListener("DOMContentLoaded", (function () { function t() { return document.querySelector("shopify-accelerated-checkout-cart, shopify-accelerated-checkout") } if (t()) Shopify.PaymentButton.init(); else { new MutationObserver((function (e, n) { t() && (Shopify.PaymentButton.init(), n.disconnect()) })).observe(document.body, { childList: !0, subtree: !0 }) } }));
+  </script>
+  <script id='scb4127' type='text/javascript' async=''
+    src='https://%%SITE%%.istudiosg.com/cdn/shopifycloud/privacy-banner/storefront-banner.js'
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script id="sections-script" data-sections="header" defer="defer"
+    src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/compiled_assets/scripts.js?3348"
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');
+  </script>
 
-<script
-  data-vue-meta="1"
-  data-vmid="ldjson-schema-listing"
-  type="application/ld+json"
->
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "sku": "695c02705919e047c632042e",
-  "productID": "695c02705919e047c632042e",
-  "name": "BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini",
-  "image": "https://bomo77.net/images/banner.png",
-  "description": "BOMO77 Web resmi Stabil Modal Receh menghadirkan informasi lengkap seputar layanan WD jutaan malam ini dengan akses mudah, cepat, dan praktis.",
-  "category": "Slot > Gacor > Indonesia",
-  "color": "Pink/Cream",
-  "brand": {
-    "@type": "Brand",
-    "name": "BOMO77"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://bomo77.net/",
-    "priceCurrency": "IDR",
-    "price": "45.0",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/UsedCondition"
-  }
+  <style>
+    #Details-popup_custom_6mTgxV-template--17605519376564__main .popup_round_border {
+      display: inline-block !important;
+    }
+
+    #PopupModal-popup_custom_6mTgxV .image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #PopupModal-popup_custom_6mTgxV .image.desktop {
+      display: none;
+    }
+
+    #PopupModal-popup_custom_6mTgxV .product-popup-modal__content {
+      padding: 0 1rem;
+    }
+
+    #PopupModal-popup_custom_6mTgxV .product-popup-modal__content-info>h1.h2 {
+      display: none;
+    }
+
+    @media screen and (min-width:750px) {
+      #PopupModal-popup_custom_6mTgxV .product-popup-modal__content {
+        width: 80%
+      }
+
+      #PopupModal-popup_custom_6mTgxV .image.desktop {
+        display: block;
+      }
+
+      #PopupModal-popup_custom_6mTgxV .image.mobile {
+        display: none;
+      }
+    }
+
+    #PopupModal-popup_custom_6mTgxV .product-popup-modal__content-info {
+      padding-right: 0;
+    }
+
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url("https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Regular.woff2?v=21706269404805127741742784888") format('woff2'),
+        url("https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Regular.woff?v=144701899629177247781742784888") format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Medium.woff2?v=142744590770268640871742784888') format('woff2'),
+        url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Medium.woff?v=86846661406826704271742784889') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Semibold.woff2?v=31375109001105336161742784889') format('woff2'),
+        url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Semibold.woff?v=158359377723366996921742784888') format('woff');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Bold.woff2?v=81066619648910226671742784888') format('woff2'),
+        url('https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/SFProText-Bold.woff?v=11034071917097156431742784889') format('woff');
+      font-weight: 700;
+      font-style: bold;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Font Awesome 6 Free';
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fa-solid-900.woff2?v=118991557498766039071742784889") format("woff2"), url("https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fa-solid-900.ttf?v=11227793290438786691742784887") format("truetype");
+    }
+
+    @font-face {
+      font-family: 'Font Awesome 6 Brands';
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src: url("https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fa-brands-400.woff2?3348") format("woff2"), url("  https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fa-brands-400.ttf?3348") format("truetype");
+    }
+  </style>
+  <style data-shopify>
+    @font-face {
+      font-family: Assistant;
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=f08b4c8dad363a51140f208e167805f634db94adbbb3544a6fbd71c32b1ebc6f") format("woff2"),
+        url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.6e9875ce64e0fefcd3f4446b7ec9036b3ddd2985.woff?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=04204526227e0d14a011b44f621eed958a37dd24ff228dec608fad5ba3714e53") format("woff");
+    }
+
+    @font-face {
+      font-family: Assistant;
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      src: url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n7.bf44452348ec8b8efa3aa3068825305886b1c83c.woff2?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=3eb98cb4f0f5b11a3f34feed0aa554dd621b127bc1cbc141c68703f90e8e42d3") format("woff2"),
+        url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n7.0c887fee83f6b3bda822f1150b912c72da0f7b64.woff?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=d0e65006948e80adf21a0472f7da1fee501e61f043b62e661027b9eeb582385b") format("woff");
+    }
+
+    @font-face {
+      font-family: Assistant;
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=f08b4c8dad363a51140f208e167805f634db94adbbb3544a6fbd71c32b1ebc6f") format("woff2"),
+        url("https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.6e9875ce64e0fefcd3f4446b7ec9036b3ddd2985.woff?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=04204526227e0d14a011b44f621eed958a37dd24ff228dec608fad5ba3714e53") format("woff");
+    }
+
+    :root,
+    .color-background-1 {
+      --color-background: 255, 255, 255;
+      --gradient-background:#EAF3FF;
+      --color-foreground: 18, 18, 18;
+      --color-shadow: 18, 18, 18;
+      --color-button: 0, 113, 227;
+      --color-button-text: 255, 255, 255;
+      --color-secondary-button: 255, 255, 255;
+      --color-secondary-button-text: 18, 18, 18;
+      --color-link: 18, 18, 18;
+      --color-badge-foreground: 18, 18, 18;
+      --color-badge-background: 224, 238, 255;
+      --color-badge-border: 18, 18, 18;
+      --payment-terms-background-color: rgb(255 255 255);
+    }
+
+    .color-background-2 {
+      --color-background: 243, 243, 243;
+      --gradient-background: #f3f3f3;
+      --color-foreground: 18, 18, 18;
+      --color-shadow: 18, 18, 18;
+      --color-button: 18, 18, 18;
+      --color-button-text: 243, 243, 243;
+      --color-secondary-button: 243, 243, 243;
+      --color-secondary-button-text: 18, 18, 18;
+      --color-link: 18, 18, 18;
+      --color-badge-foreground: 18, 18, 18;
+      --color-badge-background: 243, 243, 243;
+      --color-badge-border: 18, 18, 18;
+      --payment-terms-background-color: rgb(243 243 243);
+    }
+
+    .color-inverse {
+      --color-background: 36, 40, 51;
+      --gradient-background: #242833;
+      --color-foreground: 255, 255, 255;
+      --color-shadow: 18, 18, 18;
+      --color-button: 255, 255, 255;
+      --color-button-text: 0, 0, 0;
+      --color-secondary-button: 36, 40, 51;
+      --color-secondary-button-text: 255, 255, 255;
+      --color-link: 255, 255, 255;
+      --color-badge-foreground: 255, 255, 255;
+      --color-badge-background: 36, 40, 51;
+      --color-badge-border: 255, 255, 255;
+      --payment-terms-background-color: rgb(36 40 51);
+    }
+
+    .color-accent-1 {
+      --color-background: 18, 18, 18;
+      --gradient-background: #121212;
+      --color-foreground: 255, 255, 255;
+      --color-shadow: 18, 18, 18;
+      --color-button: 255, 255, 255;
+      --color-button-text: 18, 18, 18;
+      --color-secondary-button: 18, 18, 18;
+      --color-secondary-button-text: 255, 255, 255;
+      --color-link: 255, 255, 255;
+      --color-badge-foreground: 255, 255, 255;
+      --color-badge-background: 18, 18, 18;
+      --color-badge-border: 255, 255, 255;
+      --payment-terms-background-color: rgb(18 18 18);
+    }
+
+    .color-accent-2 {
+      --color-background: 51, 79, 180;
+      --gradient-background: #0057FF;
+      --color-foreground: 255, 255, 255;
+      --color-shadow: 18, 18, 18;
+      --color-button: 255, 255, 255;
+      --color-button-text: 51, 79, 180;
+      --color-secondary-button: 51, 79, 180;
+      --color-secondary-button-text: 255, 255, 255;
+      --color-link: 255, 255, 255;
+      --color-badge-foreground: 255, 255, 255;
+      --color-badge-background: 51, 79, 180;
+      --color-badge-border: 255, 255, 255;
+      --payment-terms-background-color: rgb(0 87 255);
+    }
+
+    .color-scheme-ac1f97d9-2391-4261-b2e4-e6912b28bacf {
+      --color-background: 0, 0, 0;
+      --gradient-background: rgba(0, 0, 0, 0);
+      --color-foreground: 255, 255, 255;
+      --color-shadow: 18, 18, 18;
+      --color-button: 0, 113, 227;
+      --color-button-text: 255, 255, 255;
+      --color-secondary-button: 0, 0, 0;
+      --color-secondary-button-text: 18, 18, 18;
+      --color-link: 18, 18, 18;
+      --color-badge-foreground: 255, 255, 255;
+      --color-badge-background: 0, 0, 0;
+      --color-badge-border: 255, 255, 255;
+      --payment-terms-background-color: rgb(0 0 0);
+    }
+
+    body,
+    .color-background-1,
+    .color-background-2,
+    .color-inverse,
+    .color-accent-1,
+    .color-accent-2,
+    .color-scheme-ac1f97d9-2391-4261-b2e4-e6912b28bacf {
+      color: rgba(var(--color-foreground), 0.75);
+      background-color: rgb(var(--color-background));
+    }
+
+    :root {
+      --font-body-family: Assistant, sans-serif;
+      --font-body-style: normal;
+      --font-body-weight: 400;
+      --font-body-weight-bold: 700;
+      --font-heading-family: Assistant, sans-serif;
+      --font-heading-style: normal;
+      --font-heading-weight: 400;
+      --font-body-scale: 1.0;
+      --font-heading-scale: 1.0;
+      --media-padding: px;
+      --media-border-opacity: 0.05;
+      --media-border-width: 1px;
+      --media-radius: 0px;
+      --media-shadow-opacity: 0.0;
+      --media-shadow-horizontal-offset: 0px;
+      --media-shadow-vertical-offset: 0px;
+      --media-shadow-blur-radius: 0px;
+      --media-shadow-visible: 0;
+      --page-width: 120rem;
+      --page-width-margin: 0rem;
+      --product-card-image-padding: 0.0rem;
+      --product-card-corner-radius: 0.0rem;
+      --product-card-text-alignment: left;
+      --product-card-border-width: 0.0rem;
+      --product-card-border-opacity: 0.0;
+      --product-card-shadow-opacity: 0.1;
+      --product-card-shadow-visible: 1;
+      --product-card-shadow-horizontal-offset: 0.0rem;
+      --product-card-shadow-vertical-offset: 0.0rem;
+      --product-card-shadow-blur-radius: 0.0rem;
+      --collection-card-image-padding: 0.0rem;
+      --collection-card-corner-radius: 0.0rem;
+      --collection-card-text-alignment: left;
+      --collection-card-border-width: 0.0rem;
+      --collection-card-border-opacity: 0.0;
+      --collection-card-shadow-opacity: 0.1;
+      --collection-card-shadow-visible: 1;
+      --collection-card-shadow-horizontal-offset: 0.0rem;
+      --collection-card-shadow-vertical-offset: 0.0rem;
+      --collection-card-shadow-blur-radius: 0.0rem;
+      --blog-card-image-padding: 0.0rem;
+      --blog-card-corner-radius: 0.0rem;
+      --blog-card-text-alignment: left;
+      --blog-card-border-width: 0.0rem;
+      --blog-card-border-opacity: 0.1;
+      --blog-card-shadow-opacity: 0.0;
+      --blog-card-shadow-visible: 0;
+      --blog-card-shadow-horizontal-offset: 0.0rem;
+      --blog-card-shadow-vertical-offset: 0.4rem;
+      --blog-card-shadow-blur-radius: 0.5rem;
+      --badge-corner-radius: 4.0rem;
+      --popup-border-width: 1px;
+      --popup-border-opacity: 0.1;
+      --popup-corner-radius: 0px;
+      --popup-shadow-opacity: 0.0;
+      --popup-shadow-horizontal-offset: 0px;
+      --popup-shadow-vertical-offset: 0px;
+      --popup-shadow-blur-radius: 0px;
+      --drawer-border-width: 1px;
+      --drawer-border-opacity: 0.1;
+
+      --drawer-shadow-opacity: 0.0;
+      --drawer-shadow-horizontal-offset: 0px;
+      --drawer-shadow-vertical-offset: 0px;
+      --drawer-shadow-blur-radius: 0px;
+      --spacing-sections-desktop: 0px;
+      --spacing-sections-mobile: 0px;
+      --grid-desktop-vertical-spacing: 8px;
+      --grid-desktop-horizontal-spacing: 8px;
+      --grid-mobile-vertical-spacing: 4px;
+      --grid-mobile-horizontal-spacing: 4px;
+      --text-boxes-border-opacity: 1.0;
+      --text-boxes-border-width: 0px;
+      --text-boxes-radius: 0px;
+      --text-boxes-shadow-opacity: 0.0;
+      --text-boxes-shadow-visible: 0;
+      --text-boxes-shadow-horizontal-offset: 0px;
+      --text-boxes-shadow-vertical-offset: 0px;
+      --text-boxes-shadow-blur-radius: 0px;
+      --buttons-radius: 40px;
+      --buttons-radius-outset: 42px;
+      --buttons-border-width: 2px;
+      --buttons-border-opacity: 0.4;
+      --buttons-shadow-opacity: 0.0;
+      --buttons-shadow-visible: 0;
+      --buttons-shadow-horizontal-offset: 0px;
+      --buttons-shadow-vertical-offset: 0px;
+      --buttons-shadow-blur-radius: 0px;
+      --buttons-border-offset: 0.3px;
+      --inputs-radius: 4px;
+      --inputs-border-width: 1px;
+      --inputs-border-opacity: 0.55;
+      --inputs-shadow-opacity: 0.0;
+      --inputs-shadow-horizontal-offset: 0px;
+      --inputs-margin-offset: 0px;
+      --inputs-shadow-vertical-offset: 0px;
+      --inputs-shadow-blur-radius: 0px;
+      --inputs-radius-outset: 5px;
+      --variant-pills-radius: 6px;
+      --variant-pills-border-width: 1px;
+      --variant-pills-border-opacity: 0.2;
+      --variant-pills-shadow-opacity: 0.0;
+      --variant-pills-shadow-horizontal-offset: -4px;
+      --variant-pills-shadow-vertical-offset: 0px;
+      --variant-pills-shadow-blur-radius: 0px;
+      --font-body-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont;
+      --font-body-style: normal;
+      --font-body-weight: 400;
+      --font-heading-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont;
+      --font-heading-style: normal;
+      --font-heading-weight: 400;
+      --font-body-scale: 1.0;
+      --font-heading-scale: 1.0;
+      --color-base-text: 18, 18, 18;
+      --color-shadow: 18, 18, 18;
+      --color-base-background-1: 242, 248, 255;
+      --color-base-background-2: 232, 242, 255;
+      --color-base-solid-button-labels: 255, 255, 255;
+      --color-base-outline-button-labels: 18, 18, 18;
+      --color-base-accent-1: 0, 113, 227;
+      --color-base-accent-2: 51, 79, 180;
+      --payment-terms-background-color: #EAF3FF;
+      --gradient-base-background-1: #FFFFFF;
+      --gradient-base-background-2: #FFFFFF;
+      --gradient-base-accent-1: #00BFFF;
+      --gradient-base-accent-2: #0057FF;
+      --media-padding: px;
+      --media-border-opacity: 0.05;
+      --media-border-width: 1px;
+      --media-radius: 0px;
+      --media-shadow-opacity: 0.0;
+      --media-shadow-horizontal-offset: 0px;
+      --media-shadow-vertical-offset: 0px;
+      --media-shadow-blur-radius: 0px;
+      --page-width: 120rem;
+      --page-width-margin: 0rem;
+      --card-image-padding: 0.0rem;
+      --card-corner-radius: 0.0rem;
+      --card-text-alignment: left;
+      --card-border-width: 0.0rem;
+      --card-border-opacity: 0.0;
+      --card-shadow-opacity: 0.1;
+      --card-shadow-horizontal-offset: 0.0rem;
+      --card-shadow-vertical-offset: 0.0rem;
+      --card-shadow-blur-radius: 0.0rem;
+      --badge-corner-radius: 4.0rem;
+      --popup-border-width: 1px;
+      --popup-border-opacity: 0.1;
+      --popup-corner-radius: 0px;
+      --popup-shadow-opacity: 0.0;
+      --popup-shadow-horizontal-offset: 0px;
+      --popup-shadow-vertical-offset: 0px;
+      --popup-shadow-blur-radius: 0px;
+      --drawer-border-width: 1px;
+      --drawer-border-opacity: 0.1;
+      --drawer-shadow-opacity: 0.0;
+      --drawer-shadow-horizontal-offset: 0px;
+      --drawer-shadow-vertical-offset: 0px;
+      --drawer-shadow-blur-radius: 0px;
+      --spacing-sections-desktop: 0px;
+      --spacing-sections-mobile: 0px;
+      --grid-desktop-vertical-spacing: 8px;
+      --grid-desktop-horizontal-spacing: 8px;
+      --grid-mobile-vertical-spacing: 4px;
+      --grid-mobile-horizontal-spacing: 4px;
+      --text-boxes-border-opacity: 1.0;
+      --text-boxes-border-width: 0px;
+      --text-boxes-radius: 0px;
+      --text-boxes-shadow-opacity: 0.0;
+      --text-boxes-shadow-horizontal-offset: 0px;
+      --text-boxes-shadow-vertical-offset: 0px;
+      --text-boxes-shadow-blur-radius: 0px;
+      --buttons-radius: 40px;
+      --buttons-radius-outset: 42px;
+      --buttons-border-width: 2px;
+      --buttons-border-opacity: 0.4;
+      --buttons-shadow-opacity: 0.0;
+      --buttons-shadow-horizontal-offset: 0px;
+      --buttons-shadow-vertical-offset: 0px;
+      --buttons-shadow-blur-radius: 0px;
+      --buttons-border-offset: 0.3px;
+      --inputs-radius: 4px;
+      --inputs-border-width: 1px;
+      --inputs-border-opacity: 0.55;
+      --inputs-shadow-opacity: 0.0;
+      --inputs-shadow-horizontal-offset: 0px;
+      --inputs-margin-offset: 0px;
+      --inputs-shadow-vertical-offset: 0px;
+      --inputs-shadow-blur-radius: 0px;
+      --inputs-radius-outset: 5px;
+      --variant-pills-radius: 6px;
+      --variant-pills-border-width: 1px;
+      --variant-pills-border-opacity: 0.2;
+      --variant-pills-shadow-opacity: 0.0;
+      --variant-pills-shadow-horizontal-offset: -4px;
+      --variant-pills-shadow-vertical-offset: 0px;
+      --variant-pills-shadow-blur-radius: 0px;
+      --color-primary-bt-bg: #ffffff;
+      --color-primary-bt-label: #FFFFFF;
+      --color-primary-bt-outline: #00BFFF;
+      --color-primary-bt-hover: #66FFFF;
+      --color-secondary-bt-bg: transparent;
+      --color-secondary-bt-label: #00BFFF;
+      --color-secondary-bt-outline: #00BFFF;
+      --color-secondary-bt-hover: #66FFFF;
+      --color-link-dynamic-label: #00BFFF;
+      --color-link-dynamic-hover: #66FFFF;
+      --color-tertiary-dynamic-label: #00BFFF;
+      --color-tertiary-dynamic-hover: #66FFFF;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    html {
+      box-sizing: border-box;
+      font-size: calc(var(--font-body-scale) * 62.5%);
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.06rem;
+      line-height: calc(1 + 0.8 / var(--font-body-scale));
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body:has(.shopify-section-group-footer-group) {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+    }
+
+    @media screen and (min-width: 750px) {
+      body {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+  <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/base.css?v=127241086646799884071742784889" rel="stylesheet"
+    type="text/css" media="all" />
+  <link rel="preload" as="font"
+    href="https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=f08b4c8dad363a51140f208e167805f634db94adbbb3544a6fbd71c32b1ebc6f"
+    type="font/woff2" crossorigin>
+  <link rel="preload" as="font"
+    href="https://%%SITE%%.istudiosg.com/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2?h1=aXN0dWRpby1lbHVzaC1wcm9kdWN0aW9uLmFjY291bnQubXlzaG9waWZ5LmNvbQ&h2=aXN0dWRpb3NnLmNvbQ&hmac=f08b4c8dad363a51140f208e167805f634db94adbbb3544a6fbd71c32b1ebc6f"
+    type="font/woff2" crossorigin>
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-predictive-search.css?v=91813212418334334851742784888"
+    media="print" onload="this.media='all'">
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    if (Shopify.designMode) {
+      document.documentElement.classList.add('shopify-design-mode');
+    }
+    const vat_free_day = false;
+
+    const vat_discount_amount = 20.0;
+
+
+    const vat_free_quantity = "3";
+
+
+    const vat_free_message = "Cannot add more than 3 VAT-exempt products to the shopping cart";
+
+
+    const not_available_message = "Not Available";
+
+
+    const quantity_limit_error_message = "Sorry! you reached maximum limit for this product!";
+  </script>
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-card.css?v=111081949408356567601742784889" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-price.css?v=89212854351592844731742784887" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/section-product-recommendations.css?v=49786085183541529781742784888"
+    media="print" onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/slick-theme.css?v=155861180100014643231742784887" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/slick-theme-min.css?v=86793612638635186001742784889" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-price.css?v=89212854351592844731742784887"
+      rel="stylesheet" type="text/css" media="all" />
+  </noscript>
+  <noscript>
+    <link
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/section-product-recommendations.css?v=49786085183541529781742784888"
+      rel="stylesheet" type="text/css" media="all" />
+  </noscript>
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-scratch.css?v=179858087556892581742784887" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-collection-carousel.css?v=15060387450964793051742784888"
+    media="print" onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-rating.css?v=157771854592137137841742784889" media="print"
+    onload="this.media='all'">
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-model.js?v=56285008796734381901742784888" defer
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/ac-modal.min.css?v=15722724579182767671742784888"
+    rel="stylesheet" type="text/css" media="all" />
+  <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/ac-modal-custom.css?v=17302321221102055051742784887"
+    rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/ac-modal-custom.css?v=17302321221102055051742784887" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-apple-care-modal.css?v=72539108787457179491742784889"
+    media="print" onload="this.media='all'">
+  <link rel="stylesheet"
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fontawesome.min.css?v=137756382566111518581742784888" media="print"
+    onload="this.media='all'">
+  <link
+    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-pickup-availability.css?v=126759165165079086151742784888"
+    rel="stylesheet" type="text/css" media="all" />
+
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+    window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+    window.ShopifyAnalytics.meta.currency = 'SGD';
+    var meta = { "product": { "id": 7986665160884, "gid": "gid://shopify/Product/7986665160884", "vendor": "Apple", "type": "iPhone", "variants": [{ "id": 44033871610036, "price": 25900, "name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia", "public_title": null, "sku": "MG8H4X/A" }], "remote": false }, "page": { "pageType": "product", "resourceType": "product", "resourceId": 7986665160884 } };
+    for (var attr in meta) {
+      window.ShopifyAnalytics.meta[attr] = meta[attr];
+    }
+  </script>
+  <script defer src="https://%%SITE%%.istudiosg.com/cdn/shopifycloud/perf-kit/shopify-perf-kit-2.0.13.min.js"
+    data-application="storefront-renderer" data-shop-id="63738642612" data-render-region="gcp-asia-southeast1"
+    data-page-type="product" data-theme-instance-id="139536236724" data-theme-name="Dawn" data-theme-version="11.0.0"
+    data-monorail-region="shop_domain" data-resource-timing-sampling-rate="10" data-shs="true" data-shs-beacon="true"
+    data-shs-export-with-fetch="true" data-shs-logs-sample-rate="1" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+
+<style id="blue-uniform-fix">
+/* UNIFORM BLUE CANVAS - remove visible color breaks at top/bottom */
+html {
+  background: #EAF3FF !important;
+  min-height: 100%;
+  background-attachment: fixed !important;
 }
-</script>
+body {
+  margin: 0 !important;
+  min-height: 100vh !important;
+  background: #EAF3FF !important;
+  background-image:
+    linear-gradient(180deg, #DCEBFF 0%, #EAF3FF 18%, #F2F8FF 50%, #EAF3FF 82%, #DCEBFF 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
 
-    <noscript data-vue-meta="1">This website requires JavaScript.</noscript>
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/core_js.b7a43db30cee2a410fc5.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/locales_pmmodules.ec3fcefdd2a885595b74.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/core_js_pure.8f578857ef2032e39dd9.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/vee_lodash.6cad4dc3b9e94329f039.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/vue_router.ef2008bd3eddaa91be12.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/app_layout_actions.8fa8abce2222f27c24c5.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/vue.3b2467e94215fd8d54fa.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/app.565fca99fe42b612b613.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/layout.d6ea3c02c439c3b9eb68.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/1045.845bcb4a58edc9da8954.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/636.df0ebea14716c198caf2.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/listingDetail.d5992d3718709bfd7e76.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/components.092c929ca60b9f158eba.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/104.6ec5e02aaaed655ca47d.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/listing.3ec1e5a33166caa05264.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/paymentGateway.ce933079d3c50864a93f.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/listingDisclaimer.952451e04901f806456c.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/221.95a08579999f3976be8c.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/185.c774c6e772aa883eeff6.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/listing_secondary.ad16e34b75a0cb73908f.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/1087.9775df33d62e765cb018.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/MyCustomers~MyCustomersDashboard~components.396e625a275319f5d2de.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/bottomBanner.da4628bbeed13a867320.js" as="script">
-    <link rel="preload" href="https://d2gjrq7hs8he14.cloudfront.net/webpack4/footer.1549faf09ffba2ac6d4b.js" as="script">
-    <style data-vue-ssr-id="e432168c:0 e432168c:1 f0ac4432:0 59326dfa:0 e8be9d34:0 1028a7ee:0 6d33b6f8:0 610f5a0e:0 4598cdac:0 3b6815fa:0 50c3d234:0 4512a504:0 561e16e4:0 6452af0c:0 109f2b94:0 9fe98c78:0 0b936d10:0 9e49e0c6:0 7ee81212:0 18fcb268:0 6477317e:0 170e03e4:0 47cd955c:0 3600f83c:0 25cb0d90:0 92fc0926:0">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}strong,b,u,i{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:"";content:none}table{border-collapse:collapse;border-spacing:0}*{-webkit-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box}body{-webkit-tap-highlight-color:rgba(0,0,0,0)}button,html input[type=button],input[type=reset],input[type=submit]{border:none;-webkit-appearance:button;cursor:pointer}button[disabled],button.btn--primary--disabled,html input[disabled],html input.btn--primary--disabled{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:border-box;box-sizing:border-box}input[type=search]::-webkit-search-decoration{-webkit-appearance:none}input[type=search]::-webkit-search-cancel-button{-webkit-appearance:searchfield-cancel-button}textarea,input,button,select{margin:0;font-family:inherit;font-size:inherit;-webkit-appearance:none}textarea{overflow:auto;resize:none;-ms-overflow-style:none;scrollbar-width:none}textarea::-webkit-scrollbar{display:none}textarea:focus,input:focus,button:focus{outline:none}html{font-size:14px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{color:#2a2a2a;font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;background:#fcfbfb;font-size:14px;line-height:1.4285714286;letter-spacing:.15px;-webkit-font-smoothing:antialiased}a{text-decoration:none;cursor:pointer;color:#ff0033}.all-caps{font-size:12px;letter-spacing:.5px;line-height:16px;text-transform:uppercase}.caption{font-size:13px;letter-spacing:.15px;line-height:16px}h1,h2,h3,h4,h5,h6{text-rendering:optimizelegibility}.h1--extra-large{font-size:32px;line-height:40px}@media only screen and (min-width: 768px){.h1--extra-large{font-size:60px}}@media only screen and (min-width: 768px){.h1--extra-large{line-height:40px}}.h1--large{font-size:24px;line-height:30px}@media only screen and (min-width: 768px){.h1--large{font-size:32px}}@media only screen and (min-width: 768px){.h1--large{line-height:40px}}h1{font-size:22px;line-height:26px;letter-spacing:0 !important}@media only screen and (min-width: 768px){h1{font-size:28px}}@media only screen and (min-width: 768px){h1{line-height:34px}}h2{font-size:20px;line-height:24px;letter-spacing:0 !important}@media only screen and (min-width: 768px){h2{font-size:24px}}@media only screen and (min-width: 768px){h2{line-height:28px}}h3{font-size:18px;line-height:22px;letter-spacing:0 !important}@media only screen and (min-width: 768px){h3{font-size:20px}}@media only screen and (min-width: 768px){h3{line-height:24px}}h4{font-size:16px;line-height:22px;letter-spacing:0 !important}@media only screen and (min-width: 768px){h4{font-size:18px}}@media only screen and (min-width: 768px){h4{line-height:22px}}h5{font-size:16px;line-height:22px}@media only screen and (min-width: 768px){h5{font-size:16px}}@media only screen and (min-width: 768px){h5{line-height:22px}}.h1{font-size:22px;line-height:26px}@media only screen and (min-width: 768px){.h1{font-size:28px}}@media only screen and (min-width: 768px){.h1{line-height:34px}}.h2{font-size:20px;line-height:24px}@media only screen and (min-width: 768px){.h2{font-size:24px}}@media only screen and (min-width: 768px){.h2{line-height:28px}}.h3{font-size:18px;line-height:22px}@media only screen and (min-width: 768px){.h3{font-size:20px}}@media only screen and (min-width: 768px){.h3{line-height:24px}}.h4{font-size:16px;line-height:22px}@media only screen and (min-width: 768px){.h4{font-size:18px}}@media only screen and (min-width: 768px){.h4{line-height:22px}}.h5{font-size:16px;line-height:22px}@media only screen and (min-width: 768px){.h5{font-size:16px}}@media only screen and (min-width: 768px){.h5{line-height:22px}}.link--arrow:after{content:" »";white-space:pre}.pm-sub-section__header{background:#f8f6f3;width:100%;padding:8px 12px;color:#9b9691;font-weight:500}.clearfix:after{content:".";visibility:hidden;display:block;height:0;clear:both}.hide{display:none !important}.scroll-lock{overflow:hidden}.hide-scrollbars{-ms-overflow-style:none;scrollbar-width:none}.hide-scrollbars::-webkit-scrollbar{display:none}.list-style--disc{list-style:disc;list-style-position:inside}.list-style--decimal{list-style:decimal;list-style-position:inside}.list-style--circle{list-style:circle;list-style-position:inside}.tc--b{color:#2a2a2a !important}.tc--dg{color:#4a4a4a !important}.tc--g{color:#6a6a6a !important}.tc--lg{color:#9b9691 !important}.tc--m{color:#ff0033 !important}.tc--m{color:#ff0033 !important}.tc--lm{color:#ff0055 !important}.tc--blue{color:#ff1744 !important}.tc--white{color:#fcfbfb !important}.tc--snow-white{color:#fff !important}.tc--green{color:#ff3355 !important}.tc--dark-green{color:#cc0033 !important}.tc--yellow{color:#ff1744 !important}.tc--dr{color:#b30000 !important}.tc--red{color:#ff0033 !important}.tc--rose{color:#ff3355 !important}.tc--oak-gray{color:#d9d5d2 !important}.tc--orange{color:#ff4d4d !important}.ta--l{text-align:left !important}.ta--r{text-align:right !important}.ta--c{text-align:center !important}.ws--normal{white-space:normal !important}.ws--nowrap{white-space:nowrap !important}.ws--pre-line{white-space:pre-line !important}.fw--light{font-weight:300 !important}.fw--reg{font-weight:400 !important}.fw--med{font-weight:500 !important}.fw--bold{font-weight:700 !important}.fw--semi--bold{font-weight:600 !important}.tr--uppercase{text-transform:uppercase !important}.tr--lowercase{text-transform:lowercase !important}.tr--capitalize{text-transform:capitalize !important}.tr--none{text-transform:none !important}.td--ul{text-decoration:underline !important}.td--ol{text-decoration:overline !important}.td--lt{text-decoration:line-through !important}.td--st:after{content:"";border-top:1px solid #d9d5d2;position:absolute;top:50%;left:0;width:50%;height:50%;margin-left:25%}.tdc--yellow{-webkit-text-decoration-color:#ff1744 !important;text-decoration-color:#ff1744 !important}.fs--i{font-style:italic}.fsz--s{font-size:12px}.fsz--base{font-size:14px}.fsz--large{font-size:16px}.fsz--xs{font-size:11px}.ws--pre{white-space:pre !important}.wb--ww{-ms-hyphens:auto;hyphens:auto;word-wrap:break-word}.ellipses{text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important}.multiline-ellipsis{position:relative}.multiline-ellipsis:after{content:"   ...";position:absolute;bottom:0;right:0;padding:0 16px;background:-webkit-gradient(linear, left top, right top, from(rgba(252, 251, 251, 0)), color-stop(50%, rgb(252, 251, 251)));background:linear-gradient(to right, rgba(252, 251, 251, 0), rgb(252, 251, 251) 50%)}.lh--none{line-height:0 !important}.lh--base{line-height:20px !important}.lh--medium{line-height:1.5 !important}.lh--large{line-height:1.75 !important}.br--gray{border:1px solid #d9d5d2}.br--light-gray{border:1px solid #e6e2df}.br--lighter-gray{border:1px solid #f5f2ee}.br--lighter-gray-2{border:1px solid #f8f6f3}.br--dark-gray{border:1px solid #c1bfbc}.br--magenta{border:1px solid #ff0033 !important}.br--2--magenta{border:2px solid #ff0033 !important}.br--snow-white{border:1px solid #fff !important}.br--blue{border:1px solid #ff1744 !important}.br--2--blue{border:2px solid #ff1744 !important}.br--none{border:none !important}.round{border-radius:50% !important}.br-rad--base{border-radius:2px !important}.br-rad--med{border-radius:3px !important}.br-rad--large{border-radius:4px !important}.br-rad--x-large{border-radius:12px !important}.br--bottom{border-top:none;border-left:none;border-right:none}.br--top{border-bottom:none;border-left:none;border-right:none}.br--left{border-top:none;border-bottom:none;border-right:none}.br--right{border-top:none;border-bottom:none;border-left:none}.br--vertical{border-left:none;border-right:none}.br--width--1{border-width:1px !important}.br--width--2{border-width:2px !important}.bg--dark-gray{background-color:#d9d5d2 !important}.bg--darker-gray{background-color:#c1bfbc !important}.bg--gray{background-color:#e6e2df !important}.bg--light-gray{background-color:#f5f2ee !important}.bg--lighter-gray{background-color:#f8f6f3 !important}.bg--lightest-gray{background-color:#f9f9f9 !important}.bg--white{background-color:#fcfbfb !important}.bg--pure-white{background-color:#fff !important}.bg--snow-white{background-color:#fff !important}.bg--blue{background-color:#ff1744 !important}.bg--dark-blue{background-color:#4a0008 !important}.bg--magenta{background-color:#ff0033 !important}.bg--red{background-color:#ff1a1a !important}.bg--dark-red{background-color:#8f0000 !important}.bg--green{background-color:#ff3355 !important}.bg--green-blue{background-color:#ff4d66 !important}.bg--light-pink{background-color:#ff2244 !important}.bg--yellow{background-color:#2a0005 !important}.bg--orange{background-color:#ff4d4d !important}.bg--purple{background-color:#5a0010 !important}.bg--light-blue{background-color:#ff3355 !important}.bg--transparent{background-color:rgba(0,0,0,0) !important}.bg--purple-gold-gradient{background-image:linear-gradient(81deg, #ff3355 6%, #ff4d4d 95%)}.bg--ecru{background-color:#efeee3 !important}.bg--light-tangerine{color:#ffc5ba !important}.bg--lighter-tangerine{color:#fee6e1 !important}.bg--lighter-blue{color:#f6fdff !important}.bg--light-indigo{color:#0e5568 !important}.d--b{display:block !important}.d--ib{display:inline-block !important}.d--tb{display:table !important}.d--fl{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important}.d--if{display:-webkit-inline-box !important;display:-ms-inline-flexbox !important;display:inline-flex !important}.d--li{display:list-item !important}.fs--ns{-ms-flex:1 0 auto;-webkit-box-flex:1;flex:1 0 auto}.jc--c{-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important}.jc--sb{-webkit-box-pack:justify !important;-ms-flex-pack:justify !important;justify-content:space-between !important}.jc--sa{-ms-flex-pack:distribute !important;justify-content:space-around !important}.jc--fs{-webkit-box-pack:start !important;-ms-flex-pack:start !important;justify-content:flex-start !important}.jc--fe{-webkit-box-pack:end !important;-ms-flex-pack:end !important;justify-content:flex-end !important}.ai--c{-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important}.ai--s{-webkit-box-align:stretch !important;-ms-flex-align:stretch !important;align-items:stretch !important}.ai--ss{-webkit-box-align:self-start !important;-ms-flex-align:self-start !important;align-items:self-start !important}.ai--fs{-webkit-box-align:start !important;-ms-flex-align:start !important;align-items:flex-start !important}.ai--fe{-webkit-box-align:end !important;-ms-flex-align:end !important;align-items:flex-end !important}.ai--bl{-webkit-box-align:baseline !important;-ms-flex-align:baseline !important;align-items:baseline !important}.fw--w{-ms-flex-wrap:wrap !important;flex-wrap:wrap !important}.fd--c{-ms-flex-direction:column !important;-webkit-box-orient:vertical !important;-webkit-box-direction:normal !important;flex-direction:column !important}.fd--cr{-ms-flex-direction:column-reverse !important;-webkit-box-orient:vertical !important;-webkit-box-direction:reverse !important;flex-direction:column-reverse !important}.fd--rr{-ms-flex-direction:row-reverse !important;-webkit-box-orient:horizontal !important;-webkit-box-direction:reverse !important;flex-direction:row-reverse !important}.fd--r{-ms-flex-direction:row !important;-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;flex-direction:row !important}.ja--c{-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important}.as--fe{-webkit-align-self:flex-end !important;-ms-flex-item-align:end !important;align-self:flex-end !important}.as--fs{-webkit-align-self:flex-start !important;-ms-flex-item-align:start !important;align-self:flex-start !important}.as--c{-webkit-align-self:center !important;-ms-flex-item-align:center !important;align-self:center !important}.f--right{float:right !important}.f--left{float:left !important}.ps--r{position:relative !important}.ps--a{position:absolute !important}.va--t{vertical-align:top !important}.va--b{vertical-align:bottom !important}.va--m{vertical-align:middle !important}.al--center{margin:0 auto !important}.al--right{margin:0 0 0 auto !important}.al--left{margin:0 auto 0 0 !important}.mr--a{margin-right:auto !important}.ml--a{margin-left:auto !important}.ovf--h{overflow:hidden !important}.ovf--s{overflow:scroll !important}.sb--smooth{scroll-behavior:smooth !important}.cursor--pointer{cursor:pointer}.cursor--default{cursor:default}.no--pointer-events{pointer-events:none}@media only screen and (max-width: 1190px){.hide-desktop-small{display:none !important}}.m--0{margin:0px !important}.m--t--0{margin-top:0px !important}.p--0{padding:0px !important}.p--t--0{padding-top:0px !important}.m--0{margin:0px !important}.m--b--0{margin-bottom:0px !important}.p--0{padding:0px !important}.p--b--0{padding-bottom:0px !important}.m--0{margin:0px !important}.m--l--0{margin-left:0px !important}.p--0{padding:0px !important}.p--l--0{padding-left:0px !important}.m--0{margin:0px !important}.m--r--0{margin-right:0px !important}.p--0{padding:0px !important}.p--r--0{padding-right:0px !important}.m--1{margin:4px !important}.m--t--1{margin-top:4px !important}.p--1{padding:4px !important}.p--t--1{padding-top:4px !important}.m--1{margin:4px !important}.m--b--1{margin-bottom:4px !important}.p--1{padding:4px !important}.p--b--1{padding-bottom:4px !important}.m--1{margin:4px !important}.m--l--1{margin-left:4px !important}.p--1{padding:4px !important}.p--l--1{padding-left:4px !important}.m--1{margin:4px !important}.m--r--1{margin-right:4px !important}.p--1{padding:4px !important}.p--r--1{padding-right:4px !important}.m--2{margin:8px !important}.m--t--2{margin-top:8px !important}.p--2{padding:8px !important}.p--t--2{padding-top:8px !important}.m--2{margin:8px !important}.m--b--2{margin-bottom:8px !important}.p--2{padding:8px !important}.p--b--2{padding-bottom:8px !important}.m--2{margin:8px !important}.m--l--2{margin-left:8px !important}.p--2{padding:8px !important}.p--l--2{padding-left:8px !important}.m--2{margin:8px !important}.m--r--2{margin-right:8px !important}.p--2{padding:8px !important}.p--r--2{padding-right:8px !important}.m--3{margin:12px !important}.m--t--3{margin-top:12px !important}.p--3{padding:12px !important}.p--t--3{padding-top:12px !important}.m--3{margin:12px !important}.m--b--3{margin-bottom:12px !important}.p--3{padding:12px !important}.p--b--3{padding-bottom:12px !important}.m--3{margin:12px !important}.m--l--3{margin-left:12px !important}.p--3{padding:12px !important}.p--l--3{padding-left:12px !important}.m--3{margin:12px !important}.m--r--3{margin-right:12px !important}.p--3{padding:12px !important}.p--r--3{padding-right:12px !important}.m--4{margin:16px !important}.m--t--4{margin-top:16px !important}.p--4{padding:16px !important}.p--t--4{padding-top:16px !important}.m--4{margin:16px !important}.m--b--4{margin-bottom:16px !important}.p--4{padding:16px !important}.p--b--4{padding-bottom:16px !important}.m--4{margin:16px !important}.m--l--4{margin-left:16px !important}.p--4{padding:16px !important}.p--l--4{padding-left:16px !important}.m--4{margin:16px !important}.m--r--4{margin-right:16px !important}.p--4{padding:16px !important}.p--r--4{padding-right:16px !important}.m--5{margin:20px !important}.m--t--5{margin-top:20px !important}.p--5{padding:20px !important}.p--t--5{padding-top:20px !important}.m--5{margin:20px !important}.m--b--5{margin-bottom:20px !important}.p--5{padding:20px !important}.p--b--5{padding-bottom:20px !important}.m--5{margin:20px !important}.m--l--5{margin-left:20px !important}.p--5{padding:20px !important}.p--l--5{padding-left:20px !important}.m--5{margin:20px !important}.m--r--5{margin-right:20px !important}.p--5{padding:20px !important}.p--r--5{padding-right:20px !important}.m--6{margin:24px !important}.m--t--6{margin-top:24px !important}.p--6{padding:24px !important}.p--t--6{padding-top:24px !important}.m--6{margin:24px !important}.m--b--6{margin-bottom:24px !important}.p--6{padding:24px !important}.p--b--6{padding-bottom:24px !important}.m--6{margin:24px !important}.m--l--6{margin-left:24px !important}.p--6{padding:24px !important}.p--l--6{padding-left:24px !important}.m--6{margin:24px !important}.m--r--6{margin-right:24px !important}.p--6{padding:24px !important}.p--r--6{padding-right:24px !important}.m--7{margin:28px !important}.m--t--7{margin-top:28px !important}.p--7{padding:28px !important}.p--t--7{padding-top:28px !important}.m--7{margin:28px !important}.m--b--7{margin-bottom:28px !important}.p--7{padding:28px !important}.p--b--7{padding-bottom:28px !important}.m--7{margin:28px !important}.m--l--7{margin-left:28px !important}.p--7{padding:28px !important}.p--l--7{padding-left:28px !important}.m--7{margin:28px !important}.m--r--7{margin-right:28px !important}.p--7{padding:28px !important}.p--r--7{padding-right:28px !important}.m--8{margin:32px !important}.m--t--8{margin-top:32px !important}.p--8{padding:32px !important}.p--t--8{padding-top:32px !important}.m--8{margin:32px !important}.m--b--8{margin-bottom:32px !important}.p--8{padding:32px !important}.p--b--8{padding-bottom:32px !important}.m--8{margin:32px !important}.m--l--8{margin-left:32px !important}.p--8{padding:32px !important}.p--l--8{padding-left:32px !important}.m--8{margin:32px !important}.m--r--8{margin-right:32px !important}.p--8{padding:32px !important}.p--r--8{padding-right:32px !important}.m--9{margin:36px !important}.m--t--9{margin-top:36px !important}.p--9{padding:36px !important}.p--t--9{padding-top:36px !important}.m--9{margin:36px !important}.m--b--9{margin-bottom:36px !important}.p--9{padding:36px !important}.p--b--9{padding-bottom:36px !important}.m--9{margin:36px !important}.m--l--9{margin-left:36px !important}.p--9{padding:36px !important}.p--l--9{padding-left:36px !important}.m--9{margin:36px !important}.m--r--9{margin-right:36px !important}.p--9{padding:36px !important}.p--r--9{padding-right:36px !important}.m--10{margin:40px !important}.m--t--10{margin-top:40px !important}.p--10{padding:40px !important}.p--t--10{padding-top:40px !important}.m--10{margin:40px !important}.m--b--10{margin-bottom:40px !important}.p--10{padding:40px !important}.p--b--10{padding-bottom:40px !important}.m--10{margin:40px !important}.m--l--10{margin-left:40px !important}.p--10{padding:40px !important}.p--l--10{padding-left:40px !important}.m--10{margin:40px !important}.m--r--10{margin-right:40px !important}.p--10{padding:40px !important}.p--r--10{padding-right:40px !important}.m--11{margin:44px !important}.m--t--11{margin-top:44px !important}.p--11{padding:44px !important}.p--t--11{padding-top:44px !important}.m--11{margin:44px !important}.m--b--11{margin-bottom:44px !important}.p--11{padding:44px !important}.p--b--11{padding-bottom:44px !important}.m--11{margin:44px !important}.m--l--11{margin-left:44px !important}.p--11{padding:44px !important}.p--l--11{padding-left:44px !important}.m--11{margin:44px !important}.m--r--11{margin-right:44px !important}.p--11{padding:44px !important}.p--r--11{padding-right:44px !important}.m--12{margin:48px !important}.m--t--12{margin-top:48px !important}.p--12{padding:48px !important}.p--t--12{padding-top:48px !important}.m--12{margin:48px !important}.m--b--12{margin-bottom:48px !important}.p--12{padding:48px !important}.p--b--12{padding-bottom:48px !important}.m--12{margin:48px !important}.m--l--12{margin-left:48px !important}.p--12{padding:48px !important}.p--l--12{padding-left:48px !important}.m--12{margin:48px !important}.m--r--12{margin-right:48px !important}.p--12{padding:48px !important}.p--r--12{padding-right:48px !important}.m--h--0{margin-left:0px !important;margin-right:0px !important}.p--h--0{padding-left:0px !important;padding-right:0px !important}.m--h--1{margin-left:4px !important;margin-right:4px !important}.p--h--1{padding-left:4px !important;padding-right:4px !important}.m--h--2{margin-left:8px !important;margin-right:8px !important}.p--h--2{padding-left:8px !important;padding-right:8px !important}.m--h--3{margin-left:12px !important;margin-right:12px !important}.p--h--3{padding-left:12px !important;padding-right:12px !important}.m--h--4{margin-left:16px !important;margin-right:16px !important}.p--h--4{padding-left:16px !important;padding-right:16px !important}.m--h--5{margin-left:20px !important;margin-right:20px !important}.p--h--5{padding-left:20px !important;padding-right:20px !important}.m--h--6{margin-left:24px !important;margin-right:24px !important}.p--h--6{padding-left:24px !important;padding-right:24px !important}.m--h--7{margin-left:28px !important;margin-right:28px !important}.p--h--7{padding-left:28px !important;padding-right:28px !important}.m--h--8{margin-left:32px !important;margin-right:32px !important}.p--h--8{padding-left:32px !important;padding-right:32px !important}.m--h--9{margin-left:36px !important;margin-right:36px !important}.p--h--9{padding-left:36px !important;padding-right:36px !important}.m--h--10{margin-left:40px !important;margin-right:40px !important}.p--h--10{padding-left:40px !important;padding-right:40px !important}.m--h--11{margin-left:44px !important;margin-right:44px !important}.p--h--11{padding-left:44px !important;padding-right:44px !important}.m--h--12{margin-left:48px !important;margin-right:48px !important}.p--h--12{padding-left:48px !important;padding-right:48px !important}.m--v--0{margin-top:0px !important;margin-bottom:0px !important}.p--v--0{padding-top:0px !important;padding-bottom:0px !important}.m--v--1{margin-top:4px !important;margin-bottom:4px !important}.p--v--1{padding-top:4px !important;padding-bottom:4px !important}.m--v--2{margin-top:8px !important;margin-bottom:8px !important}.p--v--2{padding-top:8px !important;padding-bottom:8px !important}.m--v--3{margin-top:12px !important;margin-bottom:12px !important}.p--v--3{padding-top:12px !important;padding-bottom:12px !important}.m--v--4{margin-top:16px !important;margin-bottom:16px !important}.p--v--4{padding-top:16px !important;padding-bottom:16px !important}.m--v--5{margin-top:20px !important;margin-bottom:20px !important}.p--v--5{padding-top:20px !important;padding-bottom:20px !important}.m--v--6{margin-top:24px !important;margin-bottom:24px !important}.p--v--6{padding-top:24px !important;padding-bottom:24px !important}.m--v--7{margin-top:28px !important;margin-bottom:28px !important}.p--v--7{padding-top:28px !important;padding-bottom:28px !important}.m--v--8{margin-top:32px !important;margin-bottom:32px !important}.p--v--8{padding-top:32px !important;padding-bottom:32px !important}.m--v--9{margin-top:36px !important;margin-bottom:36px !important}.p--v--9{padding-top:36px !important;padding-bottom:36px !important}.m--v--10{margin-top:40px !important;margin-bottom:40px !important}.p--v--10{padding-top:40px !important;padding-bottom:40px !important}.m--v--11{margin-top:44px !important;margin-bottom:44px !important}.p--v--11{padding-top:44px !important;padding-bottom:44px !important}.m--v--12{margin-top:48px !important;margin-bottom:48px !important}.p--v--12{padding-top:48px !important;padding-bottom:48px !important}.o--none{opacity:0}.disabled-section{color:#9b9691 !important;cursor:not-allowed}.single-column-layout{margin:0 auto;max-width:750px}.width--100{width:100% !important}.width--mc{width:-webkit-max-content !important;width:-moz-max-content !important;width:max-content !important}.height--100{height:100% !important}.height--100{height:100%}.no--select{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.bs--none{-webkit-box-shadow:none !important;box-shadow:none !important}.ff--no-increment-input{-moz-appearance:textfield}main #content{max-width:1380px;margin:0 auto;padding:24px 8px 0 8px;min-height:calc(100vh - 150px)}main .content--desktop{min-width:768px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){main #content{padding:0}}.badge{display:inline-block;height:18px;font-size:11px;font-style:normal;color:#fcfbfb;line-height:19px;padding:0 6px;border-radius:18px;letter-spacing:.5px}.badge--right{position:absolute;top:-6px;right:-6px}.badge--red{background:#ff1a1a}.badge--blue{background:#ff1744}.badge--black{background:#4a4a4a}.btn{display:inline-block;position:relative;vertical-align:top;white-space:nowrap;letter-spacing:.15px;font-size:14px;font-weight:500;cursor:pointer;text-align:center;border:1px solid rgba(0,0,0,0);border-radius:3px;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;min-width:68px;height:36px;padding:0 12px;line-height:34px;overflow:hidden;-webkit-tap-highlight-color:rgba(0,0,0,0)}.btn:after{content:"";display:block;position:absolute;width:1000%;height:1000%;top:-450%;left:-450%;pointer-events:none;background-image:radial-gradient(circle, #000 10%, transparent 10.01%);background-repeat:no-repeat;background-position:50%;-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:0;-webkit-transition:transform .3s,opacity .5s;-webkit-transition:opacity .5s,-webkit-transform .3s;transition:opacity .5s,-webkit-transform .3s;transition:transform .3s,opacity .5s;transition:transform .3s,opacity .5s,-webkit-transform .3s;-webkit-backface-visibility:hidden}.btn:active:after{-ms-transform:scale(0);-webkit-transform:scale(0);transform:scale(0);opacity:.2;-webkit-transition:0s;transition:0s}.btn--primary,.btn--primary--disabled{color:#fcfbfb;border-color:#ff1744;background:#ff1744}.btn--primary--magenta{border-color:#ff0033;background:#ff0033}.btn--primary--black{border-color:#2a2a2a;background:#2a2a2a;color:#fcfbfb}.btn--secondary{color:#ff1744;border-color:#ff1744;background:rgba(0,0,0,0)}.btn--secondary--magenta{color:#ff0033;border-color:#ff0033;background:rgba(0,0,0,0)}.btn--secondary--white{color:#fcfbfb;border-color:#fff;background:rgba(0,0,0,0)}.btn--secondary--black{color:#2a2a2a;border-color:#2a2a2a;background:rgba(0,0,0,0)}.btn--tertiary{color:#6a6a6a;border-color:#d9d5d2;background:rgba(0,0,0,0);font-weight:normal}.btn--tag{color:#ff0033;font-size:13px;letter-spacing:.4px;font-weight:400;background:#f5f2ee;border-color:#f5f2ee;line-height:30px;height:32px;min-width:48px}.btn--tag.btn--icon{color:#6a6a6a}.btn--tag--outline{color:#ff0033;border-color:#e6e2df}.btn--close{border-radius:50%;padding:0;background:rgba(0,0,0,0);opacity:.5;min-width:0;line-height:34px;min-width:0;height:36px;width:36px}.btn--close:hover{opacity:1}.btn--icon{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center}.btn__icon{display:inline-block;margin-right:8px}.btn__icon--right{margin:0 0 0 8px}.btn--carousel{position:absolute;height:40px;width:40px;background:#fff;padding:0;border:none;border-radius:50%;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2);min-width:40px;z-index:1}.btn--carousel:before{content:"";display:inline-block;margin-bottom:-1px;border-right:3px solid #4a4a4a;border-bottom:3px solid #4a4a4a;height:12px;width:12px}.btn--carousel--large{height:44px;width:44px;min-width:44px}.btn--carousel--prev{left:-56px}.btn--carousel--prev:before{-ms-transform:rotate(135deg);-webkit-transform:rotate(135deg);transform:rotate(135deg);margin-right:-4px}.btn--carousel--next{right:-56px}.btn--carousel--next:before{-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg);margin-left:-4px}.btn--carousel-vertical--prev{top:-56px}.btn--carousel-vertical--prev:before{-ms-transform:rotate(225deg);-webkit-transform:rotate(225deg);transform:rotate(225deg);margin-bottom:-4px}.btn--carousel-vertical--next{bottom:-56px}.btn--carousel-vertical--next:before{-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.btn--fab{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;border-radius:38px;-webkit-box-shadow:0 2px 10px rgba(0,0,0,.35);box-shadow:0 2px 10px rgba(0,0,0,.35);z-index:3;padding:0 20px;line-height:30px;height:32px}.btn--fab__icon--before{margin-left:-3px;margin-right:2px}.btn--fab__icon--after{margin-left:7px;margin-right:-8px;margin-bottom:6px}.btn--fab--close-btn .label{padding-right:12px;border-right:1px solid #c1bfbc}.btn--fab--top-center{position:fixed;left:50%;-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%)}.btn--fab--bottom-center{position:fixed;bottom:32px;left:50%;-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%)}.btn--primary[disabled],.btn--primary--disabled{background:#d9d5d2;color:#fcfbfb;border-color:#d9d5d2}.btn--secondary[disabled],.btn--secondary.btn--primary--disabled,.btn--tertiary[disabled],.btn--tertiary.btn--primary--disabled{color:#d9d5d2;border-color:#d9d5d2}.btn--carousel[disabled]:before,.btn--carousel.btn--primary--disabled:before{border-color:#e6e2df}.btn--wide{padding:0 40px !important}.btn--small{font-size:13px;min-width:48px;height:32px;line-height:30px}.btn--large{font-size:16px;min-width:78px;height:46px;line-height:44px;padding:0 16px}.notes{padding-top:8px;color:#9b9691}.card{background:#fff}.card--small{-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,.1);box-shadow:0 1px 2px 0 rgba(0,0,0,.1);border-radius:2px;padding:12px}.card--medium{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2);border-radius:2px;padding:20px}.card--large{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2);border-radius:3px;padding:32px}.card--no-pad{padding:0}.carousel{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.carousel .btn--carousel{top:50%;-ms-transform:translate(0, -50%);-webkit-transform:translate(0, -50%);transform:translate(0, -50%)}.carousel--mobile{margin:0}.carousel--overlay-btns{margin:0 !important}.carousel__slide{text-align:left;-webkit-transition:.5s transform;transition:.5s transform;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none}.carousel__slide--mobile{overflow-x:scroll;overflow-y:hidden;-webkit-overflow-scrolling:touch}.carousel__slide::-webkit-scrollbar{display:none}.carousel__inner{overflow:hidden;white-space:nowrap;width:100%}.btn--carousel--overlay.btn--carousel--prev{left:-20px}.btn--carousel--overlay.btn--carousel--next{right:-20px}.carousel__item{position:relative;display:inline-block;vertical-align:top}.carousel__item a{display:block}.carousel__item img{display:block;width:100%}.carousel__item-no-shrink{-ms-flex-negative:0;flex-shrink:0}.carousel__pagination{width:12px;height:12px;border-radius:50%;background-color:#d9d5d2;margin-right:12px;cursor:pointer}.carousel__pagination--active{background-color:#ff0033}.carousel__see-more{position:relative;color:#ff0033}.carousel__see-more:after{content:"";display:block;padding-bottom:100%}.carousel__see-more a{display:-webkit-box;display:-ms-flexbox;display:flex;position:absolute;top:0;white-space:normal;text-align:center;padding:0 8px;background:#f8f6f3;width:100%;height:100%;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.carousel__see-more a{font-size:11px}}@media only screen and (min-width: 768px)and (max-width: 991px){.carousel__see-more a{font-size:12px}}.carousel__see-more--link-xs{font-size:11px}.carousel__see-more--link-h4{font-size:18px}.infinite-carousel{overflow:hidden}.infinite-carousel .btn--carousel{top:50%;-ms-transform:translate(0, -50%);-webkit-transform:translate(0, -50%);transform:translate(0, -50%)}.infinite-carousel__container{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100%;-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out, -webkit-transform .5s ease-in-out}.slide{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out, -webkit-transform .5s ease-in-out}.slide--active{cursor:pointer;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out, -webkit-transform .5s ease-in-out}#flash{text-align:center;position:fixed;top:3.5rem;left:50%;-ms-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:1500}#flash .checkmark{margin-right:12px}#flash__message{display:inline-block;padding:12px 20px;border-radius:2px;background:#2a2a2a;color:#fcfbfb;letter-spacing:.3px;opacity:.95;min-width:400px;-webkit-box-shadow:0 2px 10px rgba(0,0,0,.35);box-shadow:0 2px 10px rgba(0,0,0,.35)}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){#flash__message{min-width:80vw}}.form__group{margin-bottom:20px;position:relative;vertical-align:top}.form__double-input__group{margin-bottom:20px}.form__double-input__group .form__group{display:inline-block;vertical-align:top;width:calc(50% - 6px);margin-bottom:0}.form__double-input__group .form__group:not(:last-child){margin-right:12px}@media only screen and (min-width: 768px){.pm-form__inline-labels .form__group{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.pm-form__inline-labels .form__group--check{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.pm-form__inline-labels .form__text{display:inline-block;vertical-align:top;width:calc(100% - 160px)}.pm-form__inline-labels .form__text--input{display:inline-block;vertical-align:top;width:calc(114.3% - 182.88px)}.pm-form__inline-labels .form__label--text{display:inline-block;vertical-align:top;padding:0 20px 0 0;text-align:right;width:160px}.pm-form__inline-labels .form__error-message{left:160px}.pm-form__inline-labels .form__double-input__group{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.pm-form__inline-labels .form__double-input{display:inline-block;vertical-align:top;width:calc(100% - 160px)}.pm-form__inline-labels .form__double-input .form__group{display:inline-block;min-width:165px}.pm-form__inline-labels .form__double-input .form__text{width:100%}.pm-form__inline-labels .form__double-input .form__text--input{width:114.3%}.pm-form__inline-labels .form__text__suffix{top:0}}.form__text{width:100%;display:block;color:#4a4a4a;background:rgba(0,0,0,0);border:1px solid #e6e2df}.form__text::-webkit-input-placeholder{opacity:1;color:#9b9691;font-size:16px !important}.form__text:-moz-placeholder{opacity:1;color:#9b9691;font-size:16px !important}.form__text::-moz-placeholder{opacity:1;color:#9b9691;font-size:16px !important}.form__text:-ms-input-placeholder{opacity:1;color:#9b9691;font-size:16px !important}.form__text:focus{-webkit-box-shadow:0 0 2px #c1bfbc;box-shadow:0 0 2px #c1bfbc}.form__text:disabled,.form__text[readonly]{color:#6a6a6a;background-color:#f5f2ee;opacity:1}.form__text:disabled{cursor:not-allowed}.form__text--input{width:114.3%;padding:9.144px 13.716px;font-size:16.002px;min-height:41.148px;border:1.143px solid #e6e2df;border-radius:2.286px;-webkit-transform:scale(0.874889);-ms-transform:scale(0.874889);transform:scale(0.874889);-webkit-transform-origin:left top;-ms-transform-origin:left top;transform-origin:left top;margin-right:-14.3%;margin-bottom:-5.148px}.form__text__suffix{position:absolute;height:36px;right:12px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;top:28px}.form_suffix_without_label{top:0}.form__error{border:1px solid #ff1744 !important}.form__error:focus{-webkit-box-shadow:0 0 2px hsl(1.7391304348,64.4859813084%,78.0392156863%);box-shadow:0 0 2px hsl(1.7391304348,64.4859813084%,78.0392156863%)}.form__error-message{display:block;position:relative;padding-top:8px;color:#ff1744}.form__label--text{display:block;padding:0 0 8px 0;color:#6a6a6a}.form__text--select{padding:0;border:none}.form__text--select .dropdown__menu{width:100%}.form__group--check{display:inline-block}.form__group--check:not(:last-child){margin-right:12px}.form__label--check{display:block;position:relative}.form__label--check .form__error-message{left:calc(100% + 8px)}.form__check{position:absolute;opacity:0}.form__check:checked+.form__check--custom--checkbox{background:#ff1744;border-color:#ff1744}.form__check:checked+.form__check--custom--checkbox:after{opacity:1}.form__check:checked+.form__check--custom--checkbox--magenta{background:#ff0033 !important;border-color:#ff0033}.form__check:checked+.form__check--custom--checkbox--magenta.display-check::after{opacity:1}.form__check:checked+.form__check--custom--radio{border-color:#ff1744}.form__check:checked+.form__check--custom--radio:after{content:"";position:absolute;top:2px;left:2px;height:10px;width:10px;background:#ff1744;border-radius:50%}.form__check:checked+.form__check--custom--radio--large{border:2px solid #ff1744;height:32px;width:32px}.form__check:checked+.form__check--custom--radio--large:after{top:4px;left:4px;height:20px;width:20px}.form__check:checked+.form__check--custom--radio--medium{border:1px solid #ff1744;height:24px;width:24px}.form__check:checked+.form__check--custom--radio--medium:after{top:3px;left:3px;height:16px;width:16px}.form__check:checked+.form__check--custom--radio--magenta{border-color:#ff0033}.form__check:checked+.form__check--custom--radio--magenta:after{background:#ff0033}.form__check:disabled+.form__check--custom{background:#e6e2df}.form__check--custom{display:inline-block;position:relative;vertical-align:middle;height:16px;width:16px;min-width:16px;min-height:16px;border:1px solid #c1bfbc;margin:0 8px 0 0}.form__check--custom--large{border:2px solid #c1bfbc;height:32px;width:32px}.form__check--custom--medium{border:1px solid #c1bfbc;height:24px;width:24px}.form__check--custom--radio{border-radius:50%}.form__check--custom--checkbox:after{content:"";display:block;opacity:0;position:relative;left:4px;width:5px;height:10px;border:solid #fcfbfb;border-width:0 2px 2px 0;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.form__check--custom--checkbox--magenta.display-check::after{content:"";display:block;opacity:0;position:relative;left:4px;top:-2px;width:6px;height:10px;border:solid #fcfbfb;border-width:0 2px 2px 0;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.toggle__switch{cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0)}.toggle__switch__input{display:none}.toggle__switch__input:checked+.toggle__switch__slider{border-color:rgba(0,0,0,0);background:#ff3355}.toggle__switch__input:checked+.toggle__switch__slider:before{content:"";-ms-transform:translate(28px, 0);-webkit-transform:translate(28px, 0);transform:translate(28px, 0);background:#fff}.toggle__switch__input:checked+.toggle__switch__slider:after{content:"ON";color:#fcfbfb;left:6px}.toggle__switch__input:disabled:not(:checked)+.toggle__switch__slider:before{content:"";-ms-transform:translate(0, 0);-webkit-transform:translate(0, 0);transform:translate(0, 0);color:#9b9691}.toggle__switch__input:disabled:not(:checked)+.toggle__switch__slider:after{content:"OFF";color:#9b9691}.toggle__switch__input:disabled:checked+.toggle__switch__slider{opacity:.5}.toggle__switch__slider{display:inline-block;position:relative;height:30px;width:58px;border-radius:100px;border:1px solid #d9d5d2;-webkit-transition:background .2s;transition:background .2s;-webkit-backface-visibility:hidden}.toggle__switch__slider:before{content:"";-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2);display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;height:28px;width:28px;position:absolute;top:0;left:0;border-radius:100px;background:#fff;font-size:11px;-webkit-transition:transform .1s ease-out;-webkit-transition:-webkit-transform .1s ease-out;transition:-webkit-transform .1s ease-out;transition:transform .1s ease-out;transition:transform .1s ease-out, -webkit-transform .1s ease-out}.toggle__switch__slider:after{content:"OFF";color:#9b9691;font-size:12px;position:relative;left:30px;top:4px}.form__actions{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:end;-webkit-box-pack:end;justify-content:flex-end;padding-top:12px;border-top:1px solid #e6e2df}.form__actions .btn+.btn{margin-left:16px}.form__actions--reverse{-ms-flex-direction:row-reverse;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;flex-direction:row-reverse;-ms-flex-pack:start;-webkit-box-pack:start;justify-content:flex-start}.form__actions--reverse .btn+.btn{margin-right:16px}.form__text--hidden{display:block;width:0;height:0;border:0;padding:0;margin:0}.checkmark{display:inline-block}.checkmark:after{content:"";display:block;height:10px;width:5px;border:solid #ff0033;border-width:0 2px 2px 0;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg);margin:-2px 3px 1px 3px}.checkmark--medium-small::after{height:13px;width:7px;border-width:0 2px 2px 0;margin:-3px 4px 1px 4px}.checkmark--medium::after{height:15px;width:8px;border-width:0 3px 3px 0;margin:-3px 4px 1px 4px}.checkmark--large::after{height:20px;width:10px;border-width:0 4px 4px 0;margin:-3px 6px 1px 6px}.checkmark--x-large::after{height:30px;width:15px;border-width:0 5px 5px 0;margin:-6px 9px 1px 9px}.checkmark--xx-large::after{height:50px;width:25px;border-width:0 6px 5px 0;margin:-12px 14px 2px 14px}.checkmark--white::after{border-color:#fff}.checkmark--green::after{border-color:#ff3355}.checkmark--black::after{border-color:#2a2a2a}.arrow{display:inline-block;border-right:2px solid #e6e2df;border-bottom:2px solid #e6e2df;min-width:8px;height:8px;width:8px;min-width:8px}.arrow--large{height:12px;width:12px;min-width:12px}.arrow--x-large{height:15px;width:15px;border-width:3px;min-width:15px}.arrow--right{-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.arrow--left{-ms-transform:rotate(135deg);-webkit-transform:rotate(135deg);transform:rotate(135deg)}.arrow--down{-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.arrow--up{-ms-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}.long-arrow{display:inline-block;border-right:1px solid #6a6a6a;border-bottom:1px solid #6a6a6a;border-radius:.5px;min-width:8px;height:8px;width:8px}.long-arrow:before{content:"";display:block;width:12.5px;height:1px;background-color:#6a6a6a;border-radius:1px;-webkit-transform:rotate(45deg) translate(-1px, 4px);-ms-transform:rotate(45deg) translate(-1px, 4px);transform:rotate(45deg) translate(-1px, 4px)}.long-arrow--up{-webkit-transform:rotate(225deg);-ms-transform:rotate(225deg);transform:rotate(225deg);margin-bottom:2px}.long-arrow--down{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);margin-top:2px}.arrow--dark{border-color:#c1bfbc !important}.arrow--magenta{border-color:#ff0033 !important}.arrow--darker{border-color:#6a6a6a !important}.arrow--white{border-color:#fcfbfb}.arrow--transition{-webkit-transition:.2s transform;transition:.2s transform}.question-mark{border:1px solid #c1bfbc;border-radius:2px;background:#f5f2ee;padding:4px 8px;text-align:center;font-style:normal}.question-mark:after{content:"?"}.exclamation-mark{display:inline-block;color:#ff1744;font-weight:700;background:#fff;line-height:30px;height:30px;width:30px;text-align:center;border-radius:50%;border:1px solid rgba(0,0,0,0);font-style:normal}.exclamation-mark:after{content:"!"}.exclamation-mark--small{font-weight:500;line-height:24px;height:24px;width:24px}.exclamation-mark--gray{color:#9b9691;border-color:#d9d5d2}.exclamation-mark--red{color:#ff0033;border-color:#ff0033}.exclamation-mark--white{color:#fcfbfb;border-color:#fcfbfb;background:rgba(0,0,0,0)}.exclamation_mark--triangle{position:relative;border-left:17px solid rgba(0,0,0,0);border-right:17px solid rgba(0,0,0,0);border-bottom:30px solid #ff1a1a;font-weight:700;color:#fcfbfb;top:0;left:0}.exclamation_mark--triangle::after{content:"!";position:absolute;font-size:20px;font-style:normal;top:5px;left:-3px}.info{display:inline-block;font-weight:500;background:rgba(0,0,0,0);line-height:24px;height:24px;width:24px;text-align:center;border-radius:50%;border:1px solid rgba(0,0,0,0);font-style:normal}.info:after{content:"i"}.info--small{font-size:12px;line-height:15px;height:15px;width:15px}.info--white{color:#fcfbfb;border-color:#fcfbfb}.info--gray{color:#9b9691;border-color:#d9d5d2}.info--black{color:#2a2a2a;border-color:#2a2a2a}.cross{position:relative;display:inline-block;vertical-align:middle;height:18px;width:18px;overflow:hidden}.cross::before,.cross::after{content:"";position:absolute;height:18px;width:1px;left:9px;background:#6a6a6a}.cross::before{-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.cross::after{-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.cross--white::before,.cross--white::after{background:#fcfbfb}.cross-light{position:relative;display:inline-block;vertical-align:middle;height:18px;width:18px;overflow:hidden}.cross-light::before,.cross-light::after{content:"";position:absolute;height:18px;width:1px;left:9px;background:#c1bfbc}.cross-light::before{-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.cross-light::after{-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.cross--white::before,.cross--white::after{background:#fff}.cross--dark::before,.cross--dark::after{background:#2a2a2a}.cross-weight-medium::before,.cross-weight-medium::after{width:2px}.cross--small{height:12px;width:12px}.cross--small::before,.cross--small::after{height:12px;left:6px}.cross--x-small{height:4px;width:4px}.cross--x-small::before,.cross--x-small::after{height:4px;left:2px}.cross--medium{height:16px;width:16px}.cross--medium::before,.cross--medium::after{height:16px;left:8px}.condition-tag{font-weight:500;color:#9b9691;margin-left:auto;padding:4px 12px;border:1px solid #e6e2df;border-radius:20px}.condition-tag--small{line-height:19px;padding:0 8px;font-size:10px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.condition-tag--small{font-size:9px;line-height:9px;padding:2px 4px}}.ellipses-dot{color:#c1bfbc}.ellipses-dot::after{content:"•••";font-size:26px;letter-spacing:2px}.img__container{line-height:0;position:relative}.img__container:before{content:"";display:block;height:0;width:100%}.img__container img{position:absolute;top:0;left:0;width:100%;height:100%}.img__container--square:before{padding-top:100%}.img__container--3-8:before{padding-top:37.5%}.img__container--3-2:before{padding-top:66.6%}.img__container--16-19:before{padding-top:84.21%}.img__container--11-20:before{padding-top:55%}.img__container--16-5:before{padding-top:31%}.img__container--c2:before{padding-top:32.3%}.img__container--careers__mobile-header:before{padding-top:50%}.img__container--careers__3pic:before{padding-top:44.4%}.img__container--moderation-laptop:before{padding-top:29.2%}.img__container--barcode-tips:before{padding-top:65%}.img__container--1-5:before{padding-top:20%}.img__container--careers__wlb:before{padding-top:67%}.img__container--bundle{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.img__container--bundle img{-webkit-box-shadow:2px 2px 0 0 #fff,5px 5px 0 0 #c1bfbc;box-shadow:2px 2px 0 0 #fff,5px 5px 0 0 #c1bfbc}.img__container--bundle .badge{position:absolute;padding:0 12px;bottom:-4px;height:20px}.img__selected--magenta:after{content:"";display:block;position:absolute;left:0;top:0;right:0;bottom:-1px;-webkit-box-shadow:inset 0 0 0 3px #ff0033;box-shadow:inset 0 0 0 3px #ff0033}.img__container--video-thumbnail img{background:#000;-o-object-fit:contain;object-fit:contain}.img__container--video-thumbnail:after{content:"";background:rgba(0,0,0,.35);z-index:3;position:absolute;left:0;right:0}.img__container--video-thumbnail .img__video-thumbnail__play-img{z-index:1;height:44px;width:44px;top:50%;left:50%;-ms-transform:translate3d(-50%, -50%, 0);-webkit-transform:translate3d(-50%, -50%, 0);transform:translate3d(-50%, -50%, 0);background:rgba(0,0,0,0)}.img--gray-out{opacity:.5}.user-image{border-radius:50%;vertical-align:middle;border:2px solid #fff}.user-image--xs{width:28px !important;height:28px !important}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.user-image--xs{width:24px !important;height:24px !important}}.user-image--s{width:36px !important;height:36px !important}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.user-image--s{width:32px !important;height:32px !important}}.user-image--m{width:40px !important;height:40px !important}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.user-image--m{width:36px !important;height:36px !important}}.user-image--l{width:60px !important;height:60px !important}.user-image--xl{width:100px !important;height:100px !important}.circle-loader{border:2px solid #d9d5d2;border-radius:50%;border-top:2px solid #ff0033;height:32px;width:32px;-webkit-animation:right-spin 1s linear infinite both;animation:right-spin 1s linear infinite both}.circle-loader--small{height:20px;width:20px}.circle-loader--large{border-width:3px;margin-right:12px;height:56px;width:56px}.circle-loader--x-large{border-width:4px;margin-right:12px;height:100px;width:100px}.circle-loader__text{margin-left:8px;letter-spacing:.5px;color:#2a2a2a;text-align:center}.circle-loader__text-large{margin:8px 12px}#hud,#hud__backdrop{position:fixed}#hud__backdrop{background-color:rgba(42,42,42,.45);width:100%;height:100%;top:0;left:0;z-index:1080}#hud{left:50%;top:33.33%;-ms-transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:1081;text-align:center}.hud--success{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;height:100px;width:100px;background:#ff1744;border-radius:50%}.hud--success.checkmark:after{position:relative;top:-3px}@-webkit-keyframes right-spin{0%{-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes right-spin{0%{-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.internal-share-container{overflow-y:scroll;height:calc(100% - 106px)}.internal-share{border-bottom:1px solid #e6e2df;padding:20px 44px}.internal-share:hover:not(.internal-share-protip){background:#f8f6f3}.internal-share-protip{text-align:center;color:#9b9691;padding:20px 44px}.internal-share-protip__text{font-weight:300}.share-wrapper-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center}.share-wrapper__icon-container{width:48px;height:48px;border-radius:50%;background:#ff0033;padding:13px}.posh-shows-icon-container{background:#ff4d66}.share-wrapper__share-title,.event-info__share-wrapper__share-title{font-weight:500;color:#4a4a4a;margin-left:1em}.share-wrapper__event-name{margin-top:8px;margin-left:1em;color:#6a6a6a}.direct-share-users{border-top:1px solid #f5f2ee}.direct-share-users__search-option{background-color:#f5f2ee;padding:8px 48px 8px 48px;display:-webkit-box;display:-ms-flexbox;display:flex;cursor:pointer}.ds__search-option__search-name{color:#9b9691;margin-left:8px;font-weight:300}.ds-search-users__search-people{border-bottom:1px solid #f5f2ee}.search-people__form{-ms-flex:5 1 auto;-webkit-box-flex:5;flex:5 1 auto}.search-people__input-group{margin:8px 24px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:start;-webkit-box-pack:start;justify-content:flex-start}.search-people__input-group__icon{position:absolute;top:1.25rem;left:43px;-webkit-transform:scale(1.3);-ms-transform:scale(1.3);transform:scale(1.3)}.search-people__input-group__input{height:50px;width:100%;padding-left:46px;border-radius:3px;border:1px solid #d9d5d2;background-color:#f5f2ee}.search-people__input-group_cancel{margin-left:10px;color:#9b9691;line-height:50px}.ds-search-users__user-list{height:460px;overflow-y:scroll}.ds-list__item{padding:12px 48px;border-bottom:1px solid #f5f2ee}.ds-list__item:hover{background:#fcfbfb}.ds-list__item__link__content__name{font-weight:500;height:47px;line-height:47px;margin-left:8px;color:#4a4a4a}.external-share-container{padding:16px 44px;-webkit-box-shadow:0 4px 32px 8px rgba(0,0,0,.2);box-shadow:0 4px 32px 8px rgba(0,0,0,.2)}.external-share-container__anchor{padding:4px}.external-share-container__link-container{width:38px;height:38px;border-radius:50%;padding-top:6px;margin:auto}.external-share-container__link-media-name{color:#6a6a6a;padding:5px;font-weight:300}.external-share-container__link-container--fb{border:1px solid #3d5a98}.external-share-container__link-container--tw{border:1px solid #2aa9e0}.external-share-container__link-container--pn{border:1px solid #bd081c}.external-share-container__link-container--tm{border:1px solid #37465d}.external-share-container__link-container--email{border:1px solid #fcbb58}.external-share-container__link-container--copy{border:1px solid #ff4d66}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.internal-shares{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:start;-webkit-box-pack:start;justify-content:flex-start;padding:12px;overflow-x:scroll}.internal-share{margin-right:.4em;padding:0;border:0}.internal-share-protip{width:100%;text-align:center}.internal-share-protip__text{margin:auto;width:60%}.share-wrapper-container{min-width:100px;max-width:118px;display:block;margin:auto}.share-wrapper__icon-container{height:66px;width:66px;border-radius:50%;background:#ff0033;padding:22px;margin:auto;margin-bottom:8px}.posh-shows-icon-container{background:#ff4d66}.event-info__share-wrapper__share-title,.share-wrapper__share-title{color:#6a6a6a;text-align:center;margin:auto;font-weight:500}.event-info__share-wrapper__share-title{line-height:22px}.share-wrapper__event-name{margin-top:0;margin-left:0;text-align:center;color:#6a6a6a}.direct-share-users{background:#fcfbfb;height:auto;border:0}.search-people__input-group__icon{position:absolute;top:25px;left:41px}.search-people__input-group__input{width:100%;padding:1em 1em 1em 3.2em;border-radius:3px;border:1px solid #d9d5d2;background-color:#f5f2ee;color:#4a4a4a}.ds-search-users__user-list{height:247px}.ds-list--horizontal{padding:12px 0 12px 12px;border-top:1px solid #e6e2df;margin:0;width:100%}.ds-list--horizontal__container{display:-webkit-box;display:-ms-flexbox;display:flex;overflow-x:scroll}.ds-list__search-option{text-align:center;vertical-align:middle;padding:20px;border:1px solid #ff0033;background:none;cursor:pointer}.ds-list__img-con{min-width:56px;margin-right:6%;text-align:center;cursor:pointer;background:#fcfbfb}.ds-list__text{color:#6a6a6a;text-align:center;height:16px;margin:auto}.external-share-container{padding:12px;border-top:1px solid #e6e2df;background:#fcfbfb;overflow:auto}.external-share-container__link-container{padding-top:12px;height:50px;width:50px;border-radius:50%}}.modal-open{overflow:hidden}.modal-open--fixed{position:fixed}.modal-backdrop{position:fixed;display:none;top:0;right:0;bottom:0;left:0;background:rgba(42,42,42,.45);z-index:1040}.modal-backdrop--top{z-index:1051}.modal-backdrop--in{display:block}.modal{position:fixed;top:50%;left:50%;-ms-transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);z-index:1050;width:500px;max-width:95vw;background:#fcfbfb;border-radius:2px;-webkit-box-shadow:0 4px 32px 8px rgba(0,0,0,.2);box-shadow:0 4px 32px 8px rgba(0,0,0,.2);outline:none;opacity:0;display:none;-webkit-transition:all .2s ease;transition:all .2s ease}.modal--top{z-index:1052}.modal--in{opacity:1;display:block}.modal__close-btn{position:absolute;top:8px;right:8px}.modal--top{z-index:1052}.modal--action-sheet{top:auto;right:0;bottom:0%;left:auto;width:100vw;max-width:100vw;-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%);-webkit-transition:all .2s ease;transition:all .2s ease}.modal--action-sheet.modal--in{-ms-transform:translateY(0%);-webkit-transform:translateY(0%);transform:translateY(0%)}.modal--slide-out{top:auto;bottom:20px;left:0;width:100vw;max-width:100vw;-ms-transform:translateX(100%);-webkit-transform:translateX(100%);transform:translateX(100%);-webkit-transition:transform .2s ease;-webkit-transition:-webkit-transform .2s ease;transition:-webkit-transform .2s ease;transition:transform .2s ease;transition:transform .2s ease, -webkit-transform .2s ease}.modal--slide-out.modal--in{-ms-transform:translateX(0%);-webkit-transform:translateX(0%);transform:translateX(0%)}.modal--slide-out .modal__body{padding:0}.modal--small{width:340px}.modal--large{width:650px}.modal--full{padding:0;max-height:85vh;overflow:hidden}.slide-up{-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%);-webkit-transition:transform .2s ease-in;-webkit-transition:-webkit-transform .2s ease-in;transition:-webkit-transform .2s ease-in;transition:transform .2s ease-in;transition:transform .2s ease-in, -webkit-transform .2s ease-in}.modal__header{position:relative;text-align:center;padding:16px 20px;border-bottom:1px solid #e6e2df;border-radius:2px 0 0}.modal__header--borderless{border-bottom:none;padding:24px 20px 0 20px}.modal__title{color:#6a6a6a;font-weight:300;letter-spacing:.5px;min-height:12px;padding-right:18px}.modal__title--borderless{color:#4a4a4a;font-weight:500}.modal__body{background:#fcfbfb;position:relative;overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;min-height:132px;max-height:calc(85vh - 54px - 68px);padding:20px 20px 40px 20px;border-radius:2px;color:#2a2a2a;z-index:1}.modal__body--img-covershot{width:calc(100% + 40px);margin-top:-24px;margin-left:-20px}.modal__body--full-width{padding:0}.modal__footer{padding:16px 20px;text-align:right;background:#fcfbfb;border-top:1px solid #e6e2df;border-radius:0 0 2px 2px}.modal__footer .form__actions{padding:0;border:none}.modal__footer--borderless{border-top:none;padding:0 20px 16px 20px}.modal__footer--single-btn .btn{margin:0 auto;width:350px;max-width:75%}.breadcrumb{font-size:13px;line-height:16px;letter-spacing:.15px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.breadcrumb{font-size:14px;line-height:20px}}.breadcrumb__list{margin-bottom:8px}.breadcrumb__list-item{display:inline;font-weight:300}.breadcrumb__list-item:not(:last-child):after{content:" / ";padding:0 4px}.breadcrumb__list-item:last-child .breadcrumb__link{color:#6a6a6a}.breadcrumb__link{text-align:center;color:#9b9691}.navigation__link__subtext{color:#6a6a6a;font-weight:400}.navigation--horizontal{width:100%;border-bottom:1px solid #d9d5d2}.navigation--horizontal__tab{display:inline-block}.navigation--horizontal__tab:last-child .navigation--horizontal__link{margin-right:0}.navigation--horizontal__link{display:block;color:#6a6a6a;padding:8px 16px;margin-right:16px;text-align:center}.navigation--horizontal__link:hover{font-weight:500}.navigation--horizontal__link--full{margin:0 !important}.navigation--horizontal__link--large{font-size:18px;margin-right:28px}.navigation--horizontal__link--selected{font-weight:500;border-bottom:2px solid #ff0033;color:#2a2a2a}.navigation--horizontal__link--selected--white{border-color:#fcfbfb}.navigation--horizontal__tab--disabled{pointer-events:none;opacity:.6}.navigation--vertical--left{padding-right:40px;margin-bottom:40px}.navigation--vertical__title{color:#9b9691;font-weight:300;padding:8px 16px;margin:0}.navigation--vertical__tab{border-bottom:1px solid #f5f2ee}.navigation--vertical__tab:hover{background:#f8f6f3}.navigation--vertical__link--selected{color:#2a2a2a !important;font-weight:500;cursor:pointer}.navigation--vertical__link{display:block;color:#6a6a6a;padding:20px 16px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.navigation--vertical--left,.navigation--vertical--right{padding:0}.navigation--vertical__title{background:rgba(0,0,0,0);font-weight:300;padding:12px 20px;margin:0}.navigation--vertical__list{display:block}}.dropdown{display:inline-block;position:relative}.dropdown:focus{outline:none}.dropdown__menu__item__icon{vertical-align:middle;margin-right:8px}.dropdown__selector--rotated .dropdown__selector--select-tag:after,.dropdown__selector--rotated .dropdown__selector--arrow:after{-ms-transform:rotate(-135deg);-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}.dropdown__menu--expanded{display:block !important;opacity:1 !important}.dropdown__selector{display:inline-block;position:relative;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.dropdown__selector--caret:after{position:relative;top:0;margin-left:4px;display:inline-block;border-right:6px solid rgba(0,0,0,0);border-top:6px solid #c1bfbc;border-left:6px solid rgba(0,0,0,0);content:""}.dropdown__selector--caret.btn--primary:after,.dropdown__selector--caret.btn--primary--disabled:after{border-top:6px solid #fcfbfb}.dropdown__selector--caret.dropdown__selector--caret--white:after{border-top:6px solid #fff}.dropdown__selector--caret--small:after{border-width:5px}.dropdown__selector--arrow:after{content:"";position:relative;top:0;margin-left:8px;display:inline-block;border-right:2px solid #c1bfbc;border-bottom:2px solid #c1bfbc;height:8px;width:8px;top:50%;-ms-transform:rotate(45deg) translate(0, -50%);-webkit-transform:rotate(45deg) translate(0, -50%);transform:rotate(45deg) translate(0, -50%);-webkit-transition:all .2s;transition:all .2s}.dropdown__selector--select-tag{display:block;padding:0 36px 0 12px;background:rgba(0,0,0,0);border:1px solid #e6e2df;border-radius:2px;height:36px;line-height:34px;white-space:nowrap}.dropdown__selector--select-tag:after{content:"";position:absolute;top:50%;margin-top:-3px;right:12px;border-right:2px solid #c1bfbc;border-bottom:2px solid #c1bfbc;height:8px;width:8px;-ms-transform:rotate(45deg) translateY(-50%);-webkit-transform:rotate(45deg) translateY(-50%);transform:rotate(45deg) translateY(-50%);-webkit-transition:all .2s;transition:all .2s}.dropdown__selector--select-tag--large{padding:0 36px 0 12px;line-height:3.5rem;min-height:3.5rem}.dropdown__selector--select-tag--large:after{right:1.25rem;height:10px;width:10px}.dropdown__selector--disabled{color:#6a6a6a;background-color:#f5f2ee;pointer-events:none}.dropdown__menu{max-height:calc(100vh - 100px);position:absolute;z-index:2;background:#fff;-webkit-transition:all .1s;transition:all .1s;-webkit-box-shadow:0 2px 16px 0 rgba(0,0,0,.1);box-shadow:0 2px 16px 0 rgba(0,0,0,.1);margin:4px 0 0 0;display:none;opacity:0;overflow-y:auto;min-width:180px}.dropdown__menu--caret{top:100%;left:0;margin:8px 0 0 0;-webkit-box-shadow:0 -2px 16px 1px rgba(0,0,0,.1);box-shadow:0 -2px 16px 1px rgba(0,0,0,.1)}.dropdown__menu--caret:after{bottom:100%;left:20px;border:solid rgba(0,0,0,0);content:"";height:0;width:0;position:absolute;pointer-events:none;border-color:rgba(136,183,213,0);border-bottom-color:#fff;border-width:10px;margin-left:-10px}.dropdown__menu--top{margin:0 0 4px 0;bottom:100%;top:auto}.dropdown__menu--top:after{top:100%;bottom:auto}.dropdown__menu--dark{background:#f8f6f3}.dropdown__menu--dark.dropdown__menu--caret:after{border-bottom-color:#f8f6f3}.dropdown__menu--dark .dropdown__link:hover,.dropdown__menu--dark .dropdown__link--no-hover:hover{background:#e6e2df}.dropdown__menu--limit-height{max-height:400px}.dropdown__selector--btn{display:inline-block;position:relative;vertical-align:top;white-space:nowrap;letter-spacing:.5px;cursor:pointer;font-size:14px;text-align:center;border-width:1px;border-style:solid;border-radius:2px;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;height:36px;line-height:34px;padding:0 12px}.dropdown__selector--btn--empty:after{margin-left:0}.dropdown__menu--right{right:0;left:auto}.dropdown__menu--right:after{left:auto;right:20px;margin-left:0;margin-right:-10px}.dropdown__menu__item{display:block;cursor:pointer;position:relative}.dropdown__menu__item--seperator{border-bottom:1px solid #e6e2df}.dropdown__link,.dropdown__link--no-hover{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:8px 16px;color:#6a6a6a;text-align:left;cursor:pointer}.dropdown__link:hover,.dropdown__link--no-hover:hover{background-color:#f5f2ee}.dropdown__link--no-hover:hover{background-color:unset !important}.dropdown__link--disabled{color:#c1bfbc;cursor:default}.dropdown__link__item{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6a6a6a;font-size:13px}.dropdown__menu__item--highlighted{background:#f5f2ee}.dropdown__menu__item--selected .dropdown__link,.dropdown__menu__item--selected .dropdown__link--no-hover,.dropdown__menu__item--selected.dropdown__link,.dropdown__menu__item--selected.dropdown__link--no-hover{color:#ff0033;font-weight:500;padding-right:40px}.dropdown__menu__item--selected .dropdown__link:after,.dropdown__menu__item--selected .dropdown__link--no-hover:after,.dropdown__menu__item--selected.dropdown__link:after,.dropdown__menu__item--selected.dropdown__link--no-hover:after{content:"";display:block;position:absolute;right:20px;margin-top:-2px;top:50%;-ms-transform:rotate(45deg) translate(0, -50%);-webkit-transform:rotate(45deg) translate(0, -50%);transform:rotate(45deg) translate(0, -50%);height:10px;width:6px;border:solid #ff0033;border-width:0 2px 2px 0}.dropdown__menu__item--nested-group{padding-left:56px !important}.shimmer{-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:linear;animation-timing-function:linear;background:#f8f6f3;background:-webkit-gradient(linear, left top, right top, color-stop(8%, #f8f6f3), color-stop(18%, #f5f2ee), color-stop(33%, #f8f6f3));background:linear-gradient(to right, #f8f6f3 8%, #f5f2ee 18%, #f8f6f3 33%);-webkit-background-size:800px 104px}@-webkit-keyframes shimmer{0%{background-position:-468px 0}50%{background-position:468px 468px}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}50%{background-position:468px 468px}100%{background-position:468px 0}}.shimmer--icon{height:20px;width:20px}.shimmer--card{-webkit-box-shadow:none;box-shadow:none}.shimmer--text{height:6px;border-radius:.5em}.shimmer--text--medium{margin:4px 0}.timestamp{color:#9b9691}.type-ahead__list{max-height:360px}.type-ahead__input{width:100%;height:100%}.user-list__item{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between;padding:12px 0;margin:0 12px}.user-list__item:not(:last-child){border-bottom:1px solid #e6e2df}.user-list__details{line-height:1.5}.user-list__details .user-image,.user-list__details .user-list__name{display:inline-block;vertical-align:middle}.user-list__details .user-list__name{margin-left:8px}.carousel-vertical{position:relative;margin:56px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-wrap:none;flex-wrap:nowrap;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;height:calc(100% - 112px)}.carousel-vertical.carousel--overlay-btns{height:100%}.carousel-vertical .btn--carousel{left:50%;-ms-transform:translate(-50%, 0);-webkit-transform:translate(-50%, 0);transform:translate(-50%, 0)}.carousel--vertical--mobile{margin:0;height:100%}.carousel-vertical__slide--mobile{-webkit-overflow-scrolling:touch}.carousel-vertical__slide::-webkit-scrollbar{display:none}.carousel-vertical__inner__container{width:100%;height:100%;overflow:hidden}.carousel-vertical__inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:none;flex-wrap:nowrap;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;white-space:nowrap;height:100%;width:100%}.btn--carousel--overlay.btn--carousel-vertical--prev{top:-20px}.btn--carousel--overlay.btn--carousel-vertical--next{bottom:-20px}.carousel-vertical__item{width:100%;-ms-flex:1 1 0;-webkit-box-flex:1;flex:1 1 0}.carousel-vertical__item a{display:block}.carousel-vertical__item img{display:block;height:100%;-ms-flex:1 1 0;-webkit-box-flex:1;flex:1 1 0}.fade-enter-active,.fade-leave-active{-webkit-transition:opacity .2s;transition:opacity .2s}.fade-enter,.fade-leave-to{opacity:0}.expand-enter-active,.expand-leave-active{max-height:90vh;overflow:hidden;-webkit-transition:all .25s ease;transition:all .25s ease}.expand-enter,.expand-leave-to{max-height:0;overflow:hidden}.slide-left-enter-active,.slide-left-leave-active{-webkit-transition:all .25s ease-out;transition:all .25s ease-out}.slide-left-enter,.slide-left-leave-to{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%)}.slide-up-enter-active,.slide-up-leave-active{-webkit-transition:all .25s ease-out;transition:all .25s ease-out}.slide-up-enter,.slide-up-leave-to{-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}.slide-down-enter-active{-webkit-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:ease-in;transition-timing-function:ease-in}.slide-down-leave-active{-webkit-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:ease-in;transition-timing-function:ease-in}.slide-down-enter-to,.slide-down-leave{max-height:100px;overflow:hidden}.slide-down-enter,.slide-down-leave-to{overflow:hidden;max-height:0}.header{width:100%;padding-top:50px}.header--fixed{position:fixed;top:0;width:100%;min-width:768px;background-color:#fff;border-bottom:1px solid #e6e2df;z-index:1010}.header__con{height:50px;max-width:1360px;margin:0 auto;padding:0 12px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.header__con{padding:0}}.header__logo{height:24px;width:135px;margin:0 28px 0 12px}@media screen and (max-width: 992px){.header__logo{height:22px}}@media only screen and (min-width: 768px)and (max-width: 991px){.header__logo{width:124px}}.header__login-signup{margin:0 0 0 auto;font-weight:500}.header__login-signup_vertical-bar{padding:0 4px;color:#c1bfbc;font-weight:300}.header__account-info-list{margin:0 0 0 auto;padding-left:28px}.header__account-info-list__item{display:inline-block;vertical-align:top}.header__account-info-list__item:hover{background:#f8f6f3}.header__account-info__link{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;padding:0 16px;height:50px}.header__account-info__link__subtitle{display:block;color:#9b9691}@media screen and (max-width: 1067px){.header__account-info-list__item:first-child{display:none}}@media screen and (max-width: 992px){.header__account-info-list__item:nth-child(2){display:none}}.header__notification-count{display:inline;position:absolute;top:1px;left:2em;padding:4px 4px;background:#ff1a1a;border-radius:10px;font-size:11px;font-weight:300;letter-spacing:1px;color:#fcfbfb}.header--scrollable{width:100%;position:relative;background-color:#fff;-webkit-box-shadow:0 1px 6px 1px rgba(0,0,0,.1);box-shadow:0 1px 6px 1px rgba(0,0,0,.1);z-index:4}.header__search-box--mobile{position:fixed;top:51px;vertical-align:top;left:0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.header--fixed{min-width:auto;padding:0}.header__hamburger__toggle{display:block;float:left;width:25px}.header__hamburger{float:left;position:relative;height:50px;padding:0 16px}.header__hamburger:before{content:"";position:absolute;left:.8em;top:1.4em;width:1em;height:.12em;background:#9b9691;-webkit-box-shadow:0 .3em 0 0 #9b9691,0 .6em 0 0 #9b9691;box-shadow:0 .3em 0 0 #9b9691,0 .6em 0 0 #9b9691}.header__logo{height:20px;width:102px}}@media only screen and (max-device-width: 767px)and (max-width: 480px),only screen and (max-device-width: 767px)and (max-height: 767px)and (orientation: landscape),only screen and (max-device-height: 480px)and (orientation: landscape)and (max-width: 480px),(max-device-height: 480px)and (orientation: landscape)and (max-height: 767px)and (orientation: landscape){.header__logo{margin:0 12px;height:18px}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.header__icon-list{margin:0 8px 0 auto}.header__icon-list__item{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;vertical-align:top;border-right:1px solid #e6e2df;height:50px;padding:0 4px;margin-bottom:1px}.header__icon-list__item__link{line-height:49px;display:-webkit-box;display:-ms-flexbox;display:flex}.header__icon-list__item__link--sell{color:#ff0033;text-transform:uppercase;font-weight:500;padding:0 4px}.header__icon-list__item--icon{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}.header__icon-list__item--login{padding-top:4px;padding-left:4px;color:#ff0033;text-transform:uppercase;font-size:12px;font-weight:500}.header__icon-list__item--account{position:relative;width:50px}}@media only screen and (max-device-width: 767px)and (max-width: 480px),only screen and (max-device-width: 767px)and (max-height: 767px)and (orientation: landscape),only screen and (max-device-height: 480px)and (orientation: landscape)and (max-width: 480px),(max-device-height: 480px)and (orientation: landscape)and (max-height: 767px)and (orientation: landscape){.header__icon-list__item--account{width:44px}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.header__icon-list__item--search{width:44px}.header__icon-list__item:last-child{border-right:0}.header__account-info__dropdown{max-width:250px;max-height:75vh;overflow:scroll}.header__account-info__dropdown__header{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;white-space:nowrap;padding:12px 12px}.header__account-info__view-closet{display:inline-block;padding:0 12px;font-weight:500}.header__side-nav{position:fixed;z-index:1010;min-width:80%;height:calc(100% - 52px);overflow:scroll;top:52px;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);-webkit-transition:transform .2s;-webkit-transition:-webkit-transform .2s;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s, -webkit-transform .2s;-webkit-overflow-scrolling:touch;background:#fcfbfb}}@media only screen and (max-device-width: 767px)and (orientation: landscape),screen and (max-device-height: 480px)and (orientation: landscape)and (orientation: landscape){.header__side-nav{min-width:50%}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.header__side-nav.collapsed{-ms-transform:translate3d(-100%, 0, 0);-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0)}.header__login-signup{margin-right:12px}}@media only screen and (min-width: 0){.col-x1{width:4.1666666667%}.col-x1-gutter{width:calc(4.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x2{width:8.3333333333%}.col-x2-gutter{width:calc(8.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x3{width:12.5%}.col-x3-gutter{width:calc(12.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x4{width:16.6666666667%}.col-x4-gutter{width:calc(16.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x5{width:20.8333333333%}.col-x5-gutter{width:calc(20.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x6{width:25%}.col-x6-gutter{width:calc(25% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x7{width:29.1666666667%}.col-x7-gutter{width:calc(29.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x8{width:33.3333333333%}.col-x8-gutter{width:calc(33.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x9{width:37.5%}.col-x9-gutter{width:calc(37.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x10{width:41.6666666667%}.col-x10-gutter{width:calc(41.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x11{width:45.8333333333%}.col-x11-gutter{width:calc(45.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x12{width:50%}.col-x12-gutter{width:calc(50% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x13{width:54.1666666667%}.col-x13-gutter{width:calc(54.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x14{width:58.3333333333%}.col-x14-gutter{width:calc(58.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x15{width:62.5%}.col-x15-gutter{width:calc(62.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x16{width:66.6666666667%}.col-x16-gutter{width:calc(66.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x17{width:70.8333333333%}.col-x17-gutter{width:calc(70.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x18{width:75%}.col-x18-gutter{width:calc(75% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x19{width:79.1666666667%}.col-x19-gutter{width:calc(79.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x20{width:83.3333333333%}.col-x20-gutter{width:calc(83.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x21{width:87.5%}.col-x21-gutter{width:calc(87.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x22{width:91.6666666667%}.col-x22-gutter{width:calc(91.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x23{width:95.8333333333%}.col-x23-gutter{width:calc(95.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 0){.col-x24{width:100%}.col-x24-gutter{width:calc(100% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s1{width:4.1666666667%}.col-s1-gutter{width:calc(4.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s2{width:8.3333333333%}.col-s2-gutter{width:calc(8.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s3{width:12.5%}.col-s3-gutter{width:calc(12.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s4{width:16.6666666667%}.col-s4-gutter{width:calc(16.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s5{width:20.8333333333%}.col-s5-gutter{width:calc(20.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s6{width:25%}.col-s6-gutter{width:calc(25% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s7{width:29.1666666667%}.col-s7-gutter{width:calc(29.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s8{width:33.3333333333%}.col-s8-gutter{width:calc(33.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s9{width:37.5%}.col-s9-gutter{width:calc(37.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s10{width:41.6666666667%}.col-s10-gutter{width:calc(41.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s11{width:45.8333333333%}.col-s11-gutter{width:calc(45.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s12{width:50%}.col-s12-gutter{width:calc(50% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s13{width:54.1666666667%}.col-s13-gutter{width:calc(54.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s14{width:58.3333333333%}.col-s14-gutter{width:calc(58.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s15{width:62.5%}.col-s15-gutter{width:calc(62.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s16{width:66.6666666667%}.col-s16-gutter{width:calc(66.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s17{width:70.8333333333%}.col-s17-gutter{width:calc(70.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s18{width:75%}.col-s18-gutter{width:calc(75% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s19{width:79.1666666667%}.col-s19-gutter{width:calc(79.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s20{width:83.3333333333%}.col-s20-gutter{width:calc(83.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s21{width:87.5%}.col-s21-gutter{width:calc(87.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s22{width:91.6666666667%}.col-s22-gutter{width:calc(91.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s23{width:95.8333333333%}.col-s23-gutter{width:calc(95.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 480px){.col-s24{width:100%}.col-s24-gutter{width:calc(100% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m1{width:4.1666666667%}.col-m1-gutter{width:calc(4.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m2{width:8.3333333333%}.col-m2-gutter{width:calc(8.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m3{width:12.5%}.col-m3-gutter{width:calc(12.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m4{width:16.6666666667%}.col-m4-gutter{width:calc(16.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m5{width:20.8333333333%}.col-m5-gutter{width:calc(20.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m6{width:25%}.col-m6-gutter{width:calc(25% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m7{width:29.1666666667%}.col-m7-gutter{width:calc(29.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m8{width:33.3333333333%}.col-m8-gutter{width:calc(33.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m9{width:37.5%}.col-m9-gutter{width:calc(37.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m10{width:41.6666666667%}.col-m10-gutter{width:calc(41.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m11{width:45.8333333333%}.col-m11-gutter{width:calc(45.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m12{width:50%}.col-m12-gutter{width:calc(50% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m13{width:54.1666666667%}.col-m13-gutter{width:calc(54.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m14{width:58.3333333333%}.col-m14-gutter{width:calc(58.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m15{width:62.5%}.col-m15-gutter{width:calc(62.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m16{width:66.6666666667%}.col-m16-gutter{width:calc(66.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m17{width:70.8333333333%}.col-m17-gutter{width:calc(70.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m18{width:75%}.col-m18-gutter{width:calc(75% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m19{width:79.1666666667%}.col-m19-gutter{width:calc(79.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m20{width:83.3333333333%}.col-m20-gutter{width:calc(83.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m21{width:87.5%}.col-m21-gutter{width:calc(87.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m22{width:91.6666666667%}.col-m22-gutter{width:calc(91.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m23{width:95.8333333333%}.col-m23-gutter{width:calc(95.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 768px){.col-m24{width:100%}.col-m24-gutter{width:calc(100% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l1{width:4.1666666667%}.col-l1-gutter{width:calc(4.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l2{width:8.3333333333%}.col-l2-gutter{width:calc(8.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l3{width:12.5%}.col-l3-gutter{width:calc(12.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l4{width:16.6666666667%}.col-l4-gutter{width:calc(16.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l5{width:20.8333333333%}.col-l5-gutter{width:calc(20.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l6{width:25%}.col-l6-gutter{width:calc(25% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l7{width:29.1666666667%}.col-l7-gutter{width:calc(29.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l8{width:33.3333333333%}.col-l8-gutter{width:calc(33.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l9{width:37.5%}.col-l9-gutter{width:calc(37.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l10{width:41.6666666667%}.col-l10-gutter{width:calc(41.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l11{width:45.8333333333%}.col-l11-gutter{width:calc(45.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l12{width:50%}.col-l12-gutter{width:calc(50% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l13{width:54.1666666667%}.col-l13-gutter{width:calc(54.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l14{width:58.3333333333%}.col-l14-gutter{width:calc(58.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l15{width:62.5%}.col-l15-gutter{width:calc(62.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l16{width:66.6666666667%}.col-l16-gutter{width:calc(66.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l17{width:70.8333333333%}.col-l17-gutter{width:calc(70.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l18{width:75%}.col-l18-gutter{width:calc(75% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l19{width:79.1666666667%}.col-l19-gutter{width:calc(79.1666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l20{width:83.3333333333%}.col-l20-gutter{width:calc(83.3333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l21{width:87.5%}.col-l21-gutter{width:calc(87.5% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l22{width:91.6666666667%}.col-l22-gutter{width:calc(91.6666666667% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l23{width:95.8333333333%}.col-l23-gutter{width:calc(95.8333333333% - 2rem);margin:0 1rem}}@media only screen and (min-width: 992px){.col-l24{width:100%}.col-l24-gutter{width:calc(100% - 2rem);margin:0 1rem}}[class*=col-]{position:relative;display:inline-block;vertical-align:top}.row{margin-left:-12;margin-right:-12}footer{background-color:#f8f6f3;border-top:1px solid #f5f2ee;padding-top:24px;min-width:768px;margin-top:84px}footer h4{font-size:12px;text-transform:uppercase}footer .footer-container{width:100%}footer .footer-container .footer-content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap}footer .footer-container .footer-content .group-list{width:70%;margin-bottom:20px}footer .footer-container .footer-content .group-list ul{-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto;padding:0 1% 1% 10%}footer .footer-container .footer-content .group-list ul li{text-align:left;margin:8px 4px}footer .footer-container .footer-content .group-list ul li h4{margin-bottom:4px;color:#2a2a2a;font-weight:500;font-size:12px}footer .footer-container .footer-content .group-list ul li a{color:#9b9691}footer .footer-container .footer-content .group-list ul li.special-link a{color:#ff0033}footer .footer-container .footer-content .footer-connect{vertical-align:top;padding:4px 0 20px 0;min-width:200px;-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto}@media screen and (max-width: 965px){footer .footer-container .footer-content .footer-connect{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}}footer .footer-container .footer-content .footer-connect h4{margin-bottom:12px;color:#2a2a2a;font-weight:500}footer .footer__au-ph{max-width:100%;margin:0 auto;max-height:100px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden}footer .footer-terms-privacy-links{text-align:center;padding:20px 0px;width:80%;margin:0 auto;color:#9b9691;border-top:1px solid #e6e2df}footer .footer-terms-privacy-links a{color:#9b9691;padding:8px 16px;text-decoration:none}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){footer{min-width:auto;padding-top:0}footer .footer-content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap}footer .footer-content .group-list{width:100%}footer .footer-content .group-list .toggle{color:#9b9691;border-bottom:1px solid #e6e2df}footer .footer-content .group-list .toggle .toggle__switch{font-size:16px;line-height:2.2rem}footer .footer-content .group-list .toggle .footer__toggle--header{letter-spacing:.08em;font-weight:500;font-size:12px;line-height:2.2rem;text-transform:uppercase}footer .footer-content .group-list .toggle ul{margin-top:0;padding-left:0}footer .footer-content .group-list .toggle ul li a{color:#9b9691}footer .footer-app{width:200px}footer .footer-app h4{text-align:center;font-weight:400;margin-bottom:16px}footer .footer-copyright{border-top:1px solid #e6e2df;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;padding:8px}footer .footer-copyright .copyright{-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto;text-decoration:none;color:#9b9691}}@media only screen and (max-device-width: 767px)and (orientation: landscape),screen and (max-device-height: 480px)and (orientation: landscape)and (orientation: landscape){footer .footer-copyright .social-icons{margin-right:2%}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){footer .footer-terms-privacy-links{border-top:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;width:100%;padding:20px 8px}footer .footer-terms-privacy-links .terms,footer .footer-terms-privacy-links .privacy,footer .footer-terms-privacy-links .contact{-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto}footer .footer-terms-privacy-links a{padding:4px}}.filter-drawer{position:fixed;padding-top:50px;margin:0;top:0;left:0;width:100vw;height:100vh;background:#fcfbfb;z-index:1400;overflow-y:scroll;-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%);-webkit-transition:.3s;transition:.3s}.filter-drawer--expanded{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}.filter-drawer--header{position:fixed;width:100%;top:0;z-index:5;background:#fcfbfb;text-align:center;padding:12px 36px 12px 20px;border-bottom:1px solid #e6e2df;border-radius:2px 0 0}.filter-drawer--content{width:100%;height:100%;overflow-y:scroll}.filter-drawer--title{color:#6a6a6a;font-weight:300;min-height:12px;text-transform:capitalize}.filter-drawer--subtext{display:block;margin-top:.3rem;color:#ff0033;font-weight:300}.filter-drawer--nav-btn{position:absolute;top:8px;left:12px}.filter-drawer--done-btn{position:absolute;top:6px;right:8px}.color__circle--large{height:28px;width:28px;border-radius:50% !important}.color__circle--med{height:22px;width:22px;border-radius:50% !important}.color__circle--small{height:16px;width:16px;border-radius:50% !important}.yellow__info-banner{background:#2a0005;text-align:center;padding:16px}.dark-yellow__info-banner{background:#fcf4e0;text-align:left;padding:16px}.presentation__banner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;position:relative;padding:12px;margin:-24px -8px 0 -8px;margin-bottom:24px;background-color:#ff4d4d}@media only screen and (min-width: 768px){.presentation__banner{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.presentation__banner{margin:0 0 12px 0;min-height:52px}}.presentation__banner--image{height:24px;width:24px;margin-right:12px}.presentation__banner--right-image{height:18px;width:18px;margin-left:12px}.presentation__banner__content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.presentation__banner__content--text{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.presentation__banner__content--text{-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-align:center;-webkit-box-align:center;align-items:center}}.presentation__banner__breadcrumb{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;position:absolute;left:12px;color:#fcfbfb}.form-card{width:100%;max-width:760px}.chat-bubble{padding:16px;color:#fff;border-top-left-radius:10px;border-top-right-radius:10px;display:inline-block;position:relative}.chat-bubble::after{content:"";width:18px;height:18px;background-repeat:no-repeat;position:absolute;bottom:0}.chat-bubble--receiver{background-color:#ff0033;border-bottom-left-radius:10px}.chat-bubble--receiver:after{right:-18px;background-image:radial-gradient(circle at 100% 0, transparent 75%, #ff0033 14px)}.chat-bubble--sender{background-color:#f8f6f3;color:#2a2a2a;border-bottom-right-radius:10px}.chat-bubble--sender:after{left:-18px;background-image:radial-gradient(circle at 0% 0, transparent 75%, #f8f6f3 -14px)}.dialogue--body{background:#fcfbfb;padding:20px;border-radius:2px;color:#2a2a2a;max-width:360px;-webkit-box-shadow:0 2px 10px rgba(0,0,0,.35);box-shadow:0 2px 10px rgba(0,0,0,.35)}.dialogue--body__text{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center}.transparent-to-black-gradient-overlay{position:absolute;display:none;background:-webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(300%, #000000));background:linear-gradient(to bottom, transparent, #000000 300%);top:0;bottom:0;left:0;right:0;z-index:99;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:reverse;flex-direction:column-reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end;color:#fcfbfb}.transparent-to-black-gradient-overlay .small-overlay{font-size:9px;text-overflow:ellipsis !important;white-space:nowrap;overflow:hidden}.transparent-to-black-gradient-overlay .small-overlay-container{width:100%}.transparent-to-black-gradient-overlay .large-overlay{font-size:13px}.tooltip_container-down{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;padding:16px;-ms-flex-wrap:wrap;flex-wrap:wrap;width:320px;max-width:90vw;height:96px;position:absolute;background:#fff;color:#6a6a6a;border-radius:12px;-webkit-box-shadow:0 1px 6px 1px rgba(0,0,0,.1);box-shadow:0 1px 6px 1px rgba(0,0,0,.1);-ms-flex-line-pack:center;align-content:center;z-index:1;top:30px}.tooltip_container-up{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;padding:16px;-ms-flex-wrap:wrap;flex-wrap:wrap;width:320px;max-width:90vw;height:96px;position:absolute;background:#fff;color:#6a6a6a;border-radius:12px;-webkit-box-shadow:0 1px 6px 1px rgba(0,0,0,.1);box-shadow:0 1px 6px 1px rgba(0,0,0,.1);-ms-flex-line-pack:center;align-content:center;z-index:1;top:-108px}.tooltip_container-up.center{-ms-transform:translate(-50%, 0);-webkit-transform:translate(-50%, 0);transform:translate(-50%, 0)}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.tooltip_container-up.center{left:50%;-ms-transform:translate(-50%, 0);-webkit-transform:translate(-50%, 0);transform:translate(-50%, 0)}}.tooltip_message{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;border-right:1px solid #e6e2df;width:75%;padding-right:10px}.tooltip_confirm{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:25%;color:#ff1744;cursor:pointer;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.arrow-up{width:50px;height:16px;position:absolute;left:4px;overflow:hidden;z-index:9;top:15px}.arrow-down{width:50px;height:16px;position:absolute;left:4px;overflow:hidden;z-index:9;-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);top:-12px}.arrow-up::after,.arrow-down::after{content:"";position:absolute;width:25px;height:25px;background:#fff;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);border-radius:4px;top:8px;left:15px;-webkit-box-shadow:0 1px 6px 1px rgba(0,0,0,.1);box-shadow:0 1px 6px 1px rgba(0,0,0,.1)}.accordion-panel-body{overflow:hidden;-webkit-transition-property:height,opacity,padding-bottom;transition-property:height,opacity,padding-bottom;-webkit-transition-duration:.3s;transition-duration:.3s;height:0;padding-bottom:0;opacity:0}.accordion-panel-body.expanded{height:auto;padding-bottom:8px;opacity:1}.accordion-panel-header{padding:8px 0;-webkit-transition:background-color .25s;transition:background-color .25s;cursor:pointer}.accordion-panel-header:hover{background-color:#f8f6f3}.accordion-panel-header-icon{-webkit-transition:-webkit-transform .3s;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s, -webkit-transform .3s}.accordion-panel-header-icon.upside-down{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}.accordion-panel-footer{border-bottom:2px solid #e0dfdd}.slider-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center}.slider-container.swipe-active{background:rgba(65,166,222,.6)}.flip-card{position:relative;height:100%;width:100%;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.flip-card__front,.flip-card__back{position:absolute;height:100%;width:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden}.flip-card__rtl{-webkit-transform:rotateY(-180deg);transform:rotateY(-180deg)}.flip-card__ltr{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}.flip-card__ttb{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}.flip-card__btt{-webkit-transform:rotateX(180deg);transform:rotateX(180deg)}.flip-card--base-class{height:100px;width:100px}.flip-card--base-class .flip-card__front{background-color:#ff3355}.flip-card--base-class .flip-card__back{background-color:#ff3355}
-      i.icon{background:url(https://bomo77.net/images/logo.png) left top no-repeat;background-size:4400px 175px;display:inline-block}i.icon.heart-light-gray-empty{height:16px;width:16px;background-position:0px 0}i.icon.heart-gray-empty{height:16px;width:16px;background-position:-17px 0}i.icon.heart-black-empty{height:16px;width:16px;background-position:-34px 0}i.icon.like{height:16px;width:16px;background-position:-51px 0}i.icon.liked{height:16px;width:16px;background-position:-68px 0}i.icon.comment-light-gray{height:16px;width:16px;background-position:-85px 0}i.icon.comment-gray{height:16px;width:16px;background-position:-102px 0}i.icon.comment-black{height:16px;width:16px;background-position:-119px 0}i.icon.comment-magenta{height:16px;width:16px;background-position:-136px 0}i.icon.share-light-gray{height:16px;width:16px;background-position:-153px 0}i.icon.share-gray{height:16px;width:16px;background-position:-170px 0}i.icon.share-black{height:16px;width:16px;background-position:-187px 0}i.icon.share-magenta{height:16px;width:16px;background-position:-204px 0}i.icon.plus{height:16px;width:16px;min-width:16px;background-position:-221px 0}i.icon.minus{height:16px;width:16px;background-position:-238px 0}i.icon.flag{height:16px;width:16px;background-position:-255px 0}i.icon.search-light-gray{height:16px;width:16px;background-position:-272px 0}i.icon.filter{height:16px;width:16px;background-position:-289px 0}i.icon.sort-by{height:16px;width:16px;background-position:-306px 0}i.icon.gear-gray{height:16px;width:16px;background-position:-323px 0}i.icon.location-pin-gray{height:16px;width:16px;background-position:-340px 0}i.icon.website-gray{height:16px;width:16px;background-position:-357px 0}i.icon.gear-white{height:16px;width:16px;background-position:-374px 0}i.icon.location-pin-white{height:16px;width:16px;background-position:-391px 0}i.icon.website-white{height:16px;width:16px;background-position:-408px 0}i.icon.info-white{height:16px;width:16px;background-position:-425px 0}i.icon.check-white{height:16px;width:16px;background-position:-442px 0}i.icon.check-black{height:16px;width:16px;background-position:-459px 0}i.icon.carot-down-black{height:16px;width:16px;background-position:-476px 0}i.icon.college{height:16px;width:16px;background-position:-544px 0}i.icon.ship-time{height:16px;width:16px;background-position:-561px 0}i.icon.clock{height:16px;width:16px;background-position:-578px 0}i.icon.info-gray-small{height:16px;width:16px;background-position:-595px 0}i.icon.price-tag{height:16px;width:16px;background-position:-612px 0}i.icon.pink-heart{height:16px;width:16px;background-position:-629px 0}i.icon.clock-white{height:16px;width:16px;background-position:-646px 0}i.icon.single-hanger{height:16px;width:16px;background-position:-680px 0}i.icon.single-hanger-small-white{height:16px;width:16px;background-position:-697px 0}i.icon.progress-bar-checkmark{height:16px;width:16px;background-position:-714px 0}i.icon.white-star{height:16px;width:16px;background-position:-731px 0}i.icon.style-card{height:16px;width:16px;background-position:-816px 0}i.icon.pencil{height:16px;width:16px;background-position:-833px 0}i.icon.posh-star-small{height:16px;width:16px;background-position:-1054px 0}i.icon.magenta-filled-star{height:16px;width:16px;background-position:-1071px 0}i.icon.grey-empty-star{height:16px;width:16px;background-position:-1088px 0}i.icon.search-white{height:19px;width:19px;background-position:0px -24px}i.icon.search-gray{height:16px;width:16px;background-position:-28px -24px}i.icon.search-black{height:16px;width:16px;background-position:-53px -24px}i.icon.search-magenta{height:16px;width:16px;background-position:-78px -24px}i.icon.large-heart{height:22px;width:22px;background-position:-100px -21px}i.icon.notification{height:22px;width:22px;background-position:-125px -21px}i.icon.notification-magenta{height:27px;width:27px;background-position:-664px -53px}i.icon.sell-coin{height:20px;width:22px;background-position:-150px -22px}i.icon.sell-coin-rupee{height:20px;width:23px;background-position:-2575px -22px}i.icon.sell-coin-pounds{height:20px;width:23px;background-position:-4250px -22px}i.icon.facebook-gray{height:20px;width:22px;background-position:-200px -22px}i.icon.pinterest-gray{height:20px;width:22px;background-position:-250px -22px}i.icon.instagram-gray{height:20px;width:22px;background-position:-275px -22px}i.icon.twitter-gray{height:20px;width:22px;background-position:-4326px -22px}i.icon.youtube-gray{height:20px;width:22px;background-position:-4351px -22px}i.icon.tiktok-gray{height:20px;width:22px;background-position:-4376px -22px}i.icon.facebook-blue{height:24px;width:24px;background-position:-301px -21px}i.icon.google-white{height:24px;width:24px;background-position:-325px -21px}i.icon.pinterest-white{height:24px;width:24px;background-position:-401px -21px}i.icon.email-white{height:22px;width:22px;background-position:-426px -22px}i.icon.copy-white{height:24px;width:24px;background-position:-450px -21px}i.icon.email-gray{height:22px;width:22px;background-position:-476px -22px}i.icon.icon-inventory-tag{height:35px;width:35px;background-position:-1120px -50px}i.icon.icon-shipping{height:24px;width:24px;background-position:-501px -21px}i.icon.icon-posh-protect{height:24px;width:24px;background-position:-526px -21px}i.icon.icon-business-seller{height:24px;width:24px;background-position:-4075px -21px}i.icon.icon-seller-discount{height:24px;width:24px;background-position:-574px -20px}i.icon.icon-offer{height:24px;width:24px;background-position:-599px -20px}i.icon.icon-offer-rupee{height:24px;width:24px;background-position:-2600px -20px}i.icon.icon-offer-pounds{height:24px;width:24px;background-position:-4275px -20px}i.icon.icon-price-drop{height:24px;width:24px;background-position:-626px -21px}i.icon.icon-promo{height:24px;width:24px;background-position:-651px -21px}i.icon.default{height:24px;width:24px;background-position:-676px -21px}i.icon.feed{height:20px;width:22px;background-position:-701px -22px}i.icon.pm-logo-white{height:24px;width:24px;background-position:-725px -21px}i.icon.party-white{height:24px;width:24px;background-position:-750px -21px}i.icon.single-hanger-magenta{height:20px;width:24px;background-position:-775px -21px}i.icon.single-hanger-white{height:24px;width:24px;background-position:-800px -21px}i.icon.gray-info{cursor:pointer;height:24px;width:24px;background-position:-825px -21px}i.icon.gray-info-18{cursor:pointer;height:24px;width:24px;background-position:-825px -21px;-ms-transform:scale(0.75);-webkit-transform:scale(0.75);transform:scale(0.75)}i.icon.light-gray-info{cursor:pointer;height:24px;width:24px;background-position:-3000px -21px}i.icon.price-tag-large{height:24px;width:24px;background-position:-850px -21px}i.icon.party-magenta{height:24px;width:24px;background-position:-900px -21px}i.icon.price-drop{height:24px;width:24px;background-position:-925px -21px}i.icon.facebook-white{height:24px;width:24px;background-position:-950px -21px}i.icon.calculator{height:24px;width:24px;background-position:-975px -20px}i.icon.facebook-white-square{height:24px;width:24px;background-position:-1000px -21px}i.icon.icon-paypal-credit{height:24px;width:24px;background-position:-1025px -21px}i.icon.icon-concierge{height:24px;width:24px;background-position:-1051px -21px}i.icon.open-box-magenta{height:24px;width:24px;background-position:-1075px -21px}i.icon.open-box-white{height:24px;width:24px;background-position:-1100px -21px}i.icon.open-box-gray{height:24px;width:24px;background-position:-1125px -21px}i.icon.open-box-gray-with-plus-sign{height:24px;width:24px;background-position:-1150px -21px}i.icon.single-hanger-gray{height:20px;width:24px;background-position:-1175px -21px}i.icon.youtube-white{height:24px;width:24px;background-position:-1201px -21px}i.icon.instagram-white{height:24px;width:24px;background-position:-1226px -21px}i.icon.style-card-large{height:20px;width:25px;background-position:-1275px -21px}i.icon.single-hanger-with-cross-icons{height:21px;width:24px;background-position:-1300px -21px}i.icon.switch-view-icon{height:21px;width:24px;background-position:-1325px -21px}i.icon.us-flag{height:16px;width:24px;background-position:-1575px -21px}i.icon.au-flag{height:16px;width:24px;background-position:-1675px -21px}i.icon.uk-flag{height:16px;width:24px;background-position:-2350px -21px}i.icon.in-flag{height:28px;width:28px;background-position:-2125px -18px}i.icon.posh-star{height:20px;width:20px;background-position:-1700px -21px}i.icon.reload{height:20px;width:20px;background-position:-1725px -21px}i.icon.eu-flag{height:16px;width:24px;background-position:-1775px -21px}i.icon.calendar-gray{width:22px;height:24px;background-position:-1752px -21px}i.icon.icon-ships-from{height:24px;width:24px;background-position:-1624px -20px}i.icon.icon-currency-us{height:35px;width:35px;background-position:-1152px -50px}i.icon.icon-currency-filled-us{height:24px;width:24px;background-position:-2750px -21px}i.icon.icon-currency-in{height:35px;width:35px;background-position:-1184px -50px}i.icon.icon-currency-filled-in{height:24px;width:24px;background-position:-2775px -21px}i.icon.icon-currency-uk{height:35px;width:35px;background-position:-1219px -50px}i.icon.double-hanger-magenta{width:32px;height:22px;background-position:0px -52px}i.icon.double-hanger-gray{width:32px;height:22px;background-position:-35px -52px}i.icon.alert{height:25px;width:25px;background-position:-70px -54px}i.icon.bundle-medium-magenta{height:25px;width:25px;background-position:-102px -53px}i.icon.open-large-box-magenta{width:32px;height:24px;background-position:-98px -53px}i.icon.open-large-box-white{width:32px;height:24px;background-position:-131px -53px}i.icon.open-large-box-gray{width:32px;height:24px;background-position:-164px -53px}i.icon.open-large-box-gray-with-plus-sign{width:32px;height:24px;background-position:-197px -53px}i.icon.all-experience{height:33px;width:33px;background-position:-231px -50px}i.icon.women-experience{height:33px;width:33px;background-position:-264px -50px}i.icon.men-experience{height:33px;width:33px;background-position:-297px -50px}i.icon.kids-experience{height:33px;width:33px;background-position:-330px -50px}i.icon.plus-experience{height:33px;width:33px;background-position:-363px -50px}i.icon.boutique-experience{height:33px;width:33px;background-position:-396px -50px}i.icon.luxury-experience{height:33px;width:33px;background-position:-429px -50px}i.icon.arrow-shadow{width:29px;height:22px;background-position:-563px -57px}i.icon.plus-shadow{width:29px;height:22px;background-position:-596px -57px}i.icon.lightbulb{height:26px;width:26px;background-position:-629px -51px}i.icon.double-hanger-gray-large{width:48px;height:31px;background-position:-147px -87px}i.icon.ellipsis-shadow{height:35px;width:35px;background-position:-349px -95px}i.icon.large-heart-empty-shadow{height:35px;width:35px;background-position:-399px -95px}i.icon.large-heart-red-shadow{height:35px;width:35px;background-position:-448px -95px}i.icon.large-share-shadow{height:35px;width:35px;background-position:-497px -95px}i.icon.video-play{height:35px;width:35px;background-position:-546px -95px}i.icon.video-play-small{height:40px;width:40px;background-position:-540px -88px}i.icon.speaker-mute{height:32px;width:32px;min-width:32px;background-position:-595px -95px}i.icon.speaker{height:32px;width:32px;min-width:32px;background-position:-644px -95px}i.icon.sold-tag{background-position:-5px -140px;width:76px;height:26px}i.icon.sold-tag-large{background-position:-820px -140px;width:90px;height:26px}i.icon.reserved-tag{background-position:-87px -140px;width:100px;height:26px}i.icon.reserved-tag-large{background-position:-1017px -140px;width:112px;height:26px}i.icon.coming-soon-tag{background-position:-540px -140px;width:126px;height:26px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}i.icon.coming-soon-tag .inventory-tag__text{margin-right:8px}i.icon.coming-soon-tag-large{background-position:-670px -140px;width:145px;height:26px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}i.icon.coming-soon-tag-large .inventory-tag__text{margin-right:8px}i.icon.sold-out-tag{background-position:-192px -140px;width:94px;height:26px}i.icon.sold-out-tag-large{background-position:-910px -140px;width:105px;height:26px}i.icon.not-for-sale-tag{background-position:-291px -140px;width:117px;height:26px}i.icon.not-for-sale-tag-large{background-position:-1129px -140px;width:127px;height:26px}i.icon.sold-tag,i.icon.reserved-tag,i.icon.sold-out-tag,i.icon.not-for-sale-tag,i.icon.coming-soon-tag,i.icon.coming-soon-tag-large,i.icon.sold-tag-large,i.icon.reserved-tag-large,i.icon.sold-out-tag-large,i.icon.not-for-sale-tag-large{text-transform:uppercase;font-style:normal;color:#fff;font-size:13px;font-weight:500;text-align:center;text-shadow:0 1px 0 rgba(0,0,0,.4)}i.icon.sold-tag.coming-soon-tag-large,i.icon.sold-tag.sold-tag-large,i.icon.sold-tag.reserved-tag-large,i.icon.sold-tag.sold-out-tag-large,i.icon.sold-tag.not-for-sale-tag-large,i.icon.reserved-tag.coming-soon-tag-large,i.icon.reserved-tag.sold-tag-large,i.icon.reserved-tag.reserved-tag-large,i.icon.reserved-tag.sold-out-tag-large,i.icon.reserved-tag.not-for-sale-tag-large,i.icon.sold-out-tag.coming-soon-tag-large,i.icon.sold-out-tag.sold-tag-large,i.icon.sold-out-tag.reserved-tag-large,i.icon.sold-out-tag.sold-out-tag-large,i.icon.sold-out-tag.not-for-sale-tag-large,i.icon.not-for-sale-tag.coming-soon-tag-large,i.icon.not-for-sale-tag.sold-tag-large,i.icon.not-for-sale-tag.reserved-tag-large,i.icon.not-for-sale-tag.sold-out-tag-large,i.icon.not-for-sale-tag.not-for-sale-tag-large,i.icon.coming-soon-tag.coming-soon-tag-large,i.icon.coming-soon-tag.sold-tag-large,i.icon.coming-soon-tag.reserved-tag-large,i.icon.coming-soon-tag.sold-out-tag-large,i.icon.coming-soon-tag.not-for-sale-tag-large,i.icon.coming-soon-tag-large.coming-soon-tag-large,i.icon.coming-soon-tag-large.sold-tag-large,i.icon.coming-soon-tag-large.reserved-tag-large,i.icon.coming-soon-tag-large.sold-out-tag-large,i.icon.coming-soon-tag-large.not-for-sale-tag-large,i.icon.sold-tag-large.coming-soon-tag-large,i.icon.sold-tag-large.sold-tag-large,i.icon.sold-tag-large.reserved-tag-large,i.icon.sold-tag-large.sold-out-tag-large,i.icon.sold-tag-large.not-for-sale-tag-large,i.icon.reserved-tag-large.coming-soon-tag-large,i.icon.reserved-tag-large.sold-tag-large,i.icon.reserved-tag-large.reserved-tag-large,i.icon.reserved-tag-large.sold-out-tag-large,i.icon.reserved-tag-large.not-for-sale-tag-large,i.icon.sold-out-tag-large.coming-soon-tag-large,i.icon.sold-out-tag-large.sold-tag-large,i.icon.sold-out-tag-large.reserved-tag-large,i.icon.sold-out-tag-large.sold-out-tag-large,i.icon.sold-out-tag-large.not-for-sale-tag-large,i.icon.not-for-sale-tag-large.coming-soon-tag-large,i.icon.not-for-sale-tag-large.sold-tag-large,i.icon.not-for-sale-tag-large.reserved-tag-large,i.icon.not-for-sale-tag-large.sold-out-tag-large,i.icon.not-for-sale-tag-large.not-for-sale-tag-large{font-size:14px !important}i.icon.g-setting{width:16px;height:15px;background-position:-323px 0}i.icon.setting{width:16px;height:15px;background-position:-374px 0}i.icon.city{height:16px;width:16px;background-position:-391px 0}i.icon.website{width:16px;height:15px;background-position:-408px 0}i.icon.info{height:24px;width:24px;background-position:-425px 0}i.icon.w-tick{height:16px;width:16px;background-position:-442px 0}i.icon.b-tick{height:16px;width:16px;background-position:-459px 0}i.icon.burg-tick{height:16px;width:16px;background-position:-493px 0}i.icon.gray-tick{height:16px;width:16px;background-position:-510px 0}i.icon.gray-exclamation{height:16px;width:16px;background-position:-527px 0}i.icon.tag{background-position:-411px -140px;width:76px;height:26px}i.icon.s-tag{background-position:-487px -140px;width:49px;height:26px}i.icon.contact{background-position:-99px -88px;height:42px;width:46px}i.icon.comment--light-gray{height:16px;width:16px;background-position:-85px 0}i.icon.single-hanger{height:16px;width:16px;background-position:-680px 0}i.icon.in-bundle-small{height:16px;width:16px;background-position:-1037px 0}i.icon.in-bundle-medium{height:24px;width:24px;background-position:-1150px -20px}i.icon.bundle-medium-gray{height:24px;width:24px;background-position:-1125px -23px}i.icon.bundle-large-gray{height:24px;width:24px;background-position:-168px -53px}i.icon.bundle-small-gray-with-plus-sign{height:16px;width:16px;background-position:-1020px 0}i.icon.bundle-medium-gray-with-plus-sign{height:24px;width:24px;background-position:-175px -21px}i.icon.bundle-large-gray-with-plus-sign{height:24px;width:24px;background-position:-175px -21px}i.icon.single-hanger-with-cross-icons{height:21px;width:24px;background-position:-1300px -21px}i.icon.switch-view-icon{height:21px;width:24px;background-position:-1325px -21px}i.icon.style-card-large{height:20px;width:25px;background-position:-1275px -21px}i.icon.all-experience{height:33px;width:33px;background-position:-231px -50px}i.icon.women-experience{height:33px;width:33px;background-position:-264px -50px}i.icon.men-experience{height:33px;width:33px;background-position:-297px -50px}i.icon.kids-experience{height:33px;width:33px;background-position:-330px -50px}i.icon.plus-experience{height:33px;width:33px;background-position:-363px -50px}i.icon.boutique-experience{height:33px;width:33px;background-position:-396px -50px}i.icon.luxury-experience{height:33px;width:33px;background-position:-429px -50px}i.icon.gifts-experience{height:33px;width:33px;background-position:-462px -50px}i.icon.makeup-experience{height:33px;width:33px;background-position:-495px -50px}i.icon.job-status-completed{height:17px;width:17px;background-position:-901px 0px}i.icon.job-status-expired{height:17px;width:17px;background-position:-918px 0px}i.icon.job-status-in-progress{height:17px;width:17px;background-position:-935px 0px}i.icon.arrow-up-white{width:17px;height:16px;background-position:-1003px 0px}i.icon.instagram-logo-color{height:24px;width:24px;background-position:-1225px -22px}i.icon.twitter-logo-color{height:24px;width:24px;background-position:-375px -22px}i.icon.youtube-logo-color{height:24px;width:24px;background-position:-1200px -22px}i.icon.poshmark-logo-white{height:24px;width:24px;background-position:-675px -21px}i.icon.snapchat-logo-color{height:24px;width:24px;background-position:-1250px -22px}i.icon.facebook-gray{height:20px;width:22px;background-position:-200px -22px}i.icon.pinterest-gray{height:20px;width:22px;background-position:-250px -22px}i.icon.instagram-gray{height:20px;width:22px;background-position:-275px -22px}i.icon.facebook-blue{height:24px;width:24px;background-position:-300px -21px}i.icon.google-white{height:24px;width:24px;background-position:-325px -21px}i.icon.pinterest-white{height:24px;width:24px;background-position:-400px -21px}i.icon.email-white{height:22px;width:22px;background-position:-425px -22px}i.icon.clock-solid{height:24px;width:24px;vertical-align:middle;margin-right:5px;background-position:-1350px -22px}i.icon.calendar{height:24px;width:24px;margin-right:5px;margin-top:-4px;vertical-align:middle;background-position:-1375px -22px}i.icon.shopping-bag{height:24px;width:24px;vertical-align:middle;margin-right:5px;background-position:-1400px -21px}i.icon.heart-white-empty-large{height:18px;width:18px;background-position:-1453px -24px}i.icon.share-white-large{width:21px;height:18px;background-position:-1475px -24px}i.icon.heart-red-empty-large{width:21px;height:18px;background-position:-1500px -24px}i.icon.heart-red-large{height:18px;width:18px;background-position:-1528.5px -24px}i.icon.share-gray-large{width:22px;height:18px;background-position:-1550px -24px}i.icon.people{height:40px;width:40px;background-position:-195px -88px}i.icon.posh-market{height:40px;width:40px;background-position:-246px -88px}i.icon.brands{height:40px;width:40px;background-position:-294px -88px}i.icon.cash-back-icon{height:24px;width:24px;background-position:-1425px -21px}i.icon.apple{height:24px;width:24px;background-position:-1651px -21px}i.icon.clock-black{height:25px;width:25px;background-position:-1800px -20px}i.icon.college-black{height:25px;width:25px;background-position:-1825px -20px}i.icon.info-black{height:25px;width:25px;background-position:-1850px -20px}i.icon.instagram-circle{height:25px;width:25px;background-position:-1875px -20px}i.icon.pinterest-circle{height:25px;width:25px;background-position:-1900px -20px}i.icon.ship-time-black{height:25px;width:25px;background-position:-1925px -20px}i.icon.youtube-circle{height:25px;width:25px;background-position:-2000px -20px}i.icon.website-black{height:25px;width:25px;background-position:-2025px -20px}i.icon.location-black{height:25px;width:25px;background-position:-2050px -20px}i.icon.green-checkmark{height:24px;width:24px;background-position:-2075px -22px}i.icon.white-play-video-small{height:28px;width:28px;background-position:-2150px -22px}i.icon.shop-more{height:16px;width:16px;background-position:-1105px 0}i.icon.free-shipping{height:45px;width:45px;background-position:-690px -90px}i.icon.discounted-shipping{height:27px;width:27px;background-position:-765px -56px}i.icon.icon-shipping-new{height:27px;width:27px;background-position:-730px -51px}i.icon.icon-shipping-discount-gray{height:37px;width:37px;background-position:-755px -53px}i.icon.shipping-box{height:28px;width:28px;background-position:-2175px -12px}i.icon.shipping-box-green-check{height:28px;width:28px;background-position:-2200px -12px}i.icon.shipping-box-question-mark{height:24px;width:24px;background-position:-2225px -21px}i.icon.shipping-box-orange-check{height:28px;width:28px;background-position:-2250px -12px}i.icon.shipping-box-red-x{height:28px;width:28px;background-position:-2275px -12px}i.icon.icon-channel-share-gray{height:37px;width:37px;background-position:-790px -49px}i.icon.icon-channel-share-white{height:37px;width:37px;background-position:-820px -49px}i.icon.icon-bulk-tools{height:24px;width:24px;background-position:-2301px -21px}i.icon.icon-bulk-tools-white{height:24px;width:24px;background-position:-2326px -21px}i.icon.expand-video{height:37px;width:37px;background-position:-923px -49px}i.icon.collapse-video{height:37px;width:37px;background-position:-957px -49px}i.icon.icon-my-customers-hanger{height:24px;width:24px;background-position:-2476px -21px}i.icon.icon-my-customers-comment{height:24px;width:24px;background-position:-2501px -21px}i.icon.icon-my-customers-like{height:24px;width:24px;background-position:-2526px -21px}i.icon.icon-my-customers-comment-gray{height:24px;width:24px;background-position:-2551px -21px}i.icon.icon-my-customers-single-hanger-gray{height:24px;width:24px;background-position:-1175px -21px}i.icon.gray-circle-checkmark{height:24px;width:24px;background-position:-2430px -19px}i.icon.green-circle-checkmark{height:24px;width:24px;background-position:-2454px -20px}i.icon.download{height:20px;width:20px;background-position:-2628px -23px}i.icon.file{height:20px;width:20px;background-position:-2653px -23px}i.icon.refresh{height:24px;width:24px;background-position:-1725px -18px}i.icon.camera-gray-outline{width:22px;height:18px;background-position:-2377px -24px}i.icon.white-cross-black-circle{height:20px;width:20px;background-position:-2402px -24px}i.icon.magenta-filled-star-big{height:35px;width:35px;background-position:-1050px -52px}i.icon.grey-empty-star-big{height:35px;width:35px;background-position:-1085px -52px}i.icon.icon-red-back-arrow{height:24px;width:24px;background-position:-2825px -21px}i.icon.icon-black-ellipses-menu{height:24px;width:24px;background-position:-2826px -21px}i.icon.plus-circle-small{height:16px;width:16px;background-position:-1173px 0}i.icon.clock-green{height:14px;width:14px;background-position:-1207px 0}i.icon.clock-red{height:14px;width:14px;background-position:-1224px 0}i.icon.icon-triple-dot{height:24px;width:24px;background-position:-2876px -21px}i.icon.icon-refer-friends{height:24px;width:24px;background-position:-2926px -21px}i.icon.icon-refer-friends-delivered{height:24px;width:24px;background-position:-2951px -21px}i.icon.icon-refer-friends-reward{height:24px;width:24px;background-position:-2976px -21px}i.icon.icon-qrflow-order-status{height:24px;width:24px;background-position:-3000px -21px}i.icon.icon-qrflow-box-packed-items{height:24px;width:24px;background-position:-3050px -21px}i.icon.icon-qrflow-box-upgrade{height:24px;width:24px;background-position:-3025px -21px}i.icon.icon-qrflow-print-label{height:24px;width:24px;background-position:-3075px -21px}i.icon.icon-qrflow-usps-store{height:24px;width:24px;background-position:-3100px -21px}i.icon.current-posh-shows{height:24px;width:24px;background-position:-3151px -22px}i.icon.upcoming-posh-shows{height:24px;width:24px;background-position:-3176px -22px}i.icon.posh-shows-white{height:24px;width:24px;background-position:-3276px -22px}i.icon.forward-white-small{height:24px;width:24px;background-position:-3301px -22px}i.icon.credit-card-white-small{height:24px;width:24px;background-position:-3326px -22px}i.icon.heart-eye-emoji-small{height:24px;width:24px;background-position:-3351px -22px}i.icon.party-emoji-small{height:24px;width:24px;background-position:-4301px -22px}i.icon.speaker-small{height:24px;width:24px;background-position:-3376px -22px}i.icon.speaker-mute-small{height:24px;width:24px;background-position:-3401px -22px}i.icon.listing-tray{height:24px;width:24px;background-position:-3426px -22px}i.icon.refresh-white-small{height:24px;width:24px;background-position:-3451px -22px}i.icon.camera-on-small{height:24px;width:24px;background-position:-3476px -22px}i.icon.camera-off-small{height:24px;width:24px;background-position:-3501px -22px}i.icon.edit-white-small{height:24px;width:24px;background-position:-3526px -22px}i.icon.edit-white-extra-small{height:16px;width:16px;background-position:-1343px 0}i.icon.clock-black-x-small{height:16px;width:16px;background-position:-1363px -1px}i.icon.clock-black-small{height:16px;width:16px;background-position:-1395px 0}i.icon.forward-white{height:32px;width:32px;background-position:-1255px -52px}i.icon.credit-card-white{height:32px;width:32px;background-position:-1288px -52px}i.icon.heart-eye-emoji{height:32px;width:32px;background-position:-1321px -52px}i.icon.party-emoji{height:32px;width:32px;background-position:-1717px -52px}i.icon.camera-on{height:32px;width:32px;background-position:-1420px -52px}i.icon.camera-off{height:32px;width:32px;background-position:-1453px -52px}i.icon.bookmark-unfilled-large{height:24px;width:24px;background-position:-3576px -22px}i.icon.bookmark-filled-large{height:24px;width:24px;background-position:-3601px -22px}i.icon.saved-shows{height:24px;width:24px;background-position:-3626px -22px}i.icon.follow-pill{height:24px;width:24px;background-position:-3676px -22px}i.icon.following-pill{height:24px;width:24px;background-position:-3701px -22px}i.icon.icon-triple-dot-white{height:24px;width:24px;background-position:-3826px -22px}i.icon.edit-gray{height:24px;width:24px;background-position:-3726px -22px}i.icon.play-gray-circle{height:24px;width:24px;background-position:-3651px -22px}i.icon.play-white-circle{height:24px;width:24px;background-position:-3851px -22px}i.icon.filled-document-icon{height:24px;width:24px;background-position:-4001px -22px}i.icon.viewer-count{height:16px;width:16px;background-position:-1241px 0}i.icon.viewer-count-black{height:16px;width:16px;background-position:-1275px 0}i.icon.calendar-white{height:16px;width:16px;background-position:-1292px 0}i.icon.bookmark-unfilled{height:16px;width:16px;background-position:-1309px 0}i.icon.bookmark-filled{height:16px;width:16px;background-position:-1326px 0}i.icon.live-show{background-position:-1262px -139px;width:61px;height:20px}i.icon.live-show-tag{background-position:-1092px -114px;width:34px;height:16px}i.icon.live-show-tag-large{background-position:-1138px -110px;width:37px;height:22px}i.icon.icon-refresh{height:24px;width:24px;background-position:-3226px -22px}i.icon.icon-three-dots-white{height:20px;width:20px;min-width:20px;background-position:-3830px -23px}i.icon.icon-play{height:20px;width:20px;min-width:20px;background-position:-3853px -23px}i.icon.icon-clicks{height:20px;width:20px;min-width:20px;background-position:-3878px -23px}i.icon.icon-sold{height:20px;width:20px;min-width:20px;background-position:-3904px -23px}i.icon.icon-sales{height:20px;width:20px;min-width:20px;background-position:-3928px -23px}i.icon.icon-form{height:20px;width:20px;min-width:20px;background-position:-3953px -23px}i.icon.icon-speaker{height:20px;width:20px;min-width:20px;background-position:-3978px -23px}i.icon.icon-info-gray{height:16px;width:16px;vertical-align:middle;background-position:-1428px 0}i.icon.icon-download-circle{height:16px;width:16px;background-position:-1258px 0}i.icon.icon-plus-magenta{height:16px;width:16px;vertical-align:middle;background-position:-1480px 0}i.icon.icon-minus-magenta{height:16px;width:16px;vertical-align:middle;background-position:-1496px 0}i.icon.icon-party-popper{height:16px;width:16px;vertical-align:middle;background-position:-1514px 0}i.icon.icon-download{height:16px;width:16px;vertical-align:middle;background-position:-1530px 0}i.icon.following-checkmark{height:16px;width:16px;background-position:-1411px 0}i.icon.icon-party-popper{height:16px;width:16px;vertical-align:middle;background-position:-1514px 0}i.icon.silent-show-indicator{height:16px;width:16px;background-position:-1564px 0}i.icon.icon-bulb-gray{height:16px;width:16px;vertical-align:middle;background-position:-1548px 0}i.icon.icon-info-warning{height:16px;width:16px;vertical-align:middle;background-position:-1462px 0}i.icon.icon-info-danger{height:16px;width:16px;vertical-align:middle;background-position:-1445px 0}i.icon.icon-parcel{height:24px;width:24px;background-position:-3776px -22px}i.icon.parcel-collection{height:24px;width:24px;background-position:-3801px -22px}i.icon.icon-closet{height:24px;width:24px;min-width:24px;background-position:-4028px -21px}i.icon.icon-badge-dollar{height:24px;width:24px;min-width:24px;background-position:-4051px -21px}i.icon.icon-ads-sale{height:24px;width:24px;min-width:24px;background-position:-4126px -21px}i.icon.icon-clock-orange-solid{height:24px;width:24px;min-width:24px;background-position:-4151px -21px}i.icon.icon-speaker-dark-purple{height:24px;width:24px;min-width:24px;background-position:-4175px -21px}i.icon.icon-eye-dark-purple{height:24px;width:24px;min-width:24px;background-position:-4201px -21px}i.icon.icon-graph-stats{height:24px;width:24px;min-width:24px;background-position:-4226px -21px}i.icon.icon-triangle-danger{height:20px;width:20px;min-width:20px;background-position:-4104px -23px}i.icon.icon-eye-white{height:24px;width:24px;min-width:24px;background-position:-4301px -21px}i.icon.icon-more{height:20px;width:20px;min-width:20px;vertical-align:middle;background-position:-2853px -20px}i.icon.icon-clicks-purple{height:16px;width:16px;vertical-align:middle;background-position:-1582px 0}i.icon.icon-impressions-purple{height:16px;width:16px;vertical-align:middle;background-position:-1649px 0}i.icon.icon-listings-sold{height:16px;width:16px;vertical-align:middle;background-position:-1667px 0}i.icon.icon-sales-purple{height:16px;width:16px;vertical-align:middle;background-position:-1599px 0}i.icon.icon-budget-spend{height:16px;width:16px;vertical-align:middle;background-position:-1683px 0}i.icon.icon-roas-purple{height:16px;width:16px;vertical-align:middle;background-position:-1700px 0}i.icon.icon-cpc-purple{height:16px;width:16px;vertical-align:middle;background-position:-1718px 0}i.icon.icon-ctr-purple{height:16px;width:16px;vertical-align:middle;background-position:-1734px 0}i.icon.icon-cvr-purple{height:16px;width:16px;vertical-align:middle;background-position:-1751px 0}i.icon.icon-ads-impressions{height:32px;width:32px;vertical-align:middle;background-position:-1518px -50px}i.icon.icon-ads-clicks{height:32px;width:32px;vertical-align:middle;background-position:-1550px -50px}i.icon.icon-ads-sales{height:32px;width:32px;vertical-align:middle;background-position:-1585px -50px}i.icon.icon-ads-listings-sold{height:32px;width:32px;vertical-align:middle;background-position:-1615px -50px}i.icon.icon-ads-spend{height:32px;width:32px;vertical-align:middle;background-position:-1650px -50px}i.icon.icon-ads-roas{height:32px;width:32px;vertical-align:middle;background-position:-1685px -50px}.paypal-delete-button,.venmo-delete-button{height:40px;width:145px;padding-bottom:10px}.commerce-icon{background:url(https://d2gjrq7hs8he14.cloudfront.net/webpack4/commerce@2x-957a6914f6f36d205df86e9d65188fd43f97dea7edb7ffd2abfcd1df649ce419.png) no-repeat;background-size:500px 100px;display:inline-block}.commerce-icon.visa{background-position:-75px 0px;height:25px;width:38px}.commerce-icon.ae{background-position:-151px 0px;height:25px;width:38px}.commerce-icon.mc{background-position:-113px 0px;height:25px;width:38px}.commerce-icon.paypal{background-position:-38px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.venmo{background-position:-265px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.applepay{background-position:-303px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.googlepay{background-position:-341px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.affirm{background-position:-378px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.cc{background-position:1px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.discover{background-position:-189px 0px;height:25px;width:38px}.commerce-icon.jcb{background-position:-227px 0px;height:25px;width:38px}.commerce-icon.paypal-button{background-position:0px -25px;height:19px;width:64px;margin-left:-20px}.commerce-icon.google-pay-button{background-position:-245px -25px;height:23px;width:50px;margin-left:-20px}.commerce-icon.venmo-button{background-position:-83px -25px;height:19px;width:61px;margin-left:-20px}.commerce-icon.applepay-button{background-position:-145px -25px;height:19px;width:40px;margin-left:-20px}.commerce-icon.affirm-button{background-position:-293px -27px;height:19px;width:58px;margin-left:-20px}.commerce-icon.paypal-checkout{background-position:0px -45px;height:45px;width:180px;cursor:pointer;margin-left:12px}.commerce-icon.paypal-payment{background-position:0px -45px;height:45px;width:172px;cursor:pointer}.commerce-icon.checked-button{background-position:-64px -25px;height:19px;width:19px;margin-top:-5px}.commerce-icon.upi{background-position:-420px 0px;height:25px;width:38px;display:inline-block}.commerce-icon.nb{background-position:-452px 0px;height:25px;width:38px;display:inline-block}.commerce-icon--mini{background:url(https://d2gjrq7hs8he14.cloudfront.net/webpack4/commerce@2x-957a6914f6f36d205df86e9d65188fd43f97dea7edb7ffd2abfcd1df649ce419.png) no-repeat;background-size:500px 100px;display:inline-block;background-size:1250%}.commerce-icon--mini.visa{background-position:-48px 0px;height:16px;width:24px}.commerce-icon--mini.ae{background-position:-97px 0px;height:16px;width:24px}.commerce-icon--mini.mc{background-position:-73px 0px;height:16px;width:24px}.commerce-icon--mini.paypal{background-position:-24px 0px;height:16px;width:24px;display:inline-block}.commerce-icon--mini.venmo{background-position:-169px 0px;height:16px;width:24px}.commerce-icon--mini.applepay{background-position:-193px 0px;height:16px;width:24px}.commerce-icon--mini.googlepay{background-position:-218px 0px;height:16px;width:24px}.commerce-icon--mini.affirm{background-position:-242px 0px;height:16px;width:24px}.commerce-icon--mini.cc{background-position:0px 0px;height:16px;width:24px}.commerce-icon--mini.discover{background-position:-121px 0px;height:16px;width:24px}.commerce-icon--mini.jcb{background-position:-145px 0px;height:16px;width:24px}.paypal-credit-icon{width:100px}
-      .header__tag{font-size:9px;color:#fff;border-radius:8px;font-weight:600;padding:2px 6px;position:relative;bottom:2px;left:2px}.header__beta-tag{background:#ff1744}.dropdown__menu__item__show-tag{background:#ff4d66}.header__icon{height:28px}.header__con--lg{height:70px}.header--lg{padding-top:72px}
-      .search-box{max-width:400px;width:40vw;height:34px}.search-box .search-box-con{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;width:100%}.search-box .search-box-con .dropdown__selector.type-ahead__input{display:-webkit-box;display:-ms-flexbox;display:flex}.search-box .search-box-con .search-options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;min-width:80px;background:#f5f2ee;border:1px solid #e6e2df;border-right:none;border-radius:4px 0 0 4px;color:#9b9691;font-weight:300}.search-box .search-box-con .search-options .search-toggle{width:80px;padding:4px 0 4px 8px;text-transform:capitalize}.search-box .search-box-con .search-options .search-toggle .caret{margin:0 0 2px 5px}.search-box .search-box-con .search-options:hover{cursor:pointer}.search-box .search-box-con .search-entry{-ms-flex:2 1 auto;-webkit-box-flex:2;flex:2 1 auto;vertical-align:top;margin:0;outline:none;padding:.5em .5em .6em .5em;height:100%;max-height:34px;background:#f5f2ee;border:1px solid #e6e2df;border-radius:0;color:#2a2a2a;-webkit-appearance:button;width:100%}.search-box .search-box-con .search-entry::-webkit-input-placeholder{color:#c1bfbc}.search-box .search-box-con .search-entry::-moz-placeholder{color:#c1bfbc}.search-box .search-box-con .search-entry:-ms-input-placeholder{color:#c1bfbc}.search-box .search-box-con .search-entry::-ms-input-placeholder{color:#c1bfbc}.search-box .search-box-con .search-entry::placeholder{color:#c1bfbc}.search-box .search-box-con .search-icon{min-width:37px;background-color:#ff0033;margin:0;margin-left:-0.1em;padding:.6em .75em .2em .5em;border:none;border-radius:0 4px 4px 0;outline:none;cursor:pointer}.search-box .search-options-dropdown{position:absolute;left:0;top:30px;width:100px;background:#f5f2ee;border:1px solid #e6e2df;border-radius:0 0 4px 4px;border-top:none}.search-box .search-options-dropdown :first-child{border-bottom:1px solid #e6e2df}.search-box .search-options-dropdown span{display:block;color:#6a6a6a;font-weight:400;text-transform:capitalize;padding:8px;text-align:center;cursor:pointer}.search-box .search-options-dropdown span.selection{color:#ff0033}.search-box .search-options-dropdown--mobile{left:-1px;top:31px}.search-box .search-auto-suggest{width:100%}.search-box .search-auto-suggest .before,.search-box .search-auto-suggest .after{color:#2a2a2a;font-weight:400}.search-box .search-auto-suggest .suggest-item{color:#2a2a2a;font-weight:500}.search-box .search-auto-suggest .prepend-text{display:block;color:#9b9691}.search-box .search-auto-suggest .in{color:#ff0033;font-weight:400}.search-box .search-auto-suggest .for{color:#9b9691;font-weight:400}.search-box .search-auto-suggest-list{width:100%;max-height:370px}.search-box .search-box-v2-input::-webkit-input-placeholder{color:#9b9691;font-size:16px}.search-box .search-box-v2-input::-moz-placeholder{color:#9b9691;font-size:16px}.search-box .search-box-v2-input:-ms-input-placeholder{color:#9b9691;font-size:16px}.search-box .search-box-v2-input::-ms-input-placeholder{color:#9b9691;font-size:16px}.search-box .search-box-v2-input::placeholder{color:#9b9691;font-size:16px}.search-box .search-box-icon{height:21px}@media screen and (max-width: 992px){.search-auto-suggest-list ul{width:210px}}.search-box--mobile{z-index:1000;width:100%;max-width:none;height:52px;padding:0 8px;background-color:#fcfbfb;border-bottom:1px solid #e6e2df;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);-webkit-transition:transform .2s;-webkit-transition:-webkit-transform .2s;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s, -webkit-transform .2s}.search-box--mobile.collapsed{-ms-transform:translate3d(0, -100%, 0);-webkit-transform:translate3d(0, -100%, 0);transform:translate3d(0, -100%, 0)}.search-box--mobile .search-form{width:100%}.search-box--mobile .search-form .search-entry{font-size:18px;border-radius:0 4px 4px 0;padding-right:8px}.search-box--mobile .search-form .search-entry::-webkit-input-placeholder{font-size:12px}.search-box--mobile .search-form .search-entry::-moz-placeholder{font-size:12px}.search-box--mobile .search-form .search-entry:-ms-input-placeholder{font-size:12px}.search-box--mobile .search-form .search-entry::-ms-input-placeholder{font-size:12px}.search-box--mobile .search-form .search-entry::placeholder{font-size:12px}.search-box--mobile .search-auto-suggest-list ul{max-height:300px}@media screen and (orientation: landscape){.search-box--mobile .search-auto-suggest-list ul{max-height:200px}}.search-box--mobile .search-auto-suggest-list ul{width:98%}.search-box--mobile .search-auto-suggest-list ul li{padding:8px 8px}.search-box-input-container{-webkit-box-flex:1;-ms-flex:1;flex:1}.search-box-v2{background-color:rgba(0,0,0,0);height:44px;min-width:0}.search-box-v2 .form__text--input{border-radius:50px;background-color:#f4f2ee}.search-box-v2-input{-webkit-box-flex:1;-ms-flex:1;flex:1;min-width:60px;text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important;background:rgba(0,0,0,0);line-height:38px}.search-box-v2-clear-icon{margin-right:-8px}input[type=search].search-box-v2-input::-webkit-search-cancel-button,input[type=search].search-box-v2-input{-webkit-appearance:none}.search-box-v2--mobile{border-bottom:none;height:unset}
-      .header--scrollable__nav{margin:0 auto;padding:0 12px;min-height:45px;max-width:1360px;min-width:768px;background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.header--scrollable__nav__secondary-link{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;text-transform:uppercase;padding:0 8px;font-size:12px;font-weight:500}.header--scrollable__nav__secondary-item{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;height:100%}.header--scrollable__nav__secondary-item:hover{background:#f5f2ee}.header--scrollable__nav__links{margin:0 auto 0 0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:none;flex-wrap:nowrap}.header--scrollable__nav__links li{-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto;display:inline-block;text-align:center;overflow:hidden;white-space:nowrap}.header--scrollable__nav__links a{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;height:100%;padding:12px 12px;border-bottom:2px solid rgba(0,0,0,0)}.header--scrollable__nav__links a:hover{border-color:#ff0033;font-weight:500}.header--scrollable__nav__links__posh-shows{position:relative}.header--scrollable__nav__links__posh-shows a{color:#ff0033}.header--scrollable__nav__links__posh-shows a:hover{border-color:#ff0033}.header--scrollable__nav__links__current-posh-shows{height:24px;width:24px}.header--scrollable__dropdown{position:absolute;top:100%;width:100%;min-width:768px;background-color:#fff;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2);z-index:1010}.header--scrollable__dropdown__menu{margin:0 auto;padding:0 8px;max-width:1360px}.header--scrollable__dropdown__menu h5{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #e6e2df;text-transform:uppercase;font-weight:500}.header--scrollable__dropdown__sub-menu{vertical-align:top;max-width:210px;display:inline-block;width:calc(25% - 3rem);margin:12px 20px 4px 20px}.header--scrollable__dropdown__sub-menu a{display:block;text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important;color:#2a2a2a;margin-bottom:8px}.header__side-nav__submenu{background-color:#fff;border-right:1px solid #e6e2df}.header__side-nav__submenu--header{padding:3px 0 3px 1em;line-height:32px;font-weight:400;color:#6a6a6a}.header__side-nav__submenu--icon{margin-left:1em}.header__side-nav__submenu__current-posh-shows{height:22px;width:22px}.header__side-nav__submenu__posh-shows{position:relative;height:41px}.header__side-nav__submenu__posh-shows h4{color:#ff0033}.header__side-nav__toggle{color:#4a4a4a;border-bottom:1px solid #f5f2ee}.header__side-nav__toggle .show .header__side-nav__toggle--header{font-weight:500;color:#4a4a4a}.header__side-nav__toggle .show .toggle__switch{font-weight:400}.header__side-nav__toggle .toggle__switch{margin-right:.9em;line-height:2.3rem;font-weight:500;color:#9b9691}.header__side-nav__toggle--header{font-size:16px}.header__side-nav__toggle__list{margin:0;padding-left:0;width:100%}.header__side-nav__toggle__list__item{line-height:2.3rem;border-top:1px solid #f5f2ee}.header__side-nav__toggle__list__item--link{display:block;width:100%;padding-left:2em;color:#6a6a6a}.header__side-nav__toggle__list__item--header{padding-left:2.2em;text-decoration:underline;text-transform:uppercase}.header__side-nav__toggle__list__item--header-label{font-size:12px;text-transform:uppercase;background-color:#f5f2ee;padding-top:4px;font-weight:500;color:#9b9691}.header__side-nav__get-app{background-color:#d9d5d2;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;padding:8px}.header__side-nav__get-app li:not(:last-child){padding-right:12px}.header__side-nav__get-app li .pm-icon{width:35px;border-radius:2px}.header__side-nav__stars{font-size:11px;unicode-bidi:bidi-override;margin:0 auto;position:relative}.header__side-nav__stars-top{width:90%;position:absolute;z-index:1;top:0;left:0;overflow:hidden}.header__side-nav__stars-top span{color:#ff4d4d}.header__side-nav__stars-bottom{color:#c5c5c5}
-      .experience-switcher{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;border-right:1px solid #d9d5d2;padding:8px 12px}.experience-switcher--feed{border:none;padding:12px 8px}.experience-switcher__title{font-weight:500;color:#6a6a6a}.experiences-switcher__dropdown__menu{min-width:200px;max-height:75vh}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.experiences-switcher__dropdown__menu{max-height:66vh}}.experiences-switcher__link{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;padding:8px 12px}.experience-switcher--hamburger{padding:12px 8px;margin:8px;border:1px solid #e6e2df}.experiences-switcher__item--image{height:33px;width:33px}
-      .listing__image{float:left}.listing__info{float:right;padding-left:28px}.listing__comments-container{float:left;padding:20px 0 0 9.5%}@media only screen and (max-width: 768px){.listing__comments-container{padding:0}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__comments-container{padding:0}}.listing__layout-grid{width:50%}@media only screen and (max-width: 768px){.listing__layout-grid{float:none;width:100%}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__layout-grid{float:none;width:100%}}@media only screen and (max-width: 768px){.listing__layout-item{padding:0 12px}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__layout-item{padding:0 12px}}.listing__image__header{display:none}@media only screen and (max-width: 768px){.listing__image__header{display:block}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__image__header{display:block}}.listing__header-container{display:-webkit-box;display:-ms-flexbox;display:flex;padding-bottom:28px}@media only screen and (max-width: 768px){.listing__header-container{display:none}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__header-container{display:-webkit-box;display:-ms-flexbox;display:flex;padding-bottom:12px}}.listing__title{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between;-ms-flex-align:center;-webkit-box-align:center;align-items:center}@media only screen and (max-width: 768px){.listing__title{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__title{-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}}.listing__title .condition-tag{margin-left:8px}.listing--price{font-size:26px}.listing--original-price{font-size:18px}.listing__brand{font-size:18px}.listing__subtitle_brand,.listing__subtitle_size{font-size:15px;font-weight:500;text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important}.listing__subtitle_brand{max-width:65%}.listing__subtitle_separator{height:16px}.listing__title-container{-ms-hyphens:auto;hyphens:auto;word-wrap:break-word;word-break:break-word}@media only screen and (max-width: 768px){.listing__ipad-centered{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-ms-flex-align:center;-webkit-box-align:center;align-items:center}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__ipad-centered{-ms-flex-pack:start;-webkit-box-pack:start;justify-content:flex-start}}.listing__deal-badge{border-radius:4px;background-color:#ff0033;color:#fcfbfb}.listing__secondary-title{font-weight:500;color:#9b9691;text-transform:uppercase;padding-bottom:12px}.listing__secondary-title--large{color:#2a2a2a}.listing__info-details{padding-bottom:12px;border-bottom:1px solid #e6e2df}@media only screen and (max-width: 768px){.listing__info-details{border-bottom:none;margin:0 auto;padding:0}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__info-details{width:100%}}.listing__description{word-wrap:break-word;white-space:pre-line;width:100%;margin:8px 0}@media only screen and (max-width: 768px){.listing__description{border-top:1px solid #d9d5d2;margin:28px 0 0 0;padding-top:28px}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__description{border-top-width:0px;border-bottom:1px solid #e6e2df;margin:0;padding:20px 0 12px 0}}.listing__size-selector{display:-webkit-box;display:-ms-flexbox;display:flex}@media only screen and (max-width: 768px){.listing__size-selector{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__size-selector{display:block}}.listing__size-selector-con{margin:0 -12px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__size-selector-con{margin:0 -8px}}.listing__size-selector-links-con{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:none;flex-wrap:nowrap;margin:20px 8px 20px 28px;padding:0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__size-selector-links-con{-ms-flex-wrap:wrap;flex-wrap:wrap}}.listing__inventory-status{margin:12px 0;padding:12px;text-align:center}@media only screen and (max-width: 768px){.listing__inventory-status{margin:12px auto 28px auto}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__inventory-status{margin:12px 0 8px 0}}.listing__divider{height:16px;background-color:#f5f2ee;border:solid #d9d5d2;border-width:1px 0}.listing__social-action-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between;margin:12px 0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__social-action-container{margin:0}}.listing__social-action-container_visitors{width:45%}.listing__social-action-bar{margin-bottom:8px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__social-action-bar{margin:8px 12px;width:100%;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}}.listing__social-action-bar .social-action-bar__action{margin-right:12px}.listing__admin-actions{margin-bottom:8px}@media only screen and (max-width: 768px){.listing__admin-actions{margin:0 12px 12px 0}}.listing__status-banner{background-color:#f8f6f3;margin-bottom:28px;padding:12px 60px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__status-banner{padding:12px 20px}}.listing__status-banner__title--sold{font-weight:500;color:#b30000}.listing__status-banner__img{height:120px;width:120px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__status-banner__img{height:60px;width:60px}}.secondary__buyer__actions{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:12px;color:#6a6a6a;cursor:pointer;white-space:nowrap}@media only screen and (max-width: 768px){.secondary__buyer__actions{-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;margin:12px 0 0 0}}@media only screen and (min-width: 768px){.secondary__buyer__actions{font-weight:300}}.secondary__buyer__actions--new_layout{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;max-width:360px}.tag-details__btn{margin:0 8px 8px 0;max-width:50ch}.tag-details__btn--mobile{max-width:35ch}.listing__similar-listing .show--more--btn{left:50%;-ms-transform:translate(-50%, 0);-webkit-transform:translate(-50%, 0);transform:translate(-50%, 0);width:25% !important}.listing__similar-listing .full-width-section{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.listing__bottom{margin-bottom:-84px;padding:0 40px;padding-top:0;border-top:1px solid #e6e2df}@media only screen and (min-width: 768px){.listing__bottom{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__bottom{padding:0}}.listing__bottom section{border-bottom:1px solid #e6e2df}.listing__bottom section:last-child{border-bottom:none}.listing__bottom--empty{border:none}@media only screen and (max-width: 768px){.listing__bottom--empty{border-top:1px solid #e6e2df}}.listing__bottom__section{max-width:1360px;margin:0 auto;padding:28px 0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__bottom__section{padding-left:12px;padding-right:12px}}.listing__bottom__section-feed{padding-bottom:48px}.listing__removed{max-width:750px}.item-details{margin:20px 0}.item-details__list{display:grid;grid-template-columns:70px 1fr;grid-column-gap:44px;grid-row-gap:8px;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.item-details__row{display:contents}.item-details__key{color:#6a6a6a;-ms-flex-item-align:start;align-self:start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.item-details__key{text-transform:capitalize;font-weight:500;letter-spacing:.02em;font-size:14px;margin-bottom:0}}.item-details__value{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;word-break:break-word;overflow-wrap:anywhere}.item-details__value span:not(:last-of-type)::after{content:",";margin-right:4px}.item-details__link{margin-left:12px;white-space:nowrap}.item-details__description{position:relative;display:block;width:100%;white-space:pre-line;overflow-wrap:anywhere;overflow:hidden}@supports(-webkit-line-clamp: 7){.item-details__description.is-clamped{text-overflow:ellipsis;display:-webkit-box;overflow:hidden;-webkit-line-clamp:7;-webkit-box-orient:vertical}}.item-details__description.is-clamped:after{content:"";position:absolute;left:0;right:0;bottom:0;height:20px;pointer-events:none;background:-webkit-gradient(linear, left top, left bottom, color-stop(-50%, rgba(252, 251, 251, 0)), to(#fcfbfb));background:linear-gradient(to bottom, rgba(252, 251, 251, 0) -50%, #fcfbfb 100%)}.item-details__size_selector{text-align:center}.item-details__size_selector td,.item-details__size_selector th,.item-details__size_selector .sizing-chart--name{height:36px;font-weight:500;vertical-align:middle}.listing__closet-widget__container{padding:12px 0}@media only screen and (max-width: 768px){.listing__closet-widget__container{display:none}}.listing__closet-widget{background-color:#fff;-webkit-box-shadow:0 1px 2px 0 rgba(0,0,0,.1);box-shadow:0 1px 2px 0 rgba(0,0,0,.1);border-radius:4px;padding:16px}.listing-closet-widget-header{display:grid;grid-template-columns:auto 1fr;grid-template-rows:1fr auto;-webkit-box-align:start;-ms-flex-align:start;align-items:start}.listing-closet-widget-header__image{grid-column-start:1;grid-column-end:2;grid-row-start:1;grid-row-end:2}.seller-details__info{grid-column-start:2;grid-column-end:3;grid-row-start:1;grid-row-end:2}.listing__closet-widget__bottom{display:none}@media only screen and (max-width: 768px){.listing__closet-widget__bottom{display:block}}.seller-user-image{height:70px;width:70px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.seller-user-image{height:67px;width:67px}}.seller-details__user-name{margin-left:2px}.seller-details__stats{grid-column-start:2;grid-column-end:3;grid-row-start:2;grid-row-end:3}.seller-details__stats--tablet{grid-column-start:1}.listing-view-closet-widget-button{min-width:96px;margin-left:16px}.user-location-activity{margin-right:36px}.user-detail-icons{min-width:16px}.seller-details__stats-mobile{grid-column-start:1}.listing__video--full-screen{position:fixed !important;z-index:1040}.listing__video__btn-close{position:absolute;right:12px;top:12px;z-index:3}.listing__video__volume__upper-left{position:absolute;left:12px;top:20px;z-index:3}.listing__video__controls{position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;width:100%;bottom:20px;padding:20px}.listing__video__controls.video-controls--enhancement{bottom:-8px !important}.listing__video__progress-bar-con{cursor:pointer;width:100%;border-radius:4px;padding:20px 0;overflow-x:hidden}.listing__video__progress-bar-con:hover .listing__video__progress-bar::after{visibility:visible;opacity:1}.listing__video__progress-bar__background{height:4px;border-radius:4px;width:100%;background:#4a4a4a;position:relative}.listing__video__progress-bar{position:absolute;border-radius:4px;top:0;left:0;background:#fff;height:100%;width:100%;-ms-transform:translate3d(-100%, 0, 0);-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);-webkit-transition:-webkit-transform .1s ease;transition:-webkit-transform .1s ease;transition:transform .1s ease;transition:transform .1s ease, -webkit-transform .1s ease}.listing__video__progress-bar:after{content:"";height:12px;width:12px;border-radius:50%;position:absolute;right:0;bottom:8px;background:#fff;visibility:hidden;opacity:0;-webkit-transition:all .2;transition:all .2;top:50%;-ms-transform:translate(0, -50%);-webkit-transform:translate(0, -50%);transform:translate(0, -50%)}.listing__video__progress-bar:hover:after{visibility:visible;opacity:1}.posh-story__btn--play{height:120px;width:120px;z-index:5;position:absolute;background:rgba(0,0,0,0);left:0;right:0;margin:0 auto;top:50%;-ms-transform:translate(0, -50%);-webkit-transform:translate(0, -50%);transform:translate(0, -50%);padding:0;z-index:5}.listing__video__controls__playpause-img{position:static}.posh-story__btn--play__img{width:100%}.listing__video__controls__playpause-btn{line-height:0;height:44px;width:44px}.listing__video__progress-bar__input{position:absolute;width:calc(100% - 150px);top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);height:100%;z-index:5;opacity:0}.listing__video__progress-bar__input.progress-bar--enhancement{width:calc(100% - 190px) !important}.listing__cross-trend__overlay{position:absolute;top:0;left:0;height:100%;width:100%}.listing__cross-trend__overlay:after{content:"";position:absolute;width:100%;height:100%;top:0;left:0;background:rgba(0,0,0,.35);overflow:hidden}.listing__cross-trend__title{color:#fcfbfb;font-weight:500;position:absolute;width:100%;white-space:normal;left:0;bottom:0;z-index:2;padding:8px}.listing-details__d-au-ph{max-height:600px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;overflow:hidden}.listing-details__m-au-ph-bottom{max-height:336px;margin:0 auto;overflow:hidden;padding:28px 0;display:-webkit-box;display:-ms-flexbox;display:flex;alignt-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.listing-layout-outer-wrapper{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}.listing-layout-inner-wrapper{max-width:1380px;margin:0 auto;padding:0 8px 0 8px}.listing-layout-right-container{max-height:600px;overflow-y:scroll;scrollbar-width:none;-ms-overflow-style:none}.listing-layout-visitor{width:45%}.listing-layout-social-actions{width:81%;float:right;margin-top:16px}.icon-shipping-comet{height:22px;width:22px}.shipping-comet-text{color:#008a23}
-      .listing__banner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;position:relative;line-height:1.5;padding:12px;font-size:16px;margin:-24px -8px 0 -8px;margin-bottom:28px}@media only screen and (min-width: 768px){.listing__banner{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__banner{margin:0 0 12px 0}}.listing__banner--image{height:24px;width:24px;margin-right:12px}.listing__banner--right-image{height:18px;width:18px;margin-left:12px}.listing__banner__content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center}.listing__banner__content--text{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:end;-webkit-box-align:end;align-items:flex-end}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__banner__content--text{-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-align:center;-webkit-box-align:center;align-items:center}}.listing__banner__breadcrumb{-webkit-align-self:flex-start;-ms-flex-item-align:start;align-self:flex-start;position:absolute;left:12px;color:#fcfbfb}.presentation__banner{background-color:#ff4d4d}
-      .listing__header .comment-detail-icon{-webkit-transform:scale(1.3);-ms-transform:scale(1.3);transform:scale(1.3);margin-top:4px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__header .header__user-actions{width:35%;-webkit-box-pack:inherit;-ms-flex-pack:inherit;justify-content:inherit}}.header__section{width:100%}
-      .slideshow{display:-webkit-box;display:-ms-flexbox;display:flex}.slideshow:hover .slideshow__edit-overlay{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;-ms-flex-align:center;-webkit-box-align:center;align-items:center;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column}.slideshow--desktop{max-height:550px;height:39vw}@media only screen and (max-width: 768px){.slideshow--desktop{height:606px;max-height:none}}.slideshow__container--vertical{height:100%}.slideshow__video{width:100%;height:100%;position:absolute;top:0;left:0}.slideshow__video video{width:100%;height:100%;-o-object-fit:contain;object-fit:contain;background:#000}.btn__pos__rel{position:absolute;top:2%;right:2%;z-index:2;background:#fff;height:32px;width:32px;-webkit-box-shadow:0px 3px 8px rgba(0,0,0,.19);box-shadow:0px 3px 8px rgba(0,0,0,.19);border-radius:50%;line-height:34px;min-width:0;padding:0}.btn__pos{position:relative}.slideshow--fullscreen .carousel__slide{text-align:center !important}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.slideshow{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.slideshow__img{width:100%}.slideshow__container{position:absolute;bottom:0;margin:12px;width:100%}}.slideshow-img-container--add-more{position:fixed;height:100%}.slideshow__icon-add-image{position:absolute;bottom:20px;right:20px}.slideshow__edit-overlay{position:absolute;display:none;background:rgba(0,0,0,.5);top:0;bottom:0;left:0;right:0;z-index:100}.img__container--video-thumbnail--black{background-color:#000}
-      .social-action-bar{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.social-action-bar__action{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;-webkit-box-align:center;align-items:center;color:#6a6a6a;cursor:pointer;font-weight:500}
-      .like__bottom-count{margin-top:4px;font-weight:300;color:#9b9691}
-      .size-selector__size-option{margin:12px 8px 8px;min-width:3rem;text-align:center;color:#4a4a4a}.size-selector__size-option--mobile{max-width:30ch}
-      .sizing-chart,.measurement-chart{padding-bottom:20px}.measurement-chart{padding-left:0;padding-right:0;padding-top:0}.measurements-chart--content{padding:0 20px}.sizing-chart--link{display:block;padding:12px 20px}.sizing-chart--loader{display:block;margin:20vh auto}.sizing-chart--list{margin-bottom:20px;border:1px solid #e6e2df}.sizing-chart--name{padding:8px 4px 4px 4px;color:#6a6a6a;border-bottom:1px solid #e6e2df;background:#f5f2ee}
-      .commerce-actions{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions{-ms-flex-direction:column-reverse;-webkit-box-orient:vertical;-webkit-box-direction:reverse;flex-direction:column-reverse}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions--sticky{position:fixed;bottom:0;left:0;background:#fff;padding:16px;width:100%;z-index:40;-webkit-box-shadow:0 0 1px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.1);box-shadow:0 0 1px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.1);-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}}.commerce-actions__container{max-width:360px;margin-top:12px}@media only screen and (max-width: 768px){.commerce-actions__container{margin:0 auto}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__container{max-width:unset;margin-top:0}}.commerce-actions__wrapper{gap:16px}.commerce-actions__button_pair{margin-top:12px;width:calc(50% - .75rem)}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__button_pair{width:100%}}.commerce-actions__button_pair__new{-ms-flex:1 1 0;-webkit-box-flex:1;flex:1 1 0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__button_pair--sticky{margin-top:0}}.payment-gateway__empty{min-height:50px}.commerce-actions__no_offers{margin-bottom:-12px}
-      .commerce-actions{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions{-ms-flex-direction:column-reverse;-webkit-box-orient:vertical;-webkit-box-direction:reverse;flex-direction:column-reverse}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions--sticky{position:fixed;bottom:0;left:0;background:#fff;padding:16px;width:100%;z-index:40;-webkit-box-shadow:0 0 1px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.1);box-shadow:0 0 1px rgba(0,0,0,.1),0 0 1px rgba(0,0,0,.1);-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}}.commerce-actions__container{max-width:360px;margin-top:12px}@media only screen and (max-width: 768px){.commerce-actions__container{margin:0 auto}}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__container{max-width:unset;margin-top:0}}.commerce-actions__wrapper{gap:16px}.commerce-actions__button_pair{margin-top:12px;width:calc(50% - .75rem)}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__button_pair{width:100%}}.commerce-actions__button_pair__new{-ms-flex:1 1 0;-webkit-box-flex:1;flex:1 1 0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.commerce-actions__button_pair--sticky{margin-top:0}}.payment-gateway__empty{min-height:50px}.commerce-actions__no_offers{margin-bottom:-12px}
-      .listing__disclaimer__title{border-bottom:1px solid #e6e2df;text-transform:uppercase}.listing__secondary-title{font-weight:500;color:#9b9691;text-transform:uppercase}.listing__secondary-title--large{font-size:14px;color:#2a2a2a}.listing__disclaimer__message{display:inline-block;vertical-align:middle;color:#9b9691;margin-right:8px}.listing__disclaimer__message-con,.listing__disclaimer__message-con-new{border-bottom:1px solid #e6e2df;padding:8px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.listing__disclaimer__item:last-child .listing__disclaimer__message-con{border-bottom:none}}.posh-protect-banner{background:#f2f2f2;border-radius:4px}.posh-protect-banner__icon{height:40px;width:40px}.posh-protect-banner__icon--small{height:24px;width:24px}
-      .comment__header{border-bottom:1px solid #f5f2ee;color:#9b9691;padding-bottom:8px}.comments__form{margin-top:16px;-ms-flex-align:center;-webkit-box-align:center;align-items:center}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.comments__form{display:-webkit-box;display:-ms-flexbox;display:flex}}.comments__form-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-ms-flex-align:center;-webkit-box-align:center;align-items:center}.comments__form-textarea{margin-left:12px;-ms-flex-basis:100%;-ms-flex-preferred-size:100%;flex-basis:100%}.comments__submit-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:end;-webkit-box-pack:end;justify-content:flex-end;margin-top:8px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.comments__submit-container{height:2.6em;margin:0 0 0 8px;min-width:70px}}.comments__button{color:#9b9691;background:#fcfbfb;border:1px solid #e6e2df;margin-top:12px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.comments__button{margin-top:0}}.comment__remaining-chars{margin:-40px 0 0 56px;color:#9b9691;text-align:left}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.comment__remaining-chars{margin-top:8px}}.comments__user-suggest-list-container{position:absolute;top:0;left:0;right:0;z-index:1}.comments__user-suggest-list{width:100%}.comments__user-suggest-list__handle{display:block;margin-top:4px}.comment__warning-banner{margin-top:12px;background-color:#fffbe9;min-height:104px}.comment__warning-text{line-height:18px;padding:12px 20px 12px 0px}.comment__warning-icon{margin:12px 8px 12px 12px;min-width:16px}.comment__blurred{-webkit-filter:blur(4px);filter:blur(4px);pointer-events:none}.comment__input-container{-ms-flex:1 1 0;-webkit-box-flex:1;flex:1 1 0}
-      .comment__header__user-image{margin-right:-8px;border:2px solid #fcfbfb}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.comment__header__user-image{border:1px solid #fcfbfb}}
-      .pa-badge--pill{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;position:relative;cursor:pointer;-webkit-box-sizing:border-box;box-sizing:border-box;border-radius:16px;padding:8px 16px}.pa-badge--oval{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-shadow:0px .853447px 1.42241px rgba(0,0,0,.3);box-shadow:0px .853447px 1.42241px rgba(0,0,0,.3);border-radius:50%;width:21px;height:21px;padding:3px;margin-left:8px;-ms-flex-item-align:center;align-self:center}.pa-badge__star{height:15px;width:15px;background-size:cover}.pa-badge__text{padding-left:8px;display:-webkit-box;display:-ms-flexbox;display:flex}
-      .common-d-prm-ph-bottom{position:fixed;bottom:0px;max-width:100%;max-height:70px;left:50%;-webkit-transform:translate(-50%, 0);-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);z-index:10}.common-m-prm-ph-bottom{position:fixed;bottom:0px;max-width:100%;max-height:55px;left:50%;-webkit-transform:translate(-50%, 0);-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);z-index:10}
-      .login-link .login-banner{position:fixed;z-index:99;bottom:0;background:#e6e2df;height:116px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.login-link .login-banner{height:208px}}.login-link .login-banner .banner-close-icon--mobile{position:absolute;top:20px;right:0}.login-link .login-banner .login-btn-link{margin-left:auto}.login-link .profile-img{width:40px;height:40px;border-radius:50%}.login-link .modal-msk-email{text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important;display:inline-block;vertical-align:bottom;max-width:250px}.login-link .msk-email{text-overflow:ellipsis !important;white-space:nowrap !important;overflow:hidden !important;display:inline-block;vertical-align:bottom;max-width:256px}.login-link-border-top{border-top:1px solid #e6e2df;padding-top:12px}
-      .group-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:no-wrap;flex-wrap:no-wrap;-ms-flex:1 1 auto;-webkit-box-flex:1;flex:1 1 auto;min-width:700px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.group-list{display:block;width:94%;min-width:200px;margin:0 3% 10px 3%}}
-      .store-icon{height:26px;width:88px;margin:0 20px 12px 0}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.store-icon{margin:0 0 20px 56px}}.store-icon--big{height:40px;width:140px;margin-right:20px}
-      .social-icons i{margin-right:5px}@media only screen and (max-device-width: 767px),(max-device-height: 480px)and (orientation: landscape){.social-icons i{margin-right:10px}}
-      .country-switcher__dropdown__menu{min-width:200px}.country-switcher--icon{height:33px;width:33px}
+/* Keep the whole page on one continuous blue/light-blue surface */
+#PageContainer,
+#MainContent,
+.main-content,
+.content-for-layout,
+main,
+.shopify-section-group-header-group,
+.shopify-section-group-footer-group {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Eliminate white/black striping from generic layout wrappers */
+.page-width,
+.section,
+.shopify-section,
+.content-container,
+.container,
+.wrapper,
+.site-content {
+  background-color: transparent !important;
+}
+
+/* Smooth blue header without hard color cuts */
+header,
+.header,
+.site-header,
+.shopify-section-header,
+.shopify-section-header-sticky,
+.header-wrapper {
+  background: linear-gradient(90deg, #003B8F 0%, #006CFF 50%, #00AFFF 100%) !important;
+  background-image: linear-gradient(90deg, #003B8F 0%, #006CFF 50%, #00AFFF 100%) !important;
+}
+
+/* Make the bottom of the page continue in blue instead of ending in a block */
+footer,
+.footer,
+.footer__content-top,
+.footer__content-bottom {
+  background: linear-gradient(180deg, #0A5ED7 0%, #0752B8 100%) !important;
+  background-image: linear-gradient(180deg, #0A5ED7 0%, #0752B8 100%) !important;
+}
+
+/* Bottom fixed bar: full-width continuous blue */
+.fixed-footer,
+.ALEXSIS77-fixed-footer,
+[class*="fixed-footer"],
+[class*="bottom-nav"] {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background: linear-gradient(90deg, #003B8F 0%, #006CFF 50%, #00AFFF 100%) !important;
+  background-image: linear-gradient(90deg, #003B8F 0%, #006CFF 50%, #00AFFF 100%) !important;
+}
+
+/* Replace remaining pure white page-level surfaces with light blue */
+body > div,
+#shopify-section-header,
+#shopify-section-footer,
+.shopify-section-header,
+.shopify-section-footer {
+  background-color: transparent !important;
+}
+
+/* Avoid hard white bands caused by inline styles */
+[style*="background: white"],
+[style*="background:white"],
+[style*="background-color: white"],
+[style*="background-color:white"],
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background:#ffffff"],
+[style*="background: #ffffff"] {
+  background-color: #EAF3FF !important;
+  background-image: none !important;
+}
+
+/* Blue separators instead of white/black gaps */
+hr,
+.divider {
+  border-color: #9BC7FF !important;
+}
+
+/* Keep images/logos themselves untouched */
+img, svg, video, iframe {
+  background-color: transparent !important;
+}
+</style>
+
+<style id="blue-flat-unified-theme">
+/* === UNIFIED FLAT BLUE THEME === */
+:root {
+  --flat-blue: #0b63f6;
+  --flat-blue-dark: #0752c9;
+  --flat-blue-light: #eaf3ff;
+  --flat-blue-soft: #dceaff;
+  --flat-white: #ffffff;
+  --flat-text: #12325c;
+  --flat-border: #b9d5ff;
+}
+
+/* One continuous page background */
+html,
+html body,
+body {
+  background: #eaf3ff !important;
+  background-image: none !important;
+  background-color: #eaf3ff !important;
+  color: var(--flat-text);
+}
+
+/* Remove visual bands caused by alternating backgrounds */
+main,
+#MainContent,
+.shopify-section,
+.page-width,
+.page-container,
+.content-container,
+.container,
+.site-content,
+.content,
+section {
+  background-image: none !important;
+}
+
+/* Header / top areas use one continuous blue */
+header,
+.site-header,
+.header,
+.header-wrapper,
+.announcement-bar,
+.top-bar,
+.header__wrapper {
+  background-image: none !important;
+  background-color: var(--flat-blue) !important;
+  border-color: var(--flat-blue-dark) !important;
+}
+
+/* Navigation stays one solid/continuous blue */
+nav,
+.navigation,
+.navbar,
+.menu,
+.menu-wrapper,
+.header-menu {
+  background-image: none !important;
+  background-color: var(--flat-blue) !important;
+}
+
+/* Cards/panels: white-blue instead of random black/white blocks */
+.card,
+.card-wrapper,
+.product-card,
+.product-grid,
+.collection-card,
+.panel,
+.box,
+.content-box,
+.section-card,
+.game-card,
+.game-item,
+.item-card {
+  background-image: none !important;
+  background-color: var(--flat-white) !important;
+  border-color: var(--flat-border) !important;
+}
+
+/* Large section wrappers use the same light-blue background */
+main > *,
+main section,
+.shopify-section > div,
+.section,
+.section-wrapper {
+  background-image: none !important;
+}
+
+/* Buttons */
+button,
+.btn,
+.button,
+input[type="submit"],
+input[type="button"],
+a.button,
+.button--primary {
+  background-image: none !important;
+  background-color: var(--flat-blue) !important;
+  border-color: var(--flat-blue) !important;
+  color: #fff !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  background-image: none !important;
+  background-color: #fff !important;
+  border-color: var(--flat-border) !important;
+  color: var(--flat-text) !important;
+}
+
+/* Footer: one uninterrupted blue block */
+footer,
+.site-footer,
+.footer,
+.footer-wrapper {
+  background-image: none !important;
+  background-color: var(--flat-blue-dark) !important;
+  border-color: var(--flat-blue-dark) !important;
+}
+
+/* Fixed bottom navigation: no cut-off gradient */
+.bottom-nav,
+.bottom-navigation,
+.mobile-bottom-nav,
+.fixed-bottom-nav {
+  background-image: none !important;
+  background-color: var(--flat-blue) !important;
+  border-color: var(--flat-blue-dark) !important;
+}
+
+/* Remove common dark/black strips */
+[style*="background:#000"],
+[style*="background: #000"],
+[style*="background-color:#000"],
+[style*="background-color: #000"],
+[style*="background:#111"],
+[style*="background: #111"],
+[style*="background-color:#111"],
+[style*="background-color: #111"] {
+  background: #eaf3ff !important;
+  background-image: none !important;
+}
+
+/* Remove common white background strips from structural elements */
+main > div,
+section > div {
+  background-image: none;
+}
+
+/* Preserve readable text */
+h1,h2,h3,h4,h5,h6 {
+  color: var(--flat-text);
+}
+header h1, header h2, header h3, header h4, header h5, header h6,
+nav, nav a,
+.site-header a,
+.header a,
+footer,
+footer a {
+  color: #fff !important;
+}
+
+/* Images/SVGs remain untouched unless their own fills are explicitly styled */
+</style>
+
+
+<style id="blue-bottom-nav-fix">
+/* === BOTTOM NAV: BLUE BACKGROUND + VISIBLE WHITE ICONS === */
+.bottom-nav,
+.bottom-navigation,
+.mobile-bottom-nav,
+.fixed-bottom-nav,
+nav.bottom-nav,
+nav.mobile-bottom-nav,
+[class*="bottom-nav"],
+[class*="bottom-navigation"] {
+  background: #0752c9 !important;
+  background-image: none !important;
+  border-top: 1px solid #0b63f6 !important;
+  color: #ffffff !important;
+}
+
+/* Make all bottom-nav links/buttons readable */
+.bottom-nav a,
+.bottom-navigation a,
+.mobile-bottom-nav a,
+.fixed-bottom-nav a,
+[class*="bottom-nav"] a,
+[class*="bottom-navigation"] a,
+.bottom-nav button,
+.bottom-navigation button,
+.mobile-bottom-nav button,
+.fixed-bottom-nav button {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* Icons: force white where they use currentColor */
+.bottom-nav svg,
+.bottom-navigation svg,
+.mobile-bottom-nav svg,
+.fixed-bottom-nav svg,
+[class*="bottom-nav"] svg,
+[class*="bottom-navigation"] svg {
+  color: #ffffff !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* Font/icon glyphs */
+.bottom-nav i,
+.bottom-nav span,
+.bottom-navigation i,
+.bottom-navigation span,
+.mobile-bottom-nav i,
+.mobile-bottom-nav span,
+.fixed-bottom-nav i,
+.fixed-bottom-nav span,
+[class*="bottom-nav"] i,
+[class*="bottom-nav"] span {
+  color: #ffffff !important;
+}
+
+/* Active item */
+.bottom-nav .active,
+.bottom-navigation .active,
+.mobile-bottom-nav .active,
+.fixed-bottom-nav .active,
+[class*="bottom-nav"] .active {
+  color: #ffffff !important;
+  background: #0b63f6 !important;
+}
+
+/* Keep the page itself light-blue and continuous */
+html,
+body {
+  background: #eaf3ff !important;
+  background-image: none !important;
+}
+</style>
+
+
+<style id="blue-bottom-icon-solid">
+/* === SOLID BLUE ICON AREA — NO TRANSPARENCY === */
+.bottom-nav a,
+.bottom-navigation a,
+.mobile-bottom-nav a,
+.fixed-bottom-nav a,
+[class*="bottom-nav"] a,
+[class*="bottom-navigation"] a {
+  background: #0b63f6 !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  border: 1px solid #3f8cff !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+/* Solid blue icon containers */
+.bottom-nav a svg,
+.bottom-navigation a svg,
+.mobile-bottom-nav a svg,
+.fixed-bottom-nav a svg,
+[class*="bottom-nav"] a svg,
+[class*="bottom-navigation"] a svg {
+  background: #0b63f6 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Icon glyphs stay white against solid blue */
+.bottom-nav i,
+.bottom-nav span,
+.bottom-navigation i,
+.bottom-navigation span,
+.mobile-bottom-nav i,
+.mobile-bottom-nav span,
+.fixed-bottom-nav i,
+.fixed-bottom-nav span,
+[class*="bottom-nav"] i,
+[class*="bottom-nav"] span {
+  background: #0b63f6 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Active icon gets a darker solid blue */
+.bottom-nav .active,
+.bottom-navigation .active,
+.mobile-bottom-nav .active,
+.fixed-bottom-nav .active,
+[class*="bottom-nav"] .active {
+  background: #0752c9 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Remove transparent layers from common inner icon wrappers */
+.bottom-nav a > *,
+.bottom-navigation a > *,
+.mobile-bottom-nav a > *,
+.fixed-bottom-nav a > *,
+[class*="bottom-nav"] a > *,
+[class*="bottom-navigation"] a > * {
+  opacity: 1 !important;
+}
+
+/* Bottom bar itself remains solid */
+.bottom-nav,
+.bottom-navigation,
+.mobile-bottom-nav,
+.fixed-bottom-nav,
+[class*="bottom-nav"],
+[class*="bottom-navigation"] {
+  background: #0752c9 !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+</style>
+
+
+<style id="ALEXSIS77-bottom-icon-background">
+/* === ACTUAL SMALL ICON BACKGROUND ===
+   The bottom menu uses .ALEXSIS77-fixed-footer.
+   Give each image a solid blue badge so the icon has a visible background.
+*/
+.ALEXSIS77-fixed-footer {
+  background: #0752c9 !important;
+  background-image: none !important;
+  opacity: 1 !important;
+}
+
+.ALEXSIS77-fixed-footer a {
+  background: transparent !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.ALEXSIS77-fixed-footer a img,
+.ALEXSIS77-fixed-footer a img.live-chat-icon {
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+  padding: 5px !important;
+  box-sizing: border-box !important;
+  background: #0b63f6 !important;
+  background-color: #0b63f6 !important;
+  background-image: none !important;
+  border: 1px solid #62a5ff !important;
+  border-radius: 8px !important;
+  opacity: 1 !important;
+  object-fit: contain !important;
+}
+
+/* Keep the active/animated button solid too */
+.ALEXSIS77-fixed-footer a.tada img {
+  background: #006cff !important;
+  border-color: #9bc7ff !important;
+}
+</style>
+
+</head>
+
+<body class="gradient animate--hover-default" data-template="product">
+  <div id="shopify-section-announcement_bar_slider" class="shopify-section">
+    <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/announcement-bar-slider.js?v=142197795293918470981742784887"
+      defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    <div class="hura-announcement-bar slider-container">
+      <div class="hura-messages swiper-wrapper">
+        <div class="hura-message swiper-slide slick-slide">ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</div>
+        <div class="hura-message swiper-slide slick-slide">Situs slot Dengan rtp slot tertinggi hari ini</div>
+        <div class="hura-message swiper-slide slick-slide">situs game game fitur lengkap</div>
+        <div class="hura-message swiper-slide slick-slide">Situs slot game hari ini Lisensi Resmi Internasional</div>
+        <div class="hura-message swiper-slide slick-slide">platform slot gacor terpercaya Ternama Dunia</div>
+        <div class="hura-message swiper-slide slick-slide">Dengan layanan customer care terbaik</div>
+      </div>
+    </div>
+    <style>
+      .hura-messages.swiper-wrapper {
+        display: none
+      }
+
+      .hura-announcement-bar {
+        width: 100%;
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 8px 0
+      }
+
+      .hura-announcement-bar .slick-track {
+        display: flex;
+        align-items: center
+      }
+
+      .hura-messages.swiper-wrapper.slick-initialized.slick-slider {
+        display: flex
+      }
+
+      div#shopify-section-announcement_bar_slider {
+        background: #242424;
+      }
+
+      .hura-announcement-bar .hura-message {
+        text-align: center;
+        align-self: center;
+        font-size: 12px;
+        line-height: 14px;
+        color: #0b63f6;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hura-announcement-bar .swiper-button-next:after,
+      .hura-announcement-bar .swiper-container-rtl .swiper-button-prev:after,
+      .hura-announcement-bar .swiper-button-prev:after,
+      .hura-announcement-bar .swiper-container-rtl .swiper-button-next:after {
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      .hura-messages .slick-prev:before,
+      .hura-messages .slick-next:before {
+        color: #ffffff !important;
+        opacity: 1;
+      }
+
+      .hura-messages .slick-prev:before {
+        content: url("data:image/svg+xml,%3Csvg width='6' height='11' viewBox='0 0 6 11' fill='none' xmlns='http://%%SITE%%.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.16164 10.3233L6 9.48493L1.67671 5.16164L6 0.838358L5.16164 0L0 5.16164L5.16164 10.3233Z' fill='white'/%3E%3C/svg%3E%0A");
+      }
+
+      .hura-messages .slick-next:before {
+        content: url("data:image/svg+xml,%3Csvg width='6' height='11' viewBox='0 0 6 11' fill='none' xmlns='http://%%SITE%%.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.838356 0.676713L-8.46107e-07 1.51507L4.32329 5.83836L-9.01992e-08 10.1616L0.838357 11L6 5.83836L0.838356 0.676713Z' fill='white'/%3E%3C/svg%3E%0A");
+      }
+
+      div.hura-swiper-button {
+        display: block;
+        align-items: center;
+      }
+
+      .slick-next,
+      .slick-next:focus,
+      .slick-next:hover,
+      .slick-prev,
+      .slick-prev:focus,
+      .slick-prev:hover {
+        color: transparent;
+        outline: 0;
+        background: 0 0
+      }
+
+      .slick-next,
+      .slick-prev {
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        cursor: pointer;
+        border: none;
+        z-index: 1
+      }
+
+      .slick-next:focus:before,
+      .slick-next:hover:before,
+      .slick-prev:focus:before,
+      .slick-prev:hover:before {
+        opacity: 1
+      }
+
+      .slick-next.slick-disabled:before,
+      .slick-prev.slick-disabled:before {
+        opacity: .25
+      }
+
+      .slick-next:before,
+      .slick-prev:before {
+        font-family: slick;
+        font-size: 20px;
+        line-height: 1;
+        opacity: .75;
+        color: #000;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale
+      }
+
+      .slick-prev {
+        left: 0
+      }
+
+      [dir=rtl] .slick-prev {
+        right: -25px;
+        left: auto
+      }
+
+      .slick-prev:before,
+      [dir=rtl] .slick-next:before {
+        content: '←'
+      }
+
+      .slick-next:before,
+      [dir=rtl] .slick-prev:before {
+        content: '→'
+      }
+
+      .slick-next {
+        right: 0
+      }
+
+      [dir=rtl] .slick-next {
+        right: auto;
+        left: -25px
+      }
+
+      .announcement_link {
+        color: #d0d0d0 !important;
+        text-decoration: none;
+      }
+
+      @media screen and (max-width:749px) {
+        .slick-prev {
+          left: -21px
+        }
+
+        .slick-next {
+          right: -21px
+        }
+
+        .hura-announcement-bar {
+          margin: inherit;
+          padding: 8px 30px;
+          height: auto
+        }
+      }
     </style>
-  </head>
-  <body >
-    <noscript data-vue-meta="1" data-pbody="true">
-      <iframe src="https://bomo77.net/ns.html?id=GTM-WL69NPH&gtm_auth=frvvXcvTLPB7RSj2zHeAtQ&gtm_preview=env-2&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden">
+    <style>
+      .n-columns-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-weight: 700;
+      }
 
-      </iframe>
+      .login,
+      .register {
+        position: relative;
+        isolation: isolate;
+        padding: 18px 20px;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .login,
+      .register {
+        background: linear-gradient(135deg, #005BFF 0%, #00BFFF 15%, #0055FF 35%, #0077FF 60%, #00AFFF 100%);
+        border: 4px solid #000;
+        text-shadow: 2px 2px 4px rgb(252, 252, 252);
+      }
+
+      .login:hover,
+      .register:hover {
+        transform: translateY(-10px);
+      }
+
+      .login:active,
+      .register:active {
+        transform: translateY(6px);
+        box-shadow:
+          0 6px 0 #ffffff,
+          0 10px 20px rgba(255, 255, 255, 0.6);
+      }
+
+      .login::before,
+      .register::before {
+        content: "";
+        position: absolute;
+        top: -150%;
+        left: -50%;
+        width: 60%;
+        height: 300%;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 30%,
+            rgba(255, 255, 255, 0.7) 50%,
+            rgba(255, 255, 255, 0.1) 70%,
+            transparent 100%);
+        transform: rotate(30deg);
+        transition: none;
+        animation: shine 3s infinite;
+      }
+
+      .login span,
+      .register span {
+        position: relative;
+        z-index: 2;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-200%) rotate(30deg);
+        }
+
+        100% {
+          transform: translateX(200%) rotate(30deg);
+        }
+      }
+    </style>
+    <div class="n-columns-2">
+      <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noreferrer" class="register">REGISTER</a>
+      <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noreferrer" class="login">LOGIN</a>
+    </div>
+  </div>
+  <!-- BEGIN sections: header-group -->
+  <div id="shopify-section-sections--17605520031924__header"
+    class="shopify-section shopify-section-group-header-group section-header">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-list-menu.css?v=104864129994713251501742784888"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-search.css?v=130382253973794904871742784887"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-menu-drawer.css?v=21058032239462183751742784887"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-cart-notification.css?v=71986486250318288601742784887"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-cart-items.css?v=144236440317055431411742784889"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-price.css?v=89212854351592844731742784887" media="print"
+      onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-loading-overlay.css?v=160031540023746741091742784889"
+      media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+      href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-mega-menu.css?v=10110889665867715061742784889"
+      media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-mega-menu.css?v=10110889665867715061742784889"
+        rel="stylesheet" type="text/css" media="all" />
     </noscript>
-    <div id="app" data-server-rendered="true">
-      <!---->
-      <header class="header">
-        <nav class="header--fixed">
-          <div class="header__con">
-            <!---->
-            <a href="%%CTA_URL%%" data-et-name="homepage" data-et-prop-location="header" class="d--fl ai--c">
-              <img src="https://bomo77.net/images/logo.png" alt="BOMO77-logo" title="BOMO77-logo" class="header__logo"></a>
-              <!---->
-            <div class="search-box header__search-box">
-              <form id="searchForm" action="%%CTA_URL%%" method="get" class="search-form">
-                <div class="search-box-con">
-                  <div class="search-options">
-                    <div aria-haspopup="true" class="ps--r search-toggle">
-                      <div>
-                        <span class="d--ib">listings</span>
-                        <div class="dropdown__selector dropdown__selector--caret dropdown__selector--caret--small"></div>
-                      </div>
-                      <div class="search-options-dropdown hide"><span data-search-type-name="listings" class="selection">listings</span><span data-search-type-name="people">people</span></div>
-                    </div>
-                  </div>
-                  <div aria-haspopup="true" tabindex="0" data-test="dropdown" class="dropdown search-auto-suggest">
-                    <div data-test="dropdown-container">
-                      <div class="dropdown__selector type-ahead__input">
-                        <div class="search-box-input-container">
-                          <!---->
-                          <input id="searchInput" placeholder="Search BOMO77" data-et-prop-content_type="listings" aria-label="Search" autocomplete="off" autocorrect="off" spellcheck="false" name="query" type="search" data-et-name="search_bar" value="" class="search-entry">
-                          <!---->
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <!---->
-                    </div>
-                  </div>
-                  <button data-et-prop-content_type="listings" type="submit" data-et-name="search_icon" class="search-icon"><i class="icon search-white"></i></button>
-                </div>
-                <input id="searchType" type="hidden" name="type" value="listings"><input id="src" type="hidden" name="src" value="dir">
-              </form>
-            </div>
-            <div class="header__login-signup">
-              <a href="https://akses-bomo77net.pages.dev/" data-et-name="intro_tap_login" class="tc--m">Log in BOMO77</a><span class="header__login-signup_vertical-bar">|</span>
-              <a href="https://akses-bomo77net.pages.dev/" data-et-name="intro_tap_signup" class="tc--m">Sign up BOMO77</a>
-            </div>
-          </div>
-          <!---->
-        </nav>
-        <nav class="header--scrollable">
-          <div class="header--scrollable__nav">
-            <div data-et-name="market_switcher" data-et-click-type="button" class="experience-switcher">
-              <h5 class="experience-switcher__title all-caps">
-                POSH MARKETS
-              </h5>
-              <div aria-haspopup="true" tabindex="0" data-test="dropdown" items="all,women,men,kids,home_a,electronics,pets,luxury,beaut_a,plus,boutique,wholesale" arrowSelector="true" selectedValue="all" selectorClass="d--b" menuClass="experiences-switcher__dropdown__menu" class="dropdown">
-                <div data-test="dropdown-container">
-                  <div class="dropdown__selector dropdown__selector--arrow d--b">
-                    All
-                  </div>
-                </div>
-                <div>
-                  <ul data-test="dropdown_menu_list" class="dropdown__menu dropdown__menu--caret experiences-switcher__dropdown__menu">
-                    <li class="dropdown__menu__item--selected dropdown__menu__item">
-                      <a data-et-name="market_all" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      All
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_women" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Women
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_men" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Men
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_kids" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Kids
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_home_a" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Home
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_electronics" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Electronics
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_pets" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Pets
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_luxury" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                        <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Luxury
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_beaut_a" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                        <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Beauty &amp; Wellness
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_plus" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                      <img data-src="https://d2zlsagv0ouax1.cloudfront.net/assets/poshmarkets/diamond_assets/plus/market-plus-44ab1150d0fe5a5f7be047d4f141588f.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Plus Size
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_boutique" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                        <img data-src="https://bomo77.net/images/logo.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Boutiques
-                      </a>
-                    </li>
-                    <li class="dropdown__menu__item">
-                      <a data-et-name="market_wholesale" data-et-click-type="button" data-et-on-name="market_list" data-et-on-screen_type="drop_down" class="dropdown__link experiences-switcher__link">
-                        <img data-src="https://d2zlsagv0ouax1.cloudfront.net/assets/poshmarkets/diamond_assets/wholesale/market-wholesale-920f60c4957b86a0fcf377b7d9d6a6d5.png" alt="" class="dropdown__menu__item__icon experiences-switcher__item--image">
-                      Wholesale
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <ul class="header--scrollable__nav__links">
-              <li><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Women
-                </a>
-              </li>
-              <li><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Men
-                </a>
-              </li>
-              <li><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Kids
-                </a>
-              </li>
-              <li><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Home
-                </a>
-              </li>
-              <li class="hide-desktop-small"><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Electronics
-                </a>
-              </li>
-              <li class="hide-desktop-small"><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Pets
-                </a>
-              </li>
-              <li class="hide-desktop-small"><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Beauty &amp; Wellness
-                </a>
-              </li>
-              <li class="hide-desktop-small"><a href="%%CTA_URL%%" data-et-prop-location="nav">
-                Brands
-                </a>
-              </li>
-              <li><a href="%%CTA_URL%%" data-et-name="parties" data-et-prop-location="nav">
-                Parties
-                </a>
-              </li>
-              <li class="header--scrollable__nav__links__posh-shows d--fl">
-                <a href="%%CTA_URL%%" data-et-name="posh_shows" data-et-prop-location="nav">
-                Posh Shows
-                </a>
-              </li>
-            </ul>
-            <ul class="d--fl ai--c">
-              <li class="header--scrollable__nav__secondary-item">
-                <a data-et-prop-location="nav" data-et-name="how_it_works" href="%%CTA_URL%%" class="tc--lg header--scrollable__nav__secondary-link">How it works</a>
-              </li>
-              <li class="header--scrollable__nav__secondary-item sell">
-                <a href="%%CTA_URL%%" data-et-prop-location="nav" data-et-name="sell" class="header--scrollable__nav__secondary-link">
-                  <i class="icon m--r--1 sell-coin">
+    <noscript>
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-list-menu.css?v=104864129994713251501742784888"
+        rel="stylesheet" type="text/css" media="all" />
+    </noscript>
+    <noscript>
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-search.css?v=130382253973794904871742784887"
+        rel="stylesheet" type="text/css" media="all" />
+    </noscript>
+    <noscript>
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-menu-drawer.css?v=21058032239462183751742784887"
+        rel="stylesheet" type="text/css" media="all" />
+    </noscript>
+    <noscript>
+      <link
+        href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-cart-notification.css?v=71986486250318288601742784887"
+        rel="stylesheet" type="text/css" media="all" />
+    </noscript>
+    <noscript>
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-cart-items.css?v=144236440317055431411742784889"
+        rel="stylesheet" type="text/css" media="all" />
+    </noscript>
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/custom-style.css?v=128650136086380557481742784888"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-cto-cart-drawer.css?v=87861508187535145881742784888"
+      rel="stylesheet" type="text/css" media="all" />
+    <style>
+      header-drawer,
+      .header-drawer-lazyload {
+        justify-self: start;
+        height: 48px;
+        width: 48px;
+        margin-left: 0
+      }
 
-                </i>
-                <span>Sell on BOMO77</span>
-              </a>
-            </li>
-            </ul>
+      @media screen and (min-width: 1024px) {
+
+        header-drawer,
+        .header-drawer-lazyload {
+          display: none;
+        }
+      }
+
+      @media only screen and (width:375px) {
+        input[type=search]::placeholder {
+          color: rgba(18, 18, 18, .75);
+          position: relative;
+          width: 51px;
+          left: 5px;
+          top: 2px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 15px;
+          opacity: .75
+        }
+      }
+
+      .menu-drawer-container {
+        display: flex;
+      }
+
+      .list-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .list-menu--inline {
+        display: inline-flex;
+        flex-wrap: wrap;
+      }
+
+      summary.list-menu__item {
+        padding-right: 2.7rem;
+      }
+
+      .list-menu__item {
+        align-items: center;
+        line-height: calc(1 + 0.3 / var(--font-body-scale));
+      }
+
+      .list-menu__item--link {
+        text-decoration: none;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        line-height: calc(1 + 0.8 / var(--font-body-scale));
+      }
+
+      @media screen and (min-width: 750px) {
+        .list-menu__item--link {
+          padding-bottom: 0.5rem;
+          padding-top: 0.5rem;
+        }
+      }
+
+      .my-store-locator {
+        display: none;
+      }
+    </style>
+    <style data-shopify>
+      .header {
+        padding: 10px 3rem 10px 3rem;
+      }
+
+      .section-header {
+        position: sticky;
+        /* This is for fixing a Safari z-index issue. PR #2147 */
+        margin-bottom: 0px;
+      }
+
+      @media screen and (min-width: 750px) {
+        .section-header {
+          margin-bottom: 0px;
+        }
+      }
+
+      @media screen and (min-width: 990px) {
+        .header {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .header-menu-wrapper {
+          min-height: 140px;
+        }
+      }
+
+      .menu-drawer__menu li {
+        --color-foreground: #121212;
+        color: #121212;
+      }
+
+      #right_menu_items {
+        justify-content: space-between;
+        list-style: none;
+        display: contents;
+        flex-direction: row;
+      }
+
+      #right_menu_items li a {
+        color: #383131
+      }
+
+      #right_menu_mobile_items li a {
+        color: #383131
+      }
+
+      .right_menu_divider {}
+
+      #right_menu_items li:nth-child(2) {
+        background: ;
+      }
+
+      #right_menu_items li:nth-child(3) {
+        background: ;
+      }
+
+      #right_menu_items li:nth-child(4) {
+        background: ;
+      }
+
+      #right_menu_items li:nth-child(5) {
+        background: ;
+      }
+
+      #right_menu_items li:nth-child(6) {
+        background: ;
+      }
+
+      #right_menu_items li:nth-child(7) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(1) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(2) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(3) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(4) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(5) {
+        background: ;
+      }
+
+      #right_menu_mobile_items li:nth-child(6) {
+        background: ;
+      }
+    </style>
+    <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/details-disclosure.js?v=13653116266235556501742784889"
+      defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/details-modal.js?v=25581673532751508451742784889"
+      defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/cart-notification.js?v=138585423170270737471742784887"
+      defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/search-form.js?v=35015649889156673281742784888" defer="defer"
+      nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    <svg xmlns="http://%%SITE%%.w3.org/2000/svg" class="hidden">
+      <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z"
+          fill="currentColor" />
+      </symbol>
+      <symbol id="icon-reset" class="icon icon-close" fill="none" viewBox="0 0 18 18" stroke="currentColor">
+        <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2" />
+        <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round"
+          transform="translate(5 5)" />
+        <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round"
+          transform="translate(5 5)" />
+      </symbol>
+      <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+        <path
+          d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+          fill="currentColor">
+      </symbol>
+    </svg>
+    <sticky-header data-sticky-type="on-scroll-up"
+      class="header-wrapper color-background-1 gradient header-wrapper--border-bottom header-menu-wrapper">
+      
+
+      <header
+        class="header header--middle-left header--mobile-center page-width header--has-menu header--has-social header--has-account">
+        <lazyload-section class="header-drawer-lazyload" data-render-on-load="true" data-selector=".js-header-drawer"
+          data-callback="if (window.initHeaderDrawerAria) window.initHeaderDrawerAria()">
+          <header-drawer data-breakpoint="tablet">
+            <details id="Details-menu-drawer-container" class="menu-drawer-container">
+              <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="Menu">
+                <span>
+                  <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                    class="icon icon-hamburger" fill="none" viewBox="0 0 18 16" width="18" height="16">
+                    <path
+                      d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z"
+                      fill="currentColor">
+                  </svg>
+                  <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                    fill="none" viewBox="0 0 18 17" width="18" height="17">
+                    <path
+                      d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                      fill="currentColor">
+                  </svg>
+                </span>
+              </summary>
+              <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-background-1" tabindex="-1"
+                style="background-color:#EAF3FF">
+              </div>
+            </details>
+          </header-drawer>
+        </lazyload-section>
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          window.initHeaderDrawerAria = function () {
+            document.querySelectorAll('.js-header-drawer [id^="Details-"] summary').forEach((summary) => {
+              summary.setAttribute('role', 'button');
+              summary.setAttribute('aria-expanded', summary.parentNode.hasAttribute('open'));
+
+              if (summary.nextElementSibling.getAttribute('id')) {
+                summary.setAttribute('aria-controls', summary.nextElementSibling.id);
+              }
+
+              summary.addEventListener('click', (event) => {
+                event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
+              });
+
+              if (summary.closest('header-drawer, menu-drawer')) return;
+              summary.parentElement.addEventListener('keyup', onKeyUpEscape);
+            });
+          };
+        </script>
+        <div class="header__heading">
+          <div class="brand--logo">
+            <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+              class="header__heading-link link link--text focus-inset" aria-label="Home">
+              <div class="ratio" style="--ratio-percent: 25.875000000000004%">
+                <img src="https://alexsis77.org/images/logo.png" loading="lazy"
+                  class="header__heading-logo company_logo ratio" width="700" height="200" alt="SLOT88">
+              </div>
+            </a>
           </div>
-          <div class="header--scrollable__dropdown">
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Belts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Face Masks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Glasses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Gloves &amp; Mittens
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hair Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hosiery &amp; Socks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Key &amp; Card Holders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Phone Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Scarves &amp; Wraps
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sunglasses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Watches
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Bags
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Baby Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Backpacks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Clutches &amp; Wristlets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cosmetic Bags &amp; Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Crossbody Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hobos
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Laptop Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Satchels
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Shoulder Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Totes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wallets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Bags <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Clothing
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Dresses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Intimates &amp; Sleepwear
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Jackets &amp; Coats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Jeans
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Pants &amp; Jumpsuits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Shorts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Skirts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Sweaters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Swim
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Tops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Clothing <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Jewelry
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bracelets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Brooches
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Earrings
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Necklaces
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Rings
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Jewelry <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Makeup
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Blush
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bronzer &amp; Contour
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Brushes &amp; Tools
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Concealer
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Eyeliner
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Eyeshadow
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Setting Powder &amp; Spray
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Foundation
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Lip Balm &amp; Gloss
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Lipstick
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mascara
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Makeup <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Shoes
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Ankle Boots &amp; Booties
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Athletic Shoes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Espadrilles
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Flats &amp; Loafers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Heels
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Over the Knee Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Platforms
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sandals
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sneakers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wedges
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Winter &amp; Rain Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Shoes <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Trending Styles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  New Vuori Activewear Under $100
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Celine Phantom Handbags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Gray Cashmere Sweaters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Jenni Kayne Sweaters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Jil Sander Sweaters &amp; Knitwear
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Levi's 501 Jeans
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Daily Drills Activewear
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vuori Activewear
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Set Active Workout Sets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Trends <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Belts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cuff Links
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Face Masks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Jewelry
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Key &amp; Card Holders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Money Clips
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Phone Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sunglasses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Ties
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Watches
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Bags
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Backpacks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Briefcases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Duffel Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Laptop Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Luggage &amp; Travel Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Messenger Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wallets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Bags <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Clothing
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Jackets &amp; Coats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Jeans
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Pants
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Shirts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Shorts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Suits &amp; Blazers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Sweaters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Swim
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Underwear &amp; Socks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Clothing <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Shoes
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Athletic Shoes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Boat Shoes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Chukka Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Loafers &amp; Slip-Ons
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Oxfords &amp; Derbys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Rain &amp; Snow Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sandals &amp; Flip-Flops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sneakers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Shoes <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Trending Styles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Nike Under $50
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vuori Under $50
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Skagen Watches
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Dark Gray Oversized Blazers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Fitted Double Breasted Blazers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Lululemon Athletica Apparel Under $50
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Obermeyer Ski &amp; Snowboard Jackets &amp; Coats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  New Snow Bibs
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Hoka Hiking Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Trends <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Belts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bibs
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Diaper Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Face Masks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hair Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Jewelry
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mittens
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Socks &amp; Tights
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sunglasses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Ties
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Clothing
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Bottoms
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Costumes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Dresses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Jackets &amp; Coats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Matching Sets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  One Pieces
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Pajamas
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Shirts &amp; Tops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Swim
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Clothing <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Shoes
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Baby &amp; Walker
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Dress Shoes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Moccasins
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Rain &amp; Snow Boots
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sandals &amp; Flip-Flops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Slippers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sneakers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Water Shoes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Shoes <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Toys
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Action Figures &amp; Playsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Building Sets &amp; Blocks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cars &amp; Vehicles
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Dolls &amp; Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Learning Toys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Puzzles &amp; Games
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Stuffed Animals
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Trading Cards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Toys <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Trending Styles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Triangle Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Brushed Wool Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Hermes Silk Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Black Long Sleeve Glitter Mesh Tops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Long Wool Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Hooded Scarves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Obermeyer Ski Suits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Bogner Ski Suits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Ski &amp; Snow Jumpsuits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Trends <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Accents
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Accent Pillows
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Baskets &amp; Bins
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Candles &amp; Holders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Coffee Table Books
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Curtains &amp; Drapes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Decor
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Door Mats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Faux Florals
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Furniture Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Lanterns
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Picture Frames
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Vases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Accents <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Bath
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bath Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bath Storage
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bath Towels
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Beach Towels
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hand Towels
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Shower Curtains
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Vanity Mirrors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Vanity Trays
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wash Cloths
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Bath <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Bedding
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Blankets &amp; Throws
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Comforters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Duvet Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mattress Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Pillows
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Quilts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sheets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Bedding <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Dining
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bar Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Dinnerware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Drinkware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Flatware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Serveware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Serving Utensils
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Table Linens
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Dining <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Holiday
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Garland
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Holiday Blankets &amp; Throws
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Holiday Decor
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Holiday Pillows
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Ornaments
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  String Lights
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wreaths
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Holiday <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Kitchen
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bakeware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Coffee &amp; Tea Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cookbooks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cooking Utensils
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cookware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Food Storage
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Kitchen Linens
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Kitchen Tools
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Knives &amp; Cutlery
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Kitchen <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Office
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Arts &amp; Crafts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Binders &amp; Folders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Calendars
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Labels &amp; Label Makers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Notebooks &amp; Journals
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Pencil Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Planners
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Shipping Supplies
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Stationery
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Office <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Party Supplies
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cake Candles
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cake Toppers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cards &amp; Invitations
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Decorations
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Favors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Gift Wrap
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Party Lights
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Disposable Tableware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Party Supplies <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Storage &amp; Organization
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Closet Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Drawer Liners
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Garment Bags
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Jewelry Organizers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Makeup Organizers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Storage
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Storage &amp; Organization <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Wall Decor
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Art &amp; Decals
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Clocks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Display Shelves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Hooks
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mirrors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Tapestries
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wallpaper
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Wall Decor <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Trending Styles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Aesop Hand Washes + Balms
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Essential Oil Diffusers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Aromatherapy Essentials &amp; Diffusers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Pink Tree Toppers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Perfume Trays
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Tinsel Garland
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Marbled Coasters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Vintage Ice Buckets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Matcha Whisk Kits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Trends <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Cameras, Photo &amp; Video
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Digital Cameras
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bags &amp; Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Binoculars &amp; Scopes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Film Photography
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Flashes
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Lenses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Memory Cards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Simulated Cameras
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Tripods &amp; Monopods
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Underwater Photography
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Video
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Cameras, Photo &amp; Video <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Cell Phones &amp; Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cell Phones
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Holsters &amp; Clips
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Screen Protectors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Skins &amp; Bumpers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Chargers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Adapters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cables
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Cell Phones &amp; Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Computers, Laptops &amp; Parts
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Laptops
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cables &amp; Interconnects
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Webcams
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Computer Cable Adapters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Computer Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Computer Microphones
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Single Board Computers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Graphics Cards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Keyboards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Memory Card Readers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Mice
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Computers, Laptops &amp; Parts <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Tablets &amp; Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Tablets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  eBook Readers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Chargers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Power Adapters
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Power Cables
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Tablet Keyboards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Screen Protectors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Skins
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Sleeves
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Tablets &amp; Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Video Games &amp; Consoles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Consoles
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Handheld Consoles
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Batteries &amp; Chargers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cables
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Controllers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Gaming Guides
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Keyboards
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Digital Games
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  PC Games
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Video Games
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Video Games &amp; Consoles <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    VR, AR &amp; Accessories
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  PC &amp; Console VR Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Smartphone VR Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Standalone VR Headsets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cases, Covers &amp; Skins
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Controllers &amp; Sensors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Parts
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics VR, AR &amp; Accessories <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Wearables
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Smartwatches
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Body Mounted Cameras
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Clips, Arm &amp; Wristbands
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Glasses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Rings
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Smartwatch Cases
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Wearables Chargers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Wearables <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Bird
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cages &amp; Covers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Feeders &amp; Waterers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Perches &amp; Swings
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Toys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Bird <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Cat
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Beds
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bowls &amp; Feeders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Carriers &amp; Travel
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Clothing &amp; Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Collars, Leashes  &amp; Harnesses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Grooming
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Scratchers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Toys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Cat <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Dog
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bedding &amp; Blankets
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bowls &amp; Feeders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Carriers &amp; Travel
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Clothing &amp; Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Collars, Leashes &amp; Harnesses
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Grooming
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Housebreaking
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Toys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Dog <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Fish
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Aquarium Kits
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cleaning &amp; Maintenance
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Decor &amp; Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Fish <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Reptile
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cleaning &amp; Maintenance
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Habitats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Habitat Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Heating &amp; Lights
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Reptile <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Small Pets
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bedding
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Bowls &amp; Feeders
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Cages &amp; Habitats
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Carriers
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Grooming
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Habitat Accessories
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav">
-                  Toys
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="subcategory" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Pets Small Pets <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Women
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Bath &amp; Body
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Hair
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Skincare
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Beauty &amp; Wellness <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Men
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Grooming
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Grooming <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Kids
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav">
-                  Bath, Skin &amp; Hair
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Bath, Skin &amp; Hair <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Trending Styles
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Rodial Blush Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Opi Press-on Nails
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Nyx Lip Liner Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Ofra Eyeshadow Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Viseart Eyeshadow Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Makeup Revolution Lipstick Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Ipsy Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Avon Eyeliner Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="showrooms" data-et-prop-location="nav">
-                  Taste Beauty Eyeshadow Makeup
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Trends <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide">
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Women's Brands
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  lululemon athletica
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Coach
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Michael Kors
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Louis Vuitton
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Nike
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Tory Burch
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  kate spade
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  CHANEL
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Free People
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  J. Crew
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Women's Brands <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Men's Brands
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Nike
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Gucci
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  The North Face
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Banana Republic
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Levi's
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  adidas
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  True Religion
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  J. Crew
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Jordan
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Polo by Ralph Lauren
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Men's Brands <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Kid's Brands
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Gap
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Carter's
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Nike
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Children's Place
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Gymboree
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  OshKosh B'gosh
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Converse
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Ralph Lauren
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Justice
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Old Navy
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Kids' Brands <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Home Brands
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Crate&amp;Barrel
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  IKEA
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Jonathan Adler
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Paper Source
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Pier 1
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Pottery Barn
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Restoration Hardware
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Sur La Table
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Target
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  The Container Store
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  West Elm
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Williams Sonoma
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Z Gallerie
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Home Brands <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-              <ul class="header--scrollable__dropdown__sub-menu">
-                <li class="header-label">
-                  <h5 class="all-caps">
-                    Electronics Brands
-                  </h5>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Apple
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Sony
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Microsoft
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Fujifilm
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  google
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Samsung
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Dell
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  HP
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Nikon
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav">
-                  Canon
-                  </a>
-                </li>
-                <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="nav" class="fw--med tc--m">
-                  Shop All Electronics Brands <span class="link--arrow"></span></a>
-                </li>
-              </ul>
-            </div>
-            <div class="header--scrollable__dropdown__menu hide"></div>
-            <div class="header--scrollable__dropdown__menu hide"></div>
+          <div class="apple_logo">
+            <a href="#" class="header__heading-link link link--text focus-inset" aria-label="Home">
+              <svg width="78" height="36" viewbox="0 0 78 36" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M67.3956 0.551707C68.5859 0.553638 69.3535 0.556397 69.9332 0.561638C70.5052 0.566603 70.8971 0.573776 71.2123 0.583982C71.8133 0.603292 72.2433 0.638325 72.6165 0.691289C73.243 0.78039 73.7505 0.930454 74.2151 1.15555C74.6777 1.37927 75.0969 1.67912 75.4562 2.04132C75.8154 2.40351 76.1117 2.82557 76.333 3.29093C76.5553 3.75878 76.7043 4.26966 76.7927 4.90192C76.8453 5.27818 76.8806 5.71293 76.9004 6.31981C76.9105 6.63814 76.9179 7.03344 76.9228 7.6108C76.928 8.19561 76.931 8.96966 76.9329 10.1691V25.8318C76.931 27.0312 76.928 27.8052 76.9228 28.39C76.9176 28.9671 76.9105 29.3627 76.9004 29.681C76.8806 30.2882 76.8456 30.7226 76.7927 31.0989C76.7043 31.7309 76.5553 32.242 76.333 32.7099C76.1117 33.1753 75.8152 33.5976 75.4562 33.9595C75.0969 34.3217 74.6777 34.6213 74.2151 34.8453C73.7505 35.0701 73.243 35.2204 72.6165 35.3095C72.2435 35.3625 71.8136 35.3975 71.2123 35.4168C70.8971 35.4271 70.5052 35.4342 69.9332 35.4392C69.3535 35.4442 68.5859 35.4472 67.3956 35.4491H10.8639C9.67355 35.4472 8.90599 35.4444 8.32628 35.4392C7.75425 35.4342 7.36239 35.4271 7.04721 35.4168C6.44614 35.3975 6.01622 35.3625 5.64298 35.3095C5.01645 35.2204 4.50904 35.0704 4.04434 34.8453C3.58184 34.6216 3.1626 34.3217 2.80332 33.9595C2.44405 33.5973 2.14777 33.1753 1.92651 32.7099C1.70415 32.242 1.55519 31.7312 1.46674 31.0989C1.41416 30.7226 1.37884 30.2879 1.3594 29.681C1.34927 29.3627 1.34187 28.9674 1.33694 28.39C1.33174 27.8052 1.32873 27.0312 1.32681 25.8318V10.1688C1.32873 8.96938 1.33174 8.19533 1.33694 7.61053C1.34215 7.03344 1.34927 6.63787 1.3594 6.31953C1.37911 5.71238 1.41416 5.27791 1.46674 4.90164C1.55519 4.26966 1.70415 3.75851 1.92651 3.29066C2.14777 2.82529 2.44433 2.40296 2.80332 2.04104C3.16232 1.67912 3.58184 1.37927 4.04434 1.15527C4.50904 0.930454 5.01645 0.780114 5.64298 0.691013C6.01595 0.638049 6.44587 0.603016 7.04721 0.583706C7.36239 0.5735 7.75425 0.566327 8.32628 0.561362C8.90599 0.556397 9.67355 0.553362 10.8639 0.551431H67.3956V0.551707ZM67.3964 0H67.3959H67.3953H10.8639C9.67081 0.00193098 8.90216 0.00496536 8.32136 0.00993073C7.75589 0.0148961 7.35746 0.0217924 7.02941 0.0325507C6.42916 0.0518605 5.97788 0.086618 5.56658 0.144823C4.89131 0.24082 4.33214 0.40385 3.80693 0.657911C3.28856 0.908938 2.8203 1.243 2.41585 1.65098C2.01167 2.05842 1.68088 2.52985 1.43251 3.05232C1.18113 3.58113 1.01957 4.14415 0.924276 4.8244C0.865949 5.24177 0.831172 5.6972 0.81173 6.3016C0.80105 6.63704 0.793931 7.03896 0.789001 7.60556C0.784072 8.18127 0.780786 8.94759 0.77887 10.1677V25.8312C0.780786 27.0521 0.784072 27.8185 0.789001 28.3944C0.793931 28.9608 0.80105 29.363 0.81173 29.6981C0.831172 30.3025 0.865949 30.758 0.924276 31.1753C1.01957 31.8556 1.18086 32.4189 1.43251 32.9477C1.68088 33.4701 2.01167 33.9416 2.41585 34.349C2.8203 34.757 3.28856 35.0911 3.80693 35.3421C4.33187 35.5964 4.89104 35.7595 5.56631 35.8552C5.97788 35.9137 6.42916 35.9481 7.02941 35.9674C7.35719 35.9782 7.75561 35.9851 8.32108 35.9901C8.90161 35.995 9.67054 35.9981 10.8628 36H67.3953C68.5884 35.9981 69.3571 35.9953 69.9379 35.9901C70.5033 35.9851 70.9018 35.9782 71.2298 35.9674C71.83 35.9481 72.2813 35.9134 72.6926 35.8552C73.3679 35.7592 73.9271 35.5961 74.4523 35.3421C74.9707 35.0911 75.4389 34.757 75.8434 34.349C76.2475 33.9416 76.5783 33.4701 76.8267 32.9477C77.0781 32.4189 77.2396 31.8559 77.3349 31.1756C77.3933 30.7585 77.428 30.3031 77.4475 29.6984C77.4582 29.363 77.4653 28.9608 77.4702 28.3944C77.4754 27.8182 77.4784 27.0519 77.4803 25.8323V10.1688C77.4784 8.94814 77.4751 8.18182 77.4702 7.60556C77.4653 7.03923 77.4582 6.63704 77.4475 6.30188C77.428 5.6972 77.3933 5.24177 77.3349 4.82468C77.2396 4.14442 77.0784 3.58113 76.8267 3.05232C76.5783 2.52985 76.2475 2.05842 75.8434 1.65098C75.4389 1.243 74.9707 0.908938 74.4523 0.657911C73.9273 0.40385 73.3682 0.240544 72.6929 0.144823C72.2813 0.0863422 71.83 0.0518605 71.2298 0.0325507C70.9018 0.0220683 70.5033 0.0148961 69.9381 0.00993073C69.3573 0.00496536 68.5887 0.00193098 67.3964 0ZM22.5344 11.7168C21.5471 11.6432 20.6516 12.0003 19.9308 12.2877C19.4756 12.4692 19.09 12.623 18.7949 12.623C18.4598 12.623 18.0462 12.4578 17.5821 12.2725C16.9748 12.03 16.2811 11.753 15.5645 11.7667C13.9039 11.7913 12.3737 12.7399 11.5177 14.2375C9.79313 17.2529 11.0774 21.7215 12.7574 24.1683C13.5792 25.3638 14.5592 26.7114 15.8462 26.6623C16.4215 26.6395 16.8308 26.4638 17.254 26.2821C17.7424 26.0725 18.2494 25.8548 19.0517 25.8548C19.8172 25.8548 20.3017 26.066 20.7676 26.2691C21.2127 26.4632 21.6409 26.6499 22.2811 26.638C23.6146 26.6132 24.4597 25.4176 25.2754 24.2152C26.1766 22.8902 26.5709 21.6054 26.6247 21.4299L26.6301 21.4125C26.6005 21.4012 24.0306 20.4078 24.0048 17.425C23.982 14.9773 25.9504 13.7774 26.1114 13.6792L26.1186 13.6748C24.9578 11.9537 23.1658 11.764 22.5344 11.7168ZM22.5559 6.95508C22.6827 8.1087 22.2224 9.26866 21.5384 10.1015C20.8549 10.9348 19.7349 11.582 18.6374 11.4962C18.4865 10.3663 19.0421 9.18536 19.6744 8.448C20.3806 7.61575 21.5715 6.99453 22.5559 6.95508Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M32.4756 10.1289H34.8561C36.1108 10.1289 36.9797 10.9774 36.9797 12.2411V12.2502C36.9797 13.5095 36.1108 14.3715 34.8561 14.3715H33.4686V16.5731H32.4756V10.1289ZM33.4686 10.9727V13.5318H34.608C35.4725 13.5318 35.9689 13.0629 35.9689 12.2546V12.2458C35.9689 11.4417 35.4728 10.973 34.608 10.973H33.4686V10.9727Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M37.8961 11.8765H38.8537V12.6803H38.8758C39.0264 12.1311 39.4167 11.7871 39.9487 11.7871C40.0859 11.7871 40.2056 11.8095 40.2812 11.823V12.7206C40.2059 12.6894 40.0372 12.6671 39.8512 12.6671C39.2348 12.6671 38.8537 13.0737 38.8537 13.7746V16.5748H37.8961V11.8765Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M40.7574 14.2433V14.2389C40.7574 12.7697 41.5997 11.7871 42.9075 11.7871C44.2154 11.7871 45.0177 12.7341 45.0177 14.1451V14.4712H41.715C41.7325 15.36 42.2158 15.878 42.9782 15.878C43.5456 15.878 43.9224 15.5831 44.0423 15.2303L44.0557 15.1947H44.9643L44.9555 15.2438C44.8049 15.9897 44.0867 16.6686 42.956 16.6686C41.5863 16.6683 40.7574 15.726 40.7574 14.2433ZM41.7279 13.7879H44.0689C43.9889 12.9752 43.5368 12.5777 42.9116 12.5777C42.2911 12.5774 41.8122 13.0017 41.7279 13.7879Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M45.9835 11.8765H46.9411V12.6045H46.9633C47.1629 12.1132 47.6369 11.7871 48.2487 11.7871C48.8916 11.7871 49.3613 12.122 49.5477 12.7118H49.5699C49.8093 12.1402 50.3588 11.7871 51.024 11.7871C51.946 11.7871 52.549 12.4034 52.549 13.3457V16.5745H51.587V13.5779C51.587 12.9661 51.263 12.6133 50.6957 12.6133C50.1283 12.6133 49.7337 13.042 49.7337 13.6362V16.5748H48.7936V13.5065C48.7936 12.9617 48.4524 12.6133 47.9113 12.6133C47.3439 12.6133 46.9406 13.0643 46.9406 13.6717V16.5745H45.983V11.8765H45.9835Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M53.6573 10.5993C53.6573 10.2912 53.9054 10.041 54.2156 10.041C54.5305 10.041 54.7743 10.2912 54.7743 10.5993C54.7743 10.9031 54.5305 11.153 54.2156 11.153C53.9054 11.153 53.6573 10.9031 53.6573 10.5993ZM53.737 11.8765H54.6946V16.5746H53.737V11.8765Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M55.8882 14.9207V11.875H56.8458V14.7331C56.8458 15.4432 57.1739 15.8363 57.8388 15.8363C58.5127 15.8363 58.9472 15.3494 58.9472 14.6173V11.8753H59.9092V16.5733H58.9472V15.8677H58.9251C58.6811 16.3411 58.2068 16.6671 57.4976 16.6671C56.4734 16.6669 55.8882 16.0015 55.8882 14.9207Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M61.0338 11.8765H61.9914V12.6045H62.0136C62.2132 12.1132 62.6872 11.7871 63.299 11.7871C63.9419 11.7871 64.4116 12.122 64.598 12.7118H64.6202C64.8596 12.1402 65.4091 11.7871 66.0743 11.7871C66.9963 11.7871 67.5993 12.4034 67.5993 13.3457V16.5745H66.6373V13.5779C66.6373 12.9661 66.3133 12.6133 65.746 12.6133C65.1786 12.6133 64.784 13.042 64.784 13.6362V16.5748H63.8439V13.5065C63.8439 12.9617 63.5027 12.6133 62.9616 12.6133C62.3942 12.6133 61.9909 13.0643 61.9909 13.6717V16.5745H61.0333V11.8765H61.0338Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M32.4756 19.6562H34.8561C36.1108 19.6562 36.9797 20.5045 36.9797 21.7685V21.7773C36.9797 23.0366 36.1108 23.8986 34.8561 23.8986H33.4686V26.1002H32.4756V19.6562ZM33.4686 20.5004V23.0592H34.608C35.4725 23.0592 35.9689 22.5902 35.9689 21.782V21.7732C35.9689 20.969 35.4728 20.5004 34.608 20.5004H33.4686Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M37.4825 24.7629V24.754C37.4825 23.9367 38.112 23.4365 39.2159 23.3695L40.4837 23.2937V22.9408C40.4837 22.4228 40.1513 22.11 39.5571 22.11C39.0031 22.11 38.6613 22.3737 38.5817 22.7486L38.5729 22.7888H37.6684L37.6728 22.7397C37.7393 21.9312 38.4354 21.3105 39.5839 21.3105C40.723 21.3105 41.4457 21.918 41.4457 22.8603V26.0983H40.4837V25.3568H40.4662C40.1956 25.8613 39.6548 26.1829 39.0384 26.1829C38.1076 26.1832 37.4825 25.607 37.4825 24.7629ZM39.3002 25.4106C39.9738 25.4106 40.4837 24.9504 40.4837 24.3386V23.9725L39.3443 24.044C38.7681 24.0796 38.4488 24.3342 38.4488 24.7317V24.7405C38.4491 25.1515 38.7859 25.4106 39.3002 25.4106Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M42.5538 21.4038H43.5114V22.2077H43.5335C43.6842 21.6584 44.0744 21.3145 44.6064 21.3145C44.7436 21.3145 44.8633 21.3368 44.9389 21.3503V22.2479C44.8636 22.2168 44.6949 22.1944 44.5089 22.1944C43.8925 22.1944 43.5114 22.6008 43.5114 23.302V26.1019H42.5538V21.4038Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M46.3461 24.8628V22.1697H45.6768V21.4017H46.3461V20.1777H47.3258V21.4017H48.1991V22.1697H47.3258V24.8046C47.3258 25.2824 47.5386 25.4253 47.942 25.4253C48.0441 25.4253 48.1285 25.4165 48.1991 25.4076V26.1536C48.0882 26.1712 47.9067 26.1938 47.7114 26.1938C46.7894 26.1936 46.3461 25.8005 46.3461 24.8628Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M49.2159 21.4038H50.1735V22.1136H50.1957C50.4394 21.6361 50.9183 21.3145 51.6232 21.3145C52.647 21.3145 53.2369 21.9798 53.2369 23.0606V26.1019H52.2749V23.2438C52.2749 22.5379 51.9468 22.1406 51.2817 22.1406C50.6078 22.1406 50.1735 22.6319 50.1735 23.3643V26.1022H49.2159V21.4038Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M54.1758 23.767V23.7623C54.1758 22.2931 55.0182 21.3105 56.326 21.3105C57.6338 21.3105 58.4362 22.2576 58.4362 23.6685V23.9946H55.1334C55.151 24.8834 55.6343 25.4017 56.3966 25.4017C56.964 25.4017 57.3408 25.1068 57.4608 24.754L57.4742 24.7182H58.3828L58.374 24.7673C58.2234 25.5132 57.5051 26.1921 56.3745 26.1921C55.005 26.1921 54.1758 25.2497 54.1758 23.767ZM55.1466 23.3116H57.4876C57.4076 22.4989 56.9555 22.1011 56.3304 22.1011C55.7099 22.1011 55.2309 22.5254 55.1466 23.3116Z"
+                  fill="#121212">
+                </path>
+                <path
+                  d="M59.4498 21.4038H60.4074V22.2077H60.4295C60.5802 21.6584 60.9704 21.3145 61.5024 21.3145C61.6396 21.3145 61.7593 21.3368 61.8349 21.3503V22.2479C61.7596 22.2168 61.5909 22.1944 61.4049 22.1944C60.7885 22.1944 60.4074 22.6008 60.4074 23.302V26.1019H59.4498V21.4038Z"
+                  fill="#121212">
+                </path>
+              </svg>
+            </a>
           </div>
-        </nav>
-        <!----><!---->
-      </header>
-      <!----><!---->
-      <main>
-        <div>
-          <!----><!----><!----><!----><!----><!----><!----><!---->
-          <div class="web-app-modal">
-            <!---->
-          </div>
-          <!----><!----><!----><!---->
         </div>
-        <!---->
-        <div id="content" class="content--desktop">
-          <form class="hide"><input id="cache-content-page-module" type="text"><input id="cache-content-sharable-states" type="text"></form>
-          <div class="view">
-            <div>
+        <div class="search-container">
+          <div class="container_search container_search_port">
+            <predictive-search class="search-modal__form" data-loading-text="Loading...">
+              <form class="nosubmit_form search search-modal__form" action="/search" id="nosubmit_form2" method="get"
+                role="search">
+                <input type="hidden" name="type" value="product">
+                <input class="nosubmit" id="Search-In-Modal" type="search" name="q" value="Slot Gacor"
+                  placeholder="Search" aria-label="Search" role="combobox" aria-expanded="false"
+                  aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list"
+                  aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off"
+                  autocapitalize="off" spellcheck="false">
+                <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search
+                  style="max-height: 540px;">
+                  <div class="predictive-search__loading-state">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66"
+                      xmlns="http://%%SITE%%.w3.org/2000/svg">
+                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30">
+                      </circle>
+                    </svg>
+                  </div>
+                </div>
+                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true">
+                </span>
+              </form>
+              <button type="button" class="btn_close btn_close_desktop" id="btn_close2" aria-label="Close">
+                <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation" width="16.61px"
+                  height="16.61px">
+                  <use href="#icon-close" />
+                </svg>
+              </button>
+            </predictive-search>
+          </div>
+        </div>
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-my-store-locator.css?v=39324846110998923741742784888"
+          rel="stylesheet" type="text/css" media="all" />
+
+        <div class="header__icons">
+          <div class="desktop-localization-wrapper">
+          </div>
+          <a href="%%CTA_URL%%" class="header__icon header__icon--account link focus-inset small-hide">
+            <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-account"
+              fill="none" viewBox="0 0 18 19" width="18" height="19">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z"
+                fill="currentColor">
+            </svg>
+            <span class="visually-hidden">Log in</span>
+          </a>
+          <a href="%%CTA_URL%%" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+            <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.5 4.25C6.5 2.93882 7.76806 1.75 9.5 1.75C11.2319 1.75 12.5 2.93882 12.5 4.25H6.5ZM5.5 4.25C5.5 2.24747 7.36595 0.75 9.5 0.75C11.6341 0.75 13.5 2.24747 13.5 4.25H17C18.1046 4.25 19 5.14543 19 6.25V19.25C19 20.3546 18.1046 21.25 17 21.25H2C0.895431 21.25 0 20.3546 0 19.25V6.25C0 5.14543 0.895431 4.25 2 4.25H5.5ZM1 6.25C1 5.69772 1.44772 5.25 2 5.25H17C17.5523 5.25 18 5.69772 18 6.25V19.25C18 19.8023 17.5523 20.25 17 20.25H2C1.44772 20.25 1 19.8023 1 19.25V6.25Z"
+                fill="currentColor" />
+            </svg>
+            <span class="visually-hidden">Cart</span>
+          </a>
+        </div>
+      </header>
+      <div class="header_nav">
+        <lazyload-section data-selectors='[".js-header-dropdown-menu-list"]'>
+          <nav class="header__inline-menu">
+            <ul class="list-menu list-menu--inline">
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-1" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-mac" class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-1"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-2" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-ipad" class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">DAFTAR ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-2"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-3" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-iphone"
+                      class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">LOGIN ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-3"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-4" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-watch" class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">ALEXSIS77 Link</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-4"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-5" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-music" class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">ALEXSIS77 Login</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-5"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-6" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-tv-home"
+                      class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">RTP ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-6"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-7" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-accessories"
+                      class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">Website ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-7"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li>
+                <header-menu>
+                  <details id="Details-HeaderMenu-9" class="mainMenuUpdate2">
+                    <summary id="headerCss HeaderMenu-offers"
+                      class="header__menu-item list-menu__item link focus-inset">
+                      <p>
+                        <a href="%%CTA_URL%%">Situs ALEXSIS77</a>
+                      </p>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </summary>
+                    <ul id="HeaderMenu-MenuList-9"
+                      class="js-header-dropdown-menu-list header__submenu list-menu list-menu--disclosure color-background-1 gradient caption-large motion-reduce global-settings-popup"
+                      tabindex="-1">
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>
+              <li class="right_header_division right_menu_divider">
+              </li>
+            </ul>
+          </nav>
+        </lazyload-section>
+      </div>
+    </sticky-header>
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/custom-style.css?v=128650136086380557481742784888"
+      rel="stylesheet" type="text/css" media="all" />
+    <lazyload-section data-render-on-load="true" data-selector="cart-notification">
+    </lazyload-section>
+    <style>
+      .cart-notification {
+        display: none;
+      }
+    </style>
+    <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "ALEXSIS77",
+            "url": "https://alexsis77.org/",
+            "sameAs": [
+              "https://%%SITE%%.facebook.com/ALEXSIS77",
+              "https://%%SITE%%.instagram.com/ALEXSIS77/",
+              "https://%%SITE%%.youtube.com/channel/ALEXSIS77/"
+            ]
+          }
+    </script>
+    <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+      $("input").focus(function () {
+        $(".btn_close").css("visibility", "visible");
+      });
+      $(".btn_close").on("mousedown ", function () {
+        $(".nosubmit").val("");
+      });
+      $("input").focusout(function () {
+        $(".btn_close").css("visibility", "hidden");
+      });
+      $("input").focus(function () {
+        if (document.querySelector('.gl-fullscreen-header') !== null) {
+          $(".btn_close").css("visibility", "hidden");
+        }
+      });
+      $("#Details-menu-drawer-container").on("click", function () {
+        if ($("#cart-notification").hasClass("minicart-active")) {
+          $("#cart-notification").hide();
+          $('#cart-notification').removeClass('minicart-active');
+        }
+      });
+      $('body,html').click(function (e) {
+        if ($("#cart-notification").hasClass("minicart-active")) {
+          $("#cart-notification").hide();
+          $('#cart-notification').removeClass('minicart-active');
+        }
+      });
+    </script>
+  </div>
+  <!-- END sections: header-group -->
+  <div class="hidden">
+    <div id="shopify-section-predictive-search" class="shopify-section">
+    </div>
+  </div>
+  <div id="shopify-section-navigation_stripe" class="shopify-section slider-container">
+    <style>
+      div#shopify-section-navigation_stripe {
+        display: flex;
+        width: 100%;
+        background:#EAF3FF;
+        padding: 12px 0;
+        box-shadow: inset 0px -0.5px 0px #d2d2d2;
+        height: 108px;
+        max-height: 108px;
+        overflow: hidden;
+      }
+    </style>
+    <div class="nav-left-arrow">
+    </div>
+    <div class="apl_lob_slider without_main_title apl_lob_slider-ipad">
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1757657996&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1757657996&width=90 https://alexsis77.org/images/banner.png?v=1757657996&width=180 https://alexsis77.org/images/banner.png?v=1757657996&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">ALEXSIS77</p>
+              <p class="prod apl_lob_price">From $8.008 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1757657995&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1757657995&width=90 https://alexsis77.org/images/banner.png?v=1757657995&width=180 https://alexsis77.org/images/banner.png?v=1757657995&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">LOGIN ALEXSIS77</p>
+              <p class="prod apl_lob_price">From $807.77 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1757657995&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1757657995&width=90 https://alexsis77.org/images/banner.png?v=1757657995&width=180 https://alexsis77.org/images/banner.png?v=1757657995&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">DAFTAR ALEXSIS77</p>
+              <p class="prod apl_lob_price">From $752.00 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1740017919&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1740017919&width=90 https://alexsis77.org/images/banner.png?v=1740017919&width=180 https://alexsis77.org/images/banner.png?v=1740017919&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">SITUS ALEXSIS77</p>
+              <p class="prod apl_lob_price">From 10.000 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1731047537&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1731047537&width=90 https://alexsis77.org/images/banner.png?v=1731047537&width=180 https://alexsis77.org/images/banner.png?v=1731047537&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+              </div>
+              <p class="apl_lob_title">ALEXSIS77 Login</p>
+              <p class="prod apl_lob_price">From $1285.00 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1731636011&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1731636011&width=90 https://alexsis77.org/images/banner.png?v=1731636011&width=180 https://alexsis77.org/images/banner.png?v=1731636011&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">RTP ALEXSIS77</p>
+              <p class="collection apl_lob_price">From $99.00 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1731636011&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1731636011&width=90 https://alexsis77.org/images/banner.png?v=1731636011&width=180 https://alexsis77.org/images/banner.png?v=1731636011&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">ALEXSIS77 Link</p>
+              <p class="collection apl_lob_price">From $99.00 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="list-lob">
+            <div class="imagecontainer ratio" style="--ratio-percent: 100%;">
+              <img src="https://alexsis77.org/images/banner.png?v=1731636011&width=100"
+                srcset="https://alexsis77.org/images/banner.png?v=1731636011&width=90 https://alexsis77.org/images/banner.png?v=1731636011&width=180 https://alexsis77.org/images/banner.png?v=1731636011&width=240 240w"
+                sizes="(max-width): 90px,(max-width): 180px,100vw" height="84" width="84" loading="lazy" alt="">
+            </div>
+            <div class="apl_lob_content">
+              <div class="tagcontainer">
+                <div class="apl_label_attr" style="color: #00BFFF">NEW</div>
+              </div>
+              <p class="apl_lob_title">Situs ALEXSIS77</p>
+              <p class="collection apl_lob_price">From $99.00 SGD</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="apl_lob_list_item end_lob_text">
+        <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+          class="end_lob_title">
+          <span class="end_title_anchor">View All iPhone
+            <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.649682 8.5L0 7.85032L3.35032 4.5L0 1.14968L0.649682 0.5L4.64968 4.5L0.649682 8.5Z"
+                fill="#0071E3" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-right-arrow">
+    </div>
+  </div>
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <section id="shopify-section-template--17605519376564__main" class="shopify-section section">
+      <section id="MainProduct-template--17605519376564__main"
+        class="product-page-width page-width section-template--17605519376564__main-padding"
+        data-section="template--17605519376564__main">
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/section-main-product.css?v=106354761565452021941742784887"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-accordion.css?v=114305622551526091581742784887"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-price.css?v=89212854351592844731742784887"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-slider.css?v=102975581670085299341742784888"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-rating.css?v=157771854592137137841742784889"
+          rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-loading-overlay.css?v=160031540023746741091742784889"
+          rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-deferred-media.css?v=14096082462203297471742784888"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/custom-style.css?v=128650136086380557481742784888"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/collapsecon.css?v=55192844502193137581742784889"
+          rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/productMarketingContent.css?v=134348870364535945721742784887"
+          rel="stylesheet" type="text/css" media="all" />
+        <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/fancybox-3-5-7.css?v=48221248546321444771742784887"
+          rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-trade-in-sellto.css?v=107184028641227493051757586003"
+          rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-trade-in-dialog.css?v=16175248172835987831757430081"
+          rel="stylesheet" type="text/css" media="all" />
+        <style data-shopify>
+          .section-template--17605519376564__main-padding {
+            padding-top: 27px;
+            padding-bottom: 9px;
+          }
+
+          @media screen and (min-width: 750px) {
+            .section-template--17605519376564__main-padding {
+              padding-top: 36px;
+              padding-bottom: 12px;
+            }
+          }
+        </style>
+        <script
+          src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/google_analytics_finacing.js?v=123767470501580560631742784889"
+          defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+        <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-info.js?v=68469288658591082901742784888"
+          defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+        <div
+          class="product product--large product--left product--stacked product--mobile-hide grid grid--1-col grid--2-col-tablet">
+          <div class="product-page-width mobile-view_product-title">
+            <div class="priceAndLabelTag">
+              <div class="product_tag_display_container">
+                <span class="product_tag_display" style="color:#00BFFF;">NEW</span>
+              </div>
+            </div>
+            <div class="product-title-style product__title">
+              <h1>ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</h1>
+            </div>
+            <div class="product-subtitle-style">
+            </div>
+            <div class="skuAndBarcode">
+              <span class="sku-pdp" id="skumob-template--17605519376564__main">
+                <span id="skutitle1">SKU:</span>9600005409</span>
+              <span class="barcode-pdp" id="barcmob-template--17605519376564__main">
+                <label id="barcodetitle1">Barcode:</label>
+                <span class="barcodeinput" id="main-pro-barcode-mobile">9600005409</span>
+              </span>
+            </div>
+            <p class="product__preorder-message"></p>
+          </div>
+          <div class="grid__item product__media-wrapper">
+            <media-gallery id="MediaGallery-template--17605519376564__main" role="region"
+              class="product__media-gallery product-custom-media" aria-label="Gallery Viewer"
+              data-desktop-layout="stacked">
+              <div id="GalleryStatus-template--17605519376564__main" class="visually-hidden" role="status">
+              </div>
+              <slider-component id="GalleryViewer-template--17605519376564__main" class="slider-mobile-gutter">
+                <a class="skip-to-content-link button visually-hidden quick-add-hidden"
+                  href="#ProductInfo-template--17605519376564__main">Skip to product information</a>
+                <ul id="Slider-Gallery-template--17605519376564__main"
+                  class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile">
+                  <li id="Slide-template--17605519376564__main-32122040123572"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide is-active"
+                    data-media-id="template--17605519376564__main-32122040123572">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040123572">
+                          <span class="visually-hidden">Open media 1 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040156340"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040156340">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="iPhone_17_Pro_Cosmic_Orange_PDP_Image_Position_2_Cosmic_Orange_Colour__SG-EN"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040156340">
+                          <span class="visually-hidden">Open media 2 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040189108"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040189108">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450055&amp;width=823"
+                            alt="ALEXSIS77"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450055&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450055&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450055&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450055&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450055&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040189108">
+                          <span class="visually-hidden">Open media 3 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040221876"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040221876">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="SLOT88 Terpercaya"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040221876">
+                          <span class="visually-hidden">Open media 4 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040254644"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040254644">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="Situs SLOT88"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040254644">
+                          <span class="visually-hidden">Open media 5 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040287412"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040287412">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="Link SLOT88 Gampang Menang"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040287412">
+                          <span class="visually-hidden">Open media 6 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040320180"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040320180">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="GIM777"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040320180">
+                          <span class="visually-hidden">Open media 7 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040352948"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040352948">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="SL777"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040352948">
+                          <span class="visually-hidden">Open media 8 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <li id="Slide-template--17605519376564__main-32122040385716"
+                    class="common_medias variant-comapre-image- variant-all-image product__media-item grid__item slider__slide"
+                    data-media-id="template--17605519376564__main-32122040385716">
+                    <div
+                      class="product-media-container media-type-image media-fit-contain global-media-settings gradient constrain-height"
+                      style="--ratio: 1.0; --preview-ratio: 1.0;">
+                      <modal-opener class="product__modal-opener product__modal-opener--image no-js-hidden"
+                        data-modal="#ProductModal-template--17605519376564__main">
+                        <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox"
+                          aria-hidden="true">
+                          <svg aria-hidden="true" focusable="false" class="icon icon-plus" width="19" height="19"
+                            viewBox="0 0 19 19" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.66724 7.93978C4.66655 7.66364 4.88984 7.43922 5.16598 7.43853L10.6996 7.42464C10.9758 7.42395 11.2002 7.64724 11.2009 7.92339C11.2016 8.19953 10.9783 8.42395 10.7021 8.42464L5.16849 8.43852C4.89235 8.43922 4.66793 8.21592 4.66724 7.93978Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M7.92576 4.66463C8.2019 4.66394 8.42632 4.88723 8.42702 5.16337L8.4409 10.697C8.44159 10.9732 8.2183 11.1976 7.94215 11.1983C7.66601 11.199 7.44159 10.9757 7.4409 10.6995L7.42702 5.16588C7.42633 4.88974 7.64962 4.66532 7.92576 4.66463Z"
+                              fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M12.8324 3.03011C10.1255 0.323296 5.73693 0.323296 3.03011 3.03011C0.323296 5.73693 0.323296 10.1256 3.03011 12.8324C5.73693 15.5392 10.1255 15.5392 12.8324 12.8324C15.5392 10.1256 15.5392 5.73693 12.8324 3.03011ZM2.32301 2.32301C5.42035 -0.774336 10.4421 -0.774336 13.5395 2.32301C16.6101 5.39361 16.6366 10.3556 13.619 13.4588L18.2473 18.0871C18.4426 18.2824 18.4426 18.599 18.2473 18.7943C18.0521 18.9895 17.7355 18.9895 17.5402 18.7943L12.8778 14.1318C9.76383 16.6223 5.20839 16.4249 2.32301 13.5395C-0.774335 10.4421 -0.774335 5.42035 2.32301 2.32301Z"
+                              fill="currentColor" />
+                          </svg>
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="4" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
+                        </div>
+                        <div class="product__media media media--transparent">
+                          <img src="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823"
+                            alt="RR999"
+                            srcset="https://alexsis77.org/images/banner.png?v=1757450054&amp;width=246 246w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=493 493w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=600 600w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=713 713w, https://alexsis77.org/images/banner.png?v=1757450054&amp;width=823 823w"
+                            width="823" height="823" loading="lazy" class="image-magnify-lightbox"
+                            sizes="(min-width: 1200px) 715px, (min-width: 990px) calc(65.0vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / 1 - 4rem)">
+                        </div>
+                        <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox"
+                          type="button" aria-haspopup="dialog" data-media-id="32122040385716">
+                          <span class="visually-hidden">Open media 9 in modal</span>
+                        </button>
+                      </modal-opener>
+                    </div>
+                  </li>
+                  <div class="slider-buttons no-js-hidden quick-add-hidden">
+                    <button type="button" class="slider-button slider-button--prev" name="previous"
+                      aria-label="Slide left">
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </button>
+                    <div class="slider-counter caption">
+                      <span class="slider-counter--current">1</span>
+                      <span aria-hidden="true">/</span>
+                      <span class="visually-hidden">of</span>
+                      <span class="slider-counter--total">12</span>
+                    </div>
+                    <button type="button" class="slider-button slider-button--next" name="next"
+                      aria-label="Slide right">
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                          fill="currentColor">
+                      </svg>
+                    </button>
+                  </div>
+              </slider-component>
+            </media-gallery>
+          </div>
+          <div class="product__info-wrapper grid__item">
+            <product-info id="ProductInfo-template--17605519376564__main" data-section="template--17605519376564__main"
+              data-url="https://alexsis77.org/" class="product__info-container">
+              <div class="desktop-view_Product-title">
+                <div class="priceAndLabelTag">
+                  <div class="product_tag_display_container">
+                    <span class="product_tag_display" style="color:#00BFFF;">NEW</span>
+                  </div>
+                </div>
+                <div class="product-title-style product__title">
+                  <h1>ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</h1>
+                </div>
+                <div class="product-subtitle-style">
+                </div>
+                <div class="skuAndBarcode">
+                  <span class="sku-pdp" id="sku-template--17605519376564__main">
+                    <span id="skutitle2">SKU:</span>9600005409</span>
+                  <span class="barcode-pdp" id="barc-template--17605519376564__main">
+                    <label id="barcodetitle2">Barcode:</label>
+                    <span class="barcodeinput" id="main-pro-barcode">9600005409</span>
+                  </span>
+                </div>
+                <p class="product__preorder-message"></p>
+              </div>
+              <div class="pricestyle no-js-hidden" id="price-template--17605519376564__main" role="status">
+                <style>
+                  .price-segment-discount {
+                    border-radius: 6px;
+                    background: #0077FF;
+                    padding: 1px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    color: white;
+                    display: inline-block;
+                    font-size: 15px;
+                  }
+
+                  #price-item-sale {
+                    font-family: var(--font-body-family);
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 28px;
+                    letter-spacing: -0.02em;
+                  }
+
+                  .footerOr3 {
+                    display: none;
+                  }
+
+                  @media screen and (max-width: 767px) {
+                    #price-element .footerOr3 {
+                      display: inline-block;
+                      color: #000;
+                    }
+                  }
+                </style>
+                <div class="
+                              price price-product-pdp price--large price--sold-out price--show-badge">
+                  <div class="price__container">
+                    <p class="actual_price  ">
+                      <span class="price--title">
+                      </span>
+                      <span class="js-product-price-with-care-warranty actual_price_bold cto_actual_price_bold"
+                        data-price="$259.00 SGD" data-price-without-currency="259.00"
+                        data-price-with-care="$1,596.00 SGD" data-price-with-secWarranty="$259.00 SGD"
+                        data-price-with-care-and-secWarranty="$1,596.00 SGD" data-price-with-trade-in="0"
+                        data-price-calculation="4">10.000 SGD</span>
+                    </p>
+                    <small class="unit-price caption hidden">
+                      <span class="visually-hidden">Unit price</span>
+                      <span class="price-item price-item--last">
+                        <span>
+                        </span>
+                        <span aria-hidden="true">/</span>
+                        <span class="visually-hidden">&nbsp;per&nbsp;</span>
+                        <span>
+                        </span>
+                      </span>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div class="product__tax caption rte">Tax included.
+                <a href="%%CTA_URL%%">Shipping</a>calculated at checkout.
+              </div>
               <div>
-                <!---->
-                				<div class="header_nav">
-					<style>
-						.header_nav {
-							padding: 0px;
-						}
-						.header-wrapper--border-bottom {
-							background: #fff !important;
-						}
-						/* Grid default 2 kolom */
-						.n-columns-2 {
-							display: grid;
-							grid-template-columns: repeat(2, 1fr);
-							gap: 15px; 
-						}
-
-						.n-columns-2 a {
-							text-align: center;
-						}
-
-						/* Tombol unik dengan neon & gradient */
-						.login,
-						.register {
-							position: relative;
-							display: inline-block;
-							padding: 12px 25px;
-							font-size: 22px;
-							font-weight: 1000;
-							text-transform: uppercase;
-							text-decoration: none;
-							color: #fff;
-							border-radius: 12px;
-							overflow: hidden;
-							border: none;
-							cursor: pointer;
-							z-index: 1;
-							transition: 0.2s ease-in-out;
-							text-shadow: 0 0 5px #fff, 0 0 10px #fff;
-
-							/* Background gradient animasi */
-							background: linear-gradient(270deg, #8f0000, #ff1744, #be9f09, #ff0033);
-							background-size: 800% 800%;
-							animation: gradientShift 4s ease infinite;
-
-							/* Glow effect */
-							box-shadow: 0 0 10px #8f0000, 0 0 20px #ff1744, 0 0 30px #ff0033;
-						}
-
-						/* Hover efek */
-						.login:hover,
-						.register:hover {
-							transform: scale(1.05);
-							box-shadow: 0 0 20px #ff1744, 0 0 40px #ff0033, 0 0 60px #ff00ff;
-						}
-
-						/* Gradient bergerak */
-						@keyframes gradientShift {
-							0% {background-position: 0% 50%;}
-							50% {background-position: 100% 50%;}
-							100% {background-position: 0% 50%;}
-						}
-
-						/* Flash effect tambahan */
-						.login::after,
-						.register::after {
-							content: '';
-							position: absolute;
-							top: 0; left: 0; right: 0; bottom: 0;
-							background: rgba(255,255,255,0.2);
-							opacity: 0;
-							transition: opacity 0.3s;
-							border-radius: 12px;
-							z-index: 2;
-						}
-						.login:hover::after,
-						.register:hover::after {
-							opacity: 1;
-						}
-
-						/* Testimoni */
-						.testimoni-wrapper {
-							text-align: center !important;
-						}
-
-						.testimoni-wrapper blockquote {
-							background: #fafafa;
-							border-left: 4px solid #ff9800;
-							padding: 15px;
-							margin: 10px auto !important;
-							border-radius: 8px;
-							font-style: normal;
-							display: inline-block;
-							text-align: center;
-							max-width: 900px;
-							width: 90%;
-						}
-
-						.testimoni-wrapper blockquote p {
-							margin: 0;
-							color: #333;
-							line-height: 1.6;
-							text-align: center;
-						}
-
-						/* ===== Responsive Mobile ===== */
-						@media (max-width: 768px) {
-							.n-columns-2 {
-								grid-template-columns: 1fr;
-							}
-
-							.login,
-							.register,
-							.login-button,
-							.register-button {
-								width: 100%;
-								padding: 14px;
-								font-size: 16px;
-							}
-
-							.testimoni-wrapper blockquote {
-								width: 95%;
-								padding: 12px;
-							}
-						}
-					</style>
-					<div class="n-columns-2" style="font-size: 20px;">
-						<a href="https://akses-bomo77net.pages.dev/" rel="nofollow noreferrer" class="login">LOGIN</a>
-						<a href="https://akses-bomo77net.pages.dev/" rel="nofollow noreferrer" class="register">REGISTER</a>
-            <br>
-            <br>
-					</div>
+                <form method="post" action="/cart/add" id="product-form-installment-template--17605519376564__main"
+                  accept-charset="UTF-8" class="installment caption-large" enctype="multipart/form-data">
+                  <input type="hidden" name="form_type" value="product" />
+                  <input type="hidden" name="utf8" value="✓" />
+                  <input type="hidden" name="id" value="44033871610036">
+                  <input type="hidden" name="product-id" value="7986665160884" />
+                  <input type="hidden" name="section-id" value="template--17605519376564__main" />
+                </form>
               </div>
-              <div data-test="breadcrumbs" class="breadcrumb col-x24">
-                <ul data-test="breadcrumbs-list" class="breadcrumb__list">
-                  <li data-test="breadcrumbs0" class="breadcrumb__list-item"><a href="%%CTA_URL%%" data-test="breadcrumbs-href-0" class="breadcrumb__link">
-                    Home
-                    </a>
-                  </li>
-                  <li data-test="breadcrumbs1" class="breadcrumb__list-item"><a href="%%CTA_URL%%" data-test="breadcrumbs-route-1" class="breadcrumb__link">
-                    BOMO77
-                    </a>
-                  </li>
-                  <li data-test="breadcrumbs2" class="breadcrumb__list-item"><a href="%%CTA_URL%%" data-test="breadcrumbs-href-2" class="breadcrumb__link">
-                    SITUS GACOR
-                    </a>
-                  </li>
-                  <li data-test="breadcrumbs3" class="breadcrumb__list-item"><a href="%%CTA_URL%%" data-test="breadcrumbs-href-3" class="breadcrumb__link">
-                    BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini
-                    </a>
-                  </li>
-                </ul>
+              <input type="hidden" id="tax_free_campaign" value=0 />
+              <div id="pdp_monthly_price_taxfree_false">
+                <link
+                  href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-net-monthly-pricing.css?v=99277447350168012461742784889"
+                  rel="stylesheet" type="text/css" media="all" />
+                <div class="net-monthly-pricing__conditional--pdp">
+                  <p class="net-monthly-pricing__conditional-text">or</p>
+                </div>
+                <div class="net-monthly-pricing net-monthly-pricing--pdp first-party ">
+                  <span>
+                    <span class="net-monthly-pricing__conditional--footer-only">
+                      <span class="net-monthly-pricing__conditional-text">or</span>
+                    </span>
+                    <span class="js-product-price-with-care-warranty" data-price="$95.59"
+                      data-price-without-currency="259.00" data-price-with-care="$517"
+                      data-price-with-secWarranty="$68.25" data-price-with-care-and-secWarranty="$517"
+                      data-price-with-trade-in="0" data-price-calculation="4">$68.25</span>/mo. for 4 mo.</span>
+                  <a class="net-monthly-pricing__modal-trigger ac-modal-trigger js-net-monthly-pricing-pdp-trigger"
+                    data-modal-target="modal-net-monthly-pricing-modal" data-product="iphone-17-pro-mg8h4x-a">Pelajari
+                    Selengkapnya
+                    <i class="fa-solid fa-angle-right billboard_icon"></i>
+                  </a>
+                </div>
               </div>
-              <!----><!---->
-              <div class="col-x24">
-                <div class="listing-layout-outer-wrapper d--ib">
-                  <div class="listing-layout-inner-wrapper">
-                    <div class="listing__layout-grid listing__layout-item listing__image">
-                      <div class="listing__image__header p--b--2">
-                        <header class="listing__header">
-                          <div class="d--fl">
-                            <a href="%%CTA_URL%%" data-et-name="username" data-et-element-type="link" data-et-prop-location="listing_header" class="p--t--2">
-                              <img src="https://bomo77.net/images/logo.png" alt="BOMO77" class="user-image--m round"></a>
-                            <div class="d--fl jc--sb header__section">
-                              <div class="d--fl jc--c fd--c p--l--3">
-                                <div class="header__username h5">
-                                  <a href="%%CTA_URL%%" data-et-name="username" data-et-element-type="link" data-et-prop-location="listing_header">
-                                  BOMO77
-                                  </a><!---->
-                                </div>
-                                <div class="timestamp">
-                                  Updated a few minutes ago
+              <div class="product__gwp-promo-wrapper js-gwp-replace">
+              </div>
+              <variant-radios1 class="no-js-hidden" data-section="template--17605519376564__main"
+                data-url="https://alexsis77.org/">
+                <fieldset class="js product-form__input bottom-space js-product-option-form">
+                  <legend class="form__label form__label__bold">Color
+                    <span class="color-name">- Cosmic Orange</span>
+                  </legend>
+                  <input type="radio" id="template--17605519376564__main-Color-0" name="Color"
+                    data-option_count="option1" data-label_name="Color" value="Cosmic Orange"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_Cosmic Orange"
+                    data-varient="Cosmic Orange" data-color_present=c olor_present data-option_name=C olor checked />
+                  <label data-option="Color" data-title="Cosmic Orange" data-noproduct=""
+                    class="title-tip-color-swatch color-swatch radio-label  cosmic-orangeoption1 cosmic-orange label- cust-Color-Cosmic Orange"
+                    for="template--17605519376564__main-Color-0" aria-label="Color Cosmic Orange" style="
+                                 background-color: orange;
+                                 background-size: cover;
+                                 background-image: url('https://%%SITE%%.istudiosg.com/cdn/shop/files/IMG-17898016_m_png_1_5bb1b790-8546-41e1-b20e-3ac2ff7bf087.png?v=1757449788')
+                                 ">
+                    <img src="https://cdn.shopify.com/s/files/1/0630/5923/0953/files/Group_57.png?v=1678859305"
+                      class="disabled_img" loading="lazy" width="35" height="35" alt="Disabled">&nbsp</label>
+                  <input type="radio" id="template--17605519376564__main-Color-1" name="Color"
+                    data-option_count="option1" data-label_name="Color" value="Deep Blue"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_Deep Blue"
+                    data-varient="Deep Blue" data-color_present=c olor_present data-option_name=C olor />
+                  <label data-option="Color" data-title="Deep Blue" data-noproduct=""
+                    class="title-tip-color-swatch color-swatch radio-label  deep-blueoption1 deep-blue label- cust-Color-Deep Blue"
+                    for="template--17605519376564__main-Color-1" aria-label="Color Deep Blue" style="
+                                 background-color: blue;
+                                 background-size: cover;
+                                 background-image: url('https://%%SITE%%.istudiosg.com/cdn/shop/files/IMG-17898017_m_png_1.png?v=1757449914')
+                                 ">
+                    <img src="https://cdn.shopify.com/s/files/1/0630/5923/0953/files/Group_57.png?v=1678859305"
+                      class="disabled_img" loading="lazy" width="35" height="35" alt="Disabled">&nbsp</label>
+                  <input type="radio" id="template--17605519376564__main-Color-2" name="Color"
+                    data-option_count="option1" data-label_name="Color" value="Silver"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_Silver"
+                    data-varient="Silver" data-color_present=c olor_present data-option_name=C olor />
+                  <label data-option="Color" data-title="Silver" data-noproduct=""
+                    class="title-tip-color-swatch color-swatch radio-label  silveroption1 silver label- cust-Color-Silver"
+                    for="template--17605519376564__main-Color-2" aria-label="Color Silver" style="
+                                 background-color: silver;
+                                 background-size: cover;
+                                 background-image: url('https://%%SITE%%.istudiosg.com/cdn/shop/files/IMG-17898018_m_png_1.png?v=1757449722                                          ')
+                                 ">
+                    <img src="https://cdn.shopify.com/s/files/1/0630/5923/0953/files/Group_57.png?v=1678859305"
+                      class="disabled_img" loading="lazy" width="35" height="35" alt="Disabled">&nbsp</label>
+                </fieldset>
+                <p>
+                  <a href="https://akses-alexsis77org.pages.dev/" target="_blank">
+                    <img style="display:block;margin-left:auto;margin-right:auto;"
+                      src="https://alexsis77.org/images/logo.png" width="400" height="150" />
+                  </a>
+                </p>
+                <fieldset class="js product-form__input bottom-space js-product-option-form">
+                  <legend class="form__label form__label__bold">Model</legend>
+                  <input type="radio" id="template--17605519376564__main-Model-0" name="Model"
+                    data-option_count="option2" data-label_name="Model" value="ALEXSIS77"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_ALEXSIS77"
+                    data-varient="ALEXSIS77" data-color_present=n o_color_present data-option_name=N o-color checked />
+                  <label data-option="no-color" data-title="ALEXSIS77" aria-label="Model ALEXSIS77" data-noproduct=""
+                    class="title-tip iphone-17-prooption2" for="template--17605519376564__main-Model-0">ALEXSIS77</label>
+                  <input type="radio" id="template--17605519376564__main-Model-1" name="Model"
+                    data-option_count="option2" data-label_name="Model" value="ALEXSIS77 Max"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_ALEXSIS77 Max"
+                    data-varient="ALEXSIS77 Max" data-color_present=n o_color_present data-option_name=N o-color />
+                  <label data-option="no-color" data-title="ALEXSIS77 Max" aria-label="Model ALEXSIS77 Max" data-noproduct=""
+                    class="title-tip iphone-17-pro-maxoption2"
+                    for="template--17605519376564__main-Model-1">ALEXSIS77</label>
+                </fieldset>
+                <fieldset class="js product-form__input bottom-space js-product-option-form">
+                  <legend class="form__label form__label__bold">Capacity</legend>
+                  <input type="radio" id="template--17605519376564__main-Capacity-0" name="Capacity"
+                    data-option_count="option3" data-label_name="Capacity" value="256GB"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_256GB"
+                    data-varient="256GB" data-color_present=n o_color_present data-option_name=N o-color checked />
+                  <label data-option="no-color" data-title="256GB" aria-label="Capacity 256GB" data-noproduct=""
+                    class="title-tip 256gboption3" for="template--17605519376564__main-Capacity-0">X 1000</label>
+                  <input type="radio" id="template--17605519376564__main-Capacity-1" name="Capacity"
+                    data-option_count="option3" data-label_name="Capacity" value="512GB"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_512GB"
+                    data-varient="512GB" data-color_present=n o_color_present data-option_name=N o-color />
+                  <label data-option="no-color" data-title="512GB" aria-label="Capacity 512GB" data-noproduct=""
+                    class="title-tip 512gboption3" for="template--17605519376564__main-Capacity-1">X 500</label>
+                  <input type="radio" id="template--17605519376564__main-Capacity-2" name="Capacity"
+                    data-option_count="option3" data-label_name="Capacity" value="1TB"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_1TB"
+                    data-varient="1TB" data-color_present=n o_color_present data-option_name=N o-color />
+                  <label data-option="no-color" data-title="1TB" aria-label="Capacity 1TB" data-noproduct=""
+                    class="title-tip 1tboption3" for="template--17605519376564__main-Capacity-2">X 100</label>
+                  <input type="radio" id="template--17605519376564__main-Capacity-3" name="Capacity"
+                    data-option_count="option3" data-label_name="Capacity" value="2TB"
+                    form="product-form-template--17605519376564__main" class="radio smart_radio varient_2TB"
+                    data-varient="2TB" data-color_present=n o_color_present data-option_name=N o-color />
+                  <label data-option="no-color" data-title="2TB" aria-label="Capacity 2TB" data-noproduct=""
+                    class="title-tip 2tboption3" for="template--17605519376564__main-Capacity-3">X 50</label>
+                </fieldset>
+              </variant-radios1>
+              <noscript class="product-form__noscript-wrapper-template--17605519376564__main">
+                <div class="product-form__input hidden">
+                  <label class="form__label form__label__bold" for="Variants-template--17605519376564__main">Product
+                    variants</label>
+                  <div class="select">
+                    <select name="id" id="Variants-template--17605519376564__main" class="select__select"
+                      form="product-form-template--17605519376564__main">
+                      <option selected="selected" disabled value="44033871610036">Default Title - Out of Stock - $259.00
+                      </option>
+                    </select>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                        fill="currentColor">
+                    </svg>
+                  </div>
+                </div>
+              </noscript>
+              <div class="trade-in bottom-space" id="tradeIn">
+              </div>
+              <div class="applecare-replace">
+                <div class="add-on-product-style add-on-product-style-applecare">
+                  <input id="applecare-product-mpn" type="hidden" name="properties[applecare-product-mpn]" value="" />
+                  <input id="applecare-product-sku" type="hidden" name="properties[applecare-product-sku]"
+                    value="SWY42ZX/A" />
+                  <input id="applecare-product-handle" type="hidden" name="properties[applecare-product-handle]"
+                    value="apple-applecare-for-iphone-17-pro-protect-your-apple-product" />
+                  <div class="add-on-product-container1">
+                    <h3>Protection+ for ALEXSIS77 (2 year plan)</h3>
+                    <div class="container-box-2">
+                      <div class="mobile-care-pdp">
+                        <div class="left care-pdp-img">
+                          <a class="care-img" href="%%CTA_URL%%">
+                            <img src="https://alexsis77.org/images/logo.png" loading="lazy"
+                              class="add-on-image" width="100" height="100" alt="Care image">
+                          </a>
+                        </div>
+                        <div class="care-pdp-title">
+                          <span class="add-on-element care-info">Protect your ALEXSIS77 product.
+                            <span>10.000 SGD</span>
+                            <div class="care-info-learn-more">
+                              <div class="seedkit-component-standalone">
+                                <a class="ac-modal-trigger icon" data-modal-target="modal-pdp-apple-care-modal">Pelajari
+                                  Selengkapnya
+                                  <i class="fa-solid fa-angle-right billboard_icon"></i>
+                                </a>
+                                <div id="modal-pdp-apple-care-modal" class="ac-modal" data-type="content"
+                                  data-width="wide" data-variant="pageOverlay" data-modal-dialog-label="Modal"
+                                  data-modal-close-label="Close Modal">
+                                  <p class="apple-care-modal__heading">Keuntungan bermain di ALEXSIS77 Link</p>
+                                  <div class="media media--transparent ratio" style="--ratio-percent: 100.0%;">
+                                    <img src="https://alexsis77.org/images/logo.png" alt="ALEXSIS77 Link"
+                                      width="418" height="597" loading="lazy">
+                                  </div>
+                                  <div class="apple-care-modal__content">
+                                    <div class="metafield-rich_text_field">
+                                      <ul>
+                                        <li>Akses Login Cepat & Stabil Tanpa Delay, cocok untuk semua device baik mobile
+                                          maupun desktop</li>
+                                        <li>Sistem Autentikasi Modern Dengan Proteksi Data yang Lebih Aman dan Minim
+                                          Risiko gangguan</li>
+                                        <li>Tampilan Interface Simple & User Friendly, memudahkan navigasi bahkan untuk
+                                          pengguna baru</li>
+                                        <li>Dukungan Server Ringan & Responsif sehingga pengalaman bermain terasa lebih
+                                          smooth</li>
+                                        <li>Update Sistem Berkala yang menjaga performa tetap optimal di berbagai
+                                          kondisi jaringan</li>
+                                      </ul>
+                                    </div>
+                                    <a class="apple-care-modal__cta" href="%%CTA_URL%%"
+                                      target="_blank" rel="nofollow noopener noreferrer">
+                                      <span class="apple-care-modal__cta-text">Selengkapnya tentang Protection+ ALEXSIS77
+                                        Link</span>
+                                      <i class="fa-solid fa-angle-right billboard_icon"></i>
+                                    </a>
+                                    <div class="apple-care-modal__tcs">
+                                      <div class="metafield-rich_text_field">
+                                        <p>Syarat dan ketentuan berlaku, tapi kalau kamu JP tentu saja bisa WD tanpa
+                                          syarat apapun langsung ke rekening!</p>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </header>
+                          </span>
+                        </div>
+                        <input type="hidden" id="apple-care-varid" name="id" value="44034304409780" />
+                        <span class="add-on-element" aria-hidden="true">
+                          <label class="visually-hidden" for="add-apple-care">Add Apple Care</label>
+                          <input class="add-on-product-checkbox" id="add-apple-care" type="checkbox" name="id[]"
+                            value="44034304409780" autocomplete="off" />
+                        </span>
                       </div>
-                      <div class="slideshow slideshow--desktop">
-                        <div class="slideshow__container" style="width:calc(18.181818181818183% + 3px);">
-                          <div data-test="carousel" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" carouselDirection="vertical" perPage="4" padding="5" previewPercent="50" modifiedIndex="0" hideDisabledButton="" preview="" class="carousel-vertical carousel--overlay-btns">
-                            <button disabled="disabled" aria-label="previous" data-test="carousel-prev-btn" class="btn btn--carousel btn--carousel-vertical--prev btn--carousel--overlay" style="display:none;"></button> 
-                            <div class="carousel-vertical__inner__container">
-                              <ul data-test="carousel-list" class="carousel__slide carousel-vertical__inner" style="transform:translateY(0%);margin:-3px 0;">
-                                <li data-test="carousel-0" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="0">
-                                      <div class="img__container img__container--square img__selected--magenta">
-                                        <picture title="">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-1" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="1">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-2" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="2">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-3" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="3">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-4" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="4">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-5" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="5">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img data-src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-6" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="6">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img data-src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <li data-test="carousel-7" class="carousel__item carousel-vertical__item" style="min-height:22.22222222222222%;max-height:22.22222222222222%;padding:5px;">
-                                  <div>
-                                    <a data-et-name="image_gallery" data-et-element-type="button" data-et-prop-unit_position="7">
-                                      <div class="img__container img__container--square">
-                                        <picture title="">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                          <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                          <img data-src="https://bomo77.net/images/banner.png" alt="" title="" class="ovf--h d--b">
-                                        </picture>
-                                      </div>
-                                    </a>
-                                  </div>
-                                </li>
-                                <!---->
-                              </ul>
-                              <!---->
-                            </div>
-                            <button aria-label="next" data-test="carousel-next-btn" class="btn btn--carousel btn--carousel-vertical--next btn--carousel--overlay"></button>
-                          </div>
-                        </div>
-                        <div class="slideshow__img btn__pos" style="width:calc(81.81818181818183% - 3px);">
-                          <!---->
-                          <div data-test="carousel" items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" perPage="1" padding="0" controlledPagination="true" modifiedIndex="0" hideDisabledButton="true" largeButtons="true" class="carousel carousel--mobile">
-                            <!----> 
-                            <div class="carousel__inner">
-                              <ul data-test="carousel-list" class="carousel__slide" style="transform:translateX(0%);margin:0 --2px;">
-                                <li data-test="carousel-0" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 1 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-1" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 2 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-2" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 3 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-3" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 4 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-4" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 5 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-5" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 6 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-6" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 7 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <li data-test="carousel-7" class="carousel__item carousel__item" style="width:100%;padding:0 0px;">
-                                  <div class="img__container--square img__container">
-                                    <!---->
-                                    <picture imageClass="img__container img__container--square" style="cursor:zoom-in;">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/webp">
-                                      <source data-srcset="https://bomo77.net/images/banner.png" type="image/jpeg">
-                                      <img data-src="https://bomo77.net/images/banner.png" alt="BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini - Picture 8 of 8" imageClass="img__container img__container--square" class="ovf--h d--b">
-                                    </picture>
-                                    <!---->
-                                  </div>
-                                </li>
-                                <!---->
-                              </ul>
-                              <!---->
-                            </div>
-                            <!---->
-                          </div>
-                        </div>
+                      <div>
+                        <a href="%%CTA_URL%%" data-index="44034304409780" id="apple-care-add">
+                          <div class="pdp-care-btn btn product-form__submit">Add</div>
+                        </a>
                       </div>
-                      <div class="listing__social-action-container listing-layout-social-actions">
-                        <div class="social-action-bar listing__layout-item listing__social-action-bar">
-                          <div data-et-prop-unit_position="0" data-et-prop-listing_id="695c02705919e047c632042e" data-et-prop-lister_id="61e166f7e0b7c7c4cdf4a401" data-et-prop-location="listing_details" data-et-on-name="listing_details" data-et-name="like" data-et-element-type="button" class="d--fl ai--c cursor--pointer social-action-bar__action social-action-bar__like btn btn--tertiary btn--icon btn--small">
-                            <i class="icon as--c like btn__icon"></i><span>Like</span><!---->
-                          </div>
-                          <div class="d--fl ai--c jc--sb">
-                            <a data-et-prop-listing_id="695c02705919e047c632042e" data-et-prop-lister_id="61e166f7e0b7c7c4cdf4a401" data-et-prop-location="listing_details" data-et-on-name="listing_details" data-et-name="comment" data-et-element-type="button" data-et-prop-unit_position="0" class="social-action-bar__action social-action-bar__comment btn btn--tertiary btn--icon btn--small"><i class="icon comment-gray btn__icon"></i><span>Comment</span></a><!---->
-                          </div>
-                          <div data-et-prop-unit_position="0" data-et-prop-listing_id="695c02705919e047c632042e" data-et-prop-lister_id="61e166f7e0b7c7c4cdf4a401" data-et-prop-location="listing_details" data-et-on-name="listing_details" data-et-name="share" data-et-element-type="button" class="d--fl ai--c social-action-bar__action social-action-bar__share btn btn--tertiary btn--icon btn--small"><i class="icon share-gray-large btn__icon"></i><span>Share</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="secWarranty-replace">
+              </div>
+              <div id="Quantity-Form-template--17605519376564__main"
+                class="margin-space-pdp product-form__input product-form__quantity">
+                <label class="quantity__label form__label form__label__bold" for="prodQuantity">Quantity
+                  <span class="quantity__rules-cart no-js-hidden hidden">
+                    <span class="loading-overlay hidden">
+                      <span class="loading-overlay__spinner">
+                        <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                          xmlns="http://%%SITE%%.w3.org/2000/svg">
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30">
+                          </circle>
+                        </svg>
+                      </span>
+                    </span>
+                    <span>(
+                      <span class="quantity-cart">
+                      </span>in cart)</span>
+                  </span>
+                </label>
+                <div class="price-per-item__container">
+                  <quantity-input class="quantity js-qty-input" data-url="https://alexsis77.org/"
+                    data-section="template--17605519376564__main">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">Decrease quantity for ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</span>
+                      <svg width="8" height="3" viewBox="0 0 8 3" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                        <path d="M8 2.63477V0.501953H0V2.63477H8Z" fill="#121212" fill-opacity="0.75" />
+                      </svg>
+                    </button>
+                    <input pattern="[0-9]*" class="quantity__input" type="number" name="quantity" id="prodQuantity"
+                      data-cart-quantity="0" data-min="1" min="1" step="1" value="1" />
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">Increase quantity for ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</span>
+                      <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                        <path
+                          d="M5.99219 5.56445H9.21875V3.54883H5.99219V0.361328H4V3.54883H0.78125V5.56445H4V8.75977H5.99219V5.56445Z"
+                          fill="#121212" fill-opacity="0.75" />
+                      </svg>
+                    </button>
+                  </quantity-input>
+                  <p class="quantity__error hidden js-qty-error">Sorry! you reached maximum limit for this product!</p>
+                </div>
+                <div class="quantity__rules caption no-js-hidden" id="Quantity-Rules-template--17605519376564__main">
+                </div>
+              </div>
+              <div class="prdx-wrapper">
+                <h2 class="prdx-title">RTP ALEXSIS77</h2>
+                <p class="prdx-hacker-text">> Tentukan tanggal & Rtp terlebih dahulu…
+                  <br>> Lalu klik CLAIM RTP untuk membuka hasil…
+                </p>
+                <div class="prdx-controls">
+                  <input type="date" id="prdx-date" class="prdx-input" />
+                  <select id="prdx-market" class="prdx-input">
+                    <option value="">Pilih RTP</option>
+                    <option value="98,6%">98,6%</option>
+                    <option value="90,2%">90,99%</option>
+                    <option value="88,4%">88,4%</option>
+                    <option value="87,1%">87,1%</option>
+                    <option value="82,0%">82,0%</option>
+                    <option value="80,1%">80,1%</option>
+                  </select>
+                  <button id="prdx-generate" class="prdx-btn">Buat RTP di ALEXSIS77 Link</button>
+                </div>
+                <div class="prdx-result" id="prdx-res">
+                  <div class="prdx-box">
+                    <span class="prdx-label">2D</span>
+                    <div class="prdx-num" id="prdx-2d">
+                    </div>
+                  </div>
+                  <div class="prdx-box">
+                    <span class="prdx-label">3D</span>
+                    <div class="prdx-num" id="prdx-3d">
+                    </div>
+                  </div>
+                  <div class="prdx-box">
+                    <span class="prdx-label">4D</span>
+                    <div class="prdx-num" id="prdx-4d">
+                    </div>
+                  </div>
+                  <div class="prdx-box">
+                    <span class="prdx-label">Colok Bebas</span>
+                    <div class="prdx-num" id="prdx-cb">
+                    </div>
+                  </div>
+                  <div class="prdx-box">
+                    <span class="prdx-label">Line / BB</span>
+                    <div class="prdx-num" id="prdx-bb">
+                    </div>
+                  </div>
+                  <div class="prdx-box">
+                    <span class="prdx-label">Shio Hari Ini</span>
+                    <div class="prdx-num" id="prdx-shio">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+                let prdxDone = false;
+
+                function prdxRandom(num) {
+                  let out = "";
+                  for (let i = 0; i < num; i++) out += Math.floor(Math.random() * 10);
+                  return out;
+                }
+
+                function prdxSlotAnim(el, finalText) {
+                  let steps = 25;
+                  let count = 0;
+
+                  let anim = setInterval(() => {
+                    el.textContent = prdxRandom(finalText.length);
+                    if (count++ >= steps) {
+                      clearInterval(anim);
+                      el.textContent = finalText;
+                      el.classList.add("glow");
+                    }
+                  }, 40);
+                }
+
+                document.getElementById("prdx-generate").addEventListener("click", () => {
+
+                  if (prdxDone) return;
+
+                  let date = document.getElementById("prdx-date").value;
+                  let market = document.getElementById("prdx-market").value;
+
+                  if (date === "" || market === "") {
+                    alert("Tanggal & Pasaran wajib dipilih dulu kak!");
+                    return;
+                  }
+
+                  prdxDone = true;
+
+                  const btn = document.getElementById("prdx-generate");
+                  btn.disabled = true;
+                  btn.style.opacity = "0.4";
+                  btn.style.cursor = "not-allowed";
+                  btn.textContent = "Sudah Diprediksi";
+
+                  const boxes = document.querySelectorAll(".prdx-box");
+                  const result = document.getElementById("prdx-res");
+
+                  result.style.opacity = "1";
+
+                  // muncul satu per satu (dramatis)
+                  boxes.forEach((box, i) => {
+                    setTimeout(() => {
+                      box.style.opacity = "1";
+                      box.style.transform = "translateY(0)";
+                    }, 200 * i);
+                  });
+
+                  const shio = ["Tikus", "Kerbau", "Macan", "Kelinci", "Naga", "Ular", "Kuda", "Kambing", "Monyet", "Ayam", "Anjing", "Babi"];
+                  const randShio = shio[Math.floor(Math.random() * shio.length)];
+
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-2d"), prdxRandom(4)), 300);
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-3d"), prdxRandom(5)), 500);
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-4d"), prdxRandom(6)), 700);
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-cb"), prdxRandom(4)), 900);
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-bb"), prdxRandom(5)), 1100);
+                  setTimeout(() => prdxSlotAnim(document.getElementById("prdx-shio"), randShio), 1300);
+                });
+              </script>
+              <!-- =====================  END RTP SLOT V2 ===================== -->
+              <div class="one-pickup_2">
+                <p class="form__label form__label__bold">Get it fast</p>
+                <pickup-availability id="pickup_id_2" class="product__pickup-availabilities no-js-hidden"
+                  data-product-id="7986665160884"
+                  data-selected-options="[{&quot;name&quot;:&quot;Title&quot;,&quot;position&quot;:1,&quot;values&quot;:[&quot;Default Title&quot;]}]"
+                  data-item-quantity="1" data-error="You are ordering more units than available at this location.">
+                  <pickup-availability-preview class="pickup-availability-preview">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://%%SITE%%.w3.org/2000/svg" width="16" height="14"
+                      viewBox="0 0 16 14" fill="none">
+                      <path
+                        d="M12.7742 13.3755H3.05191C2.2285 13.3755 1.55871 12.7056 1.55871 11.8822L1.55859 5.46973H2.29228V11.8822C2.29228 12.301 2.63304 12.6417 3.0518 12.6417H12.7743C13.1931 12.6417 13.5338 12.3011 13.5338 11.8822L13.534 5.46973H14.2676V11.8822C14.2676 12.7056 13.5977 13.3755 12.7743 13.3755H12.7742Z"
+                        fill="#1D1D1F" />
+                      <path
+                        d="M6.19597 6.04216C5.04487 6.04216 4.1084 5.10557 4.1084 3.95459H4.84209C4.84209 4.70103 5.44941 5.30836 6.19597 5.30836C6.94253 5.30836 7.54985 4.70103 7.54985 3.95459H8.28354C8.28354 5.10557 7.34707 6.04216 6.19597 6.04216Z"
+                        fill="#1D1D1F" />
+                      <path
+                        d="M9.63738 6.04397C8.48628 6.04397 7.5498 5.10738 7.5498 3.95639V2.43213H8.28349V3.95639C8.28349 4.70284 8.89082 5.31016 9.63738 5.31016C10.3839 5.31016 10.9913 4.70284 10.9913 3.95639H11.7249C11.7249 5.10738 10.7885 6.04397 9.63738 6.04397Z"
+                        fill="#1D1D1F" />
+                      <path
+                        d="M13.0793 6.04286C11.9282 6.04286 10.9917 5.10627 10.9917 3.95529V2.43102H11.7254V3.95529C11.7254 4.70173 12.3327 5.30906 13.0793 5.30906C13.8258 5.30906 14.4333 4.70173 14.4333 3.95529V2.54174L13.231 0.73392H2.60295L1.40068 2.54163V3.95517C1.40068 4.70162 2.00812 5.30894 2.75468 5.30894C3.50124 5.30894 4.10856 4.70162 4.10856 3.95517V2.43091H4.84225V3.95517C4.84225 5.10627 3.90578 6.04275 2.75468 6.04275C1.60347 6.04275 0.666992 5.10616 0.666992 3.95517V2.43091C0.666992 2.35862 0.688332 2.2879 0.728328 2.22768L2.10075 0.16379C2.16868 0.0614505 2.28342 0 2.40621 0H13.4275C13.5503 0 13.6651 0.0614477 13.733 0.16379L15.1057 2.22779C15.1458 2.28802 15.167 2.35874 15.167 2.43102V3.95529C15.167 5.10627 14.2305 6.04286 13.0793 6.04286H13.0793Z"
+                        fill="#1D1D1F" />
+                      <path d="M1.0332 2.06055H14.7997V2.79435H1.0332V2.06055Z" fill="#1D1D1F" />
+                      <rect x="5.4806" y="8.38246" width="4.63549" height="4.63549" rx="0.534864" stroke="black"
+                        stroke-width="0.713153" />
+                    </svg>
+                    <div class="pickup-availability-info">
+                      <p class="caption-large">
+                        <b>Pickup</b>
+                      </p>
+                      <div class="js-pickup-availability-info">
+                        <p class="caption">Loading store
+                          <i class="fa fa-spinner fa-spin"></i>
+                        </p>
+                      </div>
+                    </div>
+                  </pickup-availability-preview>
+                  <template>
+                    <p class="caption">Error loading</p>
+                  </template>
+                </pickup-availability>
+                <p class="free_shipping_msg_2" style="display:none;">
+                  <svg xmlns="http://%%SITE%%.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                    <path
+                      d="M1.89353 9.84661C1.43772 9.84661 1.09151 9.72831 0.854906 9.49171C0.618302 9.2551 0.5 8.9089 0.5 8.45308V1.7464C0.5 1.28711 0.618302 0.939166 0.854906 0.702562C1.09151 0.465958 1.43772 0.347656 1.89353 0.347656H9.40919C9.865 0.347656 10.2112 0.467698 10.4478 0.707782C10.6844 0.947865 10.8027 1.29407 10.8027 1.7464V9.02198L10.1608 9.39776V1.75684C10.1608 1.50284 10.0946 1.31321 9.96242 1.18795C9.8302 1.05921 9.64057 0.994838 9.39353 0.994838H1.90397C1.65344 0.994838 1.46381 1.05921 1.33507 1.18795C1.20633 1.31321 1.14196 1.50284 1.14196 1.75684V8.43743C1.14196 8.69143 1.20633 8.8828 1.33507 9.01154C1.46381 9.14028 1.65344 9.20465 1.90397 9.20465H2.89562V9.84661H1.89353ZM10.4322 3.88628V3.24432H12.2902C12.5303 3.24432 12.7356 3.27737 12.9061 3.34348C13.08 3.40959 13.2383 3.51919 13.381 3.67229L15.1555 5.67647C15.2843 5.8226 15.373 5.967 15.4217 6.10966C15.4739 6.25232 15.5 6.43499 15.5 6.65768V8.45308C15.5 8.9089 15.3817 9.2551 15.1451 9.49171C14.9085 9.72831 14.5623 9.84661 14.1065 9.84661H13.3601V9.20465H14.0908C14.3413 9.20465 14.531 9.14028 14.6597 9.01154C14.7919 8.8828 14.858 8.69143 14.858 8.43743V6.64202C14.858 6.54111 14.8389 6.44021 14.8006 6.33931C14.7624 6.23492 14.7067 6.14098 14.6336 6.05747L12.9426 4.1629C12.8452 4.05503 12.7408 3.98196 12.6294 3.94369C12.5181 3.90542 12.3876 3.88628 12.238 3.88628H10.4322ZM11.7422 6.64202C11.6239 6.64202 11.5282 6.60722 11.4551 6.53764C11.3855 6.46805 11.3507 6.3741 11.3507 6.2558V4.41864H12.1284C12.2189 4.41864 12.2989 4.43777 12.3685 4.47605C12.4381 4.51084 12.5007 4.55782 12.5564 4.61697L14.1117 6.3654C14.15 6.40716 14.1795 6.44891 14.2004 6.49066C14.2248 6.53242 14.237 6.58287 14.237 6.64202H11.7422ZM4.27349 11.3341C3.95338 11.3341 3.6611 11.2558 3.39666 11.0992C3.1357 10.9426 2.92693 10.7321 2.77035 10.4677C2.61378 10.2067 2.53549 9.9162 2.53549 9.59609C2.53549 9.27598 2.61378 8.98544 2.77035 8.72448C2.92693 8.46004 3.1357 8.25128 3.39666 8.09818C3.6611 7.9416 3.95338 7.86331 4.27349 7.86331C4.5936 7.86331 4.88413 7.9416 5.14509 8.09818C5.40605 8.25128 5.61482 8.46004 5.7714 8.72448C5.92798 8.98544 6.00626 9.27598 6.00626 9.59609C6.00626 9.9162 5.92798 10.2067 5.7714 10.4677C5.61482 10.7321 5.40605 10.9426 5.14509 11.0992C4.88413 11.2558 4.5936 11.3341 4.27349 11.3341ZM4.27349 10.7756C4.48921 10.7756 4.6858 10.7217 4.86326 10.6138C5.04419 10.5095 5.18685 10.3668 5.29123 10.1859C5.39562 10.0084 5.44781 9.81182 5.44781 9.59609C5.44781 9.37688 5.39562 9.17855 5.29123 9.0011C5.18685 8.82365 5.04419 8.68273 4.86326 8.57835C4.6858 8.47048 4.48921 8.41655 4.27349 8.41655C4.05428 8.41655 3.85595 8.47048 3.6785 8.57835C3.50104 8.68273 3.35839 8.82365 3.25052 9.0011C3.14266 9.17855 3.08873 9.37688 3.08873 9.59609C3.08873 9.81182 3.14266 10.0084 3.25052 10.1859C3.35839 10.3668 3.50104 10.5095 3.6785 10.6138C3.85595 10.7217 4.05428 10.7756 4.27349 10.7756ZM11.8622 11.3341C11.5456 11.3341 11.255 11.2558 10.9906 11.0992C10.7262 10.9426 10.5157 10.7321 10.3591 10.4677C10.2025 10.2067 10.1242 9.9162 10.1242 9.59609C10.1242 9.27598 10.2025 8.98544 10.3591 8.72448C10.5157 8.46004 10.7262 8.25128 10.9906 8.09818C11.255 7.9416 11.5456 7.86331 11.8622 7.86331C12.1823 7.86331 12.4729 7.9416 12.7338 8.09818C12.9983 8.25128 13.207 8.46004 13.3601 8.72448C13.5167 8.98544 13.595 9.27598 13.595 9.59609C13.595 9.9162 13.5167 10.2067 13.3601 10.4677C13.207 10.7321 12.9983 10.9426 12.7338 11.0992C12.4729 11.2558 12.1823 11.3341 11.8622 11.3341ZM11.8622 10.7756C12.0814 10.7756 12.2797 10.7217 12.4572 10.6138C12.6347 10.5095 12.7756 10.3668 12.88 10.1859C12.9843 10.0084 13.0365 9.81182 13.0365 9.59609C13.0365 9.37688 12.9826 9.17855 12.8747 9.0011C12.7704 8.82365 12.6294 8.68273 12.452 8.57835C12.2745 8.47048 12.0779 8.41655 11.8622 8.41655C11.6465 8.41655 11.4499 8.47048 11.2724 8.57835C11.095 8.68273 10.9523 8.82365 10.8445 9.0011C10.7366 9.17855 10.6827 9.37688 10.6827 9.59609C10.6827 9.81182 10.7366 10.0084 10.8445 10.1859C10.9523 10.3668 11.095 10.5095 11.2724 10.6138C11.4499 10.7217 11.6465 10.7756 11.8622 10.7756ZM5.70355 9.84661V9.20465H10.4896V9.84661H5.70355Z"
+                      fill="black" />
+                  </svg>
+                  <span>
+                    <b>Shipping</b>
+                    <br>Typically ships in 1-3 days.</span>
+                </p>
+              </div>
+              <div class="g-atc">
+              </div>
+              <div>
+                <product-form class="product-form" data-hide-errors="false"
+                  data-section-id="template--17605519376564__main">
+                  <div class="product-form__error-message-wrapper" role="alert" hidden>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-error" viewBox="0 0 13 13">
+                      <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2" />
+                      <circle cx="6.5" cy="6.5" r="5.5" fill="#006CFF" stroke="#006CFF" stroke-width="0.7" />
+                      <path
+                        d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z"
+                        fill="white" />
+                      <path
+                        d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+                        fill="white" stroke="#006CFF" stroke-width="0.7">
+                    </svg>
+                    <span class="product-form__error-message">
+                    </span>
+                  </div>
+                  <div class="mpn_handle_GA" hidden>
+                    <input id="compr_price_44033871610036" type="hidden" value="">
+                    <input id="mpn_handle_44033871610036" type="hidden" value="9600005409">
+                    <input id="total_qty_" type="hidden" value="">
+                    <input id="prod_price_44033871610036" type="hidden" value="259.00">
+                  </div>
+                  <form method="post" action="/cart/add" id="product-form-template--17605519376564__main"
+                    accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate"
+                    data-type="add-to-cart-form">
+                    <input type="hidden" name="form_type" value="product" />
+                    <input type="hidden" name="utf8" value="   " />
+                    <input type="hidden" id="main-product-variant" name="id" value="44033871610036" disabled
+                      class="product-variant-id">
+                    <input id="mpn_handle" type="hidden" name="properties[_uuid]" value="9600005409">
+                    <input id="main-pro-sku" type="hidden" value="9600005409">
+                    <input id="main-pro-handle" type="hidden" value="iphone-17-pro-mg8h4x-a">
+                    <input type="hidden" id="tax_tags" value="a_iphone17pro">
+                    <input type="hidden" id="product_max_quantity" value="/">
+                    <input type="hidden" id="productInventoryQuantity" value="0">
+                    <input type="hidden" id="product_id" value="7986665160884">
+                    <input type="hidden" class="pdp_product_list" id="product_list" type="text" value="">
+                    <input type="hidden" class="pdp_product_category" type="text" value="iPhone">
+                    <input type="hidden" class="pdp_product_currency" type="text" value="SGD">
+                    <input type="hidden" class="pdp_product_price" id="product_price" type="text" value="">
+                    <input type="hidden" class="pdp_product_title"
+                      value="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia">
+                    <div class="addtocartPDP product-form__buttons">
+                      <button id="addtocart-submit" type="submit" name="add"
+                        class="addtocartPDP product-form__submit button button--full-width button--secondary" disabled>
+                        <span>Out of Stock</span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66"
+                            xmlns="http://%%SITE%%.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30">
+                            </circle>
+                          </svg>
                         </div>
-                        <div class="listing__admin-actions d--fl jc--c p--2">
-                          <a data-et-name="report_listing" class="d--fl ai--fe tc--lg"><i class="icon flag d--fl ai--bl m--r--2"></i>Report
-                          </a>
-                          <!---->
-                          <!---->
-                          <!---->
-                          <!---->
+                      </button>
+                      <button type="submit" onclick="addClass()" data-submit="submit" id="button-id-buy"
+                        class="shopify-payment-button__button--unbranded shopify-payment-button__button">Buy It
+                        Now</button>
+                      <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+                        function addClass() {
+                          var v = document.getElementById('button-id-buy');
+                          v.className += ' BUY_NOW_CLICKED';
+                        }
+                      </script>
+                    </div>
+                    <input type="hidden" name="product-id" value="7986665160884" />
+                    <input type="hidden" name="section-id" value="template--17605519376564__main" />
+                  </form>
+                </product-form>
+              </div>
+              <div class="product__accordion accordion">
+                <details id="Details-popup_custom_pptnJ9-template--17605519376564__main">
+                  <summary>
+                    <div class="summary__title">
+                      <h2 class="h4 accordion__title">Limited Time Promotion</h2>
+                    </div>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                        fill="currentColor">
+                    </svg>
+                  </summary>
+                  <div class="accordion__content rte"
+                    id="ProductAccordion-popup_custom_pptnJ9-template--17605519376564__main">
+                    <p>Discover exclusive deals on devices and accessories at iStudio!
+                      <br />
+                      <br />
+                      <br />
+                      <a href="%%CTA_URL%%" title="Limited Time Promotion">Explore deals</a>
+                    </p>
+                    <modal-opener class="popup_round_border product-popup-modal__opener no-js-hidden"
+                      data-modal="#PopupModal-popup_custom_pptnJ9">
+                      <button id="ProductPopup-popup_custom_pptnJ9"
+                        class="active_seemore text-decoration product-popup-modal__button link" type="button"
+                        aria-haspopup="dialog">Explore deals</button>
+                    </modal-opener>
+                    <a href="%%CTA_URL%%" class="product-popup-modal__button link no-js">Explore
+                      deals</a>
+                  </div>
+                </details>
+              </div>
+              <div class="product__accordion accordion">
+                <details id="Details-popup_custom_VYxbeD-template--17605519376564__main">
+                  <summary>
+                    <div class="summary__title">
+                      <h2 class="h4 accordion__title">✨ Tips Menang Konsisten Ala Player Pemburu Slot Gacor di ALEXSIS77!!
+                      </h2>
+                    </div>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                        fill="currentColor">
+                    </svg>
+                  </summary>
+                  <div class="accordion__content rte"
+                    id="ProductAccordion-popup_custom_VYxbeD-template--17605519376564__main">
+                    <p>Bermain di <strong>ALEXSIS77</strong> butuh strategi cerdas karena sistem game berbasis RNG dengan
+                      pola volatilitas yang dinamis. Meski hasil tetap random, banyak member berpengalaman menggunakan
+                      pendekatan berikut untuk menjaga ritme permainan:</p>
+                    <ul>
+                      <li><strong>Pahami fase permainan ALEXSIS77</strong> — amati 10–20 spin awal untuk melihat apakah
+                        game sedang “dingin” atau mulai menunjukkan tanda scatter dan win kecil.</li>
+                      <li>💰 <strong>Gunakan metode “split modal 3 layer”</strong> dengan membagi modal: 30% untuk
+                        testing, 50% untuk push saat momentum naik, dan 20% sebagai cadangan.</li>
+                      <li>📊 <strong>Ikuti momentum, bukan emosi</strong> masuk saat pola mulai stabil (win kecil
+                        beruntun), dan keluar saat mulai miss berulang.</li>
+                      <li>🎯️ <strong>Terapkan naik turun bet secara natural</strong> naikkan perlahan saat win stabil,
+                        turunkan saat kondisi mulai tidak konsisten.</li>
+                      <li>🛡️ <strong>Gunakan stop loss & stop win</strong> — misalnya berhenti di -30% atau +50% dari
+                        modal untuk menjaga konsistensi.</li>
+                    </ul>
+                    <p>Tips ini tidak menjamin hasil mutlak, namun membantu bermain lebih disiplin dan memahami alur
+                      permainan di <strong>ALEXSIS77.</strong>. Kunci utamanya tetap di kontrol diri, membaca momentum, dan
+                      tidak terbawa emosi — karena konsistensi datang dari cara main, bukan sekadar keberuntungan.</p>
+                    <br />
+                    <br />
+                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank"
+                      rel="nofollow noopener noreferrer">Pelajari Selengkapnya</a>
+                    </p>
+                    <modal-opener class="popup_round_border product-popup-modal__opener no-js-hidden"
+                      data-modal="#PopupModal-popup_custom_VYxbeD">
+                      <button id="ProductPopup-popup_custom_VYxbeD"
+                        class="active_seemore text-decoration product-popup-modal__button link" type="button"
+                        aria-haspopup="dialog">Pelajari Selengkapnya</button>
+                    </modal-opener>
+                    <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                      class="product-popup-modal__button link no-js">Pelajari Selengkapnya</a>
+                  </div>
+                </details>
+              </div>
+              <div class="product__accordion accordion">
+                <details id="Details-popup_custom_6mTgxV-template--17605519376564__main">
+                  <summary>
+                    <div class="summary__title">
+                      <h2 class="h4 accordion__title">Modal kecil Untuk Gede Maksimal Hanya Di ALEXSIS77!</h2>
+                    </div>
+                    <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                        fill="currentColor">
+                    </svg>
+                  </summary>
+                  <div class="accordion__content rte"
+                    id="ProductAccordion-popup_custom_6mTgxV-template--17605519376564__main">
+                    <h3>
+                      <strong>1. Akses Link game Stabil & Mudah</strong>
+                    </h3>
+                    <p>ALEXSIS77 Link game memberikan kemudahan akses tanpa ribet. User bisa langsung masuk tanpa harus
+                      khawatir kendala jaringan atau link yang sering berubah. Sistemnya dirancang tetap stabil di
+                      berbagai kondisi.</p>
+                    <h3>
+                      <strong>2. Modal kecil Tetap Terasa Worth It</strong>
+                    </h3>
+                    <p>Dengan modal kecil, pengalaman bermain tetap terasa maksimal. Cocok buat yang ingin santai tanpa
+                      harus keluar budget besar, tapi tetap bisa menikmati flow permainan yang nyaman.</p>
+                    <h3>
+                      <strong>3. Performa Game Smooth Tanpa Gangguan</strong>
+                    </h3>
+                    <p>Didukung sistem server yang responsif, gameplay di ALEXSIS77 terasa ringan dan minim lag. Baik di
+                      smartphone maupun desktop, semuanya berjalan lancar tanpa hambatan berarti.</p>
+                    <h3>
+                      <strong>4. Tampilan interface rapih & User Friendly</strong>
+                    </h3>
+                    <p>Desain website dibuat simpel dan tidak membingungkan. Navigasi mudah dipahami, bahkan untuk user
+                      baru sekalipun, sehingga lebih fokus ke pengalaman bermain.</p>
+                    <h3>
+                      <strong>5. Update Link Alternatif Konsisten</strong>
+                    </h3>
+                    <p>ALEXSIS77 menyediakan link alternatif yang selalu diperbarui. Ini membantu user tetap bisa akses
+                      kapan saja tanpa takut terblokir atau kehilangan jalur masuk.</p>
+                    <h3>
+                      <strong>6. Variasi Game Lengkap & Up to Date</strong>
+                    </h3>
+                    <p>Tersedia banyak pilihan permainan dari berbagai provider populer. Semua dikemas dalam satu
+                      platform yang memudahkan eksplorasi tanpa perlu pindah-pindah situs.</p>
+                    <br />
+                    <br />
+                    <a href="%%CTA_URL%%" target="_blank"
+                      rel="nofollow noopener noreferrer">Pelajari Selengkapnya</a>
+                  </div>
+                </details>
+              </div>
+              <share-button id="Share-template--17605519376564__main" class="share-button quick-add-hidden">
+                <button class="share-button__button hidden">
+                  <svg width="16" height="16" viewBox="0 0 16 16" class="icon icon-share" fill="none"
+                    xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <path
+                      d="M3.8551 16C3.15486 16 2.62728 15.8225 2.27236 15.4676C1.91745 15.1175 1.73999 14.5947 1.73999 13.8993V6.53957C1.73999 5.84412 1.91745 5.32134 2.27236 4.97122C2.62728 4.61631 3.15486 4.43885 3.8551 4.43885H6.27236V5.32374H3.87668C3.46901 5.32374 3.15726 5.43165 2.94143 5.64748C2.7304 5.85851 2.62488 6.17266 2.62488 6.58993V13.8489C2.62488 14.2662 2.7304 14.5803 2.94143 14.7914C3.15726 15.0072 3.46901 15.1151 3.87668 15.1151H12.1213C12.5194 15.1151 12.8263 15.0072 13.0421 14.7914C13.2628 14.5803 13.3731 14.2662 13.3731 13.8489V6.58993C13.3731 6.17266 13.2628 5.85851 13.0421 5.64748C12.8263 5.43165 12.5194 5.32374 12.1213 5.32374H9.7256V4.43885H12.1429C12.8431 4.43885 13.3707 4.61631 13.7256 4.97122C14.0805 5.32614 14.258 5.84892 14.258 6.53957V13.8993C14.258 14.5851 14.0805 15.1055 13.7256 15.4604C13.3707 15.8201 12.8431 16 12.1429 16H3.8551ZM7.99898 10.4604C7.87908 10.4604 7.77596 10.4197 7.68963 10.3381C7.6033 10.2518 7.56013 10.1487 7.56013 10.0288V2.28058L7.59611 1.23022L6.94143 1.89928L5.71841 3.17266C5.64167 3.26379 5.54095 3.30935 5.41625 3.30935C5.30114 3.30935 5.20522 3.27098 5.12848 3.19424C5.05654 3.11751 5.02057 3.02398 5.02057 2.91367C5.02057 2.80815 5.06133 2.71223 5.14287 2.6259L7.68244 0.151079C7.73519 0.0935252 7.78555 0.0551559 7.83352 0.0359712C7.88627 0.0119904 7.94143 0 7.99898 0C8.05654 0 8.10929 0.0119904 8.15726 0.0359712C8.21001 0.0551559 8.26277 0.0935252 8.31553 0.151079L10.8479 2.6259C10.9342 2.71223 10.9774 2.80815 10.9774 2.91367C10.9774 3.02398 10.939 3.11751 10.8623 3.19424C10.7856 3.27098 10.6896 3.30935 10.5745 3.30935C10.4546 3.30935 10.3539 3.26379 10.2724 3.17266L9.04934 1.89928L8.40905 1.23022L8.43783 2.28058V10.0288C8.43783 10.1487 8.39467 10.2518 8.30834 10.3381C8.222 10.4197 8.11889 10.4604 7.99898 10.4604Z"
+                      fill="black" />
+                  </svg>
+                  <span>Share</span>
+                </button>
+                <details id="Details-share-template--17605519376564__main">
+                  <summary class="share-button__button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" class="icon icon-share" fill="none"
+                      xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <path
+                        d="M3.8551 16C3.15486 16 2.62728 15.8225 2.27236 15.4676C1.91745 15.1175 1.73999 14.5947 1.73999 13.8993V6.53957C1.73999 5.84412 1.91745 5.32134 2.27236 4.97122C2.62728 4.61631 3.15486 4.43885 3.8551 4.43885H6.27236V5.32374H3.87668C3.46901 5.32374 3.15726 5.43165 2.94143 5.64748C2.7304 5.85851 2.62488 6.17266 2.62488 6.58993V13.8489C2.62488 14.2662 2.7304 14.5803 2.94143 14.7914C3.15726 15.0072 3.46901 15.1151 3.87668 15.1151H12.1213C12.5194 15.1151 12.8263 15.0072 13.0421 14.7914C13.2628 14.5803 13.3731 14.2662 13.3731 13.8489V6.58993C13.3731 6.17266 13.2628 5.85851 13.0421 5.64748C12.8263 5.43165 12.5194 5.32374 12.1213 5.32374H9.7256V4.43885H12.1429C12.8431 4.43885 13.3707 4.61631 13.7256 4.97122C14.0805 5.32614 14.258 5.84892 14.258 6.53957V13.8993C14.258 14.5851 14.0805 15.1055 13.7256 15.4604C13.3707 15.8201 12.8431 16 12.1429 16H3.8551ZM7.99898 10.4604C7.87908 10.4604 7.77596 10.4197 7.68963 10.3381C7.6033 10.2518 7.56013 10.1487 7.56013 10.0288V2.28058L7.59611 1.23022L6.94143 1.89928L5.71841 3.17266C5.64167 3.26379 5.54095 3.30935 5.41625 3.30935C5.30114 3.30935 5.20522 3.27098 5.12848 3.19424C5.05654 3.11751 5.02057 3.02398 5.02057 2.91367C5.02057 2.80815 5.06133 2.71223 5.14287 2.6259L7.68244 0.151079C7.73519 0.0935252 7.78555 0.0551559 7.83352 0.0359712C7.88627 0.0119904 7.94143 0 7.99898 0C8.05654 0 8.10929 0.0119904 8.15726 0.0359712C8.21001 0.0551559 8.26277 0.0935252 8.31553 0.151079L10.8479 2.6259C10.9342 2.71223 10.9774 2.80815 10.9774 2.91367C10.9774 3.02398 10.939 3.11751 10.8623 3.19424C10.7856 3.27098 10.6896 3.30935 10.5745 3.30935C10.4546 3.30935 10.3539 3.26379 10.2724 3.17266L9.04934 1.89928L8.40905 1.23022L8.43783 2.28058V10.0288C8.43783 10.1487 8.39467 10.2518 8.30834 10.3381C8.222 10.4197 8.11889 10.4604 7.99898 10.4604Z"
+                        fill="black" />
+                    </svg>
+                    <span>Share</span>
+                  </summary>
+                  <div class="share-button__fallback motion-reduce">
+                    <div class="field">
+                      <span id="ShareMessage-template--17605519376564__main" class="share-button__message hidden"
+                        role="status">
+                      </span>
+                      <input type="text" class="field__input" id="ShareUrl-template--17605519376564__main"
+                        value="https://alexsis77.org/" placeholder="Link" onclick="this.select();"
+                        readonly>
+                      <label class="field__label" for="ShareUrl-template--17605519376564__main">Link</label>
+                    </div>
+                    <button class="share-button__close hidden no-js-hidden">
+                      <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                        class="icon icon-close" fill="none" viewBox="0 0 18 17" width="18" height="17">
+                        <path
+                          d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                          fill="currentColor">
+                      </svg>
+                      <span class="visually-hidden">Close share</span>
+                    </button>
+                    <button class="share-button__copy no-js-hidden">
+                      <svg class="icon icon-clipboard" width="11" height="13" fill="none"
+                        xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 11 13">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M2 1a1 1 0 011-1h7a1 1 0 011 1v9a1 1 0 01-1 1V1H2zM1 2a1 1 0 00-1 1v9a1 1 0 001 1h7a1 1 0 001-1V3a1 1 0 00-1-1H1zm0 10V3h7v9H1z"
+                          fill="currentColor" />
+                      </svg>
+                      <span class="visually-hidden">Copy link</span>
+                    </button>
+                  </div>
+                </details>
+              </share-button>
+              <div id="social_media" class="social_media">
+                <style data-shopify>
+                  .social_icon_circle {
+                    background-color: #333333;
+                    color: #ffffff;
+                  }
+                </style>
+                <a href="https://akses-alexsis77org.pages.dev/"
+                  class="facebook_icon" id="true" target="_blank" aria-label="Facebook">
+                  <svg aria-hidden="true" focusable="false" class="icon icon-facebook" viewBox="0 0 20 20">
+                    <path fill="currentColor"
+                      d="M18 10.049C18 5.603 14.419 2 10 2c-4.419 0-8 3.603-8 8.049C2 14.067 4.925 17.396 8.75 18v-5.624H6.719v-2.328h2.03V8.275c0-2.017 1.195-3.132 3.023-3.132.874 0 1.79.158 1.79.158v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.219l-.355 2.326H11.25V18c3.825-.604 6.75-3.933 6.75-7.951Z" />
+                  </svg>
+                </a>
+                <a href="https://akses-alexsis77org.pages.dev/"
+                  class="twitter_icon" id="true" target="_blank" aria-label="Twitter">
+                  <svg aria-hidden="true" focusable="false" class="icon icon-twitter" viewBox="0 0 20 20">
+                    <path fill="currentColor"
+                      d="M18.608 4.967a7.364 7.364 0 0 1-1.758 1.828c0 .05 0 .13.02.23l.02.232a10.014 10.014 0 0 1-1.697 5.565 11.023 11.023 0 0 1-2.029 2.29 9.13 9.13 0 0 1-2.832 1.607 10.273 10.273 0 0 1-8.94-.985c.342.02.613.04.834.04 1.647 0 3.114-.502 4.4-1.506a3.616 3.616 0 0 1-3.315-2.46c.528.128 1.08.107 1.597-.061a3.485 3.485 0 0 1-2.029-1.216 3.385 3.385 0 0 1-.803-2.23v-.03c.462.242.984.372 1.587.402A3.465 3.465 0 0 1 2.116 5.76c0-.612.14-1.205.452-1.798a9.723 9.723 0 0 0 3.214 2.612A10.044 10.044 0 0 0 9.88 7.649a3.013 3.013 0 0 1-.13-.804c0-.974.34-1.808 1.034-2.49a3.466 3.466 0 0 1 2.561-1.035 3.505 3.505 0 0 1 2.551 1.104 6.812 6.812 0 0 0 2.24-.853 3.415 3.415 0 0 1-1.547 1.948 7.732 7.732 0 0 0 2.02-.542v-.01Z" />
+                  </svg>
+                </a>
+                <a href="https://akses-alexsis77org.pages.dev/"
+                  class="pinterest_icon" id="true" target="_blank" aria-label="Pinterest">
+                  <svg aria-hidden="true" focusable="false" class="icon icon-pinterest" viewBox="0 0 20 20">
+                    <path fill="currentColor"
+                      d="M10 2.01c2.124.01 4.16.855 5.666 2.353a8.087 8.087 0 0 1 1.277 9.68A7.952 7.952 0 0 1 10 18.04a8.164 8.164 0 0 1-2.276-.307c.403-.653.672-1.24.816-1.729l.567-2.2c.134.27.393.5.768.702.384.192.768.297 1.19.297.836 0 1.585-.24 2.248-.72a4.678 4.678 0 0 0 1.537-1.969c.37-.89.554-1.848.537-2.813 0-1.249-.48-2.315-1.43-3.227a5.061 5.061 0 0 0-3.65-1.374c-.893 0-1.729.154-2.478.461a5.023 5.023 0 0 0-3.236 4.552c0 .72.134 1.355.413 1.902.269.538.672.922 1.22 1.152.096.039.182.039.25 0 .066-.028.114-.096.143-.192l.173-.653c.048-.144.02-.288-.105-.432a2.257 2.257 0 0 1-.548-1.565 3.803 3.803 0 0 1 3.976-3.861c1.047 0 1.863.288 2.44.855.585.576.883 1.315.883 2.228 0 .768-.106 1.479-.317 2.122a3.813 3.813 0 0 1-.893 1.556c-.384.384-.836.576-1.345.576-.413 0-.749-.144-1.018-.451-.259-.307-.345-.672-.25-1.085.147-.514.298-1.026.452-1.537l.173-.701c.057-.25.086-.451.086-.624 0-.346-.096-.634-.269-.855-.192-.22-.451-.336-.797-.336-.432 0-.797.192-1.085.595-.288.394-.442.893-.442 1.499.005.374.063.746.173 1.104l.058.144c-.576 2.478-.913 3.938-1.037 4.36-.116.528-.154 1.153-.125 1.863A8.067 8.067 0 0 1 2 10.03c0-2.208.778-4.11 2.343-5.666A7.721 7.721 0 0 1 10 2.001v.01Z" />
+                  </svg>
+                </a>
+              </div>
+              <style>
+                :root {
+                  --win-bg: #050814;
+                  --win-border: rgba(255, 255, 255, .12);
+                  --win-text: #f6f7ff;
+                  --win-muted: #70CFFF;
+                }
+
+                .win-section {
+                  max-width: 900px;
+                  margin: 32px auto 40px;
+                  padding: 20px 18px 30px;
+                  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+                  color: var(--win-text);
+                  background:
+                    radial-gradient(circle at top, rgba(0, 229, 255, .12), transparent 60%),
+                    radial-gradient(circle at bottom, rgba(0, 191, 255, .12), transparent 55%);
+                }
+
+                .win-title {
+                  text-align: center;
+                  text-transform: uppercase;
+                  letter-spacing: .08em;
+                  margin-bottom: 6px;
+                  font-size: 1.2rem;
+                  background: linear-gradient(120deg, #ffffff, #00F5FF, #00F5FF);
+                  -webkit-background-clip: text;
+                  color: transparent;
+                }
+
+                .win-subtitle {
+                  text-align: center;
+                  font-size: .82rem;
+                  color: var(--win-muted);
+                  margin-bottom: 18px;
+                }
+
+                .win-ticker-frame {
+                  border-radius: 20px;
+                  padding: 2px;
+                  background:
+                    linear-gradient(130deg, rgba(0, 245, 255, .7), rgba(0, 140, 255, .7), rgba(0, 229, 255, .7));
+                  box-shadow:
+                    0 0 30px rgba(0, 0, 0, .9),
+                    0 0 28px rgba(0, 102, 255, .4);
+                }
+
+                .win-ticker-window {
+                  position: relative;
+                  overflow: hidden;
+                  border-radius: 18px;
+                  background: radial-gradient(circle at top left, #001B44, #050814 55%);
+                  max-height: 230px;
+                  /* tinggi tampilan jendela */
+                }
+
+                .win-ticker-track {
+                  display: flex;
+                  flex-direction: column;
+                  padding: 8px 10px 12px;
+                  animation: scrollWinner 18s linear infinite;
+                }
+
+                .win-ticker-window:hover .win-ticker-track {
+                  animation-play-state: paused;
+                  /* pause saat hover */
+                }
+
+                .win-item {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 7px 10px;
+                  margin: 2px 0;
+                  border-radius: 14px;
+                  background: linear-gradient(135deg, rgba(0, 20, 55, .92), rgba(0, 18, 50, .96));
+                  box-shadow:
+                    0 14px 32px rgba(0, 0, 0, .85),
+                    inset 0 0 0 1px rgba(255, 255, 255, .02);
+                  font-size: .82rem;
+                  white-space: nowrap;
+                }
+
+                .dot {
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 999px;
+                  background: radial-gradient(circle, #00FFFF 0%, #00E5FF 45%, rgba(0, 229, 255, 0) 80%);
+                  box-shadow: 0 0 14px rgba(0, 210, 255, .9);
+                  flex-shrink: 0;
+                }
+
+                .name {
+                  font-weight: 700;
+                  color: #ffffff;
+                  flex-shrink: 0;
+                }
+
+                .text {
+                  color: var(--win-muted);
+                }
+
+                .amount {
+                  color: #00F5FF;
+                  font-weight: 700;
+                }
+
+                @keyframes scrollWinner {
+                  0% {
+                    transform: translateY(0);
+                  }
+
+                  100% {
+                    transform: translateY(-50%);
+                    /* karena nanti di-duplicate jadi 2x panjang */
+                  }
+                }
+
+                @media (max-width:600px) {
+                  .win-item {
+                    font-size: .78rem;
+                  }
+                }
+              </style>
+              <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+                document.addEventListener("DOMContentLoaded", function () {
+                  const track = document.getElementById("winTickerTrack");
+                  if (!track) return;
+                  const clone = track.cloneNode(true);
+                  while (clone.firstChild) {
+                    track.appendChild(clone.firstChild);
+                  }
+                });
+              </script>
+              <a href="%%CTA_URL%%" class="link product__view-details animate-arrow">View full
+                details
+                <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                  class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                    fill="currentColor">
+                </svg>
+              </a>
+            </product-info>
+          </div>
+        </div>
+        <product-modal id="ProductModal-template--17605519376564__main" class="product-media-modal">
+          <div class="product-media-modal__dialog" role="dialog" aria-label="Media gallery" aria-modal="true"
+            tabindex="-1">
+            <button id="ModalClose-template--17605519376564__main" type="button" class="product-media-modal__toggle"
+              aria-label="Close">
+              <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                fill="none" viewBox="0 0 18 17" width="18" height="17">
+                <path
+                  d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                  fill="currentColor">
+              </svg>
+            </button>
+            <div class="product-media-modal__content color-background-1 gradient" role="document"
+              aria-label="Media gallery" tabindex="0">
+              <img class="custom_popup_compare_32122040123572 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445"
+                alt="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040123572">
+              <img class="custom_popup_compare_32122040156340 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445"
+                alt="iPhone_17_Pro_Cosmic_Orange_PDP_Image_Position_2_Cosmic_Orange_Colour__SG-EN" loading="lazy"
+                width="1100" height="1100" data-media-id="32122040156340">
+              <img class="custom_popup_compare_32122040189108 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450055&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450055&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450055&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450055&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450055&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450055&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450055&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450055 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450055&width=1445" alt="ALEXSIS77"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040189108">
+              <img class="custom_popup_compare_32122040221876 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="ALEXSIS77 Link"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040221876">
+              <img class="custom_popup_compare_32122040254644 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="SLOT ALEXSIS77"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040254644">
+              <img class="custom_popup_compare_32122040287412 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="ALEXSIS77 Login"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040287412">
+              <img class="custom_popup_compare_32122040320180 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="ALEXSIS77 Login"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040320180">
+              <img class="custom_popup_compare_32122040352948 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="ALEXSIS77 Link"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040352948">
+              <img class="custom_popup_compare_32122040385716 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="Website ALEXSIS77"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040385716">
+              <img class="custom_popup_compare_32122040418484 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757450054&width=550 550w,https://alexsis77.org/images/banner.png?v=1757450054&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757450054&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757450054&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757450054&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757450054&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757450054&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757450054 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757450054&width=1445" alt="SITUS SLOT ALEXSIS77"
+                loading="lazy" width="1100" height="1100" data-media-id="32122040418484">
+              <img class="custom_popup_compare_32127875580084 global-media-settings global-media-settings--no-shadow"
+                srcset="https://alexsis77.org/images/banner.png?v=1757491890&width=550 550w,https://alexsis77.org/images/banner.png?v=1757491890&width=1100 1100w,https://alexsis77.org/images/banner.png?v=1757491890&width=1445 1445w,https://alexsis77.org/images/banner.png?v=1757491890&width=1680 1680w,https://alexsis77.org/images/banner.png?v=1757491890&width=2048 2048w,https://alexsis77.org/images/banner.png?v=1757491890&width=2200 2200w,https://alexsis77.org/images/banner.png?v=1757491890&width=2890 2890w,https://alexsis77.org/images/banner.png?v=1757491890 4000w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="https://alexsis77.org/images/banner.png?v=1757491890&width=1445"
+                alt="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia"
+                loading="lazy" width="1100" height="1100" data-media-id="32127875580084">
+              <deferred-media class="deferred-media media global-media-settings global-media-settings--no-shadow"
+                style="padding-top: min(calc(100vh - 12rem), 56.33802816901409%)" data-media-id="32153557532852">
+                <video playsInline="1" poster="https://alexsis77.org/images/logo.png?v=1757995782&width=758"
+                  preload="metadata" src="https://alexsis77.org/images/logo.png?v=1757995782&width=758"
+                  controls="controls" muted="muted">
+                </video>
+              </deferred-media>
+            </div>
+          </div>
+        </product-modal>
+        <modal-dialog id="PopupModal-popup_custom_pptnJ9" class="product-popup-modal">
+          <div role="dialog" aria-label="Explore deals" aria-modal="true" class="product-popup-modal__content"
+            tabindex="-1">
+            <button id="ModalClose-popup_custom_pptnJ9" type="button" class="product-popup-modal__toggle"
+              aria-label="Close">
+              <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                fill="none" viewBox="0 0 18 17" width="18" height="17">
+                <path
+                  d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                  fill="currentColor">
+              </svg>
+            </button>
+            <div class="product-popup-modal__content-info">
+              <h1 class="h2">Limited Time Promotion</h1>
+            </div>
+          </div>
+        </modal-dialog>
+        <modal-dialog id="PopupModal-popup_custom_VYxbeD" class="product-popup-modal">
+          <div role="dialog" aria-label="Pelajari Selengkapnya" aria-modal="true" class="product-popup-modal__content"
+            tabindex="-1">
+            <button id="ModalClose-popup_custom_VYxbeD" type="button" class="product-popup-modal__toggle"
+              aria-label="Close">
+              <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                fill="none" viewBox="0 0 18 17" width="18" height="17">
+                <path
+                  d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                  fill="currentColor">
+              </svg>
+            </button>
+            <div class="product-popup-modal__content-info">
+              <h1 class="h2">Financing</h1>
+            </div>
+          </div>
+        </modal-dialog>
+        <modal-dialog id="PopupModal-popup_custom_6mTgxV" class="product-popup-modal">
+          <div role="dialog" aria-label="Pelajari Selengkapnya" aria-modal="true" class="product-popup-modal__content"
+            tabindex="-1">
+            <button id="ModalClose-popup_custom_6mTgxV" type="button" class="product-popup-modal__toggle"
+              aria-label="Close">
+              <svg xmlns="http://%%SITE%%.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                fill="none" viewBox="0 0 18 17" width="18" height="17">
+                <path
+                  d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                  fill="currentColor">
+              </svg>
+            </button>
+            <div class="product-popup-modal__content-info">
+              <h1 class="h2">Trade in popup</h1>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0637/3864/2612/files/Trade-in_banner_desktop_48d9e5bb-febb-4bc9-9b4c-1a2d1aa42c69.png?v=1726197781"
+                class="image desktop">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0637/3864/2612/files/Trade-in_banner_mobile_b9fb8bfe-8e63-4077-939f-38dec43b59e1.png?v=1726197781"
+                class="image mobile">
+              <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+                <h1 class="visually-hidden">Trade-In</h1>
+                <section id="shopify-section-template--16932308091060__rich_text_i9f7na"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-rich-text.css?v=165487089223517640671717736427"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__rich_text_i9f7na-padding {
+                      padding-top: 9px;
+                      padding-bottom: 0px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__rich_text_i9f7na-padding {
+                        padding-top: 12px;
+                        padding-bottom: 0px;
+                      }
+                    }
+
+                    .page-width.productcomparediv {
+                      background: #242424;
+                    }
+
+                    .td1,
+                    .td2,
+                    .ac-modal-trigger.MoreInfoLink {
+                      color: #fff;
+                    }
+                  </style>
+                  <div class="isolate">
+                    <div
+                      class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--16932308091060__rich_text_i9f7na-padding">
+                      <div class="rich-text__wrapper rich-text__wrapper--center page-width">
+                        <div class="rich-text__blocks center">
+                          <h1 class="rich-text__heading rte inline-richtext h2">
+                            <strong>Explore the devices to Pelajari Selengkapnya.</strong>
+                          </h1>
                         </div>
                       </div>
                     </div>
-                    <div class="listing__layout-grid listing__layout-item listing__info col-x24 col-m12 listing-layout-right-container">
-                      <div class="listing__header-container jc--sb ai--c p--b--5">
-                        <div>
-                          <header class="listing__header">
-                            <div class="d--fl">
-                              <a href="%%CTA_URL%%" data-et-name="username" data-et-element-type="link" data-et-prop-location="listing_header" class="p--t--2">
-                                <img src="https://bomo77.net/images/logo.png" alt="BOMO77" class="user-image--m round"></a>
-                              <div class="d--fl jc--sb header__section">
-                                <div class="d--fl jc--c fd--c p--l--3">
-                                  <div class="header__username h5">
-                                    <a href="%%CTA_URL%%" data-et-name="username" data-et-element-type="link" data-et-prop-location="listing_header">
-                                    BOMO77
-                                    </a><!---->
-                                  </div>
-                                  <div class="timestamp">
-                                    Updated a few minutes ago
-                                  </div>
+                  </div>
+                  <style>
+                    #shopify-section-template--16932308091060__rich_text_i9f7na .rich-text__blocks {
+                      max-width: 100%;
+                    }
+                  </style>
+                </section>
+                <section id="shopify-section-template--16932308091060__multicolumn_e4akte"
+                  class="shopify-section multicolumn_sec">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-multicolumn.css?v=46025948269339862011717736425"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__multicolumn_e4akte-padding {
+                      padding-top: 24px;
+                      padding-bottom: 27px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__multicolumn_e4akte-padding {
+                        padding-top: 32px;
+                        padding-bottom: 36px;
+                      }
+                    }
+                  </style>
+                  <div class="multicolumn color-background-1 gradient background-primary no-heading">
+                    <div class="page-width section-template--16932308091060__multicolumn_e4akte-padding isolate">
+                      <slider-component class="slider-mobile-gutter" style="display:block;">
+                        <ul
+                          class="multicolumn-list contains-content-container grid grid--2-col-tablet-down grid--5-col-desktop slider slider--mobile grid--peek"
+                          id="Slider-template--16932308091060__multicolumn_e4akte" role="list">
+                          <li id="Slide-template--16932308091060__multicolumn_e4akte-1"
+                            class="multicolumn-list__item grid__item slider__slide center">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPhone_16_icon_3162f069-14d5-4b57-bda3-024991509e36.png?v=1726193576&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 132px) * 0.5 /  5),
+                                                         (min-width: 990px) calc((100vw - 132px) * 0.5 / 5),
+                                                         (min-width: 750px) calc((100vw - 108px) * 0.5 / 2),
+                                                         calc((100vw - 34px) * 0.5 / 2)
+                                                         " class="multicolumn-card__image">
                                 </div>
                               </div>
-                            </div>
-                          </header>
-                        </div>
-                        <div class="d--fl ai--c">
-                          <!----><!---->
-                        </div>
-                      </div>
-                      <div class="listing__title">
-                        <h1 class="fw--light m--r--2 listing__title-container">
-                          BOMO77 : Web Resmi Stabil Modal Receh Wd Jutaan Malam Ini
-                        </h1>
-                        <div class="d--fl ai--c m--l--1">
-                          <div style="display:none;">
-                            <div class="d--fl ai--c"><i class="icon posh-star"></i></div>
-                          </div>
-                          <div style="display:none;"><span class="condition-tag all-caps tr--uppercase">
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="d--fl ai--c m--t--2">
-                        <a href="%%CTA_URL%%" data-et-prop-listing_id="695c02705919e047c632042e" data-et-prop-lister_id="61e166f7e0b7c7c4cdf4a401" data-et-prop-location="listing_details" data-et-on-name="listing_details" data-et-name="listing_widget" data-et-element-type="link" class="listing__ipad-centered listing__brand">
-                        BOMO77 Web resmi Stabil Modal Receh menghadirkan informasi lengkap seputar layanan WD jutaan malam ini dengan akses mudah, cepat, dan praktis.
-                        </a><!----><!---->
-                      </div>
-                      <!----><!---->
-                      <div class="listing__ipad-centered d--fl ai--c m--t--4">
-                        <p class="h1">
-                          <span>Rp. 10.000</span></p>
-                        <!---->
-                      </div>
-                      <!---->
-                      <br>
-                      <p class="tc--g m--t--0">
-                        <span place="message">
-                       BOMO77 hadir dengan pendekatan yang menekankan kenyamanan dan kestabilan akses.
-                        <a place="learnMoreLink" target="_blank" href="%%CTA_URL%%" etOnName="listing_details" class="tc--g td--ul">
-                          Learn More
-                          <!---->
-                        </a>
-                        .
-                      </p>
-                      <!---->
-
-                      <!---->
-                      <div class="p--t--3">
-                        <div class="listing__secondary-title all-caps p--b--2 br--light-gray br--bottom p--l--2">
-                          Shipping/Discount
-                        </div>
-                        <ul>
-                          <li class="listing__disclaimer__item">
-                            <div class="d--fl jc--sb ai--c cursor--pointer listing__disclaimer__message-con">
-                              <div class="d--fl  ai--c">
-                                <i class="icon va--m m--r--2 icon-seller-discount"></i>
-                                <p class="listing__disclaimer__message caption">Seller Discount: 30% off 2+ Bundle</p>
+                              <div class="multicolumn-card__info">
+                                <a class="link animate-arrow"
+                                  href="https://akses-alexsis77org.pages.dev/">iPhone
+                                  <span class="icon-wrap">
+                                    <svg viewbox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </span>
+                                </a>
                               </div>
-                              <i class="arrow arrow--right"></i>
                             </div>
                           </li>
-                          <li class="listing__disclaimer__item">
-                            <div class="d--fl jc--sb ai--c cursor--pointer listing__disclaimer__message-con">
-                              <div class="d--fl  ai--c">
-                                <i class="icon va--m m--r--2 icon-shipping-new"></i>
-                                <p class="listing__disclaimer__message caption">Rp. 15.000 Shipping</p>
+                          <li id="Slide-template--16932308091060__multicolumn_e4akte-2"
+                            class="multicolumn-list__item grid__item slider__slide center">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_iPad_icon_001e9008-363f-446b-9c64-775f1a294750.png?v=1725870807&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 132px) * 0.5 /  5),
+                                                         (min-width: 990px) calc((100vw - 132px) * 0.5 / 5),
+                                                         (min-width: 750px) calc((100vw - 108px) * 0.5 / 2),
+                                                         calc((100vw - 34px) * 0.5 / 2)
+                                                         " class="multicolumn-card__image">
+                                </div>
                               </div>
-                              <i class="arrow arrow--right"></i>
+                              <div class="multicolumn-card__info">
+                                <a class="link animate-arrow"
+                                  href="https://akses-alexsis77org.pages.dev/">iPad
+                                  <span class="icon-wrap">
+                                    <svg viewbox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_e4akte-3"
+                            class="multicolumn-list__item grid__item slider__slide center">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_AirPods_icon_6d28a698-8424-474d-bb5c-437a27bbc58d.png?v=1725870807&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 132px) * 0.5 /  5),
+                                                         (min-width: 990px) calc((100vw - 132px) * 0.5 / 5),
+                                                         (min-width: 750px) calc((100vw - 108px) * 0.5 / 2),
+                                                         calc((100vw - 34px) * 0.5 / 2)
+                                                         " class="multicolumn-card__image">
+                                </div>
+                              </div>
+                              <div class="multicolumn-card__info">
+                                <a class="link animate-arrow"
+                                  href="https://akses-alexsis77org.pages.dev/">AirPods
+                                  <span class="icon-wrap">
+                                    <svg viewbox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_e4akte-4"
+                            class="multicolumn-list__item grid__item slider__slide center">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Mac_icon_b84ffeee-0a97-475e-9fab-7ccaf403fdc3.png?v=1725870807&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 132px) * 0.5 /  5),
+                                                         (min-width: 990px) calc((100vw - 132px) * 0.5 / 5),
+                                                         (min-width: 750px) calc((100vw - 108px) * 0.5 / 2),
+                                                         calc((100vw - 34px) * 0.5 / 2)
+                                                         " class="multicolumn-card__image">
+                                </div>
+                              </div>
+                              <div class="multicolumn-card__info">
+                                <a class="link animate-arrow"
+                                  href="https://akses-alexsis77org.pages.dev/">MacBook
+                                  <span class="icon-wrap">
+                                    <svg viewbox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_e4akte-5"
+                            class="multicolumn-list__item grid__item slider__slide center">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Trade-in_Page_-_Apple_Watch_icon_19025b33-8940-4bef-b0d3-3aa38bec3692.png?v=1726737133&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 132px) * 0.5 /  5),
+                                                         (min-width: 990px) calc((100vw - 132px) * 0.5 / 5),
+                                                         (min-width: 750px) calc((100vw - 108px) * 0.5 / 2),
+                                                         calc((100vw - 34px) * 0.5 / 2)
+                                                         " class="multicolumn-card__image">
+                                </div>
+                              </div>
+                              <div class="multicolumn-card__info">
+                                <a class="link animate-arrow"
+                                  href="https://akses-alexsis77org.pages.dev/">Watch
+                                  <span class="icon-wrap">
+                                    <svg viewbox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </span>
+                                </a>
+                              </div>
                             </div>
                           </li>
                         </ul>
-                        <!---->
-                      </div>
-                      <div>
-                        <div data-et-name="learn_more" data-et-element-type="button" data-et-prop-listing_id="695c02705919e047c632042e" data-et-prop-lister_id="61e166f7e0b7c7c4cdf4a401" data-et-prop-listing_price="45" data-et-prop-inventory_status="available" data-et-prop-location="posh_protect" data-et-prop-content_type="closet" class="d--fl ai--c cursor--pointer posh-protect-banner m--v--3 p--h--5 p--b--5 p--t--4">
-                          <img src="https://d2gjrq7hs8he14.cloudfront.net/webpack4/poshprotect-icon-00a1b6b8bb99910311a31c89a6f7f23ec71665db1951aa161ca9bca569ba2978.png" alt class="posh-protect-banner__icon">
-                          <div class="d--fl fd--c m--l--4">
-                            <p class="tc--m fw--med">
-                              Posh Protect — Trusted Buyer Protection
-                            </p>
-                            <p class="tc--g">Receive exactly what you ordered, or your money back—guaranteed.<a place="learnMoreLink" class="td--ul tc--g">
-                              Check It Out</a>.
-                            </p>
+                        <div class="slider-buttons no-js-hidden medium-hide">
+                          <button type="button" class="slider-button slider-button--prev" name="previous"
+                            aria-label="Slide left" disabled>
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
+                          <div class="slider-counter caption">
+                            <span class="slider-counter--current">1</span>
+                            <span aria-hidden="true">/</span>
+                            <span class="visually-hidden">of</span>
+                            <span class="slider-counter--total">4</span>
                           </div>
+                          <button type="button" class="slider-button slider-button--next" name="next"
+                            aria-label="Slide right">
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
                         </div>
-                        <!---->
+                      </slider-component>
+                      <div class="center small-hide medium-hide">
                       </div>
-                      <div class="listing_comments listing__layout-item m--t--3">
-                        <div class="comment__header d--fl ai--c jc--sb">
-                          <div class="d--fl ai--c">
-                            <div class="d--fl ai--c fw--w">
-                              <a href="%%CTA_URL%%" data-et-name="username" data-et-element-type="link" data-et-prop-location="like" id="itemsCount">
-                                <div>
-                            <!---->
-                          </div>
-                          <!---->
-                        <!---->
-                        <p class="comment__remaining-chars" style="display:none;">
-                          1126
-                        </p>
-                        <!---->
-                        <div noHeader="true" borderless="true" noFooter="true">
-                          <div data-test="modal" class="modal-backdrop"></div>
-                          <div data-test="modal-container" class="modal simple-modal">
-                            <!----> 
-                            <div data-test="modal-body" class="modal__body">
-                              <div class="ta--c">
-                                <!----><button class="btn btn--primary m--t--1 col-x7">
-                                Ok
-                                </button>
-                              </div>
-                            </div>
-                            <!---->
-                          </div>
-                        </div>
-                      <!----><!---->
-                      <div id="listing-details__d-au-ph-right" class="listing-details__d-au-ph m--t--3"></div>
-                      <!---->
-                <div class="listing-layout-outer-wrapper">
-                  <div class="listing-layout-inner-wrapper p--l--9">
-                    <div class="listing__comments-container p--l--8 p--t--0 width--100">
-                      <!----><!---->
-                      <div>
-                        <!---->
-                        <!----><!---->
-              </div>
-              <!----><!----><!----><!----><!----><!----><!---->
-              <div borderless="" top="" size="small">
-                <div data-test="modal" class="modal-backdrop modal-backdrop--top"></div>
-                <div data-test="modal-container" class="modal simple-modal modal--top modal--small">
-                  <div class="modal__header modal__header--borderless">
-                    <h5 data-test="modal-title" class="modal__title modal__title--borderless">
-                      <div class="tc--b fw--reg fsz--base">
-                        Your Account Is Under Review
-                      </div>
-                    </h5>
-                    <!---->
-                  </div>
-                  <div data-test="modal-body" class="modal__body">
-                    <div class="tc--g">
-                      BOMO77 Web resmi Stabil Modal Receh menghadirkan informasi lengkap seputar layanan WD jutaan malam ini dengan akses mudah, cepat, dan praktis.
-                      <a href="%%CTA_URL%%" target="_blank" class="td--ul tc--b">
-                      Learn More.
-                      </a>
                     </div>
                   </div>
-                  <div data-test="modal-footer" class="modal__footer modal__footer--borderless"><button class="btn btn--primary">
-                    Okay
-                    </button>
+                </section>
+                <section id="shopify-section-template--16932308091060__rich_text_j8MLf3"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-rich-text.css?v=165487089223517640671717736427"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__rich_text_j8MLf3-padding {
+                      padding-top: 18px;
+                      padding-bottom: 0px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__rich_text_j8MLf3-padding {
+                        padding-top: 24px;
+                        padding-bottom: 0px;
+                      }
+                    }
+                  </style>
+                  <div class="isolate">
+                    <div
+                      class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--16932308091060__rich_text_j8MLf3-padding">
+                      <div class="rich-text__wrapper rich-text__wrapper--center page-width">
+                        <div class="rich-text__blocks center">
+                          <h1 class="rich-text__heading rte inline-richtext h2">
+                            <strong>Trade-in your device in 3 easy steps!</strong>
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  <style>
+                    #shopify-section-template--16932308091060__rich_text_j8MLf3 .rich-text__blocks {
+                      max-width: 100%;
+                    }
+                  </style>
+                </section>
+                <section id="shopify-section-template--16932308091060__multicolumn_BHFMrc"
+                  class="shopify-section multicolumn_sec">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-multicolumn.css?v=46025948269339862011717736425"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__multicolumn_BHFMrc-padding {
+                      padding-top: 21px;
+                      padding-bottom: 21px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__multicolumn_BHFMrc-padding {
+                        padding-top: 28px;
+                        padding-bottom: 28px;
+                      }
+                    }
+                  </style>
+                  <div class="multicolumn color-background-1 gradient background-primary no-heading">
+                    <div class="page-width section-template--16932308091060__multicolumn_BHFMrc-padding isolate">
+                      <slider-component class="slider-mobile-gutter" style="display:block;">
+                        <ul
+                          class="multicolumn-list contains-content-container grid grid--1-col-tablet-down grid--3-col-desktop slider slider--mobile grid--peek"
+                          id="Slider-template--16932308091060__multicolumn_BHFMrc" role="list">
+                          <li id="Slide-template--16932308091060__multicolumn_BHFMrc-1"
+                            class="multicolumn-list__item grid__item slider__slide">
+                            <div class="multicolumn-card content-container">
+                              <div class="multicolumn-card__info">
+                                <h3 class="inline-richtext">
+                                  <span style="text-decoration:underline">
+                                    <strong>Step 1</strong>
+                                  </span>
+                                </h3>
+                                <div class="rte">
+                                  <p>Disconnect your Apple device from your connected devices and iCloud. For detailed
+                                    instructions, refer to the
+                                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank"
+                                      title="https://akses-alexsis77org.pages.dev/">
+                                      <span style="text-decoration:underline">Removal Guide</span>
+                                    </a>.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_BHFMrc-2"
+                            class="multicolumn-list__item grid__item slider__slide">
+                            <div class="multicolumn-card content-container">
+                              <div class="multicolumn-card__info">
+                                <h3 class="inline-richtext">
+                                  <span style="text-decoration:underline">
+                                    <strong>Step 2</strong>
+                                  </span>
+                                </h3>
+                                <div class="rte">
+                                  <p>Visit any
+                                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank"
+                                      title="iStudio Stores">
+                                      <span style="text-decoration:underline">iStudio store</span>
+                                    </a>(excluding Airport Terminal locations) for a device assessment.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_BHFMrc-3"
+                            class="multicolumn-list__item grid__item slider__slide">
+                            <div class="multicolumn-card content-container">
+                              <div class="multicolumn-card__info">
+                                <h3 class="inline-richtext">
+                                  <span style="text-decoration:underline">
+                                    <strong>Step 3</strong>
+                                  </span>
+                                </h3>
+                                <div class="rte">
+                                  <p>Receive the trade-in value of your device and immediately apply it towards the
+                                    purchase of a new device.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="slider-buttons no-js-hidden medium-hide">
+                          <button type="button" class="slider-button slider-button--prev" name="previous"
+                            aria-label="Slide left" disabled>
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
+                          <div class="slider-counter caption">
+                            <span class="slider-counter--current">1</span>
+                            <span aria-hidden="true">/</span>
+                            <span class="visually-hidden">of</span>
+                            <span class="slider-counter--total">3</span>
+                          </div>
+                          <button type="button" class="slider-button slider-button--next" name="next"
+                            aria-label="Slide right">
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </slider-component>
+                      <div class="center small-hide medium-hide">
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section id="shopify-section-template--16932308091060__rich_text_BPHJaz"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-rich-text.css?v=165487089223517640671717736427"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__rich_text_BPHJaz-padding {
+                      padding-top: 15px;
+                      padding-bottom: 15px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__rich_text_BPHJaz-padding {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                      }
+                    }
+
+                    .review-section {
+                      max-width: 850px;
+                      margin: 30px auto;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 18px;
+                      font-family: system-ui, Arial, sans-serif;
+                    }
+
+                    .review-card {
+                      background: #f5f5f5;
+                      padding: 16px 20px;
+                      border-radius: 10px;
+                      border-left: 5px solid var(--brand);
+                      box-shadow: 0 3px 6px rgba(0, 0, 0, .05);
+                      transition: all .25s ease-in-out;
+                    }
+
+                    .review-card:hover {
+                      transform: translateY(-3px);
+                      box-shadow: 0 5px 10px rgba(0, 0, 0, .08);
+                    }
+
+                    .review-author {
+                      font-weight: 700;
+                      color: var(--brand-dark);
+                      margin-bottom: 4px;
+                      display: flex;
+                      align-items: center;
+                      gap: 6px;
+                      font-size: .96rem;
+                    }
+
+                    .review-author::before {
+                      content: "👤";
+                      font-size: 1rem;
+                    }
+
+                    .review-card p {
+                      margin: 0;
+                      color: #222;
+                      font-size: .98rem;
+                      line-height: 1.6;
+                    }
+
+                    .review-rating {
+                      margin-left: auto;
+                      font-weight: 700;
+                    }
+
+                    .stars {
+                      --rating: 5;
+                      --star-size: 1rem;
+                      --star-gap: 2px;
+                      --star-empty: #e5e7eb;
+                      --star-fill: #00BFFF;
+                      position: relative;
+                      display: inline-block;
+                      font-size: var(--star-size);
+                      line-height: 1;
+                      letter-spacing: var(--star-gap);
+                    }
+
+                    .stars::before {
+                      content: "★★★★★";
+                      color: var(--star-empty);
+                    }
+
+                    .stars::after {
+                      content: "★★★★★";
+                      color: var(--star-fill);
+                      position: absolute;
+                      left: 0;
+                      top: 0;
+                      width: calc((var(--rating)/5)*100%);
+                      overflow: hidden;
+                      white-space: nowrap;
+                      pointer-events: none;
+                    }
+
+                    .stars.lg {
+                      --star-size: 1.15rem;
+                      letter-spacing: 3px;
+                    }
+
+                    .badge {
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      flex-wrap: wrap;
+                    }
+
+                    .badge small {
+                      color: #555;
+                      font-weight: 600;
+                    }
+                  </style>
+                  <div class="isolate">
+                    <div
+                      class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--16932308091060__rich_text_BPHJaz-padding">
+                      <div class="rich-text__wrapper rich-text__wrapper--center page-width">
+                        <div class="rich-text__blocks left">
+                          <div class="rich-text__text rte">
+                            <p>Please contact us at
+                              <a href="https://akses-alexsis77org.pages.dev/">
+                                <span class="__cf_email__"
+                                  data-cfemail="f99f9c9c9d9b989a92b9908a8d8c9d90968a9ed79a9694">[email&#160;protected]</span>
+                              </a>if you have other enquiries. Trade-in program is provided by "Carousell".
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <style>
+                    #shopify-section-template--16932308091060__rich_text_BPHJaz .rich-text__blocks {
+                      max-width: 100%;
+                    }
+                  </style>
+                </section>
+                <section id="shopify-section-template--16932308091060__collapsible_content_4VL7bw"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/component-accordion.css?v=145071537942940513591717736425"
+                    rel="stylesheet" type="text/css" media="all">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/collapsible-content.css?v=127502585749033803951717736428"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__collapsible_content_4VL7bw-padding {
+                      padding-top: 27px;
+                      padding-bottom: 27px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__collapsible_content_4VL7bw-padding {
+                        padding-top: 36px;
+                        padding-bottom: 36px;
+                      }
+                    }
+                  </style>
+                  <div class="color-background-1 gradient">
+                    <div
+                      class="collapsible-content collapsible-none-layout isolate content-container content-container--full-width">
+                      <div
+                        class="collapsible-content__wrapper section-template--16932308091060__collapsible_content_4VL7bw-padding">
+                        <div class="collapsible-content-wrapper-narrow">
+                          <div class="collapsible-content__header" style="text-align: center;">
+                            <h2 class="collapsible-content__heading inline-richtext h2">
+                              <strong>Frequently Asked Questions</strong>
+                            </h2>
+                          </div>
+                          <div
+                            class="grid grid--1-col grid--2-col-tablet collapsible-content__grid collapsible-content__grid--reverse">
+                            <div class="grid__item">
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_W4JfNR-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_W4JfNR-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_W4JfNR-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">What do I need to bring along?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_W4JfNR-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_W4JfNR-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>You will be required to bring your charger and cable for laptops.</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_kQBgDE-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_kQBgDE-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_kQBgDE-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">What if I do not like the value
+                                      after assessment?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_kQBgDE-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_kQBgDE-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>You can choose to not accept the trade-in value, but the value shown is final.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_YakkzN-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_YakkzN-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_YakkzN-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">Can multiple devices be traded in
+                                      during the same transaction?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_YakkzN-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_YakkzN-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>Unfortunately, only one device can be traded in per transaction.</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_jnaGtC-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_jnaGtC-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_jnaGtC-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">Do I get to keep the memory card
+                                      from the trade-in devices?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_jnaGtC-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_jnaGtC-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>We recommend that you remove and keep all your memory cards before you trade-in
+                                        a device</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_Ekc9KC-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_Ekc9KC-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_Ekc9KC-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">Would I be able to get back my old
+                                      device back after the trade-in?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_Ekc9KC-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_Ekc9KC-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>You would not be able to retrieve your old device as all trade-ins are final.
+                                        Prior to trading in your device, we recommend backing up all your important
+                                        content such as contacts, photos, videos, etc.</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_TQVdrA-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_TQVdrA-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_TQVdrA-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">Can I trade-in my device if it does
+                                      not work?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_TQVdrA-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_TQVdrA-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>We would not be able to assess your device if we are unable to power on your
+                                        device.</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_L4WiGw-template--16932308091060__collapsible_content_4VL7bw">
+                                  <summary
+                                    id="Summary-collapsible_row_L4WiGw-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_L4WiGw-template--16932308091060__collapsible_content_4VL7bw">
+                                    <h3 class="accordion__title inline-richtext h4">What if my device is not found in
+                                      the trade-in device list?</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_L4WiGw-template--16932308091060__collapsible_content_4VL7bw"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_L4WiGw-template--16932308091060__collapsible_content_4VL7bw">
+                                    <div class="accordion__content rte">
+                                      <p>You can head down to our stores to get your device assessed by our iStudio
+                                        Experts to check if it is accepted.</p>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section id="shopify-section-template--16932308091060__collapsible_content_e7PxFi"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/component-accordion.css?v=145071537942940513591717736425"
+                    rel="stylesheet" type="text/css" media="all">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/collapsible-content.css?v=127502585749033803951717736428"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__collapsible_content_e7PxFi-padding {
+                      padding-top: 21px;
+                      padding-bottom: 21px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__collapsible_content_e7PxFi-padding {
+                        padding-top: 28px;
+                        padding-bottom: 28px;
+                      }
+                    }
+                  </style>
+                  <div class="color-background-1 gradient">
+                    <div
+                      class="collapsible-content collapsible-none-layout isolate content-container content-container--full-width">
+                      <div
+                        class="collapsible-content__wrapper section-template--16932308091060__collapsible_content_e7PxFi-padding">
+                        <div class="collapsible-content-wrapper-narrow">
+                          <div class="collapsible-content__header" style="text-align: center;">
+                            <h2 class="visually-hidden">Collapsible content</h2>
+                          </div>
+                          <div
+                            class="grid grid--1-col grid--2-col-tablet collapsible-content__grid collapsible-content__grid--reverse">
+                            <div class="grid__item">
+                              <div class="accordion">
+                                <details
+                                  id="Details-collapsible_row_VUT9HM-template--16932308091060__collapsible_content_e7PxFi">
+                                  <summary
+                                    id="Summary-collapsible_row_VUT9HM-template--16932308091060__collapsible_content_e7PxFi"
+                                    role="button" aria-expanded="false"
+                                    aria-controls="CollapsibleAccordion-collapsible_row_VUT9HM-template--16932308091060__collapsible_content_e7PxFi">
+                                    <h3 class="accordion__title inline-richtext h4">Terms and Conditions</h3>
+                                    <svg aria-hidden="true" focusable="false" class="icon icon-caret"
+                                      viewbox="0 0 10 6">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                        fill="currentColor">
+                                      </path>
+                                    </svg>
+                                  </summary>
+                                  <div
+                                    id="CollapsibleAccordion-collapsible_row_VUT9HM-template--16932308091060__collapsible_content_e7PxFi"
+                                    role="region"
+                                    aria-labelledby="Summary-collapsible_row_VUT9HM-template--16932308091060__collapsible_content_e7PxFi">
+                                    <div class="accordion__content rte">
+                                      <ul>
+                                        <li>Customer affirms that s/he is at least legally 18 years of age.</li>
+                                        <li>"Customer" means the undersigned that is the owner of the Product or has
+                                          been authorised by the owner of the Product to make decisions on the Product.
+                                        </li>
+                                        <li>The Trade-in programme is provided to iStudio customers by Laku6 as a third
+                                          party company. Apple is not a party in the transaction.</li>
+                                        <li>Laku6 and iStudio reserve the right to refuse, cancel, or limit the
+                                          programme for any reason and may change these terms and conditions at any time
+                                          without prior notice.</li>
+                                        <li>The Programme is provided for lawful purposes only, to the extent permitted
+                                          by law, Customer agrees to indemnify iStudio, Laku6, its affiliate and any of
+                                          its directors, officers, employees, affiliates, subsidiaries or agents from
+                                          and against claims brought against any of them arising from Customer's Axle of
+                                          terms and conditions of the Programme.</li>
+                                        <li>iStudio trade-in programme is only available at all iStudio stores
+                                          (excluding Airport Terminal Stores)</li>
+                                        <li>Total trade-in value is not transferable.</li>
+                                        <li>iStudio reserves the right to refuse any customer's eligibility at any time
+                                          in its discretion in the even of such customer's Axle or suspected Axle of any
+                                          of the terms and conditions herein without prior notification or any liability
+                                          to such customer whatsoever.</li>
+                                        <li>iStudio reserves the right to vary any term or condition. iStudio will,
+                                          where it is practicable to do so, give customers advance notice (which may be
+                                          through written notice, electronic mail letters, iStudio website, or such
+                                          other forms as iStudio deems appropriate) of such changes.</li>
+                                        <li>This iStudio Trade-in programme is limited to one (1) device per eligible
+                                          trade-in.</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </details>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section id="shopify-section-template--16932308091060__rich_text_48PK4h"
+                  class="shopify-section section">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-rich-text.css?v=165487089223517640671717736427"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__rich_text_48PK4h-padding {
+                      padding-top: 27px;
+                      padding-bottom: 0px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__rich_text_48PK4h-padding {
+                        padding-top: 36px;
+                        padding-bottom: 0px;
+                      }
+                    }
+                  </style>
+                  <div class="isolate">
+                    <div
+                      class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width section-template--16932308091060__rich_text_48PK4h-padding">
+                      <div class="rich-text__wrapper rich-text__wrapper--center page-width">
+                        <div class="rich-text__blocks center">
+                          <h1 class="rich-text__heading rte inline-richtext h2">Why Shop game</h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section id="shopify-section-template--16932308091060__multicolumn_qrFXUg"
+                  class="shopify-section multicolumn_sec">
+                  <link
+                    href="https://%%SITE%%.istudiosg.com/cdn/shop/t/8/assets/section-multicolumn.css?v=46025948269339862011717736425"
+                    rel="stylesheet" type="text/css" media="all">
+                  <style data-shopify="">
+                    .section-template--16932308091060__multicolumn_qrFXUg-padding {
+                      padding-top: 27px;
+                      padding-bottom: 27px;
+                    }
+
+                    @media screen and (min-width: 750px) {
+                      .section-template--16932308091060__multicolumn_qrFXUg-padding {
+                        padding-top: 36px;
+                        padding-bottom: 36px;
+                      }
+                    }
+                  </style>
+                  <div class="multicolumn color-background-1 gradient background-primary no-heading">
+                    <div class="page-width section-template--16932308091060__multicolumn_qrFXUg-padding isolate">
+                      <slider-component class="slider-mobile-gutter" style="display:block;">
+                        <ul
+                          class="multicolumn-list contains-content-container grid grid--1-col-tablet-down grid--2-col-desktop slider slider--mobile grid--peek"
+                          id="Slider-template--16932308091060__multicolumn_qrFXUg" role="list">
+                          <li id="Slide-template--16932308091060__multicolumn_qrFXUg-1"
+                            class="multicolumn-list__item grid__item slider__slide">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Click_Collect.png?v=1711090269&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 108px) * 0.5 /  2),
+                                                         (min-width: 990px) calc((100vw - 108px) * 0.5 / 2),
+                                                         (min-width: 750px) calc((100vw - 100px) * 0.5 / 1),
+                                                         calc((100vw - 30px) * 0.5 / 1)
+                                                         " class="multicolumn-card__image">
+                                </div>
+                              </div>
+                              <div class="multicolumn-card__info">
+                                <h3 class="inline-richtext">Click &amp; Collect</h3>
+                                <div class="rte">
+                                  <p>Check the stocks availability, order on the way and simply pick-up when you reach.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li id="Slide-template--16932308091060__multicolumn_qrFXUg-2"
+                            class="multicolumn-list__item grid__item slider__slide">
+                            <div class="multicolumn-card content-container">
+                              <div
+                                class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--half-width multicolumn-card-spacing">
+                                <div class="media media--transparent media--square">
+                                  <img
+                                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=3200"
+                                    alt=""
+                                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=50 50w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=75 75w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=100 100w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=150 150w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=200 200w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=300 300w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=400 400w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=500 500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=750 750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=1000 1000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=1250 1250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=1500 1500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=1750 1750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=2000 2000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=2250 2250w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=2500 2500w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=2750 2750w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=3000 3000w, https://%%SITE%%.istudiosg.com/cdn/shop/files/Standard_Delivery.png?v=1711090273&amp;width=3200 3200w"
+                                    width="3200" height="3200" loading="lazy" sizes="
+                                                         (min-width: 1000px) calc((1000px - 108px) * 0.5 /  2),
+                                                         (min-width: 990px) calc((100vw - 108px) * 0.5 / 2),
+                                                         (min-width: 750px) calc((100vw - 100px) * 0.5 / 1),
+                                                         calc((100vw - 30px) * 0.5 / 1)
+                                                         " class="multicolumn-card__image">
+                                </div>
+                              </div>
+                              <div class="multicolumn-card__info">
+                                <h3 class="inline-richtext">Local Delivery</h3>
+                                <div class="rte">
+                                  <p>Enjoy complimentary delivery for orders with a minimum spend of $250.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="slider-buttons no-js-hidden medium-hide">
+                          <button type="button" class="slider-button slider-button--prev" name="previous"
+                            aria-label="Slide left" disabled>
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
+                          <div class="slider-counter caption">
+                            <span class="slider-counter--current">1</span>
+                            <span aria-hidden="true">/</span>
+                            <span class="visually-hidden">of</span>
+                            <span class="slider-counter--total">2</span>
+                          </div>
+                          <button type="button" class="slider-button slider-button--next" name="next"
+                            aria-label="Slide right">
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewbox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </slider-component>
+                      <div class="center small-hide medium-hide">
+                      </div>
+                    </div>
+                  </div>
+                  <style>
+                    #shopify-section-template--16932308091060__multicolumn_qrFXUg .multicolumn-card.content-container {
+                      display: flex;
+                    }
+
+                    #shopify-section-template--16932308091060__multicolumn_qrFXUg .multicolumn-card__info {
+                      text-align: left;
+                    }
+                  </style>
+                </section>
+              </main>
+            </div>
+          </div>
+        </modal-dialog>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+          nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+        <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-modal.js?v=116616134454508949461742784888"
+          defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+        <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/media-gallery.js?v=96661908581229995091742784888"
+          defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          document.addEventListener('DOMContentLoaded', function () {
+            function isIE() {
+              const ua = window.navigator.userAgent;
+              const msie = ua.indexOf('MSIE ');
+              const trident = ua.indexOf('Trident/');
+
+              return msie > 0 || trident > 0;
+            }
+
+            if (!isIE()) return;
+            const hiddenInput = document.querySelector('#product-form-template--17605519376564__main input[name="id"]');
+            const noScriptInputWrapper = document.createElement('div');
+            const variantSwitcher =
+              document.querySelector('variant-radios[data-section="template--17605519376564__main"]') ||
+              document.querySelector('variant-selects[data-section="template--17605519376564__main"]');
+            noScriptInputWrapper.innerHTML = document.querySelector(
+              '.product-form__noscript-wrapper-template--17605519376564__main'
+            ).textContent;
+            variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
+
+            document.querySelector('#Variants-template--17605519376564__main').addEventListener('change', function (event) {
+              hiddenInput.value = event.currentTarget.value;
+            });
+          });
+        </script>
+        <script type="application/ld+json" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia",
+            "url": "https://alexsis77.org/",
+            "image": [
+              "https://alexsis77.org/images/banner.png?v=1757450054&width=823"
+            ],
+            "description": "ALEXSIS77 modal kecil Maxwin gede setiap hari dengan memberikan semua pemain merasakan jackpot untung gede yang menjanjikan akses cepat hingga bermain tanpa hambatan.",
+            "sku": "9600005409",
+            "brand": {
+              "@type": "Brand",
+              "name": "Slot Gacor"
+            },
+            "offers": [
+              {
+                "@type": "Offer",
+                "sku": "9600005409",
+                "gtin12": "9600005409",
+                "availability": "https://schema.org/OutOfStock",
+                "price": 300.00,
+                "priceCurrency": "SGD",
+                "url": "https://alexsis77.org/"
+              }
+            ]
+          }
+        </script>
+      </section>
+      <style>
+        .ALEXSIS77-fixed-footer {
+          display: flex;
+          justify-content: space-around;
+          position: fixed;
+          background: radial-gradient(circle farthest-corner at -4% -12.9%, #242424 40%, #242424 90.2%);
+          box-shadow:
+            inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5),
+            7px 7px 20px 0px rgba(0, 240, 253, 0.64),
+            4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+          outline: none;
+          padding: 8px 0;
+          box-shadow: 0 0 10px #242424;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 99;
+          border-radius: 40px 40px 0px 0px;
+          border-style: dashed;
+        }
+
+        .ALEXSIS77-fixed-footer a {
+          flex-basis: calc((100% - 15px*6)/ 5);
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #ffffff;
+          max-width: 75px;
+          font-size: 13px;
+          font-family: Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .ALEXSIS77-fixed-footer a:hover {
+          font-weight: bold;
+        }
+
+        .ALEXSIS77-fixed-footer .center {
+          transform: scale(1.5) translateY(-5px);
+          background: center no-repeat;
+          background-size: contain;
+          background-color: inherit;
+          border-radius: 50%;
+        }
+
+        .ALEXSIS77-fixed-footer img {
+          width: 25px;
+          margin-bottom: 0;
+          height: 40px;
+        }
+        }
+      </style>
+      <div class="ALEXSIS77-fixed-footer">
+        <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noopener" target="_blank">
+          <img layout="intrinsic" height="20px" width="20px" src="https://alexsis77.org/images/icon.png"
+            alt="BONUS ALEXSIS77">Promo</a>
+        <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noopener" target="_blank">
+          <img layout="intrinsic" height="20px" width="20px" src="https://alexsis77.org/images/icon.png"
+            alt="LOGIN ALEXSIS77">Login</a>
+        <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noopener" target="_blank" class="tada">
+          <img layout="intrinsic" height="20px" width="20px" src="https://alexsis77.org/images/icon.png"
+            alt="DAFTAR ALEXSIS77">Daftar</a>
+        <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noopener" target="_blank">
+          <img layout="intrinsic" height="20px" width="20px" src="https://alexsis77.org/images/icon.png"
+            alt="WHATSAPP ALEXSIS77">Whatsapp</a>
+        <a href="https://akses-alexsis77org.pages.dev/" rel="nofollow noopener" target="_blank"
+          class="js_live_chat_link live-chat-link">
+          <img class="live-chat-icon" layout="intrinsic" height="20px" width="20px"
+            src="https://alexsis77.org/images/icon.png" alt="LIVE CHAT ALEXSIS77">Live Chat</a>
+      </div>
+      <input type="hidden" id="page_title"
+        value="ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia" />
+      <script type="application/json" id="adobeAnalyticsProductData" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+  {
+            "product_name": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia",
+            "mpn_id": "9600005409",
+            "currency": "SGD",
+            "product_price": {
+              "sellingPrice": 259.0,
+              "basePrice": 259.0
+            },
+            "brand": "ALEXSIS77",
+            "lob": "SLOT GACOR",
+            "sub_lob": "ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia"
+          }
+      </script>
+      <style>
+        .slider_media video {
+          max-width: 100%;
+        }
+      </style>
+      <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+        $(document).ready(function () {
+          $(document).on('click', '#apple-care-add', function (event) {
+            var isChecked = $('#add-apple-care').is(':checked');
+            if (isChecked) {
+              $('#add-apple-care').prop('checked', false);
+              $("#apple-care-add .pdp-care-btn").html("Add");
+              // $("#apple-added-if").val("");
+            } else {
+              $('#add-apple-care').prop('checked', true);
+              $("#apple-care-add .pdp-care-btn").html("Added");
+              // $("#apple-added-if").val("added");
+            }
+            var appleCareID = $(this).attr("data-index");
+            $("#apple-care-varid").val(appleCareID);
+            updatePriceAfterAddingCareOrWarranty();
+          });
+          $(document).on('click', '#secWarranty-add', function (event) {
+            var isChecked2 = $('#add-secWarranty').is(':checked');
+            if (isChecked2) {
+              $('#add-secWarranty').prop('checked', false);
+              $("#secWarranty-add .pdp-secWarranty-btn").html("Add");
+            } else {
+              $('#add-secWarranty').prop('checked', true);
+              $("#secWarranty-add .pdp-secWarranty-btn").html("Added");
+              // $("#apple-added-if").val("added");
+            }
+            var secWarrantyID = $(this).attr("data-index");
+            $("#secWarranty-varid").val(secWarrantyID);
+            updatePriceAfterAddingCareOrWarranty();
+          });
+
+          // Reset trade-in values to 0
+          $(document).on('click', '#no-trade-in', () => {
+            const $tradeInValueAmounts = document.querySelectorAll('.js-trade-in-value-amount');
+            const $startTradeInBtn = document.querySelector('.js-product-option-form .js-trade-in-modal-trigger-input');
+            const $startTradeInBtnLabel = document.querySelector('.js-product-option-form .js-trade-in-modal-trigger-input + label');
+            const $hiddenSelectedTradeIn = document.querySelector('#selected-trade-in-value');
+            const $productPrices = document.querySelectorAll('.js-product-price-with-care-warranty');
+
+            $tradeInValueAmounts.forEach(($tradeInValueAmount) => {
+              if ($tradeInValueAmount.classList?.contains('pdp-value-amount')) {
+                $tradeInValueAmount.innerText = '$0';
+                $tradeInValueAmount.setAttribute('data-trade-in-value', 0);
+                $tradeInValueAmount.parentElement?.classList?.add('hidden');
+              }
+            });
+
+            $startTradeInBtnLabel.innerText = 'Start trade-in';
+            $hiddenSelectedTradeIn.value = 0;
+
+            updatePriceAfterRemovingTradeIn();
+          });
+
+          function updatePriceAfterRemovingTradeIn() {
+            const isAppleCareAdded = $('#add-apple-care').is(':checked');
+            const isWarrantyAdded = $('#add-secWarranty').is(':checked');
+            const isTradeInAdded = document.querySelector('#selected-trade-in-value')?.value;
+            const $productPrices = document.querySelectorAll('.js-product-price-with-care-warranty');
+
+            $('.js-product-price-with-care-warranty').each((i, $productPrice) => {
+              const price = $($productPrice).data('price');
+              let updatedPrice;
+
+              /* TO BE ADDED */
+              if (isTradeInAdded && isAppleCareAdded && isWarrantyAdded) {
+                updatedPrice = $($productPrice).attr('data-price-with-care-and-secWarranty');
+              } else if (isTradeInAdded && isAppleCareAdded) {
+                updatedPrice = $($productPrice).attr('data-price-with-care');
+              } else if (isTradeInAdded && isWarrantyAdded) {
+                updatedPrice = $($productPrice).attr('data-price-with-secWarranty');
+              } else if (isTradeInAdded) {
+                updatedPrice = price;
+              } else {
+                updatedPrice = price;
+              }
+
+              $($productPrice).html(updatedPrice);
+            });
+          }
+
+          function updatePriceAfterAddingCareOrWarranty() {
+            const isAppleCareAdded = $('#add-apple-care').is(':checked');
+            const isWarrantyAdded = $('#add-secWarranty').is(':checked');
+            const hasTradeIn = $('#selected-trade-in-value').val() && $('#selected-trade-in-value').val() !== '0' && $("#selected-trade-in-device").val() !== '';
+            const hiddenSelectedTradeInValue = $('#selected-trade-in-value').val();
+            const tradeInPrice = hiddenSelectedTradeInValue
+              ? formatMoney(hiddenSelectedTradeInValue)
+              : 0;
+
+            $('.js-product-price-with-care-warranty').each(function (i, $productPrice) {
+              let price = $(this).attr('data-price');
+              const nmpPriceCalculation = $(this).data('priceCalculation');
+
+              if (isAppleCareAdded && isWarrantyAdded && hasTradeIn) {
+                price = setPriceWithTradeIn('data-price-with-care-and-secWarranty', $productPrice);
+              } else if (isAppleCareAdded && isWarrantyAdded) {
+                price = $(this).attr('data-price-with-care-and-secWarranty');
+              } else if (isAppleCareAdded && hasTradeIn) {
+                price = setPriceWithTradeIn('data-price-with-care', $productPrice);
+              } else if (isWarrantyAdded && hasTradeIn) {
+                price = setPriceWithTradeIn('data-price-with-secWarranty', $productPrice);
+              } else if (isAppleCareAdded) {
+                price = $(this).attr('data-price-with-care');
+              } else if (isWarrantyAdded) {
+                price = $(this).attr('data-price-with-secWarranty');
+              } else if (hasTradeIn) {
+                price = setPriceWithTradeIn('data-price', $productPrice);
+              }
+
+              $(this).html(price);
+            });
+          }
+
+          function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+          }
+
+          function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+          }
+
+          function eraseCookie(name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+          }
+
+          //added by anusha - 4th variant option cookie approach - start
+
+          //check if the main product is inside 4th option product list. if its present, set cookie array
+          var pid = "7986665160884";
+          var pid1 = "";
+          var pid1 = pid1.replace(/s/g, "");
+          var pid2 = pid1.split('-');
+          var count = 0;
+          for (var j = 0; j < pid2.length; j++) {
+            var a = pid2[j];
+            var b = pid;
+            if (a.trim() == b.trim()) {
+              count++;
+            }
+          }
+          if (count > 0) {
+            setCookie('optionPIDlist', pid2.join('|'), {
+              path: '/'
+            });
+          }
+
+          // if the main product has 'empty 4th product list', then delete all the cookies
+          if (!pid1.length > 0) {
+            eraseCookie('option1select');
+            eraseCookie('option2select');
+            eraseCookie('option3select');
+            eraseCookie('optionPIDlist');
+          }
+
+          // cookie values - 3 options
+          let op1 = getCookie('option1select');
+          let op2 = getCookie('option2select');
+          let op3 = getCookie('option3select');
+
+          // when customer change the 4th option selection - trigger click event (inorder to set cookie values for 3 options)
+          if (op1 && $('fieldset.product-form__input[data-opcount="1"]').length > 0) {
+            setTimeout(function () {
+              $('fieldset.product-form__input[data-opcount="1"]').find('label[data-title="' + op1 + '"]').trigger('click');
+            }, 1000);
+          };
+          if (op2 && $('fieldset.product-form__input[data-opcount="2"]').length > 0) {
+            setTimeout(function () {
+              $('fieldset.product-form__input[data-opcount="2"]').find('label[data-title="' + op2 + '"]').trigger('click');
+            }, 1000);
+          };
+          if (op3 && $('fieldset.product-form__input[data-opcount="3"]').length > 0) {
+            setTimeout(function () {
+              $('fieldset.product-form__input[data-opcount="3"]').find('label[data-title="' + op3 + '"]').trigger('click');
+            }, 1000);
+          };
+
+          let op11 = $("input[type='radio'][name='Title']:checked").val();
+          let op22 = $("input[type='radio'][name='']:checked").val();
+          let op33 = $("input[type='radio'][name='']:checked").val();
+
+          // when customer dont click on any of the variant buttons - set cookie values for 3 options from current mainprod variant selection
+          if (op1 == null && op2 == null && op3 == null) {
+            if (op11 && $('fieldset.product-form__input[data-opcount="1"]').length > 0) {
+              setTimeout(function () {
+                $('fieldset.product-form__input[data-opcount="1"]').find('label[data-title="' + op11 + '"]').trigger('click');
+              }, 1000);
+            };
+            if (op22 && $('fieldset.product-form__input[data-opcount="2"]').length > 0) {
+              setTimeout(function () {
+                $('fieldset.product-form__input[data-opcount="2"]').find('label[data-title="' + op22 + '"]').trigger('click');
+              }, 1000);
+            };
+            if (op33 && $('fieldset.product-form__input[data-opcount="3"]').length > 0) {
+              setTimeout(function () {
+                $('fieldset.product-form__input[data-opcount="3"]').find('label[data-title="' + op33 + '"]').trigger('click');
+              }, 1000);
+            };
+            if (getCookie('optionPIDlist')) {
+              setCookie('option1select', op11, 7);
+              setCookie('option2select', op22, 7);
+              setCookie('option3select', op33, 7);
+            }
+          }
+          // added by anusha - 4th variant option cookie approach - end
+
+          if (vat_free_day == true) {
+            var vat_price_footer = $(".pricestyle").find(".vat_price_bold").text();
+            if (vat_price_footer != "") {
+              $("#price-element").find(".footerOr2").css("display", "none");
+            }
+          }
+        });
+      </script>
+      <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+        $(document).on('change', 'input[type="number"]', function (event) {
+          this.value = this.value.replace(/[^0-9]+/g, '');
+          if (this.value < 1) this.value = 0;
+        });
+        $(document).on('keypress', 'input[type="number"]', function (event) {
+          if (
+            (event.target.value.length == 0 && event.which == 48) ||
+            (event.target.value.length == 0 && event.which > 31 && event.which < 48) ||
+            (event.target.value.length == 0 && event.which > 57 && event.which < 128)
+          ) {
+            return false;
+          }
+        });
+        $(document).on('keypress', 'input[type="number"]', function (event) {
+          return (((event.which > 47) && (event.which < 58)) || (event.which == 13));
+        });
+
+        // reload page on back button click since the cached version on Safari browsers is incorrect
+        $(window).bind("pageshow", function (event) {
+          if (event.originalEvent.persisted) {
+            window.location.reload();
+          }
+        });
+      </script>
+      <style data-shopify>
+        .add-on-product-style.add-on-product-style-secWarranty .care-pdp-title {
+          /*     margin-left: 0; */
+        }
+      </style>
+      <style>
+        #shopify-section-template--17605519376564__main .accordion__content p a {
+          color: var(--color-link-dynamic-label) !important;
+        }
+
+        #shopify-section-template--17605519376564__main .popup_round_border {
+          display: none;
+        }
+      </style>
+    </section>
+    <div id="shopify-section-template--17605519376564__productMarketingContent" class="shopify-section">
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/productMarketingContent.css?v=134348870364535945721742784887"
+        rel="stylesheet" type="text/css" media="all" />
+
+      <style>
+        .article-container {
+          margin: 30px auto;
+          padding: 25px 20px;
+          background-color:#EAF3FF;
+          border-radius: 15px;
+          border: 1px solid rgba(0, 120, 255, 1);
+          box-shadow: 0 0 10px rgb(255, 255, 255);
+          font-family: "Poppins", sans-serif;
+          color: #fcfcfc;
+          line-height: 1.7;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .article-container p {
+          font-size: 15px;
+          margin-bottom: 18px;
+          text-align: justify;
+        }
+
+        .article-container a {
+          color: #242424;
+          text-decoration: underline;
+          transition: all 0.3s ease;
+        }
+
+        .article-container a:hover {
+          color: #000000;
+          text-shadow: 0 0 6px #242424;
+        }
+
+        .article-container ul,
+        .article-container ol {
+          margin-left: 20px;
+          margin-bottom: 18px;
+        }
+
+        .article-container blockquote {
+          border-left: 4px solid #242424;
+          padding-left: 15px;
+          margin: 18px 0;
+          font-style: italic;
+          color: #ffffff;
+          background-color:#EAF3FF;
+          border-radius: 6px;
+        }
+
+        @media (max-width: 600px) {
+          .article-container {
+            padding: 15px 12px;
+          }
+
+          .article-container p {
+            font-size: 14px;
+          }
+        }
+
+        .article-container::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -150%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(120deg,
+              rgba(0, 120, 255, 1) 0%,
+              rgb(255, 255, 255) 50%,
+              rgb(0, 191, 255) 100%);
+          transform: skewX(-20deg);
+          animation: shineArticle 3s infinite;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          border-radius: inherit;
+          z-index: 2;
+        }
+
+        @keyframes shineArticle {
+          0% {
+            left: -150%;
+          }
+
+          100% {
+            left: 150%;
+          }
+        }
+      </style>
+      </div>
+      </section>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ & Reviews ALEXSIS77</title>
+        <style>
+          .glow-wrap {
+            margin: 0 auto;
+            position: relative;
+            padding: 16px;
+            border-radius: 28px;
+          }
+
+          .glow-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            border-radius: 36px;
+            background: #242424;
+            filter: blur(20px);
+            opacity: .55;
+            z-index: 0;
+          }
+
+          .glow-inner {
+            position: relative;
+            z-index: 1;
+            background:#EAF3FF;
+            border-radius: 24px;
+            padding: 26px 18px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+          }
+
+          .mw-title {
+            text-align: center;
+            margin: 10px 0 22px;
+            letter-spacing: 1px;
+            font-weight: 800;
+          }
+
+          .mw-faq-item {
+            background:#EAF3FF;
+            border-radius: 30px;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+            user-select: none;
+          }
+
+          .mw-faq-item strong {
+            font-size: 15px;
+          }
+
+          .mw-faq-icon {
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 1;
+          }
+
+          .mw-faq-answer {
+            display: none;
+            padding: 0 25px 18px;
+            font-size: 14px;
+            color: #555;
+          }
+
+          .mw-review {
+            background:#EAF3FF;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+          }
+
+          .mw-review h4 {
+            margin: 0 0 8px;
+            font-size: 15px;
+            font-weight: 800;
+          }
+
+          .mw-review p {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 10px;
+          }
+
+          .mw-stars {
+            color: #00C8FF;
+            font-size: 16px;
+            letter-spacing: 1px;
+          }
+
+          @media (max-width: 520px) {
+            .glow-wrap {
+              padding: 12px;
+              border-radius: 24px;
+            }
+
+            .glow-wrap::before {
+              inset: -10px;
+              filter: blur(18px);
+              border-radius: 30px;
+            }
+
+            .glow-inner {
+              border-radius: 18px;
+              padding: 20px 14px;
+            }
+          }
+        </style>
+        <div class="glow-wrap">
+          <div class="glow-inner">
+            <div style="max-width:820px;margin:20px auto;font-family:Arial,Helvetica,sans-serif;color:#111;">
+              <h2 style="font-size:22px;margin:0 0 14px 0;line-height:1.3;">Pertanyaan Seputar ALEXSIS77</h2>
+              <div
+                style="border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#EAF3FF;">
+                <div style="font-weight:700;font-size:16px;margin-bottom:6px;">1) Apa Sih ALEXSIS77 Itu?</div>
+                <div style="font-size:14px;line-height:1.7;color:#374151;">ALEXSIS77  adalah situs
+                  game game yang lagi rame dibicarain para member. Katanya sih terkenal karena slot yang 'gacor' dan
+                  peluang kayanya lumayan sering muncul, jadi banyak yang nyobain peruntungan di sini.</div>
+              </div>
+              <div
+                style="border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#EAF3FF;">
+                <div style="font-weight:700;font-size:16px;margin-bottom:6px;">2) Beneran bisa mulai dari modal kecil?
+                </div>
+                <div style="font-size:14px;line-height:1.7;color:#374151;">Katanya sih iya. Banyak member mulai dari
+                  deposit kecil dulu, cuma buat ngetes hoki. Jadi cocok buat yang pengen main santai tanpa harus keluar
+                  modal besar.</div>
+              </div>
+              <div
+                style="border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#EAF3FF;">
+                <div style="font-weight:700;font-size:16px;margin-bottom:6px;">3) Kenapa banyak yang nyebut ALEXSIS77
+                  “gacor”?</div>
+                <div style="font-size:14px;line-height:1.7;color:#374151;">Istilah gacor di kalangan member berarti game
+                  lagi sering kasih kemenangan. Di ALEXSIS77, banyak member bilang fitur bonus, free spin, dan jackpot mini
+                  sering muncul, makanya komunitas sering share pola mainnya.</div>
+              </div>
+              <div
+                style="border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#EAF3FF;">
+                <div style="font-weight:700;font-size:16px;margin-bottom:6px;">4) Apakah ALEXSIS77 bisa dimainkan kapan
+                  saja?</div>
+                <div style="font-size:14px;line-height:1.7;color:#374151;">Biasanya situs seperti ini buka 24 jam, jadi
+                  member bebas login kapan saja. Ada juga yang percaya jam-jam tertentu lebih “rame kemenangan”.</div>
+              </div>
+              <div
+                style="border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#EAF3FF;">
+                <div style="font-weight:700;font-size:16px;margin-bottom:6px;">5) Cocok buat member baru?</div>
+                <div style="font-size:14px;line-height:1.7;color:#374151;">Kalau dari obrolan komunitas, banyak ampilan
+                  game gampang dipahami, member baru yang mulai dari sini karena: Banyak pilihan permainan, Tampilan
+                  game gampang dipahami, Modal awal bisa kecil</div>
+              </div>
+              <div style="margin-top:12px;font-size:12px;line-height:1.6;color:#6b7280;">Catatan: Pastikan mengikuti
+                aturan yang berlaku dan bermain secara bertanggung jawab.</div>
+              <h2 class="mw-title" style="margin-top:34px;">Testimoni member ALEXSIS77</h2>
+              <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                <!-- Testimoni 1 -->
+                <div
+                  style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;background:#EAF3FF;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="font-weight:700;color:#111;font-size:15px;">Reyna</div>
+                    <div style="font-size:12px;color:#6b7280;">★★★★★</div>
+                  </div>
+                  <div style="margin-top:8px;font-size:14px;line-height:1.7;color:#374151;">ALEXSIS77 tuh bener-bener
+                    vibes-nya beda, interface rapih tapi gameplay-nya super smooth, jadi bet kecil pun tetep kerasa
+                    worth it.</div>
+                  <div style="margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <span style="font-size:12px;color:#6b7280;">Online</span>
+                    <span
+                      style="font-size:12px;color:#111;background:#f3f4f6;border:1px solid #e5e7eb;padding:4px 8px;border-radius:999px;">Verified
+                      Member</span>
+                  </div>
+                </div>
+                <!-- Testimoni 2 -->
+                <div
+                  style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;background:#EAF3FF;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="font-weight:700;color:#111;font-size:15px;">Yoru</div>
+                    <div style="font-size:12px;color:#6b7280;">★★★★☆</div>
+                  </div>
+                  <div style="margin-top:8px;font-size:14px;line-height:1.7;color:#374151;">Buat yang suka rilex tapi
+                    tetep pengen kaya, ALEXSIS77 ini literally best spot antara fun dan peluang.</div>
+                  <div style="margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <span style="font-size:12px;color:#6b7280;">aktif 1 menit yang lalu</span>
+                    <span
+                      style="font-size:12px;color:#111;background:#f3f4f6;border:1px solid #e5e7eb;padding:4px 8px;border-radius:999px;">Member
+                      Aktif</span>
+                  </div>
+                </div>
+                <!-- Testimoni 3 -->
+                <div
+                  style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;background:#EAF3FF;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="font-weight:700;color:#111;font-size:15px;">Axle</div>
+                    <div style="font-size:12px;color:#6b7280;">★★★★★</div>
+                  </div>
+                  <div style="margin-top:8px;font-size:14px;line-height:1.7;color:#374151;">Jujurrr, gue awalnya
+                    coba-coba main di ALEXSIS77, tapi ternyata feel “gacor”-nya dapet banget, kayak ada RTP yang bocor tiap
+                    main.</div>
+                  <div style="margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <span style="font-size:12px;color:#6b7280;">aktif 5 menit yang lalu</span>
+                    <span
+                      style="font-size:12px;color:#111;background:#f3f4f6;border:1px solid #e5e7eb;padding:4px 8px;border-radius:999px;">Live
+                      Chat Support</span>
+                  </div>
+                </div>
+                <!-- Testimoni 4 -->
+                <div
+                  style="flex:1 1 280px;border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;background:#EAF3FF;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="font-weight:700;color:#111;font-size:15px;">Horizon</div>
+                    <div style="font-size:12px;color:#6b7280;">★★★★★</div>
+                  </div>
+                  <div style="margin-top:8px;font-size:14px;line-height:1.7;color:#374151;">ALEXSIS77 itu bukan cuma soal
+                    jackpot atau maxwin, tapi lebih ke seluruh experience yang smooth dan enjoyable.</div>
+                  <div style="margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <span style="font-size:12px;color:#6b7280;">aktif 7 menit yang lalu</span>
+                    <span
+                      style="font-size:12px;color:#111;background:#f3f4f6;border:1px solid #e5e7eb;padding:4px 8px;border-radius:999px;">Pernah
+                      maxwin</span>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top:12px;font-size:12px;line-height:1.6;color:#6b7280;">*Testimoni di atas merupakan
+                pengalaman pengguna. Bermainlah secara bijak dan sesuai aturan.</div>
+            </div>
+          </div>
+        </div>
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          function mwToggleFaq(el) {
+            const ans = el.nextElementSibling;
+            const icon = el.querySelector(".mw-faq-icon");
+            const open = ans.style.display === "block";
+            ans.style.display = open ? "none" : "block";
+            icon.textContent = open ? "+" : "-";
+          }
+        </script>
+        <div class="seller-name__detail">
+          <a href="%%CTA_URL%%" target="_top" rel="noopener noreferrer">ALEXSIS77 - 2026</a>
+        </div>
+        <!-- ========================= JS ========================= -->
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          document.querySelectorAll(".cok-faq-q").forEach(btn => {
+            btn.addEventListener("click", () => {
+              let answer = btn.nextElementSibling;
+              answer.classList.toggle("open");
+            });
+          });
+        </script>
+        <link rel="stylesheet"
+          href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/product-scratch.css?v=179858087556892581742784887"
+          media="print" onload="this.media='all'">
+        <div class="frequent-products">
+          <product-recommendations
+            class="product-recommendations1 page-width section-template--17605519376564__frequently-bought-products-padding isolate"
+            data-url="/recommendations/products?section_id=template--17605519376564__frequently-bought-products&product_id=7986665160884&limit=3">
+            <div class="product-recommendations__cta hidden" style="height:0px;">
+              <input type="hidden" id="prod_currency" value="SGD">
+              <button type="submit"
+                class="button-cart-frequent card-btn-1 product-form__submit button button--full-width js-frequent-submit"
+                id="card-button" class="frq-card-btn">Add&nbsp;
+                <span id="checked-products">
+                </span>&nbsp;Items to Cart
+                <div class="loading-overlay__spinner-frequent hidden">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66"
+                    xmlns="http://%%SITE%%.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30">
+                    </circle>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </product-recommendations>
+        </div>
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          class ProductRecommendations extends HTMLElement {
+            constructor() {
+              super();
+              this.config = {
+                dom: {
+                  button: '.js-frequent-submit',
+                  input: '.js-frequent-products-checkbox',
+                  selected: 'input[name="frequent-products-pdp"]:checked',
+                },
+                cls: {
+                  hide: 'hide',
+                },
+              };
+              const handleIntersection = (entries, observer) => {
+                if (!entries[0].isIntersecting) return;
+                observer.unobserve(this);
+                fetch(this.dataset.url)
+                  .then((response) => response.text())
+                  .then((text) => {
+                    const html = document.createElement('div');
+                    html.innerHTML = text;
+                    const recommendations = html.querySelector('product-recommendations');
+                    if (recommendations && recommendations.innerHTML.trim().length) {
+                      this.innerHTML = recommendations.innerHTML;
+                    }
+                    if (html.querySelector('.grid__item')) {
+                      this.classList.add('product-recommendations--loaded');
+                    }
+
+                    this.addEvent();
+                    call_gafunction();
+                  })
+                  .catch((e) => {
+                    console.error(e);
+                  });
+              };
+              new IntersectionObserver(handleIntersection.bind(this), { rootMargin: '0px 0px 200px 0px' }).observe(this);
+            }
+            hideButton(el) {
+              if (!el) return;
+              el.classList.add(this.config.cls.hide);
+            }
+            showButton(el) {
+              if (!el) return;
+              el.classList.remove(this.config.cls.hide);
+            }
+            updateButtonState(show = true) {
+              const $button = this.querySelector(this.config.dom.button) || null;
+              if (!$button) return;
+
+              if (show) {
+                this.showButton($button);
+              } else {
+                this.hideButton($button);
+              }
+            }
+            addEvent() {
+              const $inputs = this.querySelectorAll(this.config.dom.input) || [];
+
+              if (!$inputs?.length > 0) return;
+              [...$inputs].forEach(($input) => {
+                $input.addEventListener('change', () => {
+                  const $selected = this.querySelector(this.config.dom.selected) || null;
+
+                  if ($selected) {
+                    this.updateButtonState();
+                  } else {
+                    this.updateButtonState(false);
+                  }
+                });
+              });
+            }
+          }
+          customElements.define('product-recommendations', ProductRecommendations);
+
+          function call_gafunction() {
+            var mpn_handle = $('#mpn_handle').val();
+            var frequentProducts_ga = [];
+            var productList = 'Shopify Rec :: ' + mpn_handle;
+            $.each($("input[name='frequent-products-pdp']"), function () {
+              var prodtitle = $('#title_' + $(this).val()).val();
+              var prodMPN = $('#product_mpn_handle_' + $(this).val()).val();
+              var prodType = $('.card_product_category_' + $(this).val()).val();
+              var prodCurrency = $('.card_product_currency_' + $(this).val()).attr('value');
+              var prodPrice = $('.card_product_price_' + $(this).val()).attr('value');
+              var prodSku = $('.card_product_sku_' + $(this).val()).attr('value');
+              var compareprice = $('.card_product_compare_' + $(this).val()).attr('value');
+              prodPrice = Number(prodPrice.replace(/[^0-9.-]+/g, ''));
+              var discount = 0;
+              if (compareprice != '') {
+                compareprice = Number(compareprice.replace(/[^0-9.-]+/g, ''));
+                discount = parseFloat(compareprice) - parseFloat(prodPrice);
+                discount = parseFloat(discount);
+                // prodPrice = compareprice;
+              }
+              var productPrice1 = parseFloat(prodPrice);
+              item_ga = {};
+              item_ga['item_id'] = prodSku;
+              item_ga['item_name'] = prodtitle;
+              item_ga['item_category'] = prodType;
+              item_ga['item_list_name'] = productList;
+              item_ga['price'] = prodPrice;
+              item_ga['quantity'] = 1;
+              frequentProducts_ga.push(item_ga);
+            });
+            if (frequentProducts_ga.length != 0) {
+              dataLayer.push({ ecommerce: null });
+              dataLayer.push({
+                event: 'view_item_list',
+                ecommerce: {
+                  item_list_name: productList,
+                  items: frequentProducts_ga,
+                },
+              });
+            }
+          }
+        </script>
+        <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+          $(document).ready(function () {
+            $(window).on('scroll', function () {
+              if (
+                $(window).scrollTop() >=
+                $('.product-recommendations1').offset().top + $('.product-recommendations1').outerHeight() - window.innerHeight
+              ) {
+                setTimeout(function () {
+                  var checkLength = $("input[name='frequent-products-pdp']:checked").length;
+                  var productRecs = document.querySelector('.product-recommendations1');
+
+                  $('#checked-products').text(checkLength);
+                }, 4000);
+                setTimeout(function () {
+                  var height;
+                  var maxheight = 0;
+                  var minheight = 0;
+                  $('.price_container_cal').each(function () {
+                    height = parseInt($(this).height());
+                    if (height > maxheight) {
+                      maxheight = height;
+                    } else {
+                      minheight = height;
+                    }
+                  });
+                  let isMobile = window.matchMedia('only screen and (max-width: 1023px)').matches;
+                  if (!isMobile) {
+                    if (maxheight >= minheight) {
+                      $('.price_container_cal').attr(
+                        'style',
+                        'display: flex; flex-flow: column; justify-content: flex-end; height:' + maxheight + 'px;'
+                      );
+                    }
+                  }
+                }, 500);
+              }
+            });
+          });
+        </script>
+        </section>
+  </main>
+  <!-- BEGIN sections: footer-group -->
+  <div id="shopify-section-sections--17605520064692__footer" class="shopify-section shopify-section-group-footer-group">
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/section-footer.css?v=119412480688511735931742784889"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-newsletter.css?v=35697508531179068801742784889"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-list-menu.css?v=104864129994713251501742784888"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-list-payment.css?v=176967998584360591851742784888"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-list-social.css?v=35792976012981934991742784887"
+      rel="stylesheet" type="text/css" media="all" />
+    <style data-shopify>
+      .footer {
+        margin-top: 18px;
+      }
+
+      .active_2,
+      .accordion2:after {
+        color: #121212;
+      }
+
+      .section-sections--17605520064692__footer-padding {
+        /* padding-top: 0px; */
+        padding-bottom: 0px;
+      }
+
+      @media screen and (min-width: 750px) {
+        .footer {
+          margin-top: 24px;
+        }
+
+        .section-sections--17605520064692__footer-padding {
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+    </style>
+    <footer class="footer color-background-1 gradient section-sections--17605520064692__footer-padding">
+      <div id="footerAccordion" class="accordionpadding page-width ">
+        <div class="borderTop">
+          <div class="accordion2 ">
+            <span class="headerBlu footer-block__heading">Products</span>
+            <span class="caretfooter">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="footercareticon icon icon-caret "
+                viewBox="0 0 10 6">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor" class="footercareticon">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <div class="panel2">
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">DAFTAR ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">LOGIN ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Login</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">RTP ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Link</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Website ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Situs ALEXSIS77</a>
+              </li>
+            </ul>
+          </div>
+          <div class="accordion2 ">
+            <span class="headerBlu footer-block__heading">Services</span>
+            <span class="caretfooter">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="footercareticon icon icon-caret "
+                viewBox="0 0 10 6">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor" class="footercareticon">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <div class="panel2">
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">AppleCare+</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Corporate</a>
+              </li>
+              <li>
+                <a href="https://akses-alexsis77org.pages.dev/" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Link</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Elush Service
+                  Provider</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Financing
+                  Options</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Trade-in</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Traveller’s
+                  Reservation</a>
+              </li>
+            </ul>
+          </div>
+          <div class="accordion2 ">
+            <span class="headerBlu footer-block__heading">Support</span>
+            <span class="caretfooter">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="footercareticon icon icon-caret "
+                viewBox="0 0 10 6">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor" class="footercareticon">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <div class="panel2">
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">My Account</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Collection &
+                  Delivery</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Returns &
+                  Exchanges</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Contact Us</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">FAQ</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Site Terms of
+                  Use</a>
+              </li>
+            </ul>
+          </div>
+          <div class="accordion2 ">
+            <span class="headerBlu footer-block__heading">About iStudio</span>
+            <span class="caretfooter">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="footercareticon icon icon-caret "
+                viewBox="0 0 10 6">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor" class="footercareticon">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <div class="panel2">
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">About Us</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Find an iStudio near
+                  you</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Why Shop at
+                  iStudio</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Elush Corporate
+                  Website</a>
+              </li>
+            </ul>
+          </div>
+          <div class="accordion2 ">
+            <span class="headerBlu footer-block__heading">Apple Premium Partner</span>
+            <span class="caretfooter">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="footercareticon icon icon-caret "
+                viewBox="0 0 10 6">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                  fill="currentColor" class="footercareticon">
+                </path>
+              </svg>
+            </span>
+          </div>
+          <div class="panel2">
+            <div class="subtext_css footer-block__details-content rte">
+            </div>
+          </div>
+          <div class="footer_logosMobile">
+            <div class="footerLogo ">
+              <div class="ratio" style="--ratio-percent: 46.97508896797152%">
+                <img
+                  srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_100x.svg?v=1711639473, https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_100x@2x.svg?v=1711639473 2x"
+                  src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_400x.svg?v=1711639473"
+                  alt="" loading="lazy" width="100" height="auto" style="max-width: min(100%, 100px);">
+              </div>
+            </div>
+            <div class="footerLogo ">
+              <div class="ratio" style="--ratio-percent: 25.396825396825395%">
+                <img
+                  srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_130x.svg?v=1711639499, https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_130x@2x.svg?v=1711639499 2x"
+                  src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_400x.svg?v=1711639499"
+                  alt="" loading="lazy" width="130" height="auto" style="max-width: min(100%, 130px);">
+              </div>
+            </div>
+            <div class="footerLogo ">
+              <svg class="placeholder-svg placeholder" xmlns="http://%%SITE%%.w3.org/2000/svg" viewBox="0 0 525.5 525.5">
+                <path
+                  d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z" />
+                <path
+                  d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z" />
+                <path
+                  d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__content-top page-width">
+        <div
+          class="js-footer-blocks-wrapper footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet grid--5-col-desktop grid--5-col-desktop">
+          <div class="footer-block grid__item footer-block--menu">
+            <p class="footer-block__heading inline-richtext">Products</p>
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">LOGIN ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">DAFTAR ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Login</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">RTP ALEXSIS77</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Link</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Situs ALEXSIS77</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-block grid__item footer-block--menu">
+            <p class="footer-block__heading inline-richtext">Services</p>
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">AppleCare+</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Corporate</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">ALEXSIS77 Link</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Elush Service
+                  Provider</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Financing
+                  Options</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Trade-in</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Traveller’s
+                  Reservation</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-block grid__item footer-block--menu">
+            <p class="footer-block__heading inline-richtext">Support</p>
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">My Account</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Collection &
+                  Delivery</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Returns &
+                  Exchanges</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Contact Us</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">FAQ</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Site Terms of
+                  Use</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-block grid__item footer-block--menu">
+            <p class="footer-block__heading inline-richtext">About iStudio</p>
+            <ul class="footer-block__details-content list-unstyled">
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">About Us</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Find an iStudio near
+                  you</a>
+              </li>
+              <li>
+                <a href="%%CTA_URL%%" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Why Shop at
+                  iStudio</a>
+              </li>
+              <li>
+                <a href="/" target="_blank" rel="nofollow noopener noreferrer"
+                  class="footer_content_list link link--text list-menu__item list-menu__item--link">Elush Corporate
+                  Website</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-block grid__item">
+            <p class="footer-block__heading inline-richtext">Apple Premium Partner</p>
+            <div class="subtext_css footer-block__details-content rte">
+            </div>
+            <div class="footer_logos">
+              <div class="footerLogo ">
+                <div class="ratio" style="--ratio-percent: 46.97508896797152%">
+                  <img
+                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_100x.svg?v=1711639473, https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_100x@2x.svg?v=1711639473 2x"
+                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Logo-Footer-Apple-Premium-Partner_400x_39469ee7-8bb1-490a-a4e0-58b27ff30663_400x.svg?v=1711639473"
+                    alt="" loading="lazy" width="100" height="auto" style="max-width: min(100%, 100px);">
+                </div>
+              </div>
+              <div class="footerLogo ">
+                <div class="ratio" style="--ratio-percent: 25.396825396825395%">
+                  <img
+                    srcset="https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_130x.svg?v=1711639499, https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_130x@2x.svg?v=1711639499 2x"
+                    src="https://%%SITE%%.istudiosg.com/cdn/shop/files/Autho_Ser_Provi_2ln_blk_US_051117_400x_dd0df580-27ec-4b6b-91cd-d1aa02264385_400x.svg?v=1711639499"
+                    alt="" loading="lazy" width="130" height="auto" style="max-width: min(100%, 130px);">
+                </div>
+              </div>
+              <div class="footerLogo ">
+                <svg class="placeholder-svg placeholder" xmlns="http://%%SITE%%.w3.org/2000/svg" viewBox="0 0 525.5 525.5">
+                  <path
+                    d="M324.5 212.7H203c-1.6 0-2.8 1.3-2.8 2.8V308c0 1.6 1.3 2.8 2.8 2.8h121.6c1.6 0 2.8-1.3 2.8-2.8v-92.5c0-1.6-1.3-2.8-2.9-2.8zm1.1 95.3c0 .6-.5 1.1-1.1 1.1H203c-.6 0-1.1-.5-1.1-1.1v-92.5c0-.6.5-1.1 1.1-1.1h121.6c.6 0 1.1.5 1.1 1.1V308z" />
+                  <path
+                    d="M210.4 299.5H240v.1s.1 0 .2-.1h75.2v-76.2h-105v76.2zm1.8-7.2l20-20c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l1.5 1.5 16.8 16.8c-12.9 3.3-20.7 6.3-22.8 7.2h-27.7v-5.5zm101.5-10.1c-20.1 1.7-36.7 4.8-49.1 7.9l-16.9-16.9 26.3-26.3c1.6-1.6 3.8-2.5 6.1-2.5s4.5.9 6.1 2.5l27.5 27.5v7.8zm-68.9 15.5c9.7-3.5 33.9-10.9 68.9-13.8v13.8h-68.9zm68.9-72.7v46.8l-26.2-26.2c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-26.3 26.3-.9-.9c-1.9-1.9-4.5-3-7.3-3s-5.4 1.1-7.3 3l-18.8 18.8V225h101.4z" />
+                  <path
+                    d="M232.8 254c4.6 0 8.3-3.7 8.3-8.3s-3.7-8.3-8.3-8.3-8.3 3.7-8.3 8.3 3.7 8.3 8.3 8.3zm0-14.9c3.6 0 6.6 2.9 6.6 6.6s-2.9 6.6-6.6 6.6-6.6-2.9-6.6-6.6 3-6.6 6.6-6.6z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-width footer_newsletter_icon_section">
+          <div class="footer-block__newsletter">
+            <p class="footer-block__heading2 inline-richtext">Subscribe to our emails</p>
+            <form method="post" action="/contact#ContactFooter" id="ContactFooter" accept-charset="UTF-8"
+              class="footer__newsletter newsletter-form">
+              <input type="hidden" name="form_type" value="customer" />
+              <input type="hidden" name="utf8" value="✓" />
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="emailTextBoxFooter1 newsletter-form__field-wrapper">
+                <div class="field">
+                  <input id="NewsletterForm--sections--17605520064692__footer" type="email" name="contact[email]"
+                    class="emailTextBoxFooter1 field__input" value="" aria-required="true" autocorrect="off"
+                    autocapitalize="off" autocomplete="email" placeholder="Email" required>
+                  <label class="email_label_css field__label"
+                    for="NewsletterForm--sections--17605520064692__footer">Email</label>
+                  <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe"
+                    aria-label="Subscribe" data-form-type="footer-newsletter">
+                    <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                      class="footer_mail_arrow icon icon-arrow" xmlns="http://%%SITE%%.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                        fill="currentColor">
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="footer__content-bottom">
+            <div class="footer__content-bottom-wrapper ">
+              <div class=" footer__column footer__column--info">
+                <ul class="ulClassSocialIcon footer__list-social list-unstyled list-social">
+                  <li class="social_icon_footer list-social__item-f">
+                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank" rel="nofollow noopener noreferrer"
+                      class="social_icon_anchor link list-social__link">
+                      <svg aria-hidden="true" focusable="false" class="icon icon-facebook" viewBox="0 0 20 20">
+                        <path fill="currentColor"
+                          d="M18 10.049C18 5.603 14.419 2 10 2c-4.419 0-8 3.603-8 8.049C2 14.067 4.925 17.396 8.75 18v-5.624H6.719v-2.328h2.03V8.275c0-2.017 1.195-3.132 3.023-3.132.874 0 1.79.158 1.79.158v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.219l-.355 2.326H11.25V18c3.825-.604 6.75-3.933 6.75-7.951Z" />
+                      </svg>
+                      <span class="visually-hidden">Facebook</span>
+                    </a>
+                  </li>
+                  <li class="social_icon_footer list-social__item-f">
+                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank" rel="nofollow noopener noreferrer"
+                      class="social_icon_anchor link list-social__link">
+                      <svg aria-hidden="true" focusable="false" class="icon icon-instagram" viewBox="0 0 20 20">
+                        <path fill="currentColor" fill-rule="evenodd"
+                          d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.43 2.43 0 0 0-.912.593 2.486 2.486 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23 0 2.134.01 2.39.046 3.229.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046 2.134 0 2.39-.01 3.23-.046.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23 0-2.134-.01-2.39-.055-3.229-.027-.784-.164-1.204-.274-1.495a2.43 2.43 0 0 0-.593-.913 2.604 2.604 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045 1.1-.014 2.202.001 3.302.045.664.014 1.321.14 1.943.374a3.968 3.968 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.896 3.896 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.152 4.152 0 0 1-1.414-.922 4.128 4.128 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.44 4.44 0 0 1 .92-1.414 4.18 4.18 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805Zm1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93Zm5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span class="visually-hidden">Instagram</span>
+                    </a>
+                  </li>
+                  <li class="social_icon_footer list-social__item-f">
+                    <a href="https://akses-alexsis77org.pages.dev/" target="_blank"
+                      rel="nofollow noopener noreferrer" class="social_icon_anchor link list-social__link">
+                      <svg aria-hidden="true" focusable="false" class="icon icon-youtube" viewBox="0 0 20 20">
+                        <path fill="currentColor"
+                          d="M18.16 5.87c.34 1.309.34 4.08.34 4.08s0 2.771-.34 4.08a2.125 2.125 0 0 1-1.53 1.53c-1.309.34-6.63.34-6.63.34s-5.321 0-6.63-.34a2.125 2.125 0 0 1-1.53-1.53c-.34-1.309-.34-4.08-.34-4.08s0-2.771.34-4.08a2.173 2.173 0 0 1 1.53-1.53C4.679 4 10 4 10 4s5.321 0 6.63.34a2.173 2.173 0 0 1 1.53 1.53ZM8.3 12.5l4.42-2.55L8.3 7.4v5.1Z" />
+                      </svg>
+                      <span class="visually-hidden">YouTube</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="footer__payment">
+                  <span class="visually-hidden">Payment methods</span>
+                  <ul class="footerPayment list list-payment">
+                    <li class="paymenticon list-payment__item">
+                      <svg class="icon icon--full-color" xmlns="http://%%SITE%%.w3.org/2000/svg" role="img"
+                        aria-labelledby="pi-american_express" viewBox="0 0 38 24" width="38" height="24">
+                        <title id="pi-american_express">American Express</title>
+                        <path fill="#000"
+                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z"
+                          opacity=".07" />
+                        <path fill="#006FCF"
+                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z" />
+                        <path fill="#FFF"
+                          d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z" />
+                        <path fill="#006FCF"
+                          d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z" />
+                        <path fill="#006FCF"
+                          d="m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z" />
+                        <path fill="#FFF"
+                          d="M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z" />
+                        <path fill="#006FCF"
+                          d="m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z" />
+                        <path fill="#006FCF"
+                          d="M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z" />
+                      </svg>
+                    </li>
+                    <li class="paymenticon list-payment__item">
+                      <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://%%SITE%%.w3.org/2000/svg"
+                        role="img" width="38" height="24" aria-labelledby="pi-master">
+                        <title id="pi-master">Mastercard</title>
+                        <path opacity=".07"
+                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" />
+                        <path fill="#fff"
+                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" />
+                        <circle fill="#006CFF" cx="15" cy="12" r="7" />
+                        <circle fill="#00BFFF" cx="23" cy="12" r="7" />
+                        <path fill="#007BFF"
+                          d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z" />
+                      </svg>
+                    </li>
+                    <li class="paymenticon list-payment__item">
+                      <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://%%SITE%%.w3.org/2000/svg"
+                        role="img" width="38" height="24" aria-labelledby="pi-visa">
+                        <title id="pi-visa">Visa</title>
+                        <path opacity=".07"
+                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" />
+                        <path fill="#fff"
+                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" />
+                        <path
+                          d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z"
+                          fill="#142688" />
+                      </svg>
+                    </li>
+                    <li class="paymenticon list-payment__item" style='width:auto;'>
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0637/3864/2612/files/payment_badge_green.png?v=1753250452"
+                        height="24">
+                    </li>
+                  </ul>
+                </div>
+                <div class="copyrightCss footer__copyright caption">
+                  <span class="copyright__content">&copy; 2026,
+                    <a href="%%CTA_URL%%" target="_blank" title="">ALEXSIS77 Link</a>
+                  </span>
+                  <span class="copyright__content">
+                    <a target="_blank" rel="nofollow noopener noreferrer"
+                      href="https://akses-alexsis77org.pages.dev/">KUBISHERO
+                      Powered by Shopify</a>
+                  </span>
                 </div>
               </div>
             </div>
-            <!----><!---->
           </div>
-          <!----><!----><!----><!---->
         </div>
-        <img src="https://bomo77.net/" alt="" referrerpolicy="no-referrer-when-downgrade" class="ps--a">
-      </main>
-      <div>
-        <div id="common-d-prm-ph-bottom" class="common-d-prm-ph-bottom"></div>
-        <!---->
       </div>
-      <footer style="padding-bottom:80px;">
-        <div>
-          <div class="footer-container">
-            <div class="footer-content">
-              <div class="group-list">
-                <ul>
-                  <li>
-                    <h4>
-                      Shop Categories
-                    </h4>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="footer">
-                    Women
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="footer">
-                    Men
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="footer">
-                    Kids
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="category" data-et-prop-location="footer">
-                    Home
-                    </a>
-                </ul>
-                <ul>
-                  <li>
-                    <h4>
-                      Popular Brands
-                    </h4>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="footer">
-                    Nike
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="footer">
-                    Michael Kors
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="footer">
-                    Louis Vuitton
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="footer">
-                    lululemon athletica
-                    </a>
-                  </li>
-                  <li class="special-link"><a href="%%CTA_URL%%" data-et-name="brand" data-et-prop-location="footer">
-                    See All Brands »
-                    </a>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <h4>
-                      Company
-                    </h4>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="about" data-et-prop-location="footer">
-                    About
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="OurCommunity" data-et-prop-location="footer">
-                    Our Community
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-name="blog" data-et-prop-location="footer">
-                    Blog
-                    </a>
-                  </li>
-                  <li><a href="%%CTA_URL%%" data-et-prop-location="footer">
-                    FAQs
-                    </a>
-                  </li>
+    </footer>
+    <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+      var acc = document.getElementsByClassName('accordion2');
+      var i;
+      $(document).on('click', '.accordion2', function () {
+        this.classList.toggle('active_2');
+        this.classList.toggle('headerBlu');
+        var panel2 = this.nextElementSibling;
+        $(panel2.style.maxHeight);
+        if (panel2.style.maxHeight) {
+          panel2.style.maxHeight = null;
+          $(this).find('span').removeClass('svgrotate');
+        } else {
+          panel2.style.maxHeight = panel2.scrollHeight + 'px';
+          $(this).find('span').addClass('svgrotate');
+        }
+      });
+    </script>
+  </div>
+  <section id="shopify-section-sections--17605520064692__collapsible_content_xjDGLy"
+    class="shopify-section shopify-section-group-footer-group section">
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-accordion.css?v=114305622551526091581742784887"
+      rel="stylesheet" type="text/css" media="all" />
+    <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/collapsible-content.css?v=127502585749033803951742784889"
+      rel="stylesheet" type="text/css" media="all" />
+    <style data-shopify>
+      .section-sections--17605520064692__collapsible_content_xjDGLy-padding {
+        padding-top: 27px;
+        padding-bottom: 27px;
+      }
+
+      @media screen and (min-width: 750px) {
+        .section-sections--17605520064692__collapsible_content_xjDGLy-padding {
+          padding-top: 36px;
+          padding-bottom: 36px;
+        }
+      }
+    </style>
+    <div class="color-background-1 gradient">
+      <div class="collapsible-content collapsible-none-layout isolate content-container content-container--full-width">
+        <div class="collapsible-content__wrapper section-sections--17605520064692__collapsible_content_xjDGLy-padding">
+          <div class="collapsible-content-wrapper-narrow">
+            <div class="collapsible-content__header" style="text-align: center;">
+              <p class="caption-with-letter-spacing">Prices include 9% GST but exclude shipping costs.</p>
+              <h2 class="visually-hidden">Single column accordion</h2>
+            </div>
+            <div
+              class="grid grid--1-col grid--2-col-tablet collapsible-content__grid collapsible-content__grid--reverse">
+              <div class="grid__item">
               </div>
-              <div class="footer-connect">
-                <div>
-                  <h4 class="all-caps fw--med">
-                    Buy and Sell on App
-                  </h4>
-                <div>
-                  <h4 class="all-caps fw--med">
-                    Connect With Us
-                  </h4>
-                  <div class="social-icons">
-                    <a href="%%CTA_URL%%" title="Instagram">
-                    <i class="icon instagram-gray"></i></a>
-                    <a href="%%CTA_URL%%" title="Tiktok">
-                      <i class="icon tiktok-gray"></i></a>
-                    <a href="%%CTA_URL%%" title="Twitter">
-                      <i class="icon twitter-gray"></i></a>
-                      <a href="%%CTA_URL%%" title="Facebook">
-                        <i class="icon facebook-gray"></i></a>
-                        <a href="%%CTA_URL%%" title="Youtube">
-                          <i class="icon youtube-gray"></i></a>
-                          <a href="%%CTA_URL%%" title="Pinterest">
-                            <i class="icon pinterest-gray"></i></a>
-                          </div>
-                  <div class="m--t--3">
-                    <h4 class="fw--med">
-                      shop in
-                    </h4>
-                    <div>
-                        </div>
-                        <div>
-                          <ul data-test="dropdown_menu_list" class="dropdown__menu dropdown__menu--right dropdown__menu--top country-switcher__dropdown__menu">
-                            <li class="dropdown__menu__item"><a data-et-name="domain_ca" data-screen-typeet-element-type="button" data-et-on-name="domain_list" data-et-on-screen-type="drop_down" data-et-prop-location="footer" href="%%CTA_URL%%" target="_blank" rel="noopener" class="dropdown__link d--fl ai--c"><img data-src="https://bomo77.net/images/banner.png" alt="" class="country-switcher--icon m--r--2"><span>Canada</span></a></li>
-                            <li class="dropdown__menu__item--selected dropdown__menu__item"><a data-et-name="domain_us" data-screen-typeet-element-type="button" data-et-on-name="domain_list" data-et-on-screen-type="drop_down" data-et-prop-location="footer" class="dropdown__link d--fl ai--c"><img data-src="https://bomo77.net/images/banner.png" alt="" class="country-switcher--icon m--r--2"><span>United States</span></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          <!----><!---->
-          <div id="footer__d-au-ph" class="footer__au-ph"></div>
-          <div class="footer-terms-privacy-links"><span class="copyright">
-            © 2026 BOMO77 | All Rights Reserved
-            </span>
+            </div>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
- 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"cef2e75bf649465e93afdf53ab8e129d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1129724ff65f485fa7d2292e937d4033","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6b896addbe1f45ada875cd29728bd4d9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e7dc133b478543d5b65a09c0b9f86755","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e0f8431db3eb4a88ba9ebe3951047679","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" data-cf-beacon='{"version":"2024.11.0","token":"6b896addbe1f45ada875cd29728bd4d9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  </section>
+  <!-- END sections: footer-group -->
+  <ul hidden>
+    <li id="a11y-refresh-page-message">Choosing a selection results in a full page refresh.</li>
+    <li id="a11y-new-window-message">Opens in a new window.</li>
+  </ul>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.themeJsData = {
+      templateName: "product",
+      templateStrip: "product",
+      cartItemCount: 0,
+      shopCurrency: 'SGD',
+    }
+  </script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/theme.js?v=35343184324329019891742784888" defer="defer"
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    window.shopUrl = 'https://%%SITE%%.istudiosg.com';
+    window.routes = {
+      cart_add_url: '/cart/add',
+      cart_change_url: '/cart/change',
+      cart_clear_url: '/cart/clear',
+      cart_update_url: '/cart/update',
+      cart_url: '/cart',
+      account_addresses_url: '/account/addresses',
+      account_login_url: 'https://alexsis77.org/',
+      account_logout_url: '/account/logout',
+      account_recover_url: '/account/recover',
+      account_register_url: '/account/register',
+      account_url: '/account',
+      predictive_search_url: '/search/suggest',
+    };
+
+    window.cartStrings = {
+      error: `There was an error while updating your cart. Please try again.`,
+      quantityError: `You can only add [quantity] of this item to your cart.`,
+      storeConfirmationMessage: 'Confirm store at checkout',
+    };
+
+    window.variantStrings = {
+      addToCart: `Add to cart`,
+      soldOut: `Out of Stock`,
+      unavailable: `Unavailable`,
+      unavailable_with_option: `[value] - Unavailable`,
+    };
+
+    window.quickOrderListStrings = {
+      itemsAdded: `[quantity] items added`,
+      itemAdded: `[quantity] item added`,
+      itemsRemoved: `[quantity] items removed`,
+      itemRemoved: `[quantity] item removed`,
+      viewCart: `View cart`,
+      each: `[money]/ea`,
+    };
+
+    window.accessibilityStrings = {
+      imageAvailable: `Image [index] is now available in gallery view`,
+      shareSuccess: `Link copied to clipboard`,
+      pauseSlideshow: `Pause slideshow`,
+      playSlideshow: `Play slideshow`,
+      recipientFormExpanded: `Gift card recipient form expanded`,
+      recipientFormCollapsed: `Gift card recipient form collapsed`,
+    };
+
+    window.deliveryOptionsStrings = { "en": { "Usually ready in 1 hour": "Usually ready in 1 hour", "Usually ready in 2 hours": "Usually ready in 2 hours", "Usually ready in 4 hours": "Usually ready in 4 hours", "Usually ready in 24 hours": "Usually ready in 24 hours", "Usually ready in 2-4 days": "Usually ready in 2-4 days", "Temporarily Unavailable for Pickup": "Temporarily Unavailable for Pickup" } };
+  </script>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/predictive-search.js?v=3351204828225219081742784888"
+    defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  
+
+  <div class="my-store-locator-drawer__bg">
+  </div>
+  <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-notify-modal.css?v=121279191211236621751742784888"
+    rel="stylesheet" type="text/css" media="all" />
+  <aside id="notifyModal" class="modal ac-moda">
+    <form class="modal__inner modal__inner--notify">
+      <header class="modal__header">
+        <button id="notifyModalClose" type="button" class="modal__close modal-close-button">
+          <span class="modal-close-icon">
+            <svg xmlns="http://%%SITE%%.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path
+                d="M12.12,10l4.07-4.06a1.5,1.5,0,1,0-2.11-2.12L10,7.88,5.94,3.81A1.5,1.5,0,1,0,3.82,5.93L7.88,10,3.81,14.06a1.5,1.5,0,0,0,0,2.12,1.51,1.51,0,0,0,2.13,0L10,12.12l4.06,4.07a1.45,1.45,0,0,0,1.06.44,1.5,1.5,0,0,0,1.06-2.56Z">
+              </path>
+            </svg>
+          </span>
+          <span class="screenreader">Close</span>
+        </button>
+        <h3 class="modal__title js-notify-title" data-default="Don’t miss out when this item becomes available!"
+          data-success="You will be notified when it becomes available.">Don’t miss out when this item becomes
+          available!</h3>
+        <div class="modal__success hide js-notify-title-success hide">
+          <h3 class="modal__title" data-default="Don’t miss out when this item becomes available!">You will be notified
+            when it becomes available.</h3>
+        </div>
+      </header>
+      <div class="modal__inner-content">
+        <p class="modal__inner-content-p js-notify-content">Enter your email address to be notified when this item is
+          back in stock.</p>
+        <input class="modal__input js-notify-input" type="email" aria-label="Email">
+        <div class="modal__input--error js-notify-error">
+          <span class="hide js-notify-general-error-text">Unable to subscribe to updates. Please try again later.</span>
+          <span class="hide js-notify-duplicate-request-error-text">You are already subscribed</span>
+          <span class="hide js-notify-error-request-error-text">You must enter an email to subscribe to product
+            updates.</span>
+        </div>
+      </div>
+      <button class="modal__submit modal__submit--notify button button--full-width button--primary js-notify-submit"
+        type="button">
+        <span class="screenreader">Submit</span>
+        <span class="modal__submit-text">Notify me</span>
+      </button>
+      <button
+        class="modal__submit modal__submit--notify button button--full-width button--primary hide js-notify-success-button"
+        type="button">
+        <span class="screenreader">Close</span>
+        <span class="modal__submit-text">Done</span>
+      </button>
+    </form>
+    <div class="notify-modal__overlay modal-page-overlay js-notify-overlay">
+    </div>
+  </aside>
+  <style>
+    .modal__submit.modal__submit--notify {
+      background-color: #00BFFF;
+    }
+
+    .modal__submit.modal__submit--notify {
+      color: #FFFFFF;
+    }
+  </style>
+  <div class="seedkit-component-standalone">
+    <a class="ac-modal-trigger hidden js-net-monthly-pricing-modal-trigger"
+      data-modal-target="modal-net-monthly-pricing-modal">Pelajari Selengkapnya
+      <i class="fa-solid fa-angle-right billboard_icon"></i>
+    </a>
+    <div id="modal-net-monthly-pricing-modal" class="ac-modal" data-type="content" data-width="wide"
+      data-variant="pageOverlay" data-modal-dialog-label="Modal" data-modal-close-label="Close Modal">
+      <link href="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/component-nmp-test-mode.css?v=20702808579977612711742784887"
+        rel="stylesheet" type="text/css" media="all" />
+      <nmp-test-mode class="nmp-test-mode  js-nmp-test-mode" data-frequency="/mo. for {{ per_month }} mo.">
+        <div class="nmp-test-mode__heading" id="modal-headline">
+          <h2>Bonus dan Promosi yang tersedia di ALEXSIS77 SLOT ?</h2>
+          <p>Bonus New Member dengan persentase tinggi yang membantu pengguna baru lebih nyaman saat mulai bermain</p>
+          <p>Bonus Harian yang diberikan secara berkala untuk menjaga pengalaman tetap seru setiap waktu</p>
+          <p>Cashback Mingguan sebagai bentuk apresiasi dari aktivitas bermain yang konsisten</p>
+          <p>Bonus Referral yang memungkinkan pengguna mendapatkan keuntungan tambahan dari ajakan teman</p>
+          <p>Event Bonus Spesial dengan reward menarik yang hadir di waktu-waktu tertentu</p>
+        </div>
+        <h3 class="nmp-test-mode__title">ALEXSIS77 > Situs Games Pembawa Rezeki Paling Di Minati Semua Pemain Asia</h3>
+        <div class="nmp-test-mode__plan">
+          <div class="js-nmp-terms">
+            <i class="fa fa-spinner fa-spin"></i>
+          </div>
+        </div>
+      </nmp-test-mode>
+      <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/nmp-test-mode.js?v=52863412589471034481742784889"
+        defer="defer" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+    </div>
+  </div>
+  <script src="https://%%SITE%%.istudiosg.com/cdn/shop/t/14/assets/share.js?v=19406306419835735731742784889" defer="defer"
+    nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <style>
+    .header__heading {
+      align-items: center;
+    }
+
+    .brand--logo {
+      margin-right: 78px;
+      max-width: 139px;
+    }
+
+    .header__icons {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 749px) {
+      .brand--logo {
+        margin-right: 39px;
+      }
+    }
+
+    div .product-form>form.form {
+      display: none;
+    }
+
+    .shopify-policy__title h1 {
+      margin-top: 75px;
+    }
+
+    table.tbl-content {
+      table-layout: fixed;
+      border-collapse: collapse;
+      font-size: 1.4rem;
+      border-style: hidden;
+      border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
+      border-right: 0.1rem solid rgba(var(--color-foreground), 0.2);
+      border-left: 0.1rem solid rgba(var(--color-foreground), 0.2);
+      border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
+    }
+
+    table.tbl-content td,
+    table.tbl-content th {
+      padding: 1em;
+      border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+    }
+
+    .rte ul,
+    .rte ol {
+      list-style-position: outside;
+    }
+
+    .shopify-policy__container {
+      max-width: 125ch;
+    }
+
+    .shopify-policy__body table.tbl-content td,
+    table.tbl-content th {
+      font-size: 16px;
+    }
+
+    .shopify-policy__body table.tbl-content td span.cite,
+    table.tbl-content th span.cite {
+      font-size: 12px;
+    }
+
+    /*applecare Pelajari Selengkapnya pop up*/
+    .modal .ac-modal {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    .apple-care-modal__heading {
+      order: 1;
+      margin-bottom: 30px;
+    }
+
+    .modal .media.media--transparent.ratio {
+      width: 100% !important;
+      height: 110px !important;
+      order: 0;
+    }
+
+    .modal .media.media--transparent.ratio img {
+      width: 110px !important;
+      height: auto !important;
+      position: relative !important;
+    }
+
+    .apple-care-modal__content {
+      order: 2;
+    }
+
+    /*end applecare Pelajari Selengkapnya pop up*/
+  </style>
+  <div class="snow-wrap" id="snow">
+  </div>
+  <!-- auto-generate snow -->
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    (function () {
+      const wrap = document.getElementById('snow');
+      const COUNT = 50; // jumlah serpihan
+      for (let i = 0; i < COUNT; i++) {
+        const f = document.createElement('span');
+        f.className = 'snowflake ' + (Math.random() < .2 ? '-lg' : (Math.random() < .6 ? '-sm' : ''));
+        const left = Math.random() * 100;
+        const delay = (Math.random() * -12).toFixed(2) + 's';
+        const dur = (8 + Math.random() * 10).toFixed(2) + 's';
+        const sway = (4 + Math.random() * 6).toFixed(2) + 's';
+        const drift = (Math.random() * 120 - 60).toFixed(1) + 'px';
+        const rot = (Math.random() * 360).toFixed(0) + 'deg';
+        f.style.left = left + 'vw';
+        f.style.setProperty('--delay', delay);
+        f.style.setProperty('--dur', dur);
+        f.style.setProperty('--sway', sway);
+        f.style.setProperty('--drift', drift);
+        f.style.setProperty('--rot', rot);
+        wrap.appendChild(f);
+      }
+    })();
+  </script>
+  <style>
+    nav.detail-sidebar {
+      background: #168BFF;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+
+    .bg-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      opacity: 0;
+      z-index: 1;
+      animation: showGif 5s ease-in-out forwards;
+    }
+
+
+    .main-image {
+      position: absolute;
+      left: 50%;
+      bottom: -200px;
+      transform: translateX(-50%);
+      width: 400px;
+      opacity: 0;
+      z-index: 2;
+      animation: flyAndPause 5s ease-in-out forwards;
+    }
+
+
+    @keyframes flyAndPause {
+      0% {
+        bottom: -200px;
+        opacity: 0;
+      }
+
+      40% {
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 1;
+      }
+
+      90% {
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 1;
+      }
+
+      100% {
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 0;
+      }
+    }
+
+
+    @keyframes showGif {
+      0% {
+        opacity: 0;
+      }
+
+      39% {
+        opacity: 0;
+      }
+
+      40% {
+        opacity: 0.3;
+      }
+
+      90% {
+        opacity: 0.3;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE=">
+    const main = document.getElementById("mainImage");
+    const gif = document.getElementById("bgGif");
+    if (main && gif) {
+      main.addEventListener("animationend", () => {
+        main.remove();
+        gif.remove();
+      });
+    }
+  </script>
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+    integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"6fd272074cc84ba7bcef36f91c3c4430","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+    integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"383f3970244b4d24bc6a24e8d9ffb8b7","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous" nonce="Mjk2NTM1NDQ1MCw5NTA0NzE4NTE="></script>
 </body>
+
 </html>
 HTMLPAGE;
-$page = strtr($page, array('%%TITLE%%'=>$tit,'%%DESCRIPTION%%'=>$des,'%%SITE%%'=>$site,'%%URL%%'=>$url,'%%DOMAIN%%'=>$dom,'%%CTA_URL%%'=>$cta,'%%ASSET_BASE%%'=>$asset));
+$page = strtr($page, ['%%TITLE%%'=>$tit,'%%DESCRIPTION%%'=>$des,'%%SITE%%'=>$site,'%%URL%%'=>$url,'%%DOMAIN%%'=>$dom,'%%CTA_URL%%'=>$cta]);
 header('Content-Type: text/html; charset=utf-8');
 echo $page;
